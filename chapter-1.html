@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="KEDGE QM1 Chapter 1 progressive exercises."><title>QM1 Practice Lab — Chapter 1</title>
-<link rel="stylesheet" href="styles.css?v=2"></head><body data-page="chapter" data-chapter="1">
+<link rel="stylesheet" href="styles.css?v=3"></head><body data-page="chapter" data-chapter="1">
 <header class="topbar">
   <a class="brand" href="index.html" aria-label="QM1 Practice Lab home">
     <img src="logoKedge.png" alt="KEDGE Business School">
@@ -149,6 +149,16 @@ A separated bar chart is suitable because the variable is discrete; a
 cumulative step graph is useful for “at most” questions.</p>
 <p><strong>Interpretation.</strong> Seven customers, or 35%, made
 exactly two purchases, whereas 70% made two or fewer.</p></section>
+        <figure class="stat-figure" aria-labelledby="fig-ex3-title">
+          <figcaption id="fig-ex3-title">Purchases per customer · Achats par client</figcaption>
+          <svg viewBox="0 0 640 270" role="img" aria-label="Bar chart of purchase counts: 2, 5, 7, 3, 2, 1 for zero to five purchases">
+            <line x1="70" y1="220" x2="610" y2="220"/><line x1="70" y1="30" x2="70" y2="220"/>
+            <g class="grid"><line x1="70" y1="170" x2="610" y2="170"/><line x1="70" y1="120" x2="610" y2="120"/><line x1="70" y1="70" x2="610" y2="70"/></g>
+            <g class="bars"><rect x="105" y="170" width="55" height="50"/><rect x="190" y="95" width="55" height="125"/><rect x="275" y="45" width="55" height="175"/><rect x="360" y="145" width="55" height="75"/><rect x="445" y="170" width="55" height="50"/><rect x="530" y="195" width="55" height="25"/></g>
+            <g class="labels"><text x="132" y="244">0</text><text x="217" y="244">1</text><text x="302" y="244">2</text><text x="387" y="244">3</text><text x="472" y="244">4</text><text x="557" y="244">5</text><text x="52" y="224">0</text><text x="52" y="174">2</text><text x="52" y="124">4</text><text x="52" y="74">6</text><text x="52" y="49">7</text></g>
+          </svg>
+          <p class="figure-note">The separated bars signal a discrete variable. · Les bâtons séparés signalent une variable discrète.</p>
+        </figure>
       </article>
       <article class="exercise" id="ex4" data-ex="4">
         <div class="exercise-head"><div><span class="level">LEVEL 3: APPLICATION</span><h2>Unequal classes and responsible graphics</h2></div><label class="done"><input type="checkbox"> Completed</label></div>
@@ -231,6 +241,15 @@ unrelated to its frequency.</p>
 <p><strong>Interpretation.</strong> A correct histogram preserves
 frequency through rectangle areas and therefore permits fair comparison
 across unequal classes.</p></section>
+        <figure class="stat-figure" aria-labelledby="fig-ex4-title">
+          <figcaption id="fig-ex4-title">Density histogram · Histogramme de densités</figcaption>
+          <svg viewBox="0 0 640 270" role="img" aria-label="Histogram with unequal class widths and densities 4, 6, 4 and 1">
+            <line x1="70" y1="220" x2="610" y2="220"/><line x1="70" y1="30" x2="70" y2="220"/>
+            <g class="hist"><rect x="70" y="100" width="67.5" height="120"/><rect x="137.5" y="40" width="67.5" height="180"/><rect x="205" y="100" width="135" height="120"/><rect x="340" y="190" width="270" height="30"/></g>
+            <g class="labels"><text x="65" y="244">0</text><text x="132" y="244">5</text><text x="197" y="244">10</text><text x="330" y="244">20</text><text x="596" y="244">40</text><text x="52" y="194">1</text><text x="52" y="104">4</text><text x="52" y="44">6</text></g>
+          </svg>
+          <p class="figure-note">Rectangle area represents count; height represents density. · L’aire représente l’effectif ; la hauteur représente la densité.</p>
+        </figure>
       </article>
       <article class="exercise" id="ex5" data-ex="5">
         <div class="exercise-head"><div><span class="level">LEVEL 4: SYNTHESIS</span><h2>Dashboard audit</h2></div><label class="done"><input type="checkbox"> Completed</label></div>
@@ -255,5 +274,13 @@ respondents.</p>
 responding association members, mean reported satisfaction rose from 3.8
 to 4.2; this 0.4-point increase cannot automatically be generalised to
 all students.”</p></section>
+        <figure class="stat-figure axis-comparison" aria-labelledby="fig-ex5-title">
+          <figcaption id="fig-ex5-title">Same data, different visual impression · Mêmes données, impression différente</figcaption>
+          <div class="axis-panels">
+            <svg viewBox="0 0 300 230" role="img" aria-label="Satisfaction values 3.8 and 4.2 shown on a full zero-to-five scale"><text x="78" y="20">0–5 scale / échelle 0–5</text><line x1="48" y1="195" x2="275" y2="195"/><line x1="48" y1="35" x2="48" y2="195"/><rect x="85" y="73" width="55" height="122"/><rect x="180" y="61" width="55" height="134"/><text x="99" y="217">3.8</text><text x="194" y="217">4.2</text></svg>
+            <svg viewBox="0 0 300 230" role="img" aria-label="The same satisfaction values shown on a truncated 3.6-to-4.4 scale"><text x="48" y="20">3.6–4.4 truncated / tronquée</text><line x1="48" y1="195" x2="275" y2="195"/><line x1="48" y1="35" x2="48" y2="195"/><rect x="85" y="155" width="55" height="40"/><rect x="180" y="75" width="55" height="120"/><text x="99" y="217">3.8</text><text x="194" y="217">4.2</text></svg>
+          </div>
+          <p class="figure-note">Truncation magnifies a 0.4-point change. · La troncature amplifie une variation de 0,4 point.</p>
+        </figure>
       </article></section>
-</main><footer><span>Badr ABOUFARASSE, PhD. · KEDGE Business School</span><span>© 2026 — All rights reserved</span></footer><script src="app.js?v=2"></script></body></html>
+</main><footer><span>Badr ABOUFARASSE, PhD. · KEDGE Business School</span><span>© 2026 — All rights reserved</span></footer><script src="chapter1-fr.js?v=1"></script><script src="app.js?v=4"></script></body></html>

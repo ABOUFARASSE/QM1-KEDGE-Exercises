@@ -39,7 +39,7 @@ async function initialisePortal() {
 
 async function initialiseChapter() {
   const chapter = document.body.dataset.chapter;
-  const storagePrefix = `qm1-ch${chapter}`;
+  const storagePrefix = `qm1-v2-ch${chapter}`;
   let chapterConfig = null;
   let unlocked = localStorage.getItem(`${storagePrefix}-unlocked`) === '1';
 
@@ -99,8 +99,60 @@ async function initialiseChapter() {
     check.addEventListener('change', updateProgress);
   });
   updateProgress();
+  initialiseLanguage(chapter);
   await refreshAccess();
   setInterval(refreshAccess, 15000);
+}
+
+function initialiseLanguage(chapter) {
+  if (chapter !== '1' || !window.QM1_FR) return;
+  const status = document.querySelector('.status');
+  const switcher = document.createElement('button');
+  switcher.className = 'language-switch';
+  switcher.type = 'button';
+  status.parentElement.insertBefore(switcher, status);
+  const originals = new Map();
+  const remember = element => { if (element && !originals.has(element)) originals.set(element, element.innerHTML); };
+  Object.keys(window.QM1_FR.page).forEach(key => {
+    const selector = key.replace('@placeholder', '');
+    remember(document.querySelector(selector));
+  });
+  $$('.levels a').forEach(remember);
+  $$('.exercise').forEach(article => {
+    ['.level','h2','.question','.hint','.solution'].forEach(selector => remember(article.querySelector(selector)));
+  });
+  $$('.done').forEach(label => label.dataset.en = 'Completed');
+
+  function apply(lang) {
+    document.documentElement.lang = lang;
+    document.body.dataset.lang = lang;
+    if (lang === 'fr') {
+      for (const [key, value] of Object.entries(window.QM1_FR.page)) {
+        const isPlaceholder = key.endsWith('@placeholder');
+        const element = document.querySelector(key.replace('@placeholder', ''));
+        if (isPlaceholder) element.placeholder = value; else element.innerHTML = value;
+      }
+      $$('.levels a').forEach((link, index) => link.textContent = window.QM1_FR.nav[index]);
+      $$('.exercise').forEach(article => {
+        const tr = window.QM1_FR.exercises[article.dataset.ex];
+        article.querySelector('.level').textContent = tr.level;
+        article.querySelector('h2').textContent = tr.title;
+        article.querySelector('.question').innerHTML = tr.question;
+        article.querySelector('.hint').textContent = tr.hint;
+        article.querySelector('.solution').innerHTML = tr.solution;
+      });
+      $$('.done').forEach(label => { label.lastChild.textContent = ' Terminé'; });
+      switcher.textContent = 'English';
+    } else {
+      for (const [element, content] of originals.entries()) element.innerHTML = content;
+      document.querySelector('#accessCode').placeholder = 'Enter the session code';
+      $$('.done').forEach(label => { label.lastChild.textContent = ' Completed'; });
+      switcher.textContent = 'Français';
+    }
+    localStorage.setItem('qm1-language', lang);
+  }
+  switcher.addEventListener('click', () => apply(document.body.dataset.lang === 'fr' ? 'en' : 'fr'));
+  apply(localStorage.getItem('qm1-language') === 'fr' ? 'fr' : 'en');
 }
 
 if (page === 'portal') initialisePortal();
