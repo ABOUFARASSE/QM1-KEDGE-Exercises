@@ -74,7 +74,7 @@ async function initialiseChapter() {
     if (!code || !chapterConfig) return;
     const hash = await sha256(code);
     if (hash === chapterConfig.codeHash) {
-      setSolutions(true, 'Correct code — detailed solutions are now visible.');
+      setSolutions(true, document.body.dataset.lang === 'fr' ? 'Code correct — les corrigés détaillés sont maintenant visibles.' : 'Correct code — detailed solutions are now visible.');
       $('#accessCode').value = '';
     } else {
       $('#codeMessage').textContent = document.body.dataset.lang === 'fr' ? 'Code incorrect. Vérifiez le code communiqué pendant la séance.' : 'Incorrect code. Check the code provided during the session.';
@@ -84,7 +84,8 @@ async function initialiseChapter() {
   $$('.hint-button').forEach(button => button.addEventListener('click', () => {
     const hint = button.nextElementSibling;
     hint.classList.toggle('visible');
-    button.textContent = hint.classList.contains('visible') ? 'Hide method prompt' : 'Show method prompt';
+    const fr = document.body.dataset.lang === 'fr';
+    button.textContent = hint.classList.contains('visible') ? (fr ? 'Masquer l’aide méthodologique' : 'Hide method prompt') : (fr ? 'Afficher l’aide méthodologique' : 'Show method prompt');
   }));
 
   const checks = $$('.done input');
@@ -106,7 +107,8 @@ async function initialiseChapter() {
 }
 
 function initialiseLanguage(chapter) {
-  if (chapter !== '1' || !window.QM1_FR) return;
+  const translation = window.QM1_FR || window.QM1_FR_ALL?.[chapter];
+  if (!translation) return;
   const status = document.querySelector('.status');
   const switcher = document.createElement('button');
   switcher.className = 'language-switch';
@@ -114,7 +116,7 @@ function initialiseLanguage(chapter) {
   status.parentElement.insertBefore(switcher, status);
   const originals = new Map();
   const remember = element => { if (element && !originals.has(element)) originals.set(element, element.innerHTML); };
-  Object.keys(window.QM1_FR.page).forEach(key => {
+  Object.keys(translation.page).forEach(key => {
     const selector = key.replace('@placeholder', '');
     remember(document.querySelector(selector));
   });
@@ -128,14 +130,14 @@ function initialiseLanguage(chapter) {
     document.documentElement.lang = lang;
     document.body.dataset.lang = lang;
     if (lang === 'fr') {
-      for (const [key, value] of Object.entries(window.QM1_FR.page)) {
+      for (const [key, value] of Object.entries(translation.page)) {
         const isPlaceholder = key.endsWith('@placeholder');
         const element = document.querySelector(key.replace('@placeholder', ''));
         if (isPlaceholder) element.placeholder = value; else element.innerHTML = value;
       }
-      $$('.levels a').forEach((link, index) => link.textContent = window.QM1_FR.nav[index]);
+      $$('.levels a').forEach((link, index) => link.textContent = translation.nav[index]);
       $$('.exercise').forEach(article => {
-        const tr = window.QM1_FR.exercises[article.dataset.ex];
+        const tr = translation.exercises[article.dataset.ex];
         article.querySelector('.level').textContent = tr.level;
         article.querySelector('h2').textContent = tr.title;
         article.querySelector('.question').innerHTML = tr.question;
@@ -143,15 +145,18 @@ function initialiseLanguage(chapter) {
         article.querySelector('.solution').innerHTML = tr.solution;
       });
       $$('.done').forEach(label => { label.lastChild.textContent = ' Terminé'; });
+      $$('.hint-button').forEach(button => { button.textContent = button.nextElementSibling.classList.contains('visible') ? 'Masquer l’aide méthodologique' : 'Afficher l’aide méthodologique'; });
       switcher.textContent = 'English';
     } else {
       for (const [element, content] of originals.entries()) element.innerHTML = content;
       document.querySelector('#accessCode').placeholder = 'Enter the session code';
       $$('.done').forEach(label => { label.lastChild.textContent = ' Completed'; });
+      $$('.hint-button').forEach(button => { button.textContent = button.nextElementSibling.classList.contains('visible') ? 'Hide method prompt' : 'Show method prompt'; });
       switcher.textContent = 'Français';
     }
     const completed = $$('.done input').filter(check => check.checked).length;
-    $('#progressText').textContent = lang === 'fr' ? `${completed} / 5 terminés` : `${completed} / 5 completed`;
+    const total = $$('.done input').length;
+    $('#progressText').textContent = lang === 'fr' ? `${completed} / ${total} terminés` : `${completed} / ${total} completed`;
     const open = document.body.classList.contains('solutions-visible');
     $('#statusText').textContent = open ? (lang === 'fr' ? 'Corrigés accessibles' : 'Solutions available') : (lang === 'fr' ? 'Corrigés verrouillés' : 'Solutions locked');
     localStorage.setItem('qm1-language', lang);
