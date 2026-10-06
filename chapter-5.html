@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="KEDGE QM1 Chapter 5 progressive exercises."><title>QM1 Practice Lab — Chapter 5</title>
+<link rel="stylesheet" href="styles.css"></head><body data-page="chapter" data-chapter="5">
+<header class="topbar">
+  <a class="brand" href="index.html" aria-label="QM1 Practice Lab home">
+    <img src="logoKedge.png" alt="KEDGE Business School">
+    <span>QM1 Practice Lab</span>
+  </a>
+  <div class="status"><span id="statusDot" class="dot"></span><span id="statusText">Checking access…</span></div>
+</header>
+<div id="chapterGate" class="chapter-gate" hidden><div><p class="eyebrow">CHAPTER 5</p><h1>Not released yet</h1><p>This chapter will become available when your lecturer opens it.</p><a href="index.html">Return to the course menu</a></div></div>
+<main><a class="back-link" href="index.html">← All chapters</a><section class="hero"><div><p class="eyebrow">QUANTITATIVE METHODS 1 · CHAPTER 5</p><h1>Time series</h1><p class="lead">Read changes over time and separate trend from short-term variation.</p></div>
+<div class="progress-card"><span>Your progress</span><strong id="progressText">0 / 5 completed</strong><div class="progress-track"><div id="progressBar"></div></div></div></section>
+<section class="access-card" aria-labelledby="accessTitle"><div><p class="eyebrow">LIVE SOLUTION ACCESS</p><h2 id="accessTitle">Unlock the detailed solutions</h2><p>Use the non-public session code supplied by your lecturer. Live access is checked automatically.</p></div>
+<form id="codeForm"><label for="accessCode">Session code</label><div class="code-row"><input id="accessCode" autocomplete="off" spellcheck="false" placeholder="Enter the session code"><button type="submit">Unlock</button></div><p id="codeMessage" class="message" role="status"></p></form></section>
+<nav class="levels" aria-label="Exercise list"><a href="#ex1">1 · Components and models</a><a href="#ex2">2 · Moving averages</a><a href="#ex3">3 · Linear trend</a><a href="#ex4">4 · Multiplicative seasonal forecast</a><a href="#ex5">5 · Forecast evaluation</a></nav><section id="exerciseList" class="exercise-list">
+      <article class="exercise" id="ex1" data-ex="1">
+        <div class="exercise-head"><div><span class="level">LEVEL 1: RECOGNITION</span><h2>Components and models</h2></div><label class="done"><input type="checkbox"> Completed</label></div>
+        <div class="question"><p>For each description identify trend, seasonality, cycle or irregular
+component: long-run e-commerce growth; December sales peaks;
+recession-related movements; a one-day system failure. When is a
+multiplicative model preferable?</p></div>
+        <button class="hint-button" type="button">Show method prompt</button><p class="hint">Identify the statistical concept, state the relevant formula or rule, calculate carefully, and finish with an interpretation in context.</p>
+        <section class="solution"><h3>Detailed solution</h3><p><strong>Result.</strong> Long-run growth is trend; recurring December
+peaks are seasonality; recession movements are cyclical; the failure is
+irregular. A multiplicative model is preferable when seasonal amplitudes
+rise with the series level; an additive model suits roughly constant
+absolute seasonal effects.</p></section>
+      </article>
+      <article class="exercise" id="ex2" data-ex="2">
+        <div class="exercise-head"><div><span class="level">LEVEL 2: GUIDED CALCULATION</span><h2>Moving averages</h2></div><label class="done"><input type="checkbox"> Completed</label></div>
+        <div class="question"><p>Monthly demand for five months is 90, 105, 99, 120, 126. Calculate
+the three-period centred moving averages for months 2, 3 and 4.</p></div>
+        <button class="hint-button" type="button">Show method prompt</button><p class="hint">Identify the statistical concept, state the relevant formula or rule, calculate carefully, and finish with an interpretation in context.</p>
+        <section class="solution"><h3>Detailed solution</h3><p><strong>Method.</strong> Average each consecutive window of three
+observations and attach it to the middle month. <strong>Result.</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><msub><mi>A</mi><mn>2</mn></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>90</mn><mo>+</mo><mn>105</mn><mo>+</mo><mn>99</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mn>3</mn><mo>=</mo><mn>98</mn></mrow><annotation encoding="application/x-tex">MA_2=(90+105+99)/3=98</annotation></semantics></math>;
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><msub><mi>A</mi><mn>3</mn></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>105</mn><mo>+</mo><mn>99</mn><mo>+</mo><mn>120</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mn>3</mn><mo>=</mo><mn>108</mn></mrow><annotation encoding="application/x-tex">MA_3=(105+99+120)/3=108</annotation></semantics></math>;
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><msub><mi>A</mi><mn>4</mn></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>99</mn><mo>+</mo><mn>120</mn><mo>+</mo><mn>126</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mn>3</mn><mo>=</mo><mn>115</mn></mrow><annotation encoding="application/x-tex">MA_4=(99+120+126)/3=115</annotation></semantics></math>.
+<strong>Interpretation.</strong> Smoothing reveals an upward underlying
+movement while reducing month-to-month noise; endpoints are lost because
+a centred window requires neighbours.</p></section>
+      </article>
+      <article class="exercise" id="ex3" data-ex="3">
+        <div class="exercise-head"><div><span class="level">LEVEL 2: GUIDED CALCULATION</span><h2>Linear trend</h2></div><label class="done"><input type="checkbox"> Completed</label></div>
+        <div class="question"><p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">t=1,2,3,4</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>52</mn><mo>,</mo><mn>57</mn><mo>,</mo><mn>61</mn><mo>,</mo><mn>66</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">Y=(52,57,61,66)</annotation></semantics></math>
+estimate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>Y</mi><mo accent="true">̂</mo></mover><mi>t</mi></msub><mo>=</mo><mi>a</mi><mo>+</mo><mi>b</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">\hat Y_t=a+bt</annotation></semantics></math>
+using least squares and forecast
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">t=5</annotation></semantics></math>.</p></div>
+        <button class="hint-button" type="button">Show method prompt</button><p class="hint">Identify the statistical concept, state the relevant formula or rule, calculate carefully, and finish with an interpretation in context.</p>
+        <section class="solution"><h3>Detailed solution</h3><p><strong>Method.</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>t</mi><mo accent="true">‾</mo></mover><mo>=</mo><mn>2.5</mn></mrow><annotation encoding="application/x-tex">\bar t=2.5</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>Y</mi><mo accent="true">‾</mo></mover><mo>=</mo><mn>59</mn></mrow><annotation encoding="application/x-tex">\bar Y=59</annotation></semantics></math>.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mover><mi>t</mi><mo accent="true">‾</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>Y</mi><mo>−</mo><mover><mi>Y</mi><mo accent="true">‾</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>23</mn></mrow><annotation encoding="application/x-tex">\sum(t-\bar t)(Y-\bar Y)=23</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mover><mi>t</mi><mo accent="true">‾</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">\sum(t-\bar t)^2=5</annotation></semantics></math>,
+so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>=</mo><mn>4.6</mn></mrow><annotation encoding="application/x-tex">b=4.6</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mn>59</mn><mo>−</mo><mn>4.6</mn><mrow><mo stretchy="true" form="prefix">(</mo><mn>2.5</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>47.5</mn></mrow><annotation encoding="application/x-tex">a=59-4.6(2.5)=47.5</annotation></semantics></math>.
+<strong>Result.</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>Y</mi><mo accent="true">̂</mo></mover><mi>t</mi></msub><mo>=</mo><mn>47.5</mn><mo>+</mo><mn>4.6</mn><mi>t</mi></mrow><annotation encoding="application/x-tex">\hat Y_t=47.5+4.6t</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>Y</mi><mo accent="true">̂</mo></mover><mn>5</mn></msub><mo>=</mo><mn>70.5</mn></mrow><annotation encoding="application/x-tex">\hat Y_5=70.5</annotation></semantics></math>.
+<strong>Interpretation.</strong> The fitted trend increases by 4.6 units
+per period; the forecast assumes no structural break.</p></section>
+      </article>
+      <article class="exercise" id="ex4" data-ex="4">
+        <div class="exercise-head"><div><span class="level">LEVEL 3: APPLICATION</span><h2>Multiplicative seasonal forecast</h2></div><label class="done"><input type="checkbox"> Completed</label></div>
+        <div class="question"><p>Quarterly trend is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>t</mi></msub><mo>=</mo><mn>100</mn><mo>+</mo><mn>3</mn><mi>t</mi></mrow><annotation encoding="application/x-tex">T_t=100+3t</annotation></semantics></math>.
+Seasonal factors are .80, 1.05, .95 and 1.20 for Q1–Q4.</p>
+<ol>
+<li><p>Check normalisation.</p></li>
+<li><p>Forecast
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mn>9</mn><mo>,</mo><mn>10</mn><mo>,</mo><mn>11</mn><mo>,</mo><mn>12</mn></mrow><annotation encoding="application/x-tex">t=9,10,11,12</annotation></semantics></math>.</p></li>
+<li><p>Interpret the Q4 factor.</p></li>
+</ol></div>
+        <button class="hint-button" type="button">Show method prompt</button><p class="hint">Identify the statistical concept, state the relevant formula or rule, calculate carefully, and finish with an interpretation in context.</p>
+        <section class="solution"><h3>Detailed solution</h3><p><strong>Method.</strong> The factors should average 1:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>.80</mn><mo>+</mo><mn>1.05</mn><mo>+</mo><mn>.95</mn><mo>+</mo><mn>1.20</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mn>4</mn><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">(.80+1.05+.95+1.20)/4=1</annotation></semantics></math>.
+Compute
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mi>t</mi></msub><annotation encoding="application/x-tex">T_t</annotation></semantics></math>
+then multiply by the relevant seasonal factor. <strong>Result.</strong>
+Trends are 127, 130, 133 and 136. Forecasts are 101.6, 136.5, 126.35 and
+163.2. <strong>Interpretation.</strong> Q4 is expected to be 20% above
+trend, not 20 percentage points above the previous quarter.</p></section>
+      </article>
+      <article class="exercise" id="ex5" data-ex="5">
+        <div class="exercise-head"><div><span class="level">LEVEL 4: SYNTHESIS</span><h2>Forecast evaluation</h2></div><label class="done"><input type="checkbox"> Completed</label></div>
+        <div class="question"><p>Actual values are 100, 120, 110, 130. Model A forecasts 98, 118, 115,
+128; Model B forecasts 105, 112, 108, 140. Calculate MAE for both and
+recommend a model. What else should be checked?</p></div>
+        <button class="hint-button" type="button">Show method prompt</button><p class="hint">Identify the statistical concept, state the relevant formula or rule, calculate carefully, and finish with an interpretation in context.</p>
+        <section class="solution"><h3>Detailed solution</h3><p><strong>Result.</strong> Absolute errors for A are 2, 2, 5, 2, so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mi>A</mi><msub><mi>E</mi><mi>A</mi></msub><mo>=</mo><mn>2.75</mn></mrow><annotation encoding="application/x-tex">MAE_A=2.75</annotation></semantics></math>.
+For B they are 5, 8, 2, 10, so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mi>A</mi><msub><mi>E</mi><mi>B</mi></msub><mo>=</mo><mn>6.25</mn></mrow><annotation encoding="application/x-tex">MAE_B=6.25</annotation></semantics></math>.
+Model A performs better by MAE. <strong>Interpretation.</strong> The
+comparison should use a genuine validation period and also inspect bias,
+scale-sensitive versus percentage errors, residual patterns and
+performance after structural breaks.</p></section>
+      </article></section>
+</main><footer><span>Badr ABOUFARASSE, PhD. · KEDGE Business School</span><span>© 2026 — All rights reserved</span></footer><script src="app.js"></script></body></html>

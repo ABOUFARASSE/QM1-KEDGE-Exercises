@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="KEDGE QM1 Chapter 6 progressive exercises."><title>QM1 Practice Lab — Chapter 6</title>
+<link rel="stylesheet" href="styles.css"></head><body data-page="chapter" data-chapter="6">
+<header class="topbar">
+  <a class="brand" href="index.html" aria-label="QM1 Practice Lab home">
+    <img src="logoKedge.png" alt="KEDGE Business School">
+    <span>QM1 Practice Lab</span>
+  </a>
+  <div class="status"><span id="statusDot" class="dot"></span><span id="statusText">Checking access…</span></div>
+</header>
+<div id="chapterGate" class="chapter-gate" hidden><div><p class="eyebrow">CHAPTER 6</p><h1>Not released yet</h1><p>This chapter will become available when your lecturer opens it.</p><a href="index.html">Return to the course menu</a></div></div>
+<main><a class="back-link" href="index.html">← All chapters</a><section class="hero"><div><p class="eyebrow">QUANTITATIVE METHODS 1 · CHAPTER 6</p><h1>Index numbers</h1><p class="lead">Construct and interpret price, quantity and value indices.</p></div>
+<div class="progress-card"><span>Your progress</span><strong id="progressText">0 / 5 completed</strong><div class="progress-track"><div id="progressBar"></div></div></div></section>
+<section class="access-card" aria-labelledby="accessTitle"><div><p class="eyebrow">LIVE SOLUTION ACCESS</p><h2 id="accessTitle">Unlock the detailed solutions</h2><p>Use the non-public session code supplied by your lecturer. Live access is checked automatically.</p></div>
+<form id="codeForm"><label for="accessCode">Session code</label><div class="code-row"><input id="accessCode" autocomplete="off" spellcheck="false" placeholder="Enter the session code"><button type="submit">Unlock</button></div><p id="codeMessage" class="message" role="status"></p></form></section>
+<nav class="levels" aria-label="Exercise list"><a href="#ex1">1 · Elementary index and rebasing</a><a href="#ex2">2 · Value, Laspeyres and Paasche</a><a href="#ex3">3 · Fisher and factor reversal</a><a href="#ex4">4 · Fixed-base, chain and deflation</a><a href="#ex5">5 · Supplier dashboard decision</a></nav><section id="exerciseList" class="exercise-list">
+      <article class="exercise" id="ex1" data-ex="1">
+        <div class="exercise-head"><div><span class="level">LEVEL 1: DIRECT CALCULATION</span><h2>Elementary index and rebasing</h2></div><label class="done"><input type="checkbox"> Completed</label></div>
+        <div class="question"><p>A service price rises from EUR 40 in 2023 to EUR 46 in 2025.</p>
+<ol>
+<li><p>Calculate the 2025 index with 2023=100 and the percentage
+change.</p></li>
+<li><p>An old series is 90, 100, 108 for 2022–2024 with 2023=100. Rebase
+it to 2022=100.</p></li>
+</ol></div>
+        <button class="hint-button" type="button">Show method prompt</button><p class="hint">Identify the statistical concept, state the relevant formula or rule, calculate carefully, and finish with an interpretation in context.</p>
+        <section class="solution"><h3>Detailed solution</h3><p><strong>Result.</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi><mo>=</mo><mn>46</mn><mi>/</mi><mn>40</mn><mo>×</mo><mn>100</mn><mo>=</mo><mn>115</mn></mrow><annotation encoding="application/x-tex">I=46/40\times100=115</annotation></semantics></math>,
+so the price rose by 15%. For rebasing, divide by 90 and multiply by
+100: 100.00, 111.11, 120.00. <strong>Interpretation.</strong> Rebasing
+changes the reference, not the underlying relative movements.</p></section>
+      </article>
+      <article class="exercise" id="ex2" data-ex="2">
+        <div class="exercise-head"><div><span class="level">LEVEL 2: GUIDED CALCULATION</span><h2>Value, Laspeyres and Paasche</h2></div><label class="done"><input type="checkbox"> Completed</label></div>
+        <div class="question"><div class="center">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Product</th>
+<th
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>p</mi><mn>0</mn></msub><annotation encoding="application/x-tex">p_0</annotation></semantics></math></th>
+<th
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>q</mi><mn>0</mn></msub><annotation encoding="application/x-tex">q_0</annotation></semantics></math></th>
+<th
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>p</mi><mn>1</mn></msub><annotation encoding="application/x-tex">p_1</annotation></semantics></math></th>
+<th
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>q</mi><mn>1</mn></msub><annotation encoding="application/x-tex">q_1</annotation></semantics></math></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">2.5</td>
+<td style="text-align: right;">90</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">50</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Calculate the value index and Laspeyres and Paasche price
+indices.</p></div>
+        <button class="hint-button" type="button">Show method prompt</button><p class="hint">Identify the statistical concept, state the relevant formula or rule, calculate carefully, and finish with an interpretation in context.</p>
+        <section class="solution"><h3>Detailed solution</h3><p><strong>Method.</strong> Compute
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>p</mi><mn>0</mn></msub><msub><mi>q</mi><mn>0</mn></msub><mo>=</mo><mn>400</mn></mrow><annotation encoding="application/x-tex">\sum p_0q_0=400</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>p</mi><mn>1</mn></msub><msub><mi>q</mi><mn>1</mn></msub><mo>=</mo><mn>525</mn></mrow><annotation encoding="application/x-tex">\sum p_1q_1=525</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>p</mi><mn>1</mn></msub><msub><mi>q</mi><mn>0</mn></msub><mo>=</mo><mn>490</mn></mrow><annotation encoding="application/x-tex">\sum p_1q_0=490</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>p</mi><mn>0</mn></msub><msub><mi>q</mi><mn>1</mn></msub><mo>=</mo><mn>430</mn></mrow><annotation encoding="application/x-tex">\sum p_0q_1=430</annotation></semantics></math>.
+<strong>Result.</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>V</mi></msub><mo>=</mo><mn>525</mn><mi>/</mi><mn>400</mn><mo>×</mo><mn>100</mn><mo>=</mo><mn>131.25</mn></mrow><annotation encoding="application/x-tex">I_V=525/400\times100=131.25</annotation></semantics></math>;
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>I</mi><mi>P</mi><mi>L</mi></msubsup><mo>=</mo><mn>490</mn><mi>/</mi><mn>400</mn><mo>×</mo><mn>100</mn><mo>=</mo><mn>122.50</mn></mrow><annotation encoding="application/x-tex">I_P^L=490/400\times100=122.50</annotation></semantics></math>;
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>I</mi><mi>P</mi><mi>P</mi></msubsup><mo>=</mo><mn>525</mn><mi>/</mi><mn>430</mn><mo>×</mo><mn>100</mn><mo>=</mo><mn>122.09</mn></mrow><annotation encoding="application/x-tex">I_P^P=525/430\times100=122.09</annotation></semantics></math>.
+<strong>Interpretation.</strong> Value rose 31.25%, while the two price
+measures indicate about 22% inflation. They differ because their
+quantity weights come from different periods.</p></section>
+      </article>
+      <article class="exercise" id="ex3" data-ex="3">
+        <div class="exercise-head"><div><span class="level">LEVEL 3: APPLICATION</span><h2>Fisher and factor reversal</h2></div><label class="done"><input type="checkbox"> Completed</label></div>
+        <div class="question"><p>Using Exercise 2, calculate Fisher’s price index, Laspeyres and
+Paasche quantity indices, Fisher’s quantity index and verify factor
+reversal.</p></div>
+        <button class="hint-button" type="button">Show method prompt</button><p class="hint">Identify the statistical concept, state the relevant formula or rule, calculate carefully, and finish with an interpretation in context.</p>
+        <section class="solution"><h3>Detailed solution</h3><p><strong>Result.</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>I</mi><mi>P</mi><mi>F</mi></msubsup><mo>=</mo><msqrt><mrow><mn>122.50</mn><mo>×</mo><mn>122.09</mn></mrow></msqrt><mo>=</mo><mn>122.30</mn></mrow><annotation encoding="application/x-tex">I_P^F=\sqrt{122.50\times122.09}=122.30</annotation></semantics></math>.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>I</mi><mi>Q</mi><mi>L</mi></msubsup><mo>=</mo><mn>430</mn><mi>/</mi><mn>400</mn><mo>×</mo><mn>100</mn><mo>=</mo><mn>107.50</mn></mrow><annotation encoding="application/x-tex">I_Q^L=430/400\times100=107.50</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>I</mi><mi>Q</mi><mi>P</mi></msubsup><mo>=</mo><mn>525</mn><mi>/</mi><mn>490</mn><mo>×</mo><mn>100</mn><mo>=</mo><mn>107.14</mn></mrow><annotation encoding="application/x-tex">I_Q^P=525/490\times100=107.14</annotation></semantics></math>,
+so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>I</mi><mi>Q</mi><mi>F</mi></msubsup><mo>=</mo><mn>107.32</mn></mrow><annotation encoding="application/x-tex">I_Q^F=107.32</annotation></semantics></math>.
+Then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>122.30</mn><mo>×</mo><mn>107.32</mn><mi>/</mi><mn>100</mn><mo>=</mo><mn>131.25</mn></mrow><annotation encoding="application/x-tex">122.30\times107.32/100=131.25</annotation></semantics></math>
+up to rounding, equal to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>I</mi><mi>V</mi></msub><annotation encoding="application/x-tex">I_V</annotation></semantics></math>.
+<strong>Interpretation.</strong> Fisher provides a symmetric
+decomposition of value change into price and quantity components.</p></section>
+      </article>
+      <article class="exercise" id="ex4" data-ex="4">
+        <div class="exercise-head"><div><span class="level">LEVEL 3: APPLICATION</span><h2>Fixed-base, chain and deflation</h2></div><label class="done"><input type="checkbox"> Completed</label></div>
+        <div class="question"><p>An index is 100 in year 0 and 110 in year 1. The year-2 link index
+relative to year 1 is 106. Nominal year-2 revenue is EUR 636,000.</p>
+<ol>
+<li><p>Construct the chain index for year 2.</p></li>
+<li><p>Deflate revenue into year-0 euros.</p></li>
+</ol></div>
+        <button class="hint-button" type="button">Show method prompt</button><p class="hint">Identify the statistical concept, state the relevant formula or rule, calculate carefully, and finish with an interpretation in context.</p>
+        <section class="solution"><h3>Detailed solution</h3><p><strong>Result.</strong> Chain index
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>=</mo><mn>110</mn><mo>×</mo><mn>106</mn><mi>/</mi><mn>100</mn><mo>=</mo><mn>116.6</mn></mrow><annotation encoding="application/x-tex">=110\times106/100=116.6</annotation></semantics></math>.
+Real revenue
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>=</mo><mn>636</mn><mo>,</mo><mn>000</mn><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>116.6</mn><mi>/</mi><mn>100</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>545</mn><mo>,</mo><mn>455</mn></mrow><annotation encoding="application/x-tex">=636{,}000/(116.6/100)=545{,}455</annotation></semantics></math>
+euros approximately. <strong>Interpretation.</strong> Nominal revenue
+must be divided by the price-index factor, not merely reduced by
+16.6%.</p></section>
+      </article>
+      <article class="exercise" id="ex5" data-ex="5">
+        <div class="exercise-head"><div><span class="level">LEVEL 4: SYNTHESIS</span><h2>Supplier dashboard decision</h2></div><label class="done"><input type="checkbox"> Completed</label></div>
+        <div class="question"><p>A buyer reports: value index 128, Fisher price index 120 and Fisher
+quantity index 106.67. Explain the three numbers, verify consistency,
+and give two cautions before attributing the price rise to supplier
+market power.</p></div>
+        <button class="hint-button" type="button">Show method prompt</button><p class="hint">Identify the statistical concept, state the relevant formula or rule, calculate carefully, and finish with an interpretation in context.</p>
+        <section class="solution"><h3>Detailed solution</h3><p><strong>Result.</strong> Expenditure is 28% above base, prices about
+20% above base and quantities about 6.67% above base. Consistency holds
+because
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>120</mn><mo>×</mo><mn>106.67</mn><mi>/</mi><mn>100</mn><mo>≈</mo><mn>128</mn></mrow><annotation encoding="application/x-tex">120\times106.67/100\approx128</annotation></semantics></math>.
+<strong>Interpretation.</strong> The index is descriptive. Before
+claiming market power, check product-quality and mix changes, contract
+terms, input costs, exchange rates, basket coverage and whether weights
+remain representative.</p></section>
+      </article></section>
+</main><footer><span>Badr ABOUFARASSE, PhD. · KEDGE Business School</span><span>© 2026 — All rights reserved</span></footer><script src="app.js"></script></body></html>

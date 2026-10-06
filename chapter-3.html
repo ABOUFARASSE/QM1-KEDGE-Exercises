@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="KEDGE QM1 Chapter 3 progressive exercises."><title>QM1 Practice Lab — Chapter 3</title>
+<link rel="stylesheet" href="styles.css"></head><body data-page="chapter" data-chapter="3">
+<header class="topbar">
+  <a class="brand" href="index.html" aria-label="QM1 Practice Lab home">
+    <img src="logoKedge.png" alt="KEDGE Business School">
+    <span>QM1 Practice Lab</span>
+  </a>
+  <div class="status"><span id="statusDot" class="dot"></span><span id="statusText">Checking access…</span></div>
+</header>
+<div id="chapterGate" class="chapter-gate" hidden><div><p class="eyebrow">CHAPTER 3</p><h1>Not released yet</h1><p>This chapter will become available when your lecturer opens it.</p><a href="index.html">Return to the course menu</a></div></div>
+<main><a class="back-link" href="index.html">← All chapters</a><section class="hero"><div><p class="eyebrow">QUANTITATIVE METHODS 1 · CHAPTER 3</p><h1>Dispersion and concentration</h1><p class="lead">Measure variability, inequality and concentration.</p></div>
+<div class="progress-card"><span>Your progress</span><strong id="progressText">0 / 5 completed</strong><div class="progress-track"><div id="progressBar"></div></div></div></section>
+<section class="access-card" aria-labelledby="accessTitle"><div><p class="eyebrow">LIVE SOLUTION ACCESS</p><h2 id="accessTitle">Unlock the detailed solutions</h2><p>Use the non-public session code supplied by your lecturer. Live access is checked automatically.</p></div>
+<form id="codeForm"><label for="accessCode">Session code</label><div class="code-row"><input id="accessCode" autocomplete="off" spellcheck="false" placeholder="Enter the session code"><button type="submit">Unlock</button></div><p id="codeMessage" class="message" role="status"></p></form></section>
+<nav class="levels" aria-label="Exercise list"><a href="#ex1">1 · Same mean, different risk</a><a href="#ex2">2 · Variance and standard deviation</a><a href="#ex3">3 · Boxplot and outliers</a><a href="#ex4">4 · Comparing relative dispersion</a><a href="#ex5">5 · Lorenz curve and Gini coefficient</a></nav><section id="exerciseList" class="exercise-list">
+      <article class="exercise" id="ex1" data-ex="1">
+        <div class="exercise-head"><div><span class="level">LEVEL 1: CONCEPT CHECK</span><h2>Same mean, different risk</h2></div><label class="done"><input type="checkbox"> Completed</label></div>
+        <div class="question"><p>Team A daily sales are 48, 49, 50, 51, 52. Team B sales are 30, 40,
+50, 60, 70. Compare their means and ranges. What does the comparison
+show?</p></div>
+        <button class="hint-button" type="button">Show method prompt</button><p class="hint">Identify the statistical concept, state the relevant formula or rule, calculate carefully, and finish with an interpretation in context.</p>
+        <section class="solution"><h3>Detailed solution</h3><p><strong>Result.</strong> Both means equal 50. Ranges are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>52</mn><mo>−</mo><mn>48</mn><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">52-48=4</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>70</mn><mo>−</mo><mn>30</mn><mo>=</mo><mn>40</mn></mrow><annotation encoding="application/x-tex">70-30=40</annotation></semantics></math>.
+<strong>Interpretation.</strong> Equal averages do not imply equal
+stability: Team B is much more volatile. A measure of centre must
+therefore be accompanied by dispersion.</p></section>
+      </article>
+      <article class="exercise" id="ex2" data-ex="2">
+        <div class="exercise-head"><div><span class="level">LEVEL 2: GUIDED CALCULATION</span><h2>Variance and standard deviation</h2></div><label class="done"><input type="checkbox"> Completed</label></div>
+        <div class="question"><p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>9</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">x=(2,4,4,6,9)</annotation></semantics></math>
+calculate the population mean, deviations, squared deviations, variance
+and standard deviation.</p></div>
+        <button class="hint-button" type="button">Show method prompt</button><p class="hint">Identify the statistical concept, state the relevant formula or rule, calculate carefully, and finish with an interpretation in context.</p>
+        <section class="solution"><h3>Detailed solution</h3><p><strong>Method.</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>x</mi><mo accent="true">‾</mo></mover><mo>=</mo><mn>25</mn><mi>/</mi><mn>5</mn><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">\bar x=25/5=5</annotation></semantics></math>.
+Build the calculation table.</p>
+<div class="center">
+<table>
+<tbody>
+<tr class="odd">
+<td
+style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>i</mi></msub><annotation encoding="application/x-tex">x_i</annotation></semantics></math></td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr class="even">
+<td
+style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>i</mi></msub><mo>−</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">x_i-5</annotation></semantics></math></td>
+<td style="text-align: right;">-3</td>
+<td style="text-align: right;">-1</td>
+<td style="text-align: right;">-1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td
+style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo>−</mo><mn>5</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><annotation encoding="application/x-tex">(x_i-5)^2</annotation></semantics></math></td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">16</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Result.</strong> Sum of squares
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>=</mo><mn>28</mn></mrow><annotation encoding="application/x-tex">=28</annotation></semantics></math>;
+population variance
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo>=</mo><mn>28</mn><mi>/</mi><mn>5</mn><mo>=</mo><mn>5.6</mn></mrow><annotation encoding="application/x-tex">V=28/5=5.6</annotation></semantics></math>;
+standard deviation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><msqrt><mn>5.6</mn></msqrt><mo>=</mo><mn>2.37</mn></mrow><annotation encoding="application/x-tex">\sigma=\sqrt{5.6}=2.37</annotation></semantics></math>.
+<strong>Interpretation.</strong> Observations typically lie about 2.37
+units from the mean, although standard deviation is not a literal
+average distance.</p></section>
+      </article>
+      <article class="exercise" id="ex3" data-ex="3">
+        <div class="exercise-head"><div><span class="level">LEVEL 2: GUIDED INTERPRETATION</span><h2>Boxplot and outliers</h2></div><label class="done"><input type="checkbox"> Completed</label></div>
+        <div class="question"><p>For an ordered dataset,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mn>1</mn></msub><mo>=</mo><mn>18</mn></mrow><annotation encoding="application/x-tex">Q_1=18</annotation></semantics></math>,
+median
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>=</mo><mn>24</mn></mrow><annotation encoding="application/x-tex">=24</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mn>3</mn></msub><mo>=</mo><mn>30</mn></mrow><annotation encoding="application/x-tex">Q_3=30</annotation></semantics></math>,
+minimum
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>=</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">=10</annotation></semantics></math>,
+maximum
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>=</mo><mn>55</mn></mrow><annotation encoding="application/x-tex">=55</annotation></semantics></math>.
+Compute the IQR and Tukey fences. Is 55 a potential outlier?</p></div>
+        <button class="hint-button" type="button">Show method prompt</button><p class="hint">Identify the statistical concept, state the relevant formula or rule, calculate carefully, and finish with an interpretation in context.</p>
+        <section class="solution"><h3>Detailed solution</h3><p><strong>Result.</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi><mi>Q</mi><mi>R</mi><mo>=</mo><mn>30</mn><mo>−</mo><mn>18</mn><mo>=</mo><mn>12</mn></mrow><annotation encoding="application/x-tex">IQR=30-18=12</annotation></semantics></math>.
+Lower fence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>=</mo><mn>18</mn><mo>−</mo><mn>1.5</mn><mrow><mo stretchy="true" form="prefix">(</mo><mn>12</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">=18-1.5(12)=0</annotation></semantics></math>;
+upper fence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>=</mo><mn>30</mn><mo>+</mo><mn>1.5</mn><mrow><mo stretchy="true" form="prefix">(</mo><mn>12</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>48</mn></mrow><annotation encoding="application/x-tex">=30+1.5(12)=48</annotation></semantics></math>.
+Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>55</mn><mo>&gt;</mo><mn>48</mn></mrow><annotation encoding="application/x-tex">55&gt;48</annotation></semantics></math>,
+55 is a potential upper outlier. <strong>Interpretation.</strong>
+“Potential” means the observation deserves investigation; it should not
+be deleted automatically.</p></section>
+      </article>
+      <article class="exercise" id="ex4" data-ex="4">
+        <div class="exercise-head"><div><span class="level">LEVEL 3: APPLICATION</span><h2>Comparing relative dispersion</h2></div><label class="done"><input type="checkbox"> Completed</label></div>
+        <div class="question"><p>Store A has mean weekly sales EUR 20,000 and SD EUR 3,000. Store B
+has mean EUR 8,000 and SD EUR 1,600. Compare absolute and relative
+variability.</p></div>
+        <button class="hint-button" type="button">Show method prompt</button><p class="hint">Identify the statistical concept, state the relevant formula or rule, calculate carefully, and finish with an interpretation in context.</p>
+        <section class="solution"><h3>Detailed solution</h3><p><strong>Method.</strong> Use SD for absolute spread and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>V</mi><mo>=</mo><mi>s</mi><mi>/</mi><mover><mi>x</mi><mo accent="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">CV=s/\bar x</annotation></semantics></math>
+for relative spread when means are positive and ratio-scale comparisons
+are meaningful. <strong>Result.</strong> A has the larger SD (3,000
+versus 1,600). But
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><msub><mi>V</mi><mi>A</mi></msub><mo>=</mo><mn>15</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">CV_A=15\%</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><msub><mi>V</mi><mi>B</mi></msub><mo>=</mo><mn>20</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">CV_B=20\%</annotation></semantics></math>.
+<strong>Interpretation.</strong> Store B is less variable in euros but
+more variable relative to its typical sales level.</p></section>
+      </article>
+      <article class="exercise" id="ex5" data-ex="5">
+        <div class="exercise-head"><div><span class="level">LEVEL 4: SYNTHESIS</span><h2>Lorenz curve and Gini coefficient</h2></div><label class="done"><input type="checkbox"> Completed</label></div>
+        <div class="question"><p>Five households have incomes 10, 10, 20, 20 and 40. Construct
+cumulative population and income shares, then calculate the Gini
+coefficient using trapezoids.</p></div>
+        <button class="hint-button" type="button">Show method prompt</button><p class="hint">Identify the statistical concept, state the relevant formula or rule, calculate carefully, and finish with an interpretation in context.</p>
+        <section class="solution"><h3>Detailed solution</h3><p><strong>Method.</strong> Total income is 100. Population shares are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>.2</mn><mo>,</mo><mn>.4</mn><mo>,</mo><mn>.6</mn><mo>,</mo><mn>.8</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">X=(0,.2,.4,.6,.8,1)</annotation></semantics></math>
+and cumulative income shares are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>.1</mn><mo>,</mo><mn>.2</mn><mo>,</mo><mn>.4</mn><mo>,</mo><mn>.6</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">Y=(0,.1,.2,.4,.6,1)</annotation></semantics></math>.
+The area under the Lorenz curve is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mo>∑</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Y</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><msub><mi>Y</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>X</mi><mi>i</mi></msub><mo>−</mo><msub><mi>X</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">A=\sum (Y_{i-1}+Y_i)(X_i-X_{i-1})/2</annotation></semantics></math>.
+<strong>Result.</strong> The five trapezoids have areas .01, .03, .06,
+.10 and .16, so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mn>.36</mn></mrow><annotation encoding="application/x-tex">A=.36</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo>=</mo><mn>1</mn><mo>−</mo><mn>2</mn><mi>A</mi><mo>=</mo><mn>.28</mn></mrow><annotation encoding="application/x-tex">G=1-2A=.28</annotation></semantics></math>.
+<strong>Interpretation.</strong> Inequality is positive but not extreme.
+The Gini summarises the whole distribution and should be reported with
+context or the Lorenz curve.</p></section>
+      </article></section>
+</main><footer><span>Badr ABOUFARASSE, PhD. · KEDGE Business School</span><span>© 2026 — All rights reserved</span></footer><script src="app.js"></script></body></html>

@@ -1,14 +1,47 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="KEDGE QM1 progressive exercises and live solutions access."><title>QM1 Practice Lab — Chapter 1</title><link rel="stylesheet" href="styles.css">
-</head><body><header class="topbar"><div class="brand"><strong style="font-size:25px;letter-spacing:-.05em">KEDGE<span style="color:#e40046">✦</span></strong><span>QM1 Practice Lab</span></div><div class="status"><span id="statusDot" class="dot"></span><span id="statusText">Checking solutions…</span></div></header>
-<main><section class="hero"><div><p class="eyebrow">QUANTITATIVE METHODS 1 · CHAPTER 1</p><h1>Data presentation</h1><p class="lead">A progressive practice path from statistical vocabulary to responsible data communication.</p></div><div class="progress-card"><span>Your progress</span><strong id="progressText">0 / 5 completed</strong><div class="progress-track"><div id="progressBar"></div></div></div></section>
-<section class="access-card"><div><p class="eyebrow">LIVE SOLUTION ACCESS</p><h2>Unlock the detailed solutions</h2><p>Enter the code provided by your lecturer. If solutions are opened live, this page updates automatically.</p></div><form id="codeForm"><label for="accessCode">Session code</label><div class="code-row"><input id="accessCode" autocomplete="off" placeholder="Enter code"><button>Unlock</button></div><p id="codeMessage" class="message"></p></form></section>
-<nav class="levels"><a href="#ex1">1 · Vocabulary</a><a href="#ex2">2 · Sampling</a><a href="#ex3">3 · Frequencies</a><a href="#ex4">4 · Histograms</a><a href="#ex5">5 · Dashboard audit</a></nav><section class="exercise-list">
-<article class="exercise" id="ex1"><div class="exercise-head"><div><span class="level">LEVEL 1 · RECOGNITION</span><h2>Statistical vocabulary</h2></div><label class="done"><input type="checkbox"> Completed</label></div><p>A survey asks 240 first-year students about programme, transport mode, satisfaction (1–5), number of absences and commuting time in minutes.</p><ol type="a"><li>Identify the population, statistical unit and five variables.</li><li>Classify every variable as nominal, ordinal, discrete or continuous.</li><li>Give one possible value for each variable.</li></ol><button class="hint-button">Show hint</button><p class="hint">Classify a variable from the meaning of its values, not from the way it is coded.</p><section class="solution"><h3>Detailed solution</h3><p><b>Method.</b> The population is the complete group addressed by the question; the statistical unit is one entity on which observations are recorded.</p><p><b>Answer.</b> The population is the 240 surveyed students. The unit is one student. Programme and transport mode are nominal. Satisfaction is ordinal. Absences are discrete. Commuting time is continuous.</p><p><b>Interpretation.</b> A number used as a code does not automatically make a variable quantitative.</p></section></article>
-<article class="exercise" id="ex2"><div class="exercise-head"><div><span class="level">LEVEL 2 · GUIDED REASONING</span><h2>Population, sample and bias</h2></div><label class="done"><input type="checkbox"> Completed</label></div><p>KEDGE wants the average commuting time of all 1,200 first-year students. An online questionnaire is posted at 8 a.m.; 180 volunteers answer before noon.</p><ol type="a"><li>Define the target population and sample.</li><li>Identify two plausible biases.</li><li>Propose a better sampling design.</li></ol><button class="hint-button">Show hint</button><p class="hint">A large sample is not automatically representative.</p><section class="solution"><h3>Detailed solution</h3><p><b>Method.</b> Separate the target group from the observed group.</p><p><b>Answer.</b> The target population is all 1,200 students; the sample is the 180 volunteers. Voluntary response and the morning window can create bias. Draw a random sample from the full list, possibly stratified by programme, and analyse non-response.</p></section></article>
-<article class="exercise" id="ex3"><div class="exercise-head"><div><span class="level">LEVEL 2 · GUIDED CALCULATION</span><h2>Build a frequency distribution</h2></div><label class="done"><input type="checkbox"> Completed</label></div><p class="data">0, 1, 2, 1, 3, 2, 2, 4, 1, 0, 2, 3, 1, 2, 5, 3, 2, 1, 4, 2</p><ol type="a"><li>Construct counts, frequencies and cumulative frequencies.</li><li>Find the share with at most two purchases.</li><li>Choose a graph.</li></ol><button class="hint-button">Show hint</button><p class="hint">Frequency equals count divided by 20.</p><section class="solution"><h3>Detailed solution</h3><div class="table-wrap"><table><tr><th>x</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr><tr><th>Count</th><td>2</td><td>5</td><td>7</td><td>3</td><td>2</td><td>1</td></tr><tr><th>Frequency</th><td>.10</td><td>.25</td><td>.35</td><td>.15</td><td>.10</td><td>.05</td></tr><tr><th>Cumulative</th><td>.10</td><td>.35</td><td>.70</td><td>.85</td><td>.95</td><td>1.00</td></tr></table></div><p><b>Result.</b> 14/20 = 70% made at most two purchases. Use a separated bar chart because the variable is discrete.</p></section></article>
-<article class="exercise" id="ex4"><div class="exercise-head"><div><span class="level">LEVEL 3 · APPLICATION</span><h2>Unequal classes and histograms</h2></div><label class="done"><input type="checkbox"> Completed</label></div><div class="table-wrap"><table><tr><th>Minutes</th><th>[0,5[</th><th>[5,10[</th><th>[10,20[</th><th>[20,40[</th></tr><tr><th>Count</th><td>20</td><td>30</td><td>40</td><td>20</td></tr></table></div><ol type="a"><li>Calculate widths, frequencies and densities.</li><li>Explain why raw counts should not be heights.</li><li>Identify the modal class.</li></ol><button class="hint-button">Show hint</button><p class="hint">Histogram area represents frequency. Density = count ÷ width.</p><section class="solution"><h3>Detailed solution</h3><p>Widths are 5, 5, 10, 20 and densities are 4, 6, 4, 1. The modal class is [5,10[. Raw-count heights exaggerate wide classes because rectangle areas would no longer represent frequencies.</p></section></article>
-<article class="exercise" id="ex5"><div class="exercise-head"><div><span class="level">LEVEL 4 · SYNTHESIS</span><h2>Audit a misleading dashboard</h2></div><label class="done"><input type="checkbox"> Completed</label></div><p>A manager says satisfaction “doubled” because a truncated-axis chart rises from 3.8 to 4.2, using answers from one student association.</p><p>List four problems, redesign the communication and write a defensible conclusion.</p><button class="hint-button">Show hint</button><p class="hint">Audit the numerical claim, graph scale, sampling frame and scope of inference.</p><section class="solution"><h3>Detailed solution</h3><p>The increase is (4.2/3.8 − 1) × 100 = 10.53%, not 100%. The truncated axis exaggerates it; the convenience sample is not representative; and the ordinal distribution should accompany the average. Use a 1–5 scale, show percentages, disclose n and recruitment. Conclude only for responding association members.</p></section></article>
-</section></main><footer><span>Badr ABOUFARASSE, PhD. · KEDGE Business School</span><span>© 2026 — All rights reserved</span></footer><script src="app.js"></script></body></html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="KEDGE QM1 progressive exercise portal."><title>QM1 Practice Lab — Course exercises</title>
+<link rel="stylesheet" href="styles.css"></head><body data-page="portal">
+<header class="topbar">
+  <a class="brand" href="index.html" aria-label="QM1 Practice Lab home">
+    <img src="logoKedge.png" alt="KEDGE Business School">
+    <span>QM1 Practice Lab</span>
+  </a>
+  <a class="teacher-link" href="https://github.com/ABOUFARASSE/QM1-KEDGE-Exercises">Course repository</a>
+</header>
+<main><section class="portal-hero"><p class="eyebrow">QUANTITATIVE METHODS 1 · EBP1</p><h1>Progressive exercise programme</h1>
+<p class="lead">Six guided practice sessions. Chapters become available as the course progresses.</p>
+<div class="course-meter"><span id="courseProgress">Checking course access…</span><div class="progress-track"><div id="courseBar"></div></div></div></section>
+<section class="chapter-grid" aria-label="Course chapters">
+      <article class="chapter-card" data-chapter="1">
+        <div class="chapter-number">01</div>
+        <div class="chapter-copy"><p class="eyebrow">CHAPTER 1</p><h2>Data presentation</h2><p>Organise, classify and communicate data responsibly.</p></div>
+        <div class="chapter-action"><span class="availability">Checking…</span><a href="chapter-1.html">Open chapter</a></div>
+      </article>
+      <article class="chapter-card" data-chapter="2">
+        <div class="chapter-number">02</div>
+        <div class="chapter-copy"><p class="eyebrow">CHAPTER 2</p><h2>Measures of central tendency</h2><p>Select and interpret the appropriate measure of centre.</p></div>
+        <div class="chapter-action"><span class="availability">Checking…</span><a href="chapter-2.html">Open chapter</a></div>
+      </article>
+      <article class="chapter-card" data-chapter="3">
+        <div class="chapter-number">03</div>
+        <div class="chapter-copy"><p class="eyebrow">CHAPTER 3</p><h2>Dispersion and concentration</h2><p>Measure variability, inequality and concentration.</p></div>
+        <div class="chapter-action"><span class="availability">Checking…</span><a href="chapter-3.html">Open chapter</a></div>
+      </article>
+      <article class="chapter-card" data-chapter="4">
+        <div class="chapter-number">04</div>
+        <div class="chapter-copy"><p class="eyebrow">CHAPTER 4</p><h2>Bivariate distributions</h2><p>Describe and interpret relationships between two variables.</p></div>
+        <div class="chapter-action"><span class="availability">Checking…</span><a href="chapter-4.html">Open chapter</a></div>
+      </article>
+      <article class="chapter-card" data-chapter="5">
+        <div class="chapter-number">05</div>
+        <div class="chapter-copy"><p class="eyebrow">CHAPTER 5</p><h2>Time series</h2><p>Read changes over time and separate trend from short-term variation.</p></div>
+        <div class="chapter-action"><span class="availability">Checking…</span><a href="chapter-5.html">Open chapter</a></div>
+      </article>
+      <article class="chapter-card" data-chapter="6">
+        <div class="chapter-number">06</div>
+        <div class="chapter-copy"><p class="eyebrow">CHAPTER 6</p><h2>Index numbers</h2><p>Construct and interpret price, quantity and value indices.</p></div>
+        <div class="chapter-action"><span class="availability">Checking…</span><a href="chapter-6.html">Open chapter</a></div>
+      </article></section>
+<section class="portal-note"><h2>How to work</h2><ol><li>Attempt the exercises in order.</li><li>Write the method before calculating.</li><li>Use the session code only when your lecturer releases the solutions.</li><li>Complete each exercise to record your progress on this device.</li></ol></section>
+</main><footer><span>Badr ABOUFARASSE, PhD. · KEDGE Business School</span><span>© 2026 — All rights reserved</span></footer><script src="app.js"></script></body></html>

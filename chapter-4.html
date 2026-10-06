@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="KEDGE QM1 Chapter 4 progressive exercises."><title>QM1 Practice Lab — Chapter 4</title>
+<link rel="stylesheet" href="styles.css"></head><body data-page="chapter" data-chapter="4">
+<header class="topbar">
+  <a class="brand" href="index.html" aria-label="QM1 Practice Lab home">
+    <img src="logoKedge.png" alt="KEDGE Business School">
+    <span>QM1 Practice Lab</span>
+  </a>
+  <div class="status"><span id="statusDot" class="dot"></span><span id="statusText">Checking access…</span></div>
+</header>
+<div id="chapterGate" class="chapter-gate" hidden><div><p class="eyebrow">CHAPTER 4</p><h1>Not released yet</h1><p>This chapter will become available when your lecturer opens it.</p><a href="index.html">Return to the course menu</a></div></div>
+<main><a class="back-link" href="index.html">← All chapters</a><section class="hero"><div><p class="eyebrow">QUANTITATIVE METHODS 1 · CHAPTER 4</p><h1>Bivariate distributions</h1><p class="lead">Describe and interpret relationships between two variables.</p></div>
+<div class="progress-card"><span>Your progress</span><strong id="progressText">0 / 5 completed</strong><div class="progress-track"><div id="progressBar"></div></div></div></section>
+<section class="access-card" aria-labelledby="accessTitle"><div><p class="eyebrow">LIVE SOLUTION ACCESS</p><h2 id="accessTitle">Unlock the detailed solutions</h2><p>Use the non-public session code supplied by your lecturer. Live access is checked automatically.</p></div>
+<form id="codeForm"><label for="accessCode">Session code</label><div class="code-row"><input id="accessCode" autocomplete="off" spellcheck="false" placeholder="Enter the session code"><button type="submit">Unlock</button></div><p id="codeMessage" class="message" role="status"></p></form></section>
+<nav class="levels" aria-label="Exercise list"><a href="#ex1">1 · Reading a relationship</a><a href="#ex2">2 · Covariance and correlation</a><a href="#ex3">3 · Least-squares regression</a><a href="#ex4">4 · $R^2$, interpolation and extrapolation</a><a href="#ex5">5 · From association to a decision</a></nav><section id="exerciseList" class="exercise-list">
+      <article class="exercise" id="ex1" data-ex="1">
+        <div class="exercise-head"><div><span class="level">LEVEL 1: CONCEPT CHECK</span><h2>Reading a relationship</h2></div><label class="done"><input type="checkbox"> Completed</label></div>
+        <div class="question"><p>A scatter plot of advertising expenditure and sales slopes upward,
+with points close to a line except for one distant observation.</p>
+<ol>
+<li><p>Describe direction, form and strength.</p></li>
+<li><p>What should be investigated about the distant point?</p></li>
+<li><p>Does the plot prove advertising causes sales?</p></li>
+</ol></div>
+        <button class="hint-button" type="button">Show method prompt</button><p class="hint">Identify the statistical concept, state the relevant formula or rule, calculate carefully, and finish with an interpretation in context.</p>
+        <section class="solution"><h3>Detailed solution</h3><p><strong>Result.</strong> The direction is positive, the form is
+approximately linear and the association appears strong. The distant
+point may be a data error, an unusual campaign or an influential
+observation; verify it and compare results with and without it.
+<strong>Interpretation.</strong> The plot does not prove causality
+because seasonality, product quality or reverse causality may affect
+both variables.</p></section>
+      </article>
+      <article class="exercise" id="ex2" data-ex="2">
+        <div class="exercise-head"><div><span class="level">LEVEL 2: GUIDED CALCULATION</span><h2>Covariance and correlation</h2></div><label class="done"><input type="checkbox"> Completed</label></div>
+        <div class="question"><p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">x=(1,2,3,4)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">y=(2,3,5,6)</annotation></semantics></math>
+calculate population covariance and correlation.</p></div>
+        <button class="hint-button" type="button">Show method prompt</button><p class="hint">Identify the statistical concept, state the relevant formula or rule, calculate carefully, and finish with an interpretation in context.</p>
+        <section class="solution"><h3>Detailed solution</h3><p><strong>Method.</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>x</mi><mo accent="true">‾</mo></mover><mo>=</mo><mn>2.5</mn></mrow><annotation encoding="application/x-tex">\bar x=2.5</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>y</mi><mo accent="true">‾</mo></mover><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">\bar y=4</annotation></semantics></math>.
+Cross-deviations are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>,</mo><mn>.5</mn><mo>,</mo><mn>.5</mn><mo>,</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">3, .5, .5, 3</annotation></semantics></math>,
+summing to 7; squared-deviation sums are 5 for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+and 10 for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>.
+<strong>Result.</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>o</mi><mi>v</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>7</mn><mi>/</mi><mn>4</mn><mo>=</mo><mn>1.75</mn></mrow><annotation encoding="application/x-tex">Cov(x,y)=7/4=1.75</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mi>x</mi></msub><mo>=</mo><msqrt><mrow><mn>5</mn><mi>/</mi><mn>4</mn></mrow></msqrt><mo>=</mo><mn>1.118</mn></mrow><annotation encoding="application/x-tex">\sigma_x=\sqrt{5/4}=1.118</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mi>y</mi></msub><mo>=</mo><msqrt><mrow><mn>10</mn><mi>/</mi><mn>4</mn></mrow></msqrt><mo>=</mo><mn>1.581</mn></mrow><annotation encoding="application/x-tex">\sigma_y=\sqrt{10/4}=1.581</annotation></semantics></math>,
+hence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mn>1.75</mn><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1.118</mn><mo>×</mo><mn>1.581</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>.990</mn></mrow><annotation encoding="application/x-tex">r=1.75/(1.118\times1.581)=.990</annotation></semantics></math>.
+<strong>Interpretation.</strong> The variables have a very strong
+positive linear association; the unit-free correlation is easier to
+compare than covariance.</p></section>
+      </article>
+      <article class="exercise" id="ex3" data-ex="3">
+        <div class="exercise-head"><div><span class="level">LEVEL 3: APPLICATION</span><h2>Least-squares regression</h2></div><label class="done"><input type="checkbox"> Completed</label></div>
+        <div class="question"><p>Use the data in Exercise 2 to estimate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>y</mi><mo accent="true">̂</mo></mover><mo>=</mo><mi>a</mi><mo>+</mo><mi>b</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\hat y=a+bx</annotation></semantics></math>.
+Forecast
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>3.5</mn></mrow><annotation encoding="application/x-tex">x=3.5</annotation></semantics></math>
+and calculate the residual at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>3</mn><mo>,</mo><mn>5</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(3,5)</annotation></semantics></math>.</p></div>
+        <button class="hint-button" type="button">Show method prompt</button><p class="hint">Identify the statistical concept, state the relevant formula or rule, calculate carefully, and finish with an interpretation in context.</p>
+        <section class="solution"><h3>Detailed solution</h3><p><strong>Method.</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>=</mo><mi>C</mi><mi>o</mi><mi>v</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mi>V</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1.75</mn><mi>/</mi><mn>1.25</mn><mo>=</mo><mn>1.4</mn></mrow><annotation encoding="application/x-tex">b=Cov(x,y)/V(x)=1.75/1.25=1.4</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mover><mi>y</mi><mo accent="true">‾</mo></mover><mo>−</mo><mi>b</mi><mover><mi>x</mi><mo accent="true">‾</mo></mover><mo>=</mo><mn>4</mn><mo>−</mo><mn>1.4</mn><mrow><mo stretchy="true" form="prefix">(</mo><mn>2.5</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>.5</mn></mrow><annotation encoding="application/x-tex">a=\bar y-b\bar x=4-1.4(2.5)=.5</annotation></semantics></math>.
+<strong>Result.</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>y</mi><mo accent="true">̂</mo></mover><mo>=</mo><mn>.5</mn><mo>+</mo><mn>1.4</mn><mi>x</mi></mrow><annotation encoding="application/x-tex">\hat y=.5+1.4x</annotation></semantics></math>.
+At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>3.5</mn></mrow><annotation encoding="application/x-tex">x=3.5</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>y</mi><mo accent="true">̂</mo></mover><mo>=</mo><mn>5.4</mn></mrow><annotation encoding="application/x-tex">\hat y=5.4</annotation></semantics></math>.
+At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">x=3</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>y</mi><mo accent="true">̂</mo></mover><mo>=</mo><mn>4.7</mn></mrow><annotation encoding="application/x-tex">\hat y=4.7</annotation></semantics></math>,
+so residual
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>=</mo><mi>y</mi><mo>−</mo><mover><mi>y</mi><mo accent="true">̂</mo></mover><mo>=</mo><mn>5</mn><mo>−</mo><mn>4.7</mn><mo>=</mo><mn>.3</mn></mrow><annotation encoding="application/x-tex">e=y-\hat y=5-4.7=.3</annotation></semantics></math>.
+<strong>Interpretation.</strong> A one-unit increase in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+is associated with an estimated 1.4-unit increase in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>
+within the observed range.</p></section>
+      </article>
+      <article class="exercise" id="ex4" data-ex="4">
+        <div class="exercise-head"><div><span class="level">LEVEL 3: INTERPRETATION</span><h2>$R^2$, interpolation and extrapolation</h2></div><label class="done"><input type="checkbox"> Completed</label></div>
+        <div class="question"><p>Suppose a model fitted for advertising budgets from EUR 1,000 to EUR
+10,000 has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>R</mi><mn>2</mn></msup><mo>=</mo><mn>.81</mn></mrow><annotation encoding="application/x-tex">R^2=.81</annotation></semantics></math>.
+Interpret
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>R</mi><mn>2</mn></msup><annotation encoding="application/x-tex">R^2</annotation></semantics></math>.
+Classify predictions at EUR 7,000 and EUR 20,000 and explain the
+risk.</p></div>
+        <button class="hint-button" type="button">Show method prompt</button><p class="hint">Identify the statistical concept, state the relevant formula or rule, calculate carefully, and finish with an interpretation in context.</p>
+        <section class="solution"><h3>Detailed solution</h3><p><strong>Result.</strong> The model explains 81% of the observed
+variation in sales around their mean; it does not mean that advertising
+causes 81% of sales. EUR 7,000 is interpolation, while EUR 20,000 is
+extrapolation. <strong>Interpretation.</strong> Extrapolation is risky
+because the linear relationship may not continue beyond the data and
+market saturation may appear.</p></section>
+      </article>
+      <article class="exercise" id="ex5" data-ex="5">
+        <div class="exercise-head"><div><span class="level">LEVEL 4: SYNTHESIS</span><h2>From association to a decision</h2></div><label class="done"><input type="checkbox"> Completed</label></div>
+        <div class="question"><p>A retailer finds
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mn>.85</mn></mrow><annotation encoding="application/x-tex">r=.85</annotation></semantics></math>
+between discounts and weekly sales and recommends permanent large
+discounts. Give a statistically responsible response including at least
+four checks.</p></div>
+        <button class="hint-button" type="button">Show method prompt</button><p class="hint">Identify the statistical concept, state the relevant formula or rule, calculate carefully, and finish with an interpretation in context.</p>
+        <section class="solution"><h3>Detailed solution</h3><p><strong>Result.</strong> Check the scatter plot for non-linearity and
+influential points; inspect residuals; control for holidays, advertising
+and store differences; examine whether discounting was targeted to weak
+weeks; distinguish revenue from profit; and, where feasible, use a
+randomised or credible quasi-experimental design.
+<strong>Interpretation.</strong> Strong correlation supports prediction
+inside the observed setting but is insufficient for a pricing policy
+because causal effects and margins determine profitability.</p></section>
+      </article></section>
+</main><footer><span>Badr ABOUFARASSE, PhD. · KEDGE Business School</span><span>© 2026 — All rights reserved</span></footer><script src="app.js"></script></body></html>

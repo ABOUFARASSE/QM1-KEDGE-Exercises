@@ -1,5 +1,35 @@
 {
-"solutionsOpen":false,
-"codeHash":"203cd00ca82ddcb3d7202ef4296c138897031b0640aae6bafcd92c0998983351",
-"messageWhenOpen":"Solutions have been opened by your lecturer."
+  "messageWhenOpen": "Solutions have been opened by your lecturer.",
+  "chapters": {
+    "1": {
+      "open": true,
+      "solutionsOpen": false,
+      "codeHash": "d73f6a93ab93c5182580b60f0322450e5afab47e5bf97fbab2bc44467e2f890e"
+    },
+    "2": {
+      "open": false,
+      "solutionsOpen": false,
+      "codeHash": "1fc68c3dec4b37a21b8ff30ab7f57b5347e3e1bc859d8e813795ca63461e8ffe"
+    },
+    "3": {
+      "open": false,
+      "solutionsOpen": false,
+      "codeHash": "8f0b67fb90878de3d5bcbe15f044a21a3b4a3dcea88906a817fa62a8bcdd2530"
+    },
+    "4": {
+      "open": false,
+      "solutionsOpen": false,
+      "codeHash": "5e68c553a5bce6a7527ca9c0c9694522aa20802838381f83695220967952874b"
+    },
+    "5": {
+      "open": false,
+      "solutionsOpen": false,
+      "codeHash": "e842b6e78c4e10d0faa5e790e14e0b06bfd7a25efd366a5385a003ad6e855eea"
+    },
+    "6": {
+      "open": false,
+      "solutionsOpen": false,
+      "codeHash": "41a78267aee9aa1e43090812dea37b40fb2af3b655ff2384d24b9e552be64c3e"
+    }
+  }
 }

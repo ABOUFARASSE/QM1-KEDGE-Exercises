@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="KEDGE QM1 Chapter 2 progressive exercises."><title>QM1 Practice Lab — Chapter 2</title>
+<link rel="stylesheet" href="styles.css"></head><body data-page="chapter" data-chapter="2">
+<header class="topbar">
+  <a class="brand" href="index.html" aria-label="QM1 Practice Lab home">
+    <img src="logoKedge.png" alt="KEDGE Business School">
+    <span>QM1 Practice Lab</span>
+  </a>
+  <div class="status"><span id="statusDot" class="dot"></span><span id="statusText">Checking access…</span></div>
+</header>
+<div id="chapterGate" class="chapter-gate" hidden><div><p class="eyebrow">CHAPTER 2</p><h1>Not released yet</h1><p>This chapter will become available when your lecturer opens it.</p><a href="index.html">Return to the course menu</a></div></div>
+<main><a class="back-link" href="index.html">← All chapters</a><section class="hero"><div><p class="eyebrow">QUANTITATIVE METHODS 1 · CHAPTER 2</p><h1>Measures of central tendency</h1><p class="lead">Select and interpret the appropriate measure of centre.</p></div>
+<div class="progress-card"><span>Your progress</span><strong id="progressText">0 / 5 completed</strong><div class="progress-track"><div id="progressBar"></div></div></div></section>
+<section class="access-card" aria-labelledby="accessTitle"><div><p class="eyebrow">LIVE SOLUTION ACCESS</p><h2 id="accessTitle">Unlock the detailed solutions</h2><p>Use the non-public session code supplied by your lecturer. Live access is checked automatically.</p></div>
+<form id="codeForm"><label for="accessCode">Session code</label><div class="code-row"><input id="accessCode" autocomplete="off" spellcheck="false" placeholder="Enter the session code"><button type="submit">Unlock</button></div><p id="codeMessage" class="message" role="status"></p></form></section>
+<nav class="levels" aria-label="Exercise list"><a href="#ex1">1 · Mean, median and mode</a><a href="#ex2">2 · Weighted decisions</a><a href="#ex3">3 · Grouped median and quartiles</a><a href="#ex4">4 · Geometric and harmonic means</a><a href="#ex5">5 · Choosing the centre</a></nav><section id="exerciseList" class="exercise-list">
+      <article class="exercise" id="ex1" data-ex="1">
+        <div class="exercise-head"><div><span class="level">LEVEL 1: DIRECT CALCULATION</span><h2>Mean, median and mode</h2></div><label class="done"><input type="checkbox"> Completed</label></div>
+        <div class="question"><p>Waiting times are 4, 5, 5, 6, 7, 8, 9, 26 minutes. Calculate the
+mode, median and mean. Which measure best describes a typical wait?</p></div>
+        <button class="hint-button" type="button">Show method prompt</button><p class="hint">Identify the statistical concept, state the relevant formula or rule, calculate carefully, and finish with an interpretation in context.</p>
+        <section class="solution"><h3>Detailed solution</h3><p><strong>Method.</strong> Order the data. The median is the average of
+positions 4 and 5 because
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">n=8</annotation></semantics></math>;
+the mean uses all observations. <strong>Result.</strong> Mode
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">=5</annotation></semantics></math>;
+median
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>6</mn><mo>+</mo><mn>7</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mn>2</mn><mo>=</mo><mn>6.5</mn></mrow><annotation encoding="application/x-tex">=(6+7)/2=6.5</annotation></semantics></math>;
+mean
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>=</mo><mn>70</mn><mi>/</mi><mn>8</mn><mo>=</mo><mn>8.75</mn></mrow><annotation encoding="application/x-tex">=70/8=8.75</annotation></semantics></math>
+minutes. <strong>Interpretation.</strong> The isolated 26-minute wait
+pulls the mean upward. The median is the most robust description of a
+typical wait, while the mean remains relevant for total capacity
+planning.</p></section>
+      </article>
+      <article class="exercise" id="ex2" data-ex="2">
+        <div class="exercise-head"><div><span class="level">LEVEL 2: GUIDED CALCULATION</span><h2>Weighted decisions</h2></div><label class="done"><input type="checkbox"> Completed</label></div>
+        <div class="question"><p>A course grade combines quiz 20%, project 30% and final examination
+50%. A student scores 14, 16 and 11 out of 20.</p>
+<ol>
+<li><p>Calculate the weighted mean.</p></li>
+<li><p>Compare it with the unweighted mean.</p></li>
+<li><p>Explain why the two differ.</p></li>
+</ol></div>
+        <button class="hint-button" type="button">Show method prompt</button><p class="hint">Identify the statistical concept, state the relevant formula or rule, calculate carefully, and finish with an interpretation in context.</p>
+        <section class="solution"><h3>Detailed solution</h3><p><strong>Method.</strong> Multiply each score by its weight and verify
+that weights sum to one. <strong>Result.</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>x</mi><mo accent="true">‾</mo></mover><mi>w</mi></msub><mo>=</mo><mn>.20</mn><mrow><mo stretchy="true" form="prefix">(</mo><mn>14</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mn>.30</mn><mrow><mo stretchy="true" form="prefix">(</mo><mn>16</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mn>.50</mn><mrow><mo stretchy="true" form="prefix">(</mo><mn>11</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>13.10</mn></mrow><annotation encoding="application/x-tex">\bar x_w=.20(14)+.30(16)+.50(11)=13.10</annotation></semantics></math>.
+The unweighted mean is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>14</mn><mo>+</mo><mn>16</mn><mo>+</mo><mn>11</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mn>3</mn><mo>=</mo><mn>13.67</mn></mrow><annotation encoding="application/x-tex">(14+16+11)/3=13.67</annotation></semantics></math>.
+<strong>Interpretation.</strong> The final examination receives the
+largest weight and is also the lowest score, so the weighted result is
+lower.</p></section>
+      </article>
+      <article class="exercise" id="ex3" data-ex="3">
+        <div class="exercise-head"><div><span class="level">LEVEL 3: APPLICATION</span><h2>Grouped median and quartiles</h2></div><label class="done"><input type="checkbox"> Completed</label></div>
+        <div class="question"><p>Order values are grouped:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>20</mn><mo stretchy="false" form="prefix">[</mo></mrow><annotation encoding="application/x-tex">[0,20[</annotation></semantics></math>:
+8;
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mn>20</mn><mo>,</mo><mn>40</mn><mo stretchy="false" form="prefix">[</mo></mrow><annotation encoding="application/x-tex">[20,40[</annotation></semantics></math>:
+18;
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mn>40</mn><mo>,</mo><mn>60</mn><mo stretchy="false" form="prefix">[</mo></mrow><annotation encoding="application/x-tex">[40,60[</annotation></semantics></math>:
+24;
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mn>60</mn><mo>,</mo><mn>100</mn><mo stretchy="false" form="prefix">[</mo></mrow><annotation encoding="application/x-tex">[60,100[</annotation></semantics></math>:
+10. Estimate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mn>1</mn></msub><annotation encoding="application/x-tex">Q_1</annotation></semantics></math>,
+the median and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mn>3</mn></msub><annotation encoding="application/x-tex">Q_3</annotation></semantics></math>
+by linear interpolation.</p></div>
+        <button class="hint-button" type="button">Show method prompt</button><p class="hint">Identify the statistical concept, state the relevant formula or rule, calculate carefully, and finish with an interpretation in context.</p>
+        <section class="solution"><h3>Detailed solution</h3><p><strong>Method.</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>60</mn></mrow><annotation encoding="application/x-tex">n=60</annotation></semantics></math>
+and cumulative counts are 8, 26, 50, 60. Use
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo>=</mo><mi>L</mi><mo>+</mo><mi>a</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>k</mi><mo>−</mo><msub><mi>N</mi><mrow><mi mathvariant="normal">b</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><msub><mi>n</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">Q=L+a(k-N_{\mathrm{before}})/n_c</annotation></semantics></math>
+inside the class containing target rank
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>.
+<strong>Result.</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mn>1</mn></msub><annotation encoding="application/x-tex">Q_1</annotation></semantics></math>
+has rank 15 in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mn>20</mn><mo>,</mo><mn>40</mn><mo stretchy="false" form="prefix">[</mo></mrow><annotation encoding="application/x-tex">[20,40[</annotation></semantics></math>:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>20</mn><mo>+</mo><mn>20</mn><mrow><mo stretchy="true" form="prefix">(</mo><mn>15</mn><mo>−</mo><mn>8</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mn>18</mn><mo>=</mo><mn>27.78</mn></mrow><annotation encoding="application/x-tex">20+20(15-8)/18=27.78</annotation></semantics></math>.
+The median has rank 30 in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mn>40</mn><mo>,</mo><mn>60</mn><mo stretchy="false" form="prefix">[</mo></mrow><annotation encoding="application/x-tex">[40,60[</annotation></semantics></math>:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>40</mn><mo>+</mo><mn>20</mn><mrow><mo stretchy="true" form="prefix">(</mo><mn>30</mn><mo>−</mo><mn>26</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mn>24</mn><mo>=</mo><mn>43.33</mn></mrow><annotation encoding="application/x-tex">40+20(30-26)/24=43.33</annotation></semantics></math>.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mn>3</mn></msub><annotation encoding="application/x-tex">Q_3</annotation></semantics></math>
+has rank 45:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>40</mn><mo>+</mo><mn>20</mn><mrow><mo stretchy="true" form="prefix">(</mo><mn>45</mn><mo>−</mo><mn>26</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mn>24</mn><mo>=</mo><mn>55.83</mn></mrow><annotation encoding="application/x-tex">40+20(45-26)/24=55.83</annotation></semantics></math>.
+<strong>Interpretation.</strong> Approximately half of orders lie
+between EUR 27.78 and EUR 55.83, subject to the uniform-within-class
+approximation.</p></section>
+      </article>
+      <article class="exercise" id="ex4" data-ex="4">
+        <div class="exercise-head"><div><span class="level">LEVEL 3: METHOD SELECTION</span><h2>Geometric and harmonic means</h2></div><label class="done"><input type="checkbox"> Completed</label></div>
+        <div class="question"><ol>
+<li><p>Revenue changes by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>+</mo><mn>20</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">+20\%</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>10</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">-10\%</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>+</mo><mn>15</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">+15\%</annotation></semantics></math>.
+Find the equivalent average annual growth rate.</p></li>
+<li><p>A driver covers two equal distances at 60 and 90 km/h. Find the
+average speed.</p></li>
+</ol></div>
+        <button class="hint-button" type="button">Show method prompt</button><p class="hint">Identify the statistical concept, state the relevant formula or rule, calculate carefully, and finish with an interpretation in context.</p>
+        <section class="solution"><h3>Detailed solution</h3><p><strong>Method.</strong> Compound growth requires the geometric mean
+of growth factors; equal-distance speed requires the harmonic mean.
+<strong>Result.</strong> Growth factor
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1.20</mn><mo>×</mo><mn>.90</mn><mo>×</mo><mn>1.15</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mn>1</mn><mi>/</mi><mn>3</mn></mrow></msup><mo>=</mo><mn>1.0754</mn></mrow><annotation encoding="application/x-tex">G=(1.20\times.90\times1.15)^{1/3}=1.0754</annotation></semantics></math>,
+so average growth is about 7.54% per year. Average speed
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo>=</mo><mn>2</mn><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>60</mn><mo>+</mo><mn>1</mn><mi>/</mi><mn>90</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>72</mn></mrow><annotation encoding="application/x-tex">H=2/(1/60+1/90)=72</annotation></semantics></math>
+km/h. <strong>Interpretation.</strong> The arithmetic means, 8.33% and
+75 km/h, ignore compounding and unequal travel times respectively.</p></section>
+      </article>
+      <article class="exercise" id="ex5" data-ex="5">
+        <div class="exercise-head"><div><span class="level">LEVEL 4: SYNTHESIS</span><h2>Choosing the centre</h2></div><label class="done"><input type="checkbox"> Completed</label></div>
+        <div class="question"><p>For each case choose a principal measure and justify it: employee
+salaries with a few executives; most common product size; average
+portfolio multiplier over four years; average price paid when quantities
+differ; satisfaction categories from very dissatisfied to very
+satisfied.</p></div>
+        <button class="hint-button" type="button">Show method prompt</button><p class="hint">Identify the statistical concept, state the relevant formula or rule, calculate carefully, and finish with an interpretation in context.</p>
+        <section class="solution"><h3>Detailed solution</h3><p><strong>Result.</strong> Salaries: median, due to right skew and
+outliers. Product size: mode, because the most frequent category is
+required. Portfolio multipliers: geometric mean, because returns
+compound. Average price paid: quantity-weighted arithmetic mean,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>p</mi><mi>i</mi></msub><msub><mi>q</mi><mi>i</mi></msub><mi>/</mi><mo>∑</mo><msub><mi>q</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\sum p_iq_i/\sum q_i</annotation></semantics></math>.
+Satisfaction: median or mode plus the full distribution, because the
+scale is ordinal. <strong>Interpretation.</strong> The correct centre is
+determined by the question, scale and data-generating mechanism, not by
+habit.</p></section>
+      </article></section>
+</main><footer><span>Badr ABOUFARASSE, PhD. · KEDGE Business School</span><span>© 2026 — All rights reserved</span></footer><script src="app.js"></script></body></html>
