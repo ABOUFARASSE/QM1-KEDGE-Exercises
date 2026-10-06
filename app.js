@@ -47,7 +47,8 @@ async function initialiseChapter() {
     unlocked = open;
     document.body.classList.toggle('solutions-visible', open);
     $('#statusDot').classList.toggle('open', open);
-    $('#statusText').textContent = open ? 'Solutions available' : 'Solutions locked';
+    const fr = document.body.dataset.lang === 'fr';
+    $('#statusText').textContent = open ? (fr ? 'Corrigés accessibles' : 'Solutions available') : (fr ? 'Corrigés verrouillés' : 'Solutions locked');
     if (message) $('#codeMessage').textContent = message;
     if (open) localStorage.setItem(`${storagePrefix}-unlocked`, '1');
   }
@@ -76,7 +77,7 @@ async function initialiseChapter() {
       setSolutions(true, 'Correct code — detailed solutions are now visible.');
       $('#accessCode').value = '';
     } else {
-      $('#codeMessage').textContent = 'Incorrect code. Check the code provided during the session.';
+      $('#codeMessage').textContent = document.body.dataset.lang === 'fr' ? 'Code incorrect. Vérifiez le code communiqué pendant la séance.' : 'Incorrect code. Check the code provided during the session.';
     }
   });
 
@@ -149,6 +150,10 @@ function initialiseLanguage(chapter) {
       $$('.done').forEach(label => { label.lastChild.textContent = ' Completed'; });
       switcher.textContent = 'Français';
     }
+    const completed = $$('.done input').filter(check => check.checked).length;
+    $('#progressText').textContent = lang === 'fr' ? `${completed} / 5 terminés` : `${completed} / 5 completed`;
+    const open = document.body.classList.contains('solutions-visible');
+    $('#statusText').textContent = open ? (lang === 'fr' ? 'Corrigés accessibles' : 'Solutions available') : (lang === 'fr' ? 'Corrigés verrouillés' : 'Solutions locked');
     localStorage.setItem('qm1-language', lang);
   }
   switcher.addEventListener('click', () => apply(document.body.dataset.lang === 'fr' ? 'en' : 'fr'));
