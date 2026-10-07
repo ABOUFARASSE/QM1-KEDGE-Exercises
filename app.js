@@ -41,7 +41,12 @@ async function initialiseChapter() {
   const chapter = document.body.dataset.chapter;
   const storagePrefix = `qm1-v2-ch${chapter}`;
   let chapterConfig = null;
-  let unlocked = localStorage.getItem(`${storagePrefix}-unlocked`) === '1';
+  let unlocked = sessionStorage.getItem(`${storagePrefix}-unlocked`) === '1';
+  const hideSolutionsButton = document.createElement('button');
+  hideSolutionsButton.type = 'button';
+  hideSolutionsButton.className = 'hide-solutions-button';
+  hideSolutionsButton.hidden = true;
+  $('#codeForm').appendChild(hideSolutionsButton);
 
   function setSolutions(open, message = '') {
     unlocked = open;
@@ -49,9 +54,17 @@ async function initialiseChapter() {
     $('#statusDot').classList.toggle('open', open);
     const fr = document.body.dataset.lang === 'fr';
     $('#statusText').textContent = open ? (fr ? 'Corrigés accessibles' : 'Solutions available') : (fr ? 'Corrigés verrouillés' : 'Solutions locked');
+    hideSolutionsButton.textContent = fr ? 'Masquer les corrigés' : 'Hide solutions';
+    hideSolutionsButton.hidden = !open;
     if (message) $('#codeMessage').textContent = message;
-    if (open) localStorage.setItem(`${storagePrefix}-unlocked`, '1');
+    if (open) sessionStorage.setItem(`${storagePrefix}-unlocked`, '1');
+    else sessionStorage.removeItem(`${storagePrefix}-unlocked`);
   }
+
+  hideSolutionsButton.addEventListener('click', () => {
+    const fr = document.body.dataset.lang === 'fr';
+    setSolutions(false, fr ? 'Les corrigés ont été masqués.' : 'The solutions have been hidden.');
+  });
 
   async function refreshAccess() {
     try {
@@ -159,6 +172,8 @@ function initialiseLanguage(chapter) {
     $('#progressText').textContent = lang === 'fr' ? `${completed} / ${total} terminés` : `${completed} / ${total} completed`;
     const open = document.body.classList.contains('solutions-visible');
     $('#statusText').textContent = open ? (lang === 'fr' ? 'Corrigés accessibles' : 'Solutions available') : (lang === 'fr' ? 'Corrigés verrouillés' : 'Solutions locked');
+    const hideSolutionsButton = document.querySelector('.hide-solutions-button');
+    if (hideSolutionsButton) hideSolutionsButton.textContent = lang === 'fr' ? 'Masquer les corrigés' : 'Hide solutions';
     localStorage.setItem('qm1-language', lang);
   }
   switcher.addEventListener('click', () => apply(document.body.dataset.lang === 'fr' ? 'en' : 'fr'));
