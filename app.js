@@ -48,6 +48,32 @@ async function initialiseChapter() {
   hideSolutionsButton.hidden = true;
   $('#codeForm').appendChild(hideSolutionsButton);
 
+  const downloadCard = document.createElement('section');
+  downloadCard.className = 'download-card';
+  downloadCard.innerHTML = `
+    <div>
+      <p class="eyebrow">PRINTABLE RESOURCES · RESSOURCES IMPRIMABLES</p>
+      <h2>Exercise series in PDF · Séries d’exercices en PDF</h2>
+      <p>Download the spacious student version. Detailed solutions become available after the session code is unlocked.</p>
+    </div>
+    <div class="download-groups">
+      <div class="download-group">
+        <strong>Student series · Sujets</strong>
+        <div class="download-links">
+          <a href="downloads/chapter-${chapter}-exercises-en.pdf" download>English</a>
+          <a href="downloads/chapter-${chapter}-exercises-fr.pdf" download>Français</a>
+        </div>
+      </div>
+      <div class="solution download-solutions">
+        <strong>Detailed solutions · Corrigés détaillés</strong>
+        <div class="download-links">
+          <a href="downloads/chapter-${chapter}-solutions-en.pdf" download>English</a>
+          <a href="downloads/chapter-${chapter}-solutions-fr.pdf" download>Français</a>
+        </div>
+      </div>
+    </div>`;
+  document.querySelector('.access-card').after(downloadCard);
+
   function setSolutions(open, message = '') {
     unlocked = open;
     document.body.classList.toggle('solutions-visible', open);

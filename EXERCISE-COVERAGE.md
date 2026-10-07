@@ -1,4 +1,4 @@
-# Session 1 — exercise coverage
+# Exercise coverage
 
 Chapter 1 now contains ten progressive exercises in English and French. Detailed solutions remain protected by the existing session code.
 
@@ -15,7 +15,19 @@ Chapter 1 now contains ten progressive exercises in English and French. Detailed
 | Continuous-assessment case | 9 | Grouped continuous data, unequal class widths, densities, ECC/ECD and a percentile-based pricing decision |
 | Exam-style synthesis | 10 | Ordinal data, comparative graph choice, conditional summaries, critical reasoning and a written conclusion |
 
-The sequence moves from vocabulary and recognition to calculation, interpretation, method selection and two timed, marked assessment-style cases.
+The sequence moves from vocabulary and recognition to calculation, interpretation, method selection and two assessment-style practice cases.
+
+## Chapters 2–6
+
+| Chapter | Exercises | Main coverage |
+|---|---:|---|
+| 2 — Central tendency | 7 | Mean, weighted mean, median, mode, grouped data, robustness and method selection |
+| 3 — Dispersion and concentration | 7 | Range, variance, standard deviation, coefficient of variation, quartiles, Lorenz/Gini and comparison |
+| 4 — Bivariate distributions | 7 | Scatterplots, covariance, correlation, least-squares regression, diagnosis and responsible interpretation |
+| 5 — Time series | 7 | Chronological graphs, growth rates, moving averages, trend, seasonality, forecasts and structural breaks |
+| 6 — Index numbers | 7 | Simple and composite indices, Laspeyres, Paasche, Fisher, value decomposition, rebasing and real change |
+
+Every chapter is available in English and French. Each chapter also has separate printable student and detailed-solution PDFs in both languages.
 
 ## Alignment with the supplied assessments
 
