@@ -12,6 +12,18 @@ window.QM1_EXTENDED = {
   const chapter = document.body?.dataset?.chapter;
   const additions = window.QM1_EXTENDED[chapter];
   if (!additions) return;
+  if (chapter === '1') additions.slice(-2).forEach(item => {
+    item.question = item.question
+      .replace('Case study — 12 marks.', 'Case study.')
+      .replace('Independent case — 10 marks.', 'Independent case.')
+      .replace(/ <em>\(\d+ marks?\)<\/em>/g, '');
+    item.solution = item.solution.replace('Detailed solution and marking logic', 'Detailed solution');
+    item.fr.question = item.fr.question
+      .replace('Étude de cas — 12 points.', 'Étude de cas.')
+      .replace('Cas autonome — 10 points.', 'Cas autonome.')
+      .replace(/ <em>\(\d+ points?\)<\/em>/g, '');
+    item.fr.solution = item.fr.solution.replace('Corrigé détaillé et logique du barème', 'Corrigé détaillé');
+  });
   const list = document.querySelector('#exerciseList');
   const nav = document.querySelector('.levels');
   additions.forEach((item,index) => {

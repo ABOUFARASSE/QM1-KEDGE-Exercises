@@ -20,5 +20,5 @@ The sequence moves from vocabulary and recognition to calculation, interpretatio
 ## Alignment with the supplied assessments
 
 - Exercise 9 follows the structure of the 2024 continuous assessment: a business case, a grouped distribution, graphical representation, two cumulative curves and a decision stated in context. The dataset and context are new.
-- Exercise 10 follows the assessment convention used across the supplied papers: a contextualised table, a visible marking scheme, justified method selection, calculations and a concise managerial interpretation.
+- Exercise 10 follows the assessment convention used across the supplied papers: a contextualised table, justified method selection, calculations and a concise managerial interpretation. It remains an ungraded practice exercise and displays no marks.
 - Correlation/regression, index numbers and time-series forecasting from the FERSET paper are reserved for the later chapters where those methods are taught.
