@@ -1,210 +1,46 @@
-const $ = selector => document.querySelector(selector);
-const $$ = selector => [...document.querySelectorAll(selector)];
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
 const page = document.body.dataset.page;
+const VERSION = '20261016';
 
-async function getConfig() {
-  const response = await fetch(`config.json?t=${Date.now()}`, { cache: 'no-store' });
-  if (!response.ok) throw new Error('Configuration unavailable');
-  return response.json();
+const CHAPTERS = {
+  1:{en:'Data presentation',fr:'Présenter et organiser les données',leadEn:'Organise, classify and represent data using the methods required in QM1.',leadFr:'Organiser, classer et représenter les données avec les méthodes exigées en QM1.'},
+  2:{en:'Measures of central tendency',fr:'Mesures de tendance centrale',leadEn:'Calculate and interpret mode, median, quartiles and the appropriate means.',leadFr:'Calculer et interpréter mode, médiane, quartiles et les moyennes adaptées.'},
+  3:{en:'Dispersion and concentration',fr:'Dispersion et concentration',leadEn:'Measure variability and concentration using the indicators covered in the course.',leadFr:'Mesurer la dispersion et la concentration à l’aide des indicateurs du cours.'},
+  4:{en:'Bivariate distributions and regression',fr:'Distributions bivariées et régression',leadEn:'Study correlation, linear adjustment and forecasting with the course conventions.',leadFr:'Étudier corrélation, ajustement linéaire et prévision selon les conventions du cours.'},
+  5:{en:'Time series',fr:'Séries temporelles',leadEn:'Analyse trend, moving averages, seasonality and quarterly forecasts.',leadFr:'Analyser tendance, moyennes mobiles, saisonnalité et prévisions trimestrielles.'},
+  6:{en:'Index numbers',fr:'Nombres-indices',leadEn:'Construct and interpret elementary and synthetic price, quantity and value indices.',leadFr:'Construire et interpréter les indices élémentaires et synthétiques de prix, quantité et valeur.'},
+  7:{en:'Integrated cases',fr:'Cas intégrateurs',leadEn:'Combine the main QM1 methods in continuous-assessment and final-exam style cases.',leadFr:'Mobiliser les principales méthodes de QM1 dans des cas de type contrôle continu et examen final.'}
+};
+
+const I18N = {
+  en:{portalTitle:'Progressive exercise programme',portalLead:'Seven bilingual practice sheets aligned with the QM1 course, with printable statements and detailed solutions.',howTitle:'How to work',how1:'Choose English or French with the language button.',how2:'Open a chapter and work from the statement displayed on screen.',how3:'Download the statement in French or English whenever needed.',how4:'Enter the session code to reveal the detailed solutions.',how5:'After unlocking, switch language freely between the French and English solutions.',openChapter:'Open chapter',available:'Available now',later:'Coming later',checking:'Checking…',chapterLabel:'CHAPTER',notReleased:'Not released yet',notReleasedText:'This chapter will become available when your lecturer opens it.',returnMenu:'Return to the course menu',allChapters:'← All chapters',chapterWord:'CHAPTER',resourceStatus:'Resources',bilingualPack:'Bilingual pack',packNote:'Statement visible now; detailed solution after the session code.',liveAccess:'LIVE SOLUTION ACCESS',unlockTitle:'Unlock the detailed solutions',unlockText:'Use the session code supplied by your lecturer. Access remains active for this browser session.',sessionCode:'Session code',unlock:'Unlock',printable:'PRINTABLE RESOURCES',downloadsTitle:'Download the chapter',downloadsText:'The exercise statements are always available. Solution downloads appear after unlocking.',statements:'Exercise statements',solutions:'Detailed solutions',statementLabel:'EXERCISE STATEMENT',solutionLabel:'DETAILED SOLUTION',openPdf:'Open PDF',pdfFallback:'If the PDF is not displayed on your device, use the Open PDF or download button.',locked:'Solutions locked',open:'Solutions available',hide:'Hide solutions',hidden:'The solutions have been hidden.',correct:'Correct code — detailed solutions are now visible.',incorrect:'Incorrect code. Check the code provided during the session.',statementHeading:'English statement',solutionHeading:'English detailed solution',courseAvailable:(n,t)=>`${n} of ${t} chapters available`,offline:'Course access currently unavailable'},
+  fr:{portalTitle:'Programme progressif d’exercices',portalLead:'Sept fiches bilingues alignées sur le cours QM1, avec énoncés imprimables et corrigés détaillés.',howTitle:'Comment travailler',how1:'Choisissez le français ou l’anglais avec le bouton de langue.',how2:'Ouvrez un chapitre et travaillez à partir de l’énoncé affiché à l’écran.',how3:'Téléchargez l’énoncé en français ou en anglais selon vos besoins.',how4:'Saisissez le code de la séance pour afficher les corrigés détaillés.',how5:'Après déverrouillage, passez librement du corrigé français au corrigé anglais.',openChapter:'Ouvrir le chapitre',available:'Disponible',later:'À venir',checking:'Vérification…',chapterLabel:'CHAPITRE',notReleased:'Pas encore disponible',notReleasedText:'Ce chapitre sera accessible lorsque votre enseignant l’ouvrira.',returnMenu:'Retour au menu du cours',allChapters:'← Tous les chapitres',chapterWord:'CHAPITRE',resourceStatus:'Ressources',bilingualPack:'Pack bilingue',packNote:'Énoncé visible immédiatement ; corrigé détaillé après le code de séance.',liveAccess:'ACCÈS AUX CORRIGÉS',unlockTitle:'Débloquer les corrigés détaillés',unlockText:'Utilisez le code de séance communiqué par votre enseignant. L’accès reste actif pendant cette session du navigateur.',sessionCode:'Code de séance',unlock:'Débloquer',printable:'RESSOURCES IMPRIMABLES',downloadsTitle:'Télécharger le chapitre',downloadsText:'Les énoncés sont toujours disponibles. Les téléchargements des corrigés apparaissent après déverrouillage.',statements:'Énoncés',solutions:'Corrigés détaillés',statementLabel:'ÉNONCÉ',solutionLabel:'CORRIGÉ DÉTAILLÉ',openPdf:'Ouvrir le PDF',pdfFallback:'Si le PDF ne s’affiche pas sur votre appareil, utilisez le bouton Ouvrir le PDF ou le lien de téléchargement.',locked:'Corrigés verrouillés',open:'Corrigés accessibles',hide:'Masquer les corrigés',hidden:'Les corrigés ont été masqués.',correct:'Code correct — les corrigés détaillés sont maintenant visibles.',incorrect:'Code incorrect. Vérifiez le code communiqué pendant la séance.',statementHeading:'Énoncé en français',solutionHeading:'Corrigé détaillé en français',courseAvailable:(n,t)=>`${n} chapitre${n>1?'s':''} disponible${n>1?'s':''} sur ${t}`,offline:'Accès au cours momentanément indisponible'}
+};
+
+async function getConfig(){const r=await fetch(`config.json?t=${Date.now()}`,{cache:'no-store'});if(!r.ok)throw new Error('config');return r.json();}
+async function sha256(text){const data=new TextEncoder().encode(text);const hash=await crypto.subtle.digest('SHA-256',data);return [...new Uint8Array(hash)].map(b=>b.toString(16).padStart(2,'0')).join('');}
+function getLang(){return localStorage.getItem('qm1-language')==='fr'?'fr':'en';}
+function setLangPref(lang){localStorage.setItem('qm1-language',lang);document.documentElement.lang=lang;document.body.dataset.lang=lang;}
+function translateStatic(lang){const t=I18N[lang];$$('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(t[k]!==undefined && typeof t[k]==='string')el.textContent=t[k];});const sw=$('#languageSwitch');if(sw)sw.textContent=lang==='fr'?'English':'Français';}
+function bindLanguage(handler){const sw=$('#languageSwitch');if(!sw)return;sw.addEventListener('click',()=>{const lang=getLang()==='fr'?'en':'fr';setLangPref(lang);handler(lang);});}
+
+async function initialisePortal(){
+  const apply=lang=>{translateStatic(lang);$$('.chapter-card').forEach(card=>{const i=+card.dataset.chapter;const c=CHAPTERS[i];card.querySelector('h2').textContent=lang==='fr'?c.fr:c.en;card.querySelector('.chapter-copy>p:last-child').textContent=lang==='fr'?c.leadFr:c.leadEn;card.querySelector('.chapter-copy .eyebrow').textContent=`${I18N[lang].chapterLabel} ${i}`;const a=card.querySelector('.chapter-action a');a.textContent=I18N[lang].openChapter;});refreshPortalStatus(lang);};
+  async function refreshPortalStatus(lang){try{const cfg=await getConfig();let open=0;const cards=$$('.chapter-card');cards.forEach(card=>{const cc=cfg.chapters?.[card.dataset.chapter];const yes=Boolean(cc?.open);if(yes)open++;card.classList.toggle('locked',!yes);const av=card.querySelector('.availability');av.textContent=yes?I18N[lang].available:I18N[lang].later;const a=card.querySelector('a');a.setAttribute('aria-disabled',String(!yes));a.tabIndex=yes?0:-1;if(!yes)a.onclick=e=>e.preventDefault();else a.onclick=null;});$('#courseProgress').textContent=I18N[lang].courseAvailable(open,cards.length);$('#courseBar').style.width=`${100*open/cards.length}%`;}catch(e){$('#courseProgress').textContent=I18N[lang].offline;}}
+  const lang=getLang();setLangPref(lang);apply(lang);bindLanguage(apply);
 }
 
-async function sha256(text) {
-  const data = new TextEncoder().encode(text);
-  const hash = await crypto.subtle.digest('SHA-256', data);
-  return [...new Uint8Array(hash)].map(byte => byte.toString(16).padStart(2, '0')).join('');
+async function initialiseChapter(){
+  const chapter=document.body.dataset.chapter;const c=CHAPTERS[chapter];const prefix=`qm1-v3-ch${chapter}`;let cfg=null;let unlocked=sessionStorage.getItem(`${prefix}-unlocked`)==='1';
+  const exPath=lang=>`downloads/chapter-${chapter}-exercises-${lang}.pdf?v=${VERSION}`;const solPath=lang=>`downloads/chapter-${chapter}-solutions-${lang}.pdf?v=${VERSION}`;
+  function setSolutions(open,message=''){unlocked=open;document.body.classList.toggle('solutions-visible',open);$('#statusDot').classList.toggle('open',open);if(open){sessionStorage.setItem(`${prefix}-unlocked`,'1');const lang=getLang();$('#solutionViewer').src=solPath(lang);$('#openSolution').href=solPath(lang);}else{sessionStorage.removeItem(`${prefix}-unlocked`);$('#solutionViewer').src='about:blank';}$('#hideSolutions').hidden=!open;if(message)$('#codeMessage').textContent=message;updateLanguage(getLang());}
+  function updateLanguage(lang){translateStatic(lang);$('#chapterTitle').textContent=lang==='fr'?c.fr:c.en;$('#chapterLead').textContent=lang==='fr'?c.leadFr:c.leadEn;$('#accessCode').placeholder=lang==='fr'?'Saisir le code de la séance':'Enter the session code';$('#statementHeading').textContent=I18N[lang].statementHeading;$('#solutionHeading').textContent=I18N[lang].solutionHeading;$('#exerciseViewer').src=exPath(lang);$('#openExercise').href=exPath(lang);if(unlocked){$('#solutionViewer').src=solPath(lang);$('#openSolution').href=solPath(lang);}$('#statusText').textContent=unlocked?I18N[lang].open:I18N[lang].locked;$('#hideSolutions').textContent=I18N[lang].hide;}
+  async function refresh(){try{const all=await getConfig();cfg=all.chapters?.[chapter];const chapterOpen=Boolean(cfg?.open);$('#chapterGate').hidden=chapterOpen;document.body.classList.toggle('chapter-locked',!chapterOpen);if(!chapterOpen)return;if(cfg.solutionsOpen)setSolutions(true,all.messageWhenOpen||'');else setSolutions(unlocked);}catch(e){$('#statusText').textContent=unlocked?I18N[getLang()].open:'Offline mode';}}
+  $('#codeForm').addEventListener('submit',async e=>{e.preventDefault();const code=$('#accessCode').value.trim();if(!code||!cfg)return;const hash=await sha256(code);if(hash===cfg.codeHash){setSolutions(true,I18N[getLang()].correct);$('#accessCode').value='';}else $('#codeMessage').textContent=I18N[getLang()].incorrect;});
+  $('#hideSolutions').addEventListener('click',()=>setSolutions(false,I18N[getLang()].hidden));
+  const lang=getLang();setLangPref(lang);updateLanguage(lang);bindLanguage(updateLanguage);await refresh();setInterval(refresh,15000);
 }
 
-async function initialisePortal() {
-  try {
-    const config = await getConfig();
-    let openCount = 0;
-    $$('.chapter-card').forEach(card => {
-      const chapter = card.dataset.chapter;
-      const chapterConfig = config.chapters?.[chapter];
-      const isOpen = Boolean(chapterConfig?.open);
-      if (isOpen) openCount += 1;
-      card.classList.toggle('locked', !isOpen);
-      card.querySelector('.availability').textContent = isOpen ? 'Available now' : 'Coming later';
-      const link = card.querySelector('a');
-      link.setAttribute('aria-disabled', String(!isOpen));
-      link.tabIndex = isOpen ? 0 : -1;
-      if (!isOpen) link.addEventListener('click', event => event.preventDefault());
-    });
-    $('#courseProgress').textContent = `${openCount} of 6 chapters available`;
-    $('#courseBar').style.width = `${100 * openCount / 6}%`;
-  } catch (error) {
-    $('#courseProgress').textContent = 'Course access currently unavailable';
-  }
-}
-
-async function initialiseChapter() {
-  const chapter = document.body.dataset.chapter;
-  const storagePrefix = `qm1-v2-ch${chapter}`;
-  let chapterConfig = null;
-  let unlocked = sessionStorage.getItem(`${storagePrefix}-unlocked`) === '1';
-  const hideSolutionsButton = document.createElement('button');
-  hideSolutionsButton.type = 'button';
-  hideSolutionsButton.className = 'hide-solutions-button';
-  hideSolutionsButton.hidden = true;
-  $('#codeForm').appendChild(hideSolutionsButton);
-
-  const downloadCard = document.createElement('section');
-  downloadCard.className = 'download-card';
-  downloadCard.innerHTML = `
-    <div>
-      <p class="eyebrow">PRINTABLE RESOURCES · RESSOURCES IMPRIMABLES</p>
-      <h2>Exercise series in PDF · Séries d’exercices en PDF</h2>
-      <p>Download the spacious student version. Detailed solutions become available after the session code is unlocked.</p>
-    </div>
-    <div class="download-groups">
-      <div class="download-group">
-        <strong>Student series · Sujets</strong>
-        <div class="download-links">
-          <a href="downloads/chapter-${chapter}-exercises-en.pdf" download>English</a>
-          <a href="downloads/chapter-${chapter}-exercises-fr.pdf" download>Français</a>
-        </div>
-      </div>
-      <div class="solution download-solutions">
-        <strong>Detailed solutions · Corrigés détaillés</strong>
-        <div class="download-links">
-          <a href="downloads/chapter-${chapter}-solutions-en.pdf" download>English</a>
-          <a href="downloads/chapter-${chapter}-solutions-fr.pdf" download>Français</a>
-        </div>
-      </div>
-    </div>`;
-  document.querySelector('.access-card').after(downloadCard);
-
-  function setSolutions(open, message = '') {
-    unlocked = open;
-    document.body.classList.toggle('solutions-visible', open);
-    $('#statusDot').classList.toggle('open', open);
-    const fr = document.body.dataset.lang === 'fr';
-    $('#statusText').textContent = open ? (fr ? 'Corrigés accessibles' : 'Solutions available') : (fr ? 'Corrigés verrouillés' : 'Solutions locked');
-    hideSolutionsButton.textContent = fr ? 'Masquer les corrigés' : 'Hide solutions';
-    hideSolutionsButton.hidden = !open;
-    if (message) $('#codeMessage').textContent = message;
-    if (open) sessionStorage.setItem(`${storagePrefix}-unlocked`, '1');
-    else sessionStorage.removeItem(`${storagePrefix}-unlocked`);
-  }
-
-  hideSolutionsButton.addEventListener('click', () => {
-    const fr = document.body.dataset.lang === 'fr';
-    setSolutions(false, fr ? 'Les corrigés ont été masqués.' : 'The solutions have been hidden.');
-  });
-
-  async function refreshAccess() {
-    try {
-      const config = await getConfig();
-      chapterConfig = config.chapters?.[chapter];
-      const chapterOpen = Boolean(chapterConfig?.open);
-      $('#chapterGate').hidden = chapterOpen;
-      document.body.classList.toggle('chapter-locked', !chapterOpen);
-      if (!chapterOpen) return;
-      if (chapterConfig.solutionsOpen) setSolutions(true, config.messageWhenOpen);
-      else setSolutions(unlocked);
-    } catch (error) {
-      $('#statusText').textContent = unlocked ? 'Solutions available' : 'Offline mode';
-    }
-  }
-
-  $('#codeForm').addEventListener('submit', async event => {
-    event.preventDefault();
-    const code = $('#accessCode').value.trim();
-    if (!code || !chapterConfig) return;
-    const hash = await sha256(code);
-    if (hash === chapterConfig.codeHash) {
-      setSolutions(true, document.body.dataset.lang === 'fr' ? 'Code correct — les corrigés détaillés sont maintenant visibles.' : 'Correct code — detailed solutions are now visible.');
-      $('#accessCode').value = '';
-    } else {
-      $('#codeMessage').textContent = document.body.dataset.lang === 'fr' ? 'Code incorrect. Vérifiez le code communiqué pendant la séance.' : 'Incorrect code. Check the code provided during the session.';
-    }
-  });
-
-  $$('.hint-button').forEach(button => button.addEventListener('click', () => {
-    const hint = button.nextElementSibling;
-    hint.classList.toggle('visible');
-    const fr = document.body.dataset.lang === 'fr';
-    button.textContent = hint.classList.contains('visible') ? (fr ? 'Masquer l’aide méthodologique' : 'Hide method prompt') : (fr ? 'Afficher l’aide méthodologique' : 'Show method prompt');
-  }));
-
-  const checks = $$('.done input');
-  function updateProgress() {
-    const completed = checks.filter(check => check.checked).length;
-    $('#progressText').textContent = `${completed} / ${checks.length} completed`;
-    $('#progressBar').style.width = `${100 * completed / checks.length}%`;
-    localStorage.setItem(`${storagePrefix}-progress`, JSON.stringify(checks.map(check => check.checked)));
-  }
-  const saved = JSON.parse(localStorage.getItem(`${storagePrefix}-progress`) || '[]');
-  checks.forEach((check, index) => {
-    check.checked = Boolean(saved[index]);
-    check.addEventListener('change', updateProgress);
-  });
-  updateProgress();
-  initialiseLanguage(chapter);
-  await refreshAccess();
-  setInterval(refreshAccess, 15000);
-}
-
-function initialiseLanguage(chapter) {
-  const translation = window.QM1_FR || window.QM1_FR_ALL?.[chapter];
-  if (!translation) return;
-  const status = document.querySelector('.status');
-  const switcher = document.createElement('button');
-  switcher.className = 'language-switch';
-  switcher.type = 'button';
-  status.parentElement.insertBefore(switcher, status);
-  const originals = new Map();
-  const remember = element => { if (element && !originals.has(element)) originals.set(element, element.innerHTML); };
-  Object.keys(translation.page).forEach(key => {
-    const selector = key.replace('@placeholder', '');
-    remember(document.querySelector(selector));
-  });
-  $$('.levels a').forEach(remember);
-  $$('.exercise').forEach(article => {
-    ['.level','h2','.question','.hint','.solution'].forEach(selector => remember(article.querySelector(selector)));
-  });
-  $$('.done').forEach(label => label.dataset.en = 'Completed');
-
-  function apply(lang) {
-    document.documentElement.lang = lang;
-    document.body.dataset.lang = lang;
-    if (lang === 'fr') {
-      for (const [key, value] of Object.entries(translation.page)) {
-        const isPlaceholder = key.endsWith('@placeholder');
-        const element = document.querySelector(key.replace('@placeholder', ''));
-        if (isPlaceholder) element.placeholder = value; else element.innerHTML = value;
-      }
-      $$('.levels a').forEach((link, index) => link.textContent = translation.nav[index]);
-      $$('.exercise').forEach(article => {
-        const tr = translation.exercises[article.dataset.ex];
-        article.querySelector('.level').textContent = tr.level;
-        article.querySelector('h2').textContent = tr.title;
-        article.querySelector('.question').innerHTML = tr.question;
-        article.querySelector('.hint').textContent = tr.hint;
-        article.querySelector('.solution').innerHTML = tr.solution;
-      });
-      $$('.done').forEach(label => { label.lastChild.textContent = ' Terminé'; });
-      $$('.hint-button').forEach(button => { button.textContent = button.nextElementSibling.classList.contains('visible') ? 'Masquer l’aide méthodologique' : 'Afficher l’aide méthodologique'; });
-      switcher.textContent = 'English';
-    } else {
-      for (const [element, content] of originals.entries()) element.innerHTML = content;
-      document.querySelector('#accessCode').placeholder = 'Enter the session code';
-      $$('.done').forEach(label => { label.lastChild.textContent = ' Completed'; });
-      $$('.hint-button').forEach(button => { button.textContent = button.nextElementSibling.classList.contains('visible') ? 'Hide method prompt' : 'Show method prompt'; });
-      switcher.textContent = 'Français';
-    }
-    const completed = $$('.done input').filter(check => check.checked).length;
-    const total = $$('.done input').length;
-    $('#progressText').textContent = lang === 'fr' ? `${completed} / ${total} terminés` : `${completed} / ${total} completed`;
-    const open = document.body.classList.contains('solutions-visible');
-    $('#statusText').textContent = open ? (lang === 'fr' ? 'Corrigés accessibles' : 'Solutions available') : (lang === 'fr' ? 'Corrigés verrouillés' : 'Solutions locked');
-    const hideSolutionsButton = document.querySelector('.hide-solutions-button');
-    if (hideSolutionsButton) hideSolutionsButton.textContent = lang === 'fr' ? 'Masquer les corrigés' : 'Hide solutions';
-    localStorage.setItem('qm1-language', lang);
-  }
-  switcher.addEventListener('click', () => apply(document.body.dataset.lang === 'fr' ? 'en' : 'fr'));
-  apply(localStorage.getItem('qm1-language') === 'fr' ? 'fr' : 'en');
-}
-
-if (page === 'portal') initialisePortal();
-if (page === 'chapter') initialiseChapter();
+if(page==='portal')initialisePortal();
+if(page==='chapter')initialiseChapter();
