@@ -36,7 +36,7 @@ body{margin:0}
 .qm1-print-actions,.qm1-locked-note,.qm1-solution-toggle,.qm1-hint summary,.qm1-supplement-intro{display:none!important}
 .qm1-worksheet-intro{margin-bottom:7mm}
 .qm1-worksheet-intro h2{font-size:13pt}
-.qm1-stage{break-before:page}
+.qm1-stage{break-before:auto;margin-top:9mm}
 .qm1-stage-heading{border-bottom:1px solid #9faab5;margin:0 0 5mm}
 .qm1-stage-heading h2{font-size:14pt;margin:0 0 2mm}
 .qm1-stage-heading p{font-size:9pt;margin:0 0 3mm}
@@ -96,6 +96,7 @@ with sync_playwright() as p:
                     const title=lang==='fr'?'Fiche '+ch:'Worksheet '+ch;
                     const cover='<header class="pdf-cover"><div class="eyebrow">KEDGE BUSINESS SCHOOL · QM1 · 2026–2027</div><h1>'+title+'</h1><h2>'+titles+'</h2><div class="part">'+part+'</div><div class="author">Badr ABOUFARASSE, PhD</div></header>';
                     document.body.innerHTML=cover+'<main id="pdf-main">'+result+'</main>';
+                    for(const oldIntro of document.querySelectorAll('.qm1-worksheet-intro'))oldIntro.remove();
                     for(const hint of document.querySelectorAll('details'))hint.open=true;
                     for(const btn of document.querySelectorAll('.qm1-print-actions,.qm1-locked-note,.qm1-solution-toggle'))btn.remove();
                     if(kind==='exercises')for(const answer of document.querySelectorAll('.qm1-exercise-solution'))answer.remove();
