@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "latex_sources/**"
+      - "downloads/QM1_2026_LaTeX_sources.zip"
       - ".github/workflows/build-pdfs.yml"
   workflow_dispatch:
 
@@ -17,21 +17,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Extract LaTeX sources
+
+      - name: Extract revised LaTeX sources
         run: |
           python - <<'PY2'
-          import json, pathlib
+          import zipfile, pathlib
+          archive = pathlib.Path('downloads/QM1_2026_LaTeX_sources.zip')
           out = pathlib.Path('buildtex')
           out.mkdir(exist_ok=True)
-          files = {}
-          for path in sorted(pathlib.Path('latex_sources').glob('chapter-*.json')):
-              data = json.loads(path.read_text(encoding='utf-8'))
-              files.update(data['files'])
-          if len(files) != 28:
-              raise SystemExit(f'Expected 28 LaTeX sources, found {len(files)}')
-          for name, content in files.items():
-              (out / name).write_text(content, encoding='utf-8')
-          print(f'Extracted {len(files)} LaTeX files')
+          with zipfile.ZipFile(archive) as z:
+              for chapter in range(1, 8):
+                  for lang in ('fr', 'en'):
+                      for kind in ('exercises', 'solutions'):
+                          if lang == 'fr':
+                              name = f'QM1_Fiche_{chapter}_' + ('Enonce_FR.tex' if kind == 'exercises' else 'Corrige_Detaille_FR.tex')
+                          else:
+                              name = f'QM1_Worksheet_{chapter}_' + ('Exercises_EN.tex' if kind == 'exercises' else 'Detailed_Solutions_EN.tex')
+                          destination = out / f'chapter-{chapter}-{kind}-{lang}.tex'
+                          destination.write_bytes(z.read(name))
+          assert len(list(out.glob('*.tex'))) == 28
           PY2
       - name: Compile PDFs
         uses: xu-cheng/latex-action@v3
