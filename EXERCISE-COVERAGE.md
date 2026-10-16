@@ -1,36 +1,33 @@
-# Exercise coverage
+# QM1 Practice Lab — exercise coverage (2026–2027)
 
-Chapter 1 now contains ten progressive exercises in English and French. Detailed solutions remain protected by the existing session code.
+The revised seven-worksheet series is the primary content served on each chapter page. All statements and detailed solutions are bilingual and appear on-page. The associated PDFs match the revised worksheets.
 
-| Stage | Exercises | Essential learning outcomes |
-|---|---:|---|
-| Recognition | 1 | Population, statistical unit, variables and measurement scales |
-| Sampling reasoning | 2 | Target population, sample, representativeness and selection bias |
-| Guided calculation | 3 | Counts, relative frequencies and cumulative frequencies |
-| Graphical construction | 4 | Unequal class widths, histogram density and modal class |
-| Critical interpretation | 5 | Truncated axes, misleading claims and limits of inference |
-| Representation choice | 6 | Bar chart, ordered bars, histogram, boxplot and time-series graph |
-| Multivariate description | 7 | Two-way table, conditional percentages and descriptive association |
-| Integrated professional task | 8 | Data dictionary, missing values, duplicates, consistency and reproducibility |
-| Continuous-assessment case | 9 | Grouped continuous data, unequal class widths, densities, ECC/ECD and a percentile-based pricing decision |
-| Exam-style synthesis | 10 | Ordinal data, comparative graph choice, conditional summaries, critical reasoning and a written conclusion |
+| Chapter | Revised exercises/cases | Curated supplements | Total visible |
+|---|---:|---:|---:|
+| 1 — Data presentation | 3 | 4 | 7 |
+| 2 — Central tendency | 3 | 2 | 5 |
+| 3 — Dispersion and concentration | 3 | 2 | 5 |
+| 4 — Bivariate distributions and regression | 4 | 1 | 5 |
+| 5 — Time series | 4 | 1 | 5 |
+| 6 — Index numbers | 3 | 2 | 5 |
+| 7 — Integrated cases | 2 | 0 | 2 |
+| **Total** | **22** | **12** | **34** |
 
-The sequence moves from vocabulary and recognition to calculation, interpretation, method selection and two assessment-style practice cases.
+## Supplement selection
 
-## Chapters 2–6
+- **Chapter 1:** cross-tabulation and conditional percentages; data quality protocol; continuous-assessment willingness-to-pay case; exam-style customer-satisfaction synthesis.
+- **Chapter 2:** robust centre for delivery performance; integrated selection of arithmetic, geometric and harmonic means.
+- **Chapter 3:** variance from a frequency table; comparison of concentration and robustness.
+- **Chapter 4:** regression diagnostics, residual pattern, influential observation and extrapolation.
+- **Chapter 5:** forecast validation, MAE and structural break.
+- **Chapter 6:** complete price–quantity decomposition; rebasing, inflation and real performance.
 
-| Chapter | Exercises | Main coverage |
-|---|---:|---|
-| 2 — Central tendency | 7 | Mean, weighted mean, median, mode, grouped data, robustness and method selection |
-| 3 — Dispersion and concentration | 7 | Range, variance, standard deviation, coefficient of variation, quartiles, Lorenz/Gini and comparison |
-| 4 — Bivariate distributions | 7 | Scatterplots, covariance, correlation, least-squares regression, diagnosis and responsible interpretation |
-| 5 — Time series | 7 | Chronological graphs, growth rates, moving averages, trend, seasonality, forecasts and structural breaks |
-| 6 — Index numbers | 7 | Simple and composite indices, Laspeyres, Paasche, Fisher, value decomposition, rebasing and real change |
+The duplicate introductory chart-choice exercise (Chapter 1), regression computation (Chapter 4) and centred moving average (Chapter 5) are retained in the source data but not repeated on-page.
 
-Every chapter is available in English and French. Each chapter also has separate printable student and detailed-solution PDFs in both languages.
+## Pedagogical checks
 
-## Alignment with the supplied assessments
-
-- Exercise 9 follows the structure of the 2024 continuous assessment: a business case, a grouped distribution, graphical representation, two cumulative curves and a decision stated in context. The dataset and context are new.
-- Exercise 10 follows the assessment convention used across the supplied papers: a contextualised table, justified method selection, calculations and a concise managerial interpretation. It remains an ungraded practice exercise and displays no marks.
-- Correlation/regression, index numbers and time-series forecasting from the FERSET paper are reserved for the later chapters where those methods are taught.
+- Chapter 3 revised material excludes the legacy *médiale* exercise.
+- Chapter 4 uses the course convention `ŷ = ax + b`, with `a` the slope.
+- The Chapter 2 supplementary growth-factor product was corrected to `1.244208` (equivalent annual growth ≈ 5.61%).
+- Solutions continue to be hidden until the existing session-code workflow is unlocked.
+- 28 matching printable PDFs: 7 chapters × 2 languages × statements/solutions.
