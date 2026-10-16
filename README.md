@@ -39,3 +39,9 @@ Publish from the repository root on the `main` branch using **Settings → Pages
 ## Exercise-by-exercise solution layout (17 October 2026)
 
 The session-code card is now displayed **before** the exercises. Each of the 34 exercise statements is followed immediately by its own detailed solution, which stays hidden until the session code is accepted. This pairing works in both languages, including the three subsections of integrated Case B. PDF downloads and the existing session-code hashes are unchanged.
+
+## Révision pédagogique — octobre 2026
+
+La version en ligne propose **38 exercices et cas bilingues**, classés en **applications fondamentales**, **préparation CC/partiel** et **approfondissement**. Chaque corrigé est placé directement après son énoncé et peut être masqué individuellement après déverrouillage. Les exercices de régression, séries temporelles et indices ont été complétés, avec de nouveaux tableaux et graphiques. **Les anciens PDF du dossier downloads/ ne contiennent pas tous les ajouts** ; utiliser « Imprimer la fiche à jour » pour exporter la version actuelle.
+
+Voir [le rapport de révision](PEDAGOGICAL-REVISION-2026.md).
