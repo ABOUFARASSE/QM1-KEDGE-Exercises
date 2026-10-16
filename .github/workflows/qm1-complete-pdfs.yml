@@ -7,6 +7,7 @@ on:
       - qm1-complete-pdfs-20261017
     paths:
       - 'scripts/build_complete_pdfs.py'
+      - 'scripts/audit_numeric.py'
       - 'revised-worksheets-2026.json'
       - 'exercise-data-export.json'
       - 'pedagogy-upgrade-2026.json'
@@ -33,6 +34,8 @@ jobs:
           python -m pip install --disable-pip-version-check playwright==1.55.0 pymupdf==1.26.5
           npm install --no-save mathjax-full@3.2.2
           python -m playwright install --with-deps chromium
+      - name: Independently verify worked-example arithmetic
+        run: python scripts/audit_numeric.py
       - name: Generate and verify 28 bilingual PDFs
         run: python scripts/build_complete_pdfs.py
       - name: Publish validated PDFs on main
