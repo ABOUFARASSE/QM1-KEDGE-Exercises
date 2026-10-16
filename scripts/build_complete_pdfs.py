@@ -104,7 +104,7 @@ with sync_playwright() as p:
                     const keys=pairs.map(x=>x.dataset.exercise);
                     const solutions=pairs.map(x=>x.querySelector('.qm1-exercise-solution')?.textContent.trim().length||0);
                     return {keys,solutions,charts:document.querySelectorAll('figure svg').length,
-                      unresolved:document.querySelectorAll('figure.qm1-chart[data-graph]').length,
+                      unresolved:[...document.querySelectorAll('figure.qm1-chart[data-graph]')].filter(x=>!x.querySelector('svg')).length,
                       title:document.querySelector('h1').textContent};
                 }""",{'ch':ch,'lang':lang,'kind':kind,'base':BASE[ch][lang],'extras':EXTRAS,'upgrade':UPGRADE,'titles':TITLES[ch][0 if lang=='fr' else 1]})
                 expected=set(UPGRADE['metadata'][ch])
