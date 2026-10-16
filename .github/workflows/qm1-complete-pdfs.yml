@@ -50,3 +50,12 @@ jobs:
         with:
           name: qm1-pdf-audit
           path: downloads/QM1_PDF_manifest_2026.json
+
+      - name: Preserve complete PDFs for independent visual review
+        uses: actions/upload-artifact@v4
+        with:
+          name: qm1-complete-pdfs-preview
+          path: |
+            downloads/chapter-*-exercises-*.pdf
+            downloads/chapter-*-solutions-*.pdf
+            downloads/QM1_2026-2027_28_PDF_FR_EN.zip
