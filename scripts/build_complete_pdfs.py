@@ -42,9 +42,10 @@ body{margin:0}
 .qm1-stage-heading p{font-size:9pt;margin:0 0 3mm}
 .qm1-exercise-pair{margin:5mm 0 9mm;break-inside:auto}
 .qm1-exercise-meta{font:8pt "Liberation Sans",sans-serif;color:#46586b;margin:0 0 2mm}
+.qm1-duration{margin-left:5mm}
 .exercise-block{margin:0 0 4mm}
 .qm1-exercise-solution{display:block!important;visibility:visible!important;border-top:1px solid #9faab5;padding-top:4mm;margin-top:3mm}
-.qm1-exercise-solution:before{content:"CORRIGÉ DÉTAILLÉ";display:block;font:700 8pt "Liberation Sans",sans-serif;letter-spacing:.5px;margin:0 0 3mm;color:#36506a}
+.qm1-exercise-solution:before{display:none!important}
 html[lang=en] .qm1-exercise-solution:before{content:"FULLY WORKED SOLUTION"}
 h2,h3,h4{break-after:avoid}
 h3{font-size:12pt;margin:4mm 0 2mm}
