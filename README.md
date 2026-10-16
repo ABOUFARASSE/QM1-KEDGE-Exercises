@@ -35,3 +35,7 @@ This is a static GitHub Pages website. The existing code-based hiding mechanism 
 Publish from the repository root on the `main` branch using **Settings → Pages → Deploy from a branch**.
 
 © 2026 Badr ABOUFARASSE, PhD. — KEDGE Business School.
+
+## Exercise-by-exercise solution layout (17 October 2026)
+
+The session-code card is now displayed **before** the exercises. Each of the 34 exercise statements is followed immediately by its own detailed solution, which stays hidden until the session code is accepted. This pairing works in both languages, including the three subsections of integrated Case B. PDF downloads and the existing session-code hashes are unchanged.
