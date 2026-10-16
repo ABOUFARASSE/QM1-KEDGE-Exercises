@@ -61,3 +61,26 @@
 .qm1-exercise-pair h4{font-size:1.05rem;margin:24px 0 10px}
 .qm1-exercise-pair .qm1-calculation-table{font-size:.87rem}
 @media(max-width:640px){.qm1-chart{overflow-x:auto}.qm1-exercise-meta{gap:6px}.qm1-level{font-size:.74rem}}
+
+/* Three progressive stages and updated print-to-PDF workflow. */
+.qm1-stage{margin:20px 0 36px}
+.qm1-stage-heading{margin:24px 0 16px;padding:16px 18px;border:1px solid #dfe6eb;border-left:4px solid #6b8195;border-radius:10px;background:#f7f9fb}
+.qm1-stage-heading h2{font-size:1.18rem;line-height:1.35;margin:0 0 5px}
+.qm1-stage-heading p{font-size:.91rem;color:#526173;margin:0}
+.qm1-print-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin:16px 0 22px}
+.qm1-print-actions p{flex:1 1 320px;margin:0;font-size:.84rem;color:var(--muted)}
+.qm1-print-btn{cursor:pointer;border:1px solid #cbd6e1;border-radius:8px;background:#f4f7fa;color:#23425d;font:inherit;font-weight:700;padding:10px 15px}
+.qm1-print-btn:hover,.qm1-solution-toggle:hover{filter:brightness(.96)}
+@media print{
+ @page{size:A4;margin:13mm}
+ html,body{background:white!important;color:black!important;font-size:10pt}
+ .topbar,.back-link,.hero,.access-card,.download-card,.chapter-gate,footer,.qm1-print-actions,.qm1-solution-toggle,.qm1-locked-note{display:none!important}
+ main{display:block!important;width:100%!important;max-width:none!important;margin:0!important;padding:0!important;visibility:visible!important}
+ .qm1-stage-heading{break-after:avoid;page-break-after:avoid;background:white!important}
+ .qm1-exercise-pair{box-shadow:none!important;border:1px solid #ddd!important;break-inside:avoid-page;page-break-inside:avoid;padding:10px!important}
+ .qm1-exercise-pair>.qm1-exercise-solution{background:white!important;border-color:#aaa!important}
+ .qm1-chart{break-inside:avoid;page-break-inside:avoid;max-width:100%;border:0}
+ .qm1-chart svg{min-width:0}
+ .qm1-calculation-table th,.qm1-calculation-table td{padding:3px 5px!important}
+ .qm1-exercise-pair.qm1-solution-collapsed .qm1-exercise-solution{display:none!important}
+}
