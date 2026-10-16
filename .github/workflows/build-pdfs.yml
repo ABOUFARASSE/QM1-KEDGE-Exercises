@@ -1,0 +1,82 @@
+name: Build QM1 PDFs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "latex_sources/**"
+      - ".github/workflows/build-pdfs.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Extract LaTeX sources
+        run: |
+          python - <<'PY2'
+          import json, pathlib
+          out = pathlib.Path('buildtex')
+          out.mkdir(exist_ok=True)
+          files = {}
+          for path in sorted(pathlib.Path('latex_sources').glob('chapter-*.json')):
+              data = json.loads(path.read_text(encoding='utf-8'))
+              files.update(data['files'])
+          if len(files) != 28:
+              raise SystemExit(f'Expected 28 LaTeX sources, found {len(files)}')
+          for name, content in files.items():
+              (out / name).write_text(content, encoding='utf-8')
+          print(f'Extracted {len(files)} LaTeX files')
+          PY2
+      - name: Compile PDFs
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: |
+            chapter-1-exercises-fr.tex
+            chapter-1-solutions-fr.tex
+            chapter-1-exercises-en.tex
+            chapter-1-solutions-en.tex
+            chapter-2-exercises-fr.tex
+            chapter-2-solutions-fr.tex
+            chapter-2-exercises-en.tex
+            chapter-2-solutions-en.tex
+            chapter-3-exercises-fr.tex
+            chapter-3-solutions-fr.tex
+            chapter-3-exercises-en.tex
+            chapter-3-solutions-en.tex
+            chapter-4-exercises-fr.tex
+            chapter-4-solutions-fr.tex
+            chapter-4-exercises-en.tex
+            chapter-4-solutions-en.tex
+            chapter-5-exercises-fr.tex
+            chapter-5-solutions-fr.tex
+            chapter-5-exercises-en.tex
+            chapter-5-solutions-en.tex
+            chapter-6-exercises-fr.tex
+            chapter-6-solutions-fr.tex
+            chapter-6-exercises-en.tex
+            chapter-6-solutions-en.tex
+            chapter-7-exercises-fr.tex
+            chapter-7-solutions-fr.tex
+            chapter-7-exercises-en.tex
+            chapter-7-solutions-en.tex
+          working_directory: buildtex
+          work_in_root_file_dir: true
+      - name: Verify build
+        run: |
+          count=$(find buildtex -maxdepth 1 -name '*.pdf' | wc -l)
+          test "$count" -eq 28 || { echo "Expected 28 PDFs, found $count"; exit 1; }
+      - name: Publish PDFs
+        run: |
+          mkdir -p downloads
+          cp buildtex/*.pdf downloads/
+      - name: Commit generated PDFs
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Build aligned QM1 exercise PDFs"
+          file_pattern: "downloads/*.pdf"
