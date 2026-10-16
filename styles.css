@@ -26,3 +26,19 @@
 .qm1-hint summary{cursor:pointer;font-weight:650}
 .qm1-hint p{margin-bottom:0}
 @media(max-width:700px){.revised-card .data-table,.supplementary-card table{font-size:.78rem}.revised-card .data-table th,.revised-card .data-table td,.supplementary-card th,.supplementary-card td{padding:6px 8px}}
+
+
+/* Exercise-by-exercise solutions: visible directly beneath the matching statement after session unlock. */
+.qm1-worksheet-intro{margin-bottom:10px}
+.qm1-worksheet-intro .worksheet-part{margin-bottom:0}
+.qm1-exercise-pair{margin-top:16px;margin-bottom:16px}
+.qm1-exercise-pair>.exercise-block{border-top:0;padding-top:0}
+.qm1-exercise-pair .worksheet-exercise-title{margin-top:0}
+.qm1-exercise-pair>.qm1-exercise-solution{margin-top:22px;padding:20px 22px;border:1px solid #cde2d5;border-left:4px solid var(--green);border-radius:12px;background:#f7fbf8}
+.qm1-exercise-pair>.qm1-exercise-solution.solution-block{border-top:1px solid #cde2d5}
+.qm1-exercise-pair>.qm1-exercise-solution>.solution-block{border-top:0;padding:0}
+.qm1-exercise-pair>.qm1-exercise-solution h3:first-child{margin-top:0}
+.qm1-locked-note{margin:16px 0 0;padding:12px 16px;border:1px dashed #c7ccd5;border-radius:10px;background:#f7f8fa;color:var(--muted);font-size:14px}
+.solutions-visible .qm1-locked-note{display:none}
+.qm1-supplement-intro{margin-top:32px}
+@media(max-width:800px){.qm1-exercise-pair>.qm1-exercise-solution{padding:16px 14px}}
