@@ -115,7 +115,7 @@ function renderPairedWorksheet(chapter,lang,statement,solution,extras,upgrade){
   qRoot.innerHTML=statement;aRoot.innerHTML=solution;
   const qBlocks=[...qRoot.querySelectorAll('.exercise-block')],aBlocks=[...aRoot.querySelectorAll('.solution-block')];
   if(qBlocks.length&&qBlocks.length===aBlocks.length){
-   html=qBlocks.map((block,i)=>'<article class="integrated-card qm1-exercise-pair">'+block.outerHTML+note+'<div class="solution-only qm1-exercise-solution">'+aBlocks[i].outerHTML+(ov.extraSolutionAppend?.['X'+(i+1)]||'')+'</div></article>').join('');
+   html=qBlocks.map((block,i)=>'<article class="integrated-card qm1-exercise-pair">'+block.outerHTML+note+'<div class="solution-only qm1-exercise-solution">'+aBlocks[i].outerHTML+'</div></article>').join('');
   }else html=statement+'<section class="solution-only">'+solution+'</section>';
  }
  const extrasQ=supplementHtml(chapter,lang,'statement',extras);
@@ -126,7 +126,7 @@ function renderPairedWorksheet(chapter,lang,statement,solution,extras,upgrade){
   const qBlocks=[...qRoot.querySelectorAll('.exercise-block')],aBlocks=[...aRoot.querySelectorAll('.solution-block')];
   if(qBlocks.length===aBlocks.length){
    html+='<article class="integrated-card supplementary-card qm1-supplement-intro"><p class="eyebrow">'+(fr?'ENTRAÎNEMENT APPROFONDI':'ADVANCED PRACTICE')+'</p><h2>'+(fr?'Exercices complémentaires':'Additional practice')+'</h2></article>';
-   html+=qBlocks.map((block,i)=>'<article class="integrated-card supplementary-card qm1-exercise-pair" data-exercise="X'+(i+1)+'">'+meta('X'+(i+1))+block.outerHTML+note+toggle+'<div class="solution-only qm1-exercise-solution">'+aBlocks[i].outerHTML+'</div></article>').join('');
+   html+=qBlocks.map((block,i)=>'<article class="integrated-card supplementary-card qm1-exercise-pair" data-exercise="X'+(i+1)+'">'+meta('X'+(i+1))+block.outerHTML+note+toggle+'<div class="solution-only qm1-exercise-solution">'+aBlocks[i].outerHTML+(ov.extraSolutionAppend?.['X'+(i+1)]||'')+'</div></article>').join('');
   }else console.warn('QM1: supplementary pairing mismatch',chapter,lang,qBlocks.length,aBlocks.length);
  }
  if(q&&a&&upgrade?.metadata?.[chapter]){
