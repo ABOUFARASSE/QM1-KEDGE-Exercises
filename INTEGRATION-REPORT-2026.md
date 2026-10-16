@@ -39,3 +39,7 @@
 ## Limitations and follow-up
 
 The session-code workflow hides solutions in the user interface, but a public static website cannot make browser-delivered solution data secret. A server-side access check would be required for strict confidentiality. Browser-level checks after GitHub Pages deployment are still recommended, especially on mobile.
+
+## Follow-up correction — 17 October 2026: solution positioning
+
+After reviewing user feedback, fixed the page structure that previously displayed all exercise statements first and all solutions afterwards. The new renderer matches each revised exercise to its solution by exercise number or integrated case letter and places the protected solution immediately beneath its statement. The 12 supplementary exercises are paired in their existing order. Moved the session-code card above the exercise list. No exercise text, numerical result, session code or PDF was modified in this layout-only correction. Static pairing check: 34/34 exercises have matching FR and EN solution content. Browser-level verification remains recommended.
