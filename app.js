@@ -115,7 +115,7 @@ function renderPairedWorksheet(chapter,lang,statement,solution,extras,upgrade){
   qRoot.innerHTML=statement;aRoot.innerHTML=solution;
   const qBlocks=[...qRoot.querySelectorAll('.exercise-block')],aBlocks=[...aRoot.querySelectorAll('.solution-block')];
   if(qBlocks.length&&qBlocks.length===aBlocks.length){
-   html=qBlocks.map((block,i)=>'<article class="integrated-card qm1-exercise-pair">'+block.outerHTML+note+'<div class="solution-only qm1-exercise-solution">'+aBlocks[i].outerHTML+'</div></article>').join('');
+   html=qBlocks.map((block,i)=>'<article class="integrated-card qm1-exercise-pair">'+block.outerHTML+note+'<div class="solution-only qm1-exercise-solution">'+aBlocks[i].outerHTML+(ov.extraSolutionAppend?.['X'+(i+1)]||'')+'</div></article>').join('');
   }else html=statement+'<section class="solution-only">'+solution+'</section>';
  }
  const extrasQ=supplementHtml(chapter,lang,'statement',extras);
