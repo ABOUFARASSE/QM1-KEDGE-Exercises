@@ -33,3 +33,12 @@ Chaque exercice affiche sa catégorie et une durée indicative. Après déverrou
 Les liens `downloads/chapter-*-*.pdf` restent les **PDF des fiches initiales**, non régénérés dans cette révision. La **version en ligne fait foi** pour les ajouts et corrections. Utiliser le bouton « Imprimer la fiche à jour » pour obtenir la version actualisée. Les anciens PDF sont explicitement identifiés comme tels dans l'interface.
 
 La vérification syntaxique et structurelle ne remplace pas une recette complète sur navigateur après publication GitHub Pages. Vérifier l'affichage, le code de séance, le changement FR/EN et l'impression sur la page publiée.
+
+
+## Mise à jour des PDF téléchargeables — octobre 2026
+
+Les 28 PDF (7 chapitres × 2 langues × énoncés/corrigés) sont reconstruits à partir des mêmes données et du même moteur de rendu que l'application. Les 38 exercices et cas sont tous présents dans les énoncés et les corrigés, avec des solutions autonomes accompagnées de leur énoncé.
+
+Des tableaux supplémentaires explicitent les cumuls et fréquences (chapitre 1), les interpolations (chapitre 2), les écarts et produits pondérés (chapitre 3), la droite de Mayer et la double prévision (chapitre 4), les moyennes mobiles (chapitre 5) et les indices prix–quantités et chaînés (chapitre 6).
+
+La génération automatisée (scripts/build_complete_pdfs.py et .github/workflows/qm1-complete-pdfs.yml) vérifie les appariements, les formules MathJax, les graphiques, la lisibilité des PDF, le nombre de pages et les empreintes SHA-256. Le ZIP complet et le manifeste de contrôle sont disponibles dans downloads/.

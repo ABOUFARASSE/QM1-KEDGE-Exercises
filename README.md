@@ -1,47 +1,47 @@
 # QM1 Practice Lab — KEDGE Business School
 
-Bilingual Quantitative Methods 1 practice platform for EBP1.
+Bilingual Quantitative Methods 1 practice platform for EBP1, maintained by Badr ABOUFARASSE, PhD.
 
-## Published exercises (2026–2027)
+## Published materials (2026–2027)
 
-The **seven revised worksheets** are the primary on-page exercises. They contain **22 exercises/cases**: 3 in Chapter 1, 3 in Chapter 2, 3 in Chapter 3, 4 in Chapter 4, 4 in Chapter 5, 3 in Chapter 6 and 2 integrated cases in Chapter 7.
+**38 exercises and integrated cases** in seven bilingual chapters: 7 / 5 / 6 / 6 / 6 / 6 / 2. These comprise 22 original revised exercises/cases, 12 curated supplementary exercises and 4 new comprehensive exercises. Each item has a paired solution in French and English, a pedagogical level and estimated completion time.
 
-A curated set of **12 additional exercises** from `exercise-data-export.json` appears below the revised worksheet: four in Chapter 1, two in Chapter 2, two in Chapter 3, one in Chapter 4, one in Chapter 5 and two in Chapter 6. Total: **34 on-page exercises/cases**.
+## Complete downloadable PDFs
 
-- Full English/French switching.
-- Exercise statements and detailed solutions displayed directly on the chapter page.
-- The existing session-code mechanism is preserved; solution sections and downloadable solution links are hidden until unlocked.
-- Four updated PDF resources per chapter (EN/FR × statements/solutions): **28 PDFs**, located in `downloads/`.
-- The matching LaTeX source archive is available as `downloads/QM1_2026_LaTeX_sources.zip`.
-- Charts for the discrete distribution, unequal-width histogram and Lorenz curve are rendered as inline SVG.
-- The former on-page series remains in `content/` as a fallback, but is not the primary published version.
+**28 updated PDF files** are generated from the same HTML/JSON sources as the live Practice Lab. For each chapter N:
 
-## Content files
+- downloads/chapter-N-exercises-fr.pdf — all French statements.
+- downloads/chapter-N-solutions-fr.pdf — all French statements followed by fully worked solutions.
+- downloads/chapter-N-exercises-en.pdf — all English statements.
+- downloads/chapter-N-solutions-en.pdf — all English statements followed by fully worked solutions.
 
-- `revised-worksheets-2026.json`: bilingual revised worksheets, converted from the 2026–2027 LaTeX sources.
-- `exercise-data-export.json`: supplementary exercise data, including bilingual detailed solutions.
-- `app.js`: loads revised worksheets first, then curated supplementary exercises; falls back to the legacy chapter content if the revised data cannot load.
-- `config.json`: chapter availability and SHA-256 session-code hashes (unchanged).
-- `downloads/chapter-N-exercises-LANG.pdf` and `downloads/chapter-N-solutions-LANG.pdf`: printable resources.
+All **38 exercises/cases** are included, with supplementary cases, tables, charts, formula derivations and the new October 2026 material.
 
-## Maintenance
+The instructor archive is downloads/QM1_2026-2027_28_PDF_FR_EN.zip (all 28 PDFs). The machine-readable audit file is downloads/QM1_PDF_manifest_2026.json (pages, exercise counts, math/chart counts, sizes and SHA-256).
 
-To change exercises, update the bilingual HTML fields in `revised-worksheets-2026.json` or the supplementary data and then bump the `VERSION` string in `app.js`. To rebuild PDFs, use the LaTeX sources from the archive and replace the corresponding PDF files.
+The older downloads/QM1_2026_LaTeX_sources.zip is a **historical archive**; the authoritative current PDF sources are the website's JSON files.
 
-This is a static GitHub Pages website. The existing code-based hiding mechanism is a teaching convenience, **not cryptographic protection**: public client-side files can be inspected by technically proficient visitors.
+## Reproducible PDF generation and checks
+
+The GitHub Actions workflow .github/workflows/qm1-complete-pdfs.yml runs whenever the exercise sources, rendering code or generator change. It installs Chromium, Playwright, MathJax SVG and PyMuPDF and invokes scripts/build_complete_pdfs.py. This generator uses the **same** renderPairedWorksheet and renderQM1Charts functions as the website. It checks for missing/duplicated exercises, absent or very short solutions, unresolved charts, MathJax errors, empty PDFs and unsearchable documents.
+
+All 28 PDFs are published to main only after the entire build passes. To rebuild locally, install the required dependencies and run: python scripts/build_complete_pdfs.py.
+
+## Main source files
+
+- revised-worksheets-2026.json — core bilingual worksheets.
+- exercise-data-export.json — supplementary exercises and solutions.
+- pedagogy-upgrade-2026.json — new exercises and enhanced worked solutions.
+- app.js — interactive rendering, session-code interface and graphs.
+- config.json — existing access settings and code hashes.
+- scripts/build_complete_pdfs.py — reproducible PDF generation and validation.
+
+## Important access note
+
+The static GitHub Pages site hides solution links until the session code is entered. **This is an interface restriction, not server-side security**: static PDF files can still be accessed directly by URL. True authentication requires a protected backend or file service.
 
 ## GitHub Pages
 
-Publish from the repository root on the `main` branch using **Settings → Pages → Deploy from a branch**.
+The site is published from the repository root on main.
 
-© 2026 Badr ABOUFARASSE, PhD. — KEDGE Business School.
-
-## Exercise-by-exercise solution layout (17 October 2026)
-
-The session-code card is now displayed **before** the exercises. Each of the 34 exercise statements is followed immediately by its own detailed solution, which stays hidden until the session code is accepted. This pairing works in both languages, including the three subsections of integrated Case B. PDF downloads and the existing session-code hashes are unchanged.
-
-## Révision pédagogique — octobre 2026
-
-La version en ligne propose **38 exercices et cas bilingues**, classés en **applications fondamentales**, **préparation CC/partiel** et **approfondissement**. Chaque corrigé est placé directement après son énoncé et peut être masqué individuellement après déverrouillage. Les exercices de régression, séries temporelles et indices ont été complétés, avec de nouveaux tableaux et graphiques. **Les anciens PDF du dossier downloads/ ne contiennent pas tous les ajouts** ; utiliser « Imprimer la fiche à jour » pour exporter la version actuelle.
-
-Voir [le rapport de révision](PEDAGOGICAL-REVISION-2026.md).
+© 2026 Badr ABOUFARASSE, PhD. All rights reserved.
