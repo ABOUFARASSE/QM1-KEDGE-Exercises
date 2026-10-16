@@ -1,0 +1,1 @@
+window.QM1_CHAPTER_CONTENT={};
