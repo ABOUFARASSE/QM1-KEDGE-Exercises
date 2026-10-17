@@ -8,6 +8,7 @@ on:
     paths:
       - 'scripts/build_academic_latex.py'
       - 'scripts/build_academic_latex_quality.py'
+      - 'scripts/run_academic_latex_quality.py'
       - 'scripts/audit_numeric.py'
       - 'revised-worksheets-2026.json'
       - 'exercise-data-export.json'
@@ -40,7 +41,7 @@ jobs:
           mkdir -p latex/assets
           rm -f latex/assets/*.pdf
       - name: Generate and high-assurance audit 28 academic LaTeX PDFs
-        run: python scripts/build_academic_latex_quality.py
+        run: python scripts/run_academic_latex_quality.py
       - name: Publish only fully audited PDFs and sources
         if: github.ref == 'refs/heads/main'
         run: |
