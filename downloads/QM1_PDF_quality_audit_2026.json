@@ -1,0 +1,203 @@
+{
+  "status": "PASS",
+  "pdf_count": 28,
+  "documents": [
+    {
+      "file": "chapter-1-exercises-en.pdf",
+      "pages": 3,
+      "prose_recall": 0.9873,
+      "charts": 0,
+      "suspicious_whitespace": []
+    },
+    {
+      "file": "chapter-1-exercises-fr.pdf",
+      "pages": 3,
+      "prose_recall": 0.9746,
+      "charts": 0,
+      "suspicious_whitespace": []
+    },
+    {
+      "file": "chapter-1-solutions-en.pdf",
+      "pages": 8,
+      "prose_recall": 0.9864,
+      "charts": 6,
+      "suspicious_whitespace": []
+    },
+    {
+      "file": "chapter-1-solutions-fr.pdf",
+      "pages": 8,
+      "prose_recall": 0.9808,
+      "charts": 6,
+      "suspicious_whitespace": []
+    },
+    {
+      "file": "chapter-2-exercises-en.pdf",
+      "pages": 2,
+      "prose_recall": 0.9898,
+      "charts": 0,
+      "suspicious_whitespace": []
+    },
+    {
+      "file": "chapter-2-exercises-fr.pdf",
+      "pages": 2,
+      "prose_recall": 0.9813,
+      "charts": 0,
+      "suspicious_whitespace": []
+    },
+    {
+      "file": "chapter-2-solutions-en.pdf",
+      "pages": 4,
+      "prose_recall": 0.991,
+      "charts": 0,
+      "suspicious_whitespace": []
+    },
+    {
+      "file": "chapter-2-solutions-fr.pdf",
+      "pages": 4,
+      "prose_recall": 0.9807,
+      "charts": 0,
+      "suspicious_whitespace": []
+    },
+    {
+      "file": "chapter-3-exercises-en.pdf",
+      "pages": 2,
+      "prose_recall": 0.9611,
+      "charts": 0,
+      "suspicious_whitespace": []
+    },
+    {
+      "file": "chapter-3-exercises-fr.pdf",
+      "pages": 2,
+      "prose_recall": 0.9796,
+      "charts": 0,
+      "suspicious_whitespace": []
+    },
+    {
+      "file": "chapter-3-solutions-en.pdf",
+      "pages": 5,
+      "prose_recall": 0.9678,
+      "charts": 1,
+      "suspicious_whitespace": []
+    },
+    {
+      "file": "chapter-3-solutions-fr.pdf",
+      "pages": 6,
+      "prose_recall": 0.9756,
+      "charts": 1,
+      "suspicious_whitespace": []
+    },
+    {
+      "file": "chapter-4-exercises-en.pdf",
+      "pages": 2,
+      "prose_recall": 0.9772,
+      "charts": 0,
+      "suspicious_whitespace": []
+    },
+    {
+      "file": "chapter-4-exercises-fr.pdf",
+      "pages": 2,
+      "prose_recall": 0.9785,
+      "charts": 0,
+      "suspicious_whitespace": []
+    },
+    {
+      "file": "chapter-4-solutions-en.pdf",
+      "pages": 6,
+      "prose_recall": 0.979,
+      "charts": 1,
+      "suspicious_whitespace": []
+    },
+    {
+      "file": "chapter-4-solutions-fr.pdf",
+      "pages": 6,
+      "prose_recall": 0.9822,
+      "charts": 1,
+      "suspicious_whitespace": []
+    },
+    {
+      "file": "chapter-5-exercises-en.pdf",
+      "pages": 2,
+      "prose_recall": 0.9638,
+      "charts": 0,
+      "suspicious_whitespace": []
+    },
+    {
+      "file": "chapter-5-exercises-fr.pdf",
+      "pages": 3,
+      "prose_recall": 0.9634,
+      "charts": 0,
+      "suspicious_whitespace": []
+    },
+    {
+      "file": "chapter-5-solutions-en.pdf",
+      "pages": 6,
+      "prose_recall": 0.9802,
+      "charts": 1,
+      "suspicious_whitespace": []
+    },
+    {
+      "file": "chapter-5-solutions-fr.pdf",
+      "pages": 7,
+      "prose_recall": 0.9743,
+      "charts": 1,
+      "suspicious_whitespace": []
+    },
+    {
+      "file": "chapter-6-exercises-en.pdf",
+      "pages": 2,
+      "prose_recall": 0.9574,
+      "charts": 0,
+      "suspicious_whitespace": []
+    },
+    {
+      "file": "chapter-6-exercises-fr.pdf",
+      "pages": 2,
+      "prose_recall": 0.9444,
+      "charts": 0,
+      "suspicious_whitespace": []
+    },
+    {
+      "file": "chapter-6-solutions-en.pdf",
+      "pages": 5,
+      "prose_recall": 0.9475,
+      "charts": 0,
+      "suspicious_whitespace": []
+    },
+    {
+      "file": "chapter-6-solutions-fr.pdf",
+      "pages": 5,
+      "prose_recall": 0.9361,
+      "charts": 0,
+      "suspicious_whitespace": []
+    },
+    {
+      "file": "chapter-7-exercises-en.pdf",
+      "pages": 2,
+      "prose_recall": 0.9433,
+      "charts": 0,
+      "suspicious_whitespace": []
+    },
+    {
+      "file": "chapter-7-exercises-fr.pdf",
+      "pages": 2,
+      "prose_recall": 0.9573,
+      "charts": 0,
+      "suspicious_whitespace": []
+    },
+    {
+      "file": "chapter-7-solutions-en.pdf",
+      "pages": 6,
+      "prose_recall": 0.9648,
+      "charts": 3,
+      "suspicious_whitespace": []
+    },
+    {
+      "file": "chapter-7-solutions-fr.pdf",
+      "pages": 6,
+      "prose_recall": 0.9729,
+      "charts": 3,
+      "suspicious_whitespace": []
+    }
+  ],
+  "failures": []
+}

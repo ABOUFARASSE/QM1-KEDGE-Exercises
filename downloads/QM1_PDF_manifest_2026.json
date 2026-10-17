@@ -9,8 +9,8 @@
     "pages": 3,
     "charts": 0,
     "source_tex": "chapter-1-exercises-fr.tex",
-    "bytes": 48192,
-    "sha256": "8b8b1cda94e19bd38e79812a4c3c9e36648dbcbb958efca2ffa11f59b6d469c7"
+    "bytes": 48196,
+    "sha256": "af2b8e99a14e02f4ddaf820e740facd1c2f9ce4c7da4c0d64404578cab6aab70"
   },
   {
     "file": "chapter-1-solutions-fr.pdf",
@@ -19,11 +19,11 @@
     "type": "solutions",
     "engine": "XeLaTeX",
     "exercises": 7,
-    "pages": 9,
-    "charts": 8,
+    "pages": 8,
+    "charts": 6,
     "source_tex": "chapter-1-solutions-fr.tex",
-    "bytes": 87146,
-    "sha256": "ea696c139ca3ab9a98ae31aa9a6ccf26bd5728792850746b4d1b5d015ed6a45e"
+    "bytes": 122963,
+    "sha256": "4d8c2c5c72d7fe559cfdb2494fde436b10817d5707978ce989be929e183b0518"
   },
   {
     "file": "chapter-1-exercises-en.pdf",
@@ -35,8 +35,8 @@
     "pages": 3,
     "charts": 0,
     "source_tex": "chapter-1-exercises-en.tex",
-    "bytes": 47833,
-    "sha256": "8d23bf9eb5e49fee7601348e5170d113a5447042a5d7c3a44733ed8a9fc22227"
+    "bytes": 47829,
+    "sha256": "556b82a1b01fc736b7a896aea42dd72ce4cc1735f17db7de72509a14051b1870"
   },
   {
     "file": "chapter-1-solutions-en.pdf",
@@ -45,11 +45,11 @@
     "type": "solutions",
     "engine": "XeLaTeX",
     "exercises": 7,
-    "pages": 9,
-    "charts": 8,
+    "pages": 8,
+    "charts": 6,
     "source_tex": "chapter-1-solutions-en.tex",
-    "bytes": 86202,
-    "sha256": "0deabb20be5431c3ecaca38b513c99af98749ebac71ea580a90442ff09ab0b06"
+    "bytes": 122146,
+    "sha256": "27d6a5879d3781921f5e9c188738b13b85fa6cff87700eb0b210897289f3c328"
   },
   {
     "file": "chapter-2-exercises-fr.pdf",
@@ -61,8 +61,8 @@
     "pages": 2,
     "charts": 0,
     "source_tex": "chapter-2-exercises-fr.tex",
-    "bytes": 43198,
-    "sha256": "0b1fdfefc777908288adce34d314fa8bf24d9cd356d7fca40738bcd5dbac668f"
+    "bytes": 43183,
+    "sha256": "58bc4f6679dec8b40e82f7e6cec9c7f2b312666d0ae8731999d542c3ebb07e12"
   },
   {
     "file": "chapter-2-solutions-fr.pdf",
@@ -74,8 +74,8 @@
     "pages": 4,
     "charts": 0,
     "source_tex": "chapter-2-solutions-fr.tex",
-    "bytes": 62154,
-    "sha256": "a981ac11f21013ac9269f082b73e94ee2b068253eadd287c6e43f6252c87364a"
+    "bytes": 62152,
+    "sha256": "37bcae2671ac1b16cc9256018d5df65aca840da2b064635ab61d503442f9728e"
   },
   {
     "file": "chapter-2-exercises-en.pdf",
@@ -87,8 +87,8 @@
     "pages": 2,
     "charts": 0,
     "source_tex": "chapter-2-exercises-en.tex",
-    "bytes": 42534,
-    "sha256": "b62a45f5789e88fdc1b5d8055626ea9ba01c61d7a3e2802f8ea43102a5b003e2"
+    "bytes": 42536,
+    "sha256": "1ed5a50e2420e7a6e92051f30fbf8875c26872fc943cc752144f3ba0293e338a"
   },
   {
     "file": "chapter-2-solutions-en.pdf",
@@ -100,8 +100,8 @@
     "pages": 4,
     "charts": 0,
     "source_tex": "chapter-2-solutions-en.tex",
-    "bytes": 59959,
-    "sha256": "8ee0c70e1ae1420cb440c1c86175c1a456c7a79844cf36239f56a819bf9d4b7c"
+    "bytes": 59962,
+    "sha256": "2001862ef641ea9d25c3dab94d6d880e163d0f3c7e09cfe8bcc42e8da185615b"
   },
   {
     "file": "chapter-3-exercises-fr.pdf",
@@ -113,8 +113,8 @@
     "pages": 2,
     "charts": 0,
     "source_tex": "chapter-3-exercises-fr.tex",
-    "bytes": 43109,
-    "sha256": "54c6e6c4c9d7f9324fa4e8f87b5782c9e2c89f0cb8134d1d400022b40c097c0a"
+    "bytes": 43116,
+    "sha256": "f889f90429366d69e477c8f8bebfa55194a560a1bace97e70b799b208ee33196"
   },
   {
     "file": "chapter-3-solutions-fr.pdf",
@@ -126,8 +126,8 @@
     "pages": 6,
     "charts": 1,
     "source_tex": "chapter-3-solutions-fr.tex",
-    "bytes": 71157,
-    "sha256": "eb8733ffe955bbd024f6b93b95ea35bf44af32bcabb9f1452869f9158fa726fe"
+    "bytes": 71150,
+    "sha256": "9f93eae11ef1b9b5ff0ec986611a9df3913499c6c44aaa8c5f0802887cc828f6"
   },
   {
     "file": "chapter-3-exercises-en.pdf",
@@ -139,8 +139,8 @@
     "pages": 2,
     "charts": 0,
     "source_tex": "chapter-3-exercises-en.tex",
-    "bytes": 41786,
-    "sha256": "34bd85bbd1060fdc39ecc77793520f807f07dcebdb8b244a2908e74ccf2810f7"
+    "bytes": 41760,
+    "sha256": "4cd64e50b65f9ff53bcfd038f4ba0cc17d169015a397620621660dfece744f50"
   },
   {
     "file": "chapter-3-solutions-en.pdf",
@@ -152,8 +152,8 @@
     "pages": 5,
     "charts": 1,
     "source_tex": "chapter-3-solutions-en.tex",
-    "bytes": 69055,
-    "sha256": "2f2961248785d81ff2ae07097f6e8e7122c076f71ffa50157f9caf39dd2df938"
+    "bytes": 69057,
+    "sha256": "b960629ab7e44fc96a33945e34ee65a4623b35c206d1d8020c4cb39bc13191da"
   },
   {
     "file": "chapter-4-exercises-fr.pdf",
@@ -165,8 +165,8 @@
     "pages": 2,
     "charts": 0,
     "source_tex": "chapter-4-exercises-fr.tex",
-    "bytes": 43722,
-    "sha256": "c4a1be61c2487437b4749871c15f8061ebac71bc6017839e6f0e2b162e5ac936"
+    "bytes": 43719,
+    "sha256": "551952ce56ec1d48d39a42e6f2f248ab8162976bfcf63126163ac495f2808210"
   },
   {
     "file": "chapter-4-solutions-fr.pdf",
@@ -178,8 +178,8 @@
     "pages": 6,
     "charts": 1,
     "source_tex": "chapter-4-solutions-fr.tex",
-    "bytes": 64141,
-    "sha256": "af7f5ab66b05d035f6fb40a19d0e35db35ef9137c604ede791515d066045ed9b"
+    "bytes": 69840,
+    "sha256": "79b59ab695a9657d6b068c6c1165ad9921a79cca8953d62070e6dbed35487558"
   },
   {
     "file": "chapter-4-exercises-en.pdf",
@@ -191,8 +191,8 @@
     "pages": 2,
     "charts": 0,
     "source_tex": "chapter-4-exercises-en.tex",
-    "bytes": 42907,
-    "sha256": "450224cddb389d9cd24db26c3311dd31ff4305afc910eb75dbecf4e06bd00bfe"
+    "bytes": 42895,
+    "sha256": "15c1627b8360ff361cb9eb8338e2cd3c6a93500d6e17f1e0f2383a10d1be396c"
   },
   {
     "file": "chapter-4-solutions-en.pdf",
@@ -204,8 +204,8 @@
     "pages": 6,
     "charts": 1,
     "source_tex": "chapter-4-solutions-en.tex",
-    "bytes": 61380,
-    "sha256": "f6955f4d8cb172f7194e58575fa6b77b70b52e6803991c093aab46f1425476ac"
+    "bytes": 66829,
+    "sha256": "f2dc8820770661d32aa81dc75ba85b254de6916991c4c94d3d8f0bb7eeb99587"
   },
   {
     "file": "chapter-5-exercises-fr.pdf",
@@ -217,8 +217,8 @@
     "pages": 3,
     "charts": 0,
     "source_tex": "chapter-5-exercises-fr.tex",
-    "bytes": 42128,
-    "sha256": "3bf5a46b8a34e1b758a1f443e2f6fef13b215bd60b285215a54c00f5417bbdd2"
+    "bytes": 42129,
+    "sha256": "2656fab3c83dcf097036f973dd0d64a2f777b86fab289fc98907f34a95c794c0"
   },
   {
     "file": "chapter-5-solutions-fr.pdf",
@@ -230,8 +230,8 @@
     "pages": 7,
     "charts": 1,
     "source_tex": "chapter-5-solutions-fr.tex",
-    "bytes": 65638,
-    "sha256": "c2fa8b491d2790b769ca45060b3243f94c053ac6c79704a48652bbd9e2674dea"
+    "bytes": 77717,
+    "sha256": "035231b9186eb2d96d3725a181837681c71a1fc6e0d2b5b497445e7e909f506d"
   },
   {
     "file": "chapter-5-exercises-en.pdf",
@@ -243,8 +243,8 @@
     "pages": 2,
     "charts": 0,
     "source_tex": "chapter-5-exercises-en.tex",
-    "bytes": 37980,
-    "sha256": "a561486dd188c4d166b35497f4ad64cdef36b16f8af79dadd536e67934e614d4"
+    "bytes": 37973,
+    "sha256": "cfa86882a3e104a2d8441435a1ac262f6dc2dd9a2bf38c8fdcc7ea5065e3b792"
   },
   {
     "file": "chapter-5-solutions-en.pdf",
@@ -256,8 +256,8 @@
     "pages": 6,
     "charts": 1,
     "source_tex": "chapter-5-solutions-en.tex",
-    "bytes": 62251,
-    "sha256": "1edca87ec4168968f69f81f63e543a06ccdaec493d0fc06bf6290ff251296898"
+    "bytes": 74615,
+    "sha256": "13170d69f2c173c8dcba678249880c186c1d1e6f93575a4a66a354c3e0f79b0a"
   },
   {
     "file": "chapter-6-exercises-fr.pdf",
@@ -269,8 +269,8 @@
     "pages": 2,
     "charts": 0,
     "source_tex": "chapter-6-exercises-fr.tex",
-    "bytes": 39876,
-    "sha256": "fa0ee327741e48ce9608006cfff2a5ff02f27f6a9c58258de03526bd8ce137e8"
+    "bytes": 39870,
+    "sha256": "a78d5ea59a7bbb1f776bf364bb53ea1a2c7bbe5bb640e1840920602427d123c4"
   },
   {
     "file": "chapter-6-solutions-fr.pdf",
@@ -283,7 +283,7 @@
     "charts": 0,
     "source_tex": "chapter-6-solutions-fr.tex",
     "bytes": 60476,
-    "sha256": "d1ecf28945f7a1d7230d641cf6f9751f1b7f093b4497254518a557febeab56b9"
+    "sha256": "d24d4d523336e44d9939026cbb9fe12286963d2e0cf18451a7dbe13bb41939db"
   },
   {
     "file": "chapter-6-exercises-en.pdf",
@@ -295,8 +295,8 @@
     "pages": 2,
     "charts": 0,
     "source_tex": "chapter-6-exercises-en.tex",
-    "bytes": 36673,
-    "sha256": "7664ce48c7b5e8ecc76c4af0bb2e74f908102ad8fbc7e0fc0ad90cbc0d5f1a85"
+    "bytes": 36677,
+    "sha256": "5faf947162c01c4ea29ba73ffbe7038b189326f71609b743144696a30e7ceb56"
   },
   {
     "file": "chapter-6-solutions-en.pdf",
@@ -308,8 +308,8 @@
     "pages": 5,
     "charts": 0,
     "source_tex": "chapter-6-solutions-en.tex",
-    "bytes": 59693,
-    "sha256": "e023250eb1195602294187b70fd283f7fad718d5a289c4848b2abc67d8b3fa38"
+    "bytes": 59698,
+    "sha256": "92ffea1cc01cf08ffd43ec5c87b06d6dc49fb3323656d5df1381ad87f20cef14"
   },
   {
     "file": "chapter-7-exercises-fr.pdf",
@@ -321,8 +321,8 @@
     "pages": 2,
     "charts": 0,
     "source_tex": "chapter-7-exercises-fr.tex",
-    "bytes": 37761,
-    "sha256": "d8370ab0d768566abdd188a9f5348a228d20d16cd96af6337486e72d816f3d3d"
+    "bytes": 37766,
+    "sha256": "3d2b4f5ce279d2c2713df4a8b1ecdccea4f5aee52fa4b74d37aaad9417ebaea0"
   },
   {
     "file": "chapter-7-solutions-fr.pdf",
@@ -334,8 +334,8 @@
     "pages": 6,
     "charts": 3,
     "source_tex": "chapter-7-solutions-fr.tex",
-    "bytes": 67021,
-    "sha256": "3fd90448b45de43efcd285c9027866bb661d076d20020826e22f33b9a91d0c09"
+    "bytes": 98074,
+    "sha256": "d82cb8cf56f17411ec98ceb2ea821a3e0b6a950c3cf5d7ea8055f468a9a6e8d5"
   },
   {
     "file": "chapter-7-exercises-en.pdf",
@@ -347,8 +347,8 @@
     "pages": 2,
     "charts": 0,
     "source_tex": "chapter-7-exercises-en.tex",
-    "bytes": 36954,
-    "sha256": "d5d3468701418d1209254602630a1d3dc839922884198a323d5000af3f615e1a"
+    "bytes": 36957,
+    "sha256": "a80c3e85085d416548d58ff01ac121bb4e9a4138abd182f57dee5abd543069fe"
   },
   {
     "file": "chapter-7-solutions-en.pdf",
@@ -360,19 +360,19 @@
     "pages": 6,
     "charts": 3,
     "source_tex": "chapter-7-solutions-en.tex",
-    "bytes": 65234,
-    "sha256": "235fddc5be8caf06e7ca59b6fbc5b3bb89b2e77a92c85e80285ce434d043895a"
+    "bytes": 96086,
+    "sha256": "51ce351ccc92bfb647fb89110aeabfd4cdf35df0b6485b9685adaa1257934f48"
   },
   {
     "file": "QM1_2026-2027_28_PDF_FR_EN.zip",
     "type": "complete_archive",
-    "bytes": 1468311,
-    "sha256": "d5c07e0effa04af76113a301444a1eb28d77792f5f585d770266b1dceb1f1eda"
+    "bytes": 1535176,
+    "sha256": "0d0cc2e8f1a5c94e72f03de576e849a2c3903df3a0d4271d99e0dd0ebb4eef98"
   },
   {
     "file": "QM1_2026-2027_LaTeX_sources_academic.zip",
     "type": "latex_source_archive",
-    "bytes": 196129,
-    "sha256": "b84db4d8a7f4757b4e5fe2479414795ccdf01ec7bf7252096cda592569180908"
+    "bytes": 524351,
+    "sha256": "30b06494b46a498b9c5fae9c436d73c157bf9f6c30d7d8f9295b59ed706ceb7e"
   }
 ]
