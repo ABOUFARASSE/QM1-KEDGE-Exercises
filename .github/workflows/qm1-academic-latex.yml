@@ -1,0 +1,60 @@
+name: Build academic QM1 LaTeX PDFs
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - qm1-academic-latex-20261017
+    paths:
+      - 'scripts/build_academic_latex.py'
+      - 'scripts/audit_numeric.py'
+      - 'revised-worksheets-2026.json'
+      - 'exercise-data-export.json'
+      - 'pedagogy-upgrade-2026.json'
+      - 'app.js'
+      - '.github/workflows/qm1-academic-latex.yml'
+permissions:
+  contents: write
+jobs:
+  build-and-verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install academic typesetting toolchain
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends pandoc texlive-xetex texlive-latex-extra texlive-fonts-recommended texlive-lang-french lmodern fonts-lmodern libcairo2 libpango-1.0-0
+          python -m pip install --disable-pip-version-check playwright==1.55.0 pymupdf==1.26.5 beautifulsoup4==4.12.3 cairosvg==2.7.1
+          python -m playwright install --with-deps chromium
+      - name: Audit numerical examples independently
+        run: python scripts/audit_numeric.py
+      - name: Generate 28 academic LaTeX PDFs and 28 editable sources
+        run: python scripts/build_academic_latex.py
+      - name: Publish all validated LaTeX PDFs and sources
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add downloads/chapter-*-exercises-*.pdf downloads/chapter-*-solutions-*.pdf
+          git add downloads/QM1_2026-2027_28_PDF_FR_EN.zip downloads/QM1_2026-2027_LaTeX_sources_academic.zip downloads/QM1_PDF_manifest_2026.json
+          git add latex/chapter-*.tex latex/assets/*.pdf
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish 28 academic XeLaTeX QM1 PDFs and editable source package"
+            git push origin HEAD:main
+          fi
+      - name: Preserve source and PDF bundle for quality review
+        uses: actions/upload-artifact@v4
+        with:
+          name: qm1-academic-latex-pdfs-and-sources
+          path: |
+            downloads/chapter-*-exercises-*.pdf
+            downloads/chapter-*-solutions-*.pdf
+            downloads/QM1_2026-2027_28_PDF_FR_EN.zip
+            downloads/QM1_2026-2027_LaTeX_sources_academic.zip
+            downloads/QM1_PDF_manifest_2026.json
