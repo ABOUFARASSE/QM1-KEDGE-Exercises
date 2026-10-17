@@ -17,15 +17,27 @@ Bilingual Quantitative Methods 1 practice platform for EBP1, maintained by Badr 
 
 All **38 exercises/cases** are included, with supplementary cases, tables, charts, formula derivations and the new October 2026 material.
 
-The instructor archive is downloads/QM1_2026-2027_28_PDF_FR_EN.zip (all 28 PDFs). The machine-readable audit file is downloads/QM1_PDF_manifest_2026.json (pages, exercise counts, math/chart counts, sizes and SHA-256).
+The instructor archive is downloads/QM1_2026-2027_28_PDF_FR_EN.zip (all 28 PDFs). The machine-readable audit file is downloads/QM1_PDF_manifest_2026.json (pages, exercise counts, vector-chart counts, source paths, sizes and SHA-256).
 
 The older downloads/QM1_2026_LaTeX_sources.zip is a **historical archive**; the authoritative current PDF sources are the website's JSON files.
 
+## Academic LaTeX edition (October 2026)
+
+The **28 downloadable PDFs** (7 chapters × 2 languages × exercises/solutions) are now compiled with **XeLaTeX** using a consistent black-and-white academic template: Latin Modern Roman 11 pt, A4, proper mathematical typesetting, booktabs tables, consistent heading hierarchy, running headers/footers and page numbering. Graphs are embedded as vector PDFs, not screenshots.
+
+- `downloads/QM1_2026-2027_28_PDF_FR_EN.zip`: complete academic PDF collection.
+- `downloads/QM1_2026-2027_LaTeX_sources_academic.zip`: **28 editable .tex files and their vector figure assets**, ready for XeLaTeX/Overleaf.
+- `downloads/QM1_PDF_manifest_2026.json`: per-document page count, source file, figure count and SHA-256.
+
+The PDF source is derived **without rewriting the exercise content** from the same `renderPairedWorksheet`/ `renderQM1Charts` functions as the website. The source HTML is translated into real LaTeX by Pandoc; equations and tables are typeset by XeLaTeX. The on-page exercises and session-code workflow remain unchanged.
+
+The workflow `.github/workflows/qm1-academic-latex.yml` rebuilds all 28 documents, verifies the complete 38-exercise bilingual curriculum, checks missing glyphs and overfull content, audits core numerical examples, and publishes PDFs and sources **only after all checks pass**. The former browser-to-PDF generator is retained as a manual legacy workflow.
+
 ## Reproducible PDF generation and checks
 
-The GitHub Actions workflow .github/workflows/qm1-complete-pdfs.yml runs whenever the exercise sources, rendering code or generator change. It installs Chromium, Playwright, MathJax SVG and PyMuPDF and invokes scripts/build_complete_pdfs.py. This generator uses the **same** renderPairedWorksheet and renderQM1Charts functions as the website. It checks for missing/duplicated exercises, absent or very short solutions, unresolved charts, MathJax errors, empty PDFs and unsearchable documents.
+The GitHub Actions workflow .github/workflows/qm1-academic-latex.yml runs whenever the exercise sources, rendering code or LaTeX generator change. It installs Chromium, Playwright, Pandoc, XeLaTeX, CairoSVG and PyMuPDF and invokes scripts/build_academic_latex.py. This generator uses the **same** renderPairedWorksheet and renderQM1Charts functions as the website. It checks for missing/duplicated exercises, absent or very short solutions, unresolved charts, XeLaTeX compilation failures, missing glyphs, overfull text, empty PDFs and unsearchable documents.
 
-All 28 PDFs are published to main only after the entire build passes. To rebuild locally, install the required dependencies and run: python scripts/build_complete_pdfs.py.
+All 28 PDFs are published to main only after the entire build passes. To rebuild locally, install the required dependencies and run: python scripts/build_academic_latex.py.
 
 ## Main source files
 
@@ -34,7 +46,8 @@ All 28 PDFs are published to main only after the entire build passes. To rebuild
 - pedagogy-upgrade-2026.json — new exercises and enhanced worked solutions.
 - app.js — interactive rendering, session-code interface and graphs.
 - config.json — existing access settings and code hashes.
-- scripts/build_complete_pdfs.py — reproducible PDF generation and validation.
+- scripts/build_academic_latex.py — reproducible academic XeLaTeX source and PDF generation.
+- scripts/build_complete_pdfs.py — original browser-based generator (manual fallback).
 
 ## Important access note
 
