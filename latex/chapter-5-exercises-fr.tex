@@ -1,0 +1,265 @@
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsfonts,mathtools}
+\usepackage{graphicx,booktabs,longtable,array,tabularx,adjustbox}
+\usepackage{geometry,microtype,fancyhdr,lastpage,etoolbox,enumitem}
+\usepackage{newunicodechar,textcomp}
+\usepackage{hyperref}
+\hypersetup{hidelinks,pdfcreator={XeLaTeX / QM1 academic edition}}
+\geometry{left=20mm,right=20mm,top=22mm,bottom=23mm}
+\setcounter{secnumdepth}{2}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt plus 1pt}
+\setlength{\emergencystretch}{2em}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.16}
+\setlist{nosep,topsep=3pt,itemsep=2pt,leftmargin=7mm}
+\AtBeginEnvironment{longtable}{\footnotesize\setlength{\tabcolsep}{2.2pt}}
+\newcommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\Cov}{\operatorname{Cov}}
+\providecommand{\Var}{\operatorname{Var}}
+\providecommand{\Corr}{\operatorname{Corr}}
+\providecommand{\MAD}{\operatorname{MAD}}
+\providecommand{\E}{\mathbb{E}}
+\providecommand{\R}{\mathbb{R}}
+\newunicodechar{—}{\textemdash}
+\newunicodechar{–}{\textendash}
+\newunicodechar{€}{\texteuro}
+\newunicodechar{≤}{\ensuremath{\leq}}
+\newunicodechar{≥}{\ensuremath{\geq}}
+\newunicodechar{×}{\ensuremath{\times}}
+\newunicodechar{÷}{\ensuremath{\div}}
+\newunicodechar{Σ}{\ensuremath{\Sigma}}
+\newunicodechar{σ}{\ensuremath{\sigma}}
+\newunicodechar{μ}{\ensuremath{\mu}}
+\newunicodechar{Δ}{\ensuremath{\Delta}}
+\newunicodechar{∑}{\ensuremath{\sum}}
+\newunicodechar{≈}{\ensuremath{\approx}}
+\newunicodechar{√}{\ensuremath{\surd}}
+\newunicodechar{≠}{\ensuremath{\ne}}
+\newunicodechar{→}{\ensuremath{\to}}
+\newunicodechar{∞}{\ensuremath{\infty}}
+\newunicodechar{∈}{\ensuremath{\in}}
+\newunicodechar{−}{\ensuremath{-}}
+\newunicodechar{²}{\ensuremath{^{2}}}
+\newunicodechar{³}{\ensuremath{^{3}}}
+\newunicodechar{₀}{\ensuremath{_{0}}}
+\newunicodechar{₁}{\ensuremath{_{1}}}
+\newunicodechar{₂}{\ensuremath{_{2}}}
+\newunicodechar{₃}{\ensuremath{_{3}}}
+\newunicodechar{₄}{\ensuremath{_{4}}}
+\newunicodechar{ₜ}{\ensuremath{_{t}}}
+\newunicodechar{ₚ}{\ensuremath{_{p}}}
+\newunicodechar{ₙ}{\ensuremath{_{n}}}
+\newunicodechar{ₓ}{\ensuremath{_{x}}}
+\newunicodechar{ᵢ}{\ensuremath{_{i}}}
+\newunicodechar{ŷ}{\ensuremath{\hat y}}
+\newunicodechar{Ŷ}{\ensuremath{\widehat Y}}
+\newunicodechar{ₘ}{\ensuremath{_{m}}}
+\newunicodechar{ₑ}{\ensuremath{_{e}}}
+\newunicodechar{ₐ}{\ensuremath{_{a}}}
+\newunicodechar{ₖ}{\ensuremath{_{k}}}
+\newunicodechar{ₛ}{\ensuremath{_{s}}}
+\newunicodechar{ₗ}{\ensuremath{_{l}}}
+\newunicodechar{ₕ}{\ensuremath{_{h}}}
+\newunicodechar{ₒ}{\ensuremath{_{o}}}
+\newunicodechar{₊}{\ensuremath{_{+}}}
+\newunicodechar{₋}{\ensuremath{_{-}}}
+\newunicodechar{₌}{\ensuremath{_{=}}}
+\newunicodechar{₍}{\ensuremath{_{(}}}
+\newunicodechar{₎}{\ensuremath{_{)}}}
+\newunicodechar{⁻}{\ensuremath{^{-}}}
+\newunicodechar{⁺}{\ensuremath{^{+}}}
+\newunicodechar{⁰}{\ensuremath{^{0}}}
+\newunicodechar{¹}{\ensuremath{^{1}}}
+\newunicodechar{⁴}{\ensuremath{^{4}}}
+\newunicodechar{⁵}{\ensuremath{^{5}}}
+\newunicodechar{⁶}{\ensuremath{^{6}}}
+\newunicodechar{⁷}{\ensuremath{^{7}}}
+\newunicodechar{⁸}{\ensuremath{^{8}}}
+\newunicodechar{⁹}{\ensuremath{^{9}}}
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0pt}{2.0ex plus .7ex minus .3ex}{1.0ex}{\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0pt}{1.8ex plus .5ex minus .2ex}{.7ex}{\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0pt}{1.3ex plus .4ex minus .2ex}{.5ex}{\normalsize\bfseries}}
+\makeatother
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead[L]{\small\textsc{KEDGE Business School --- QM1}}
+\fancyhead[R]{\small\textsc{2026--2027}}
+\fancyfoot[L]{\small Badr ABOUFARASSE, PhD}
+\fancyfoot[R]{\small\thepage\ /\ \pageref{LastPage}}
+\setlength{\headheight}{14pt}
+\setkeys{Gin}{keepaspectratio}
+\begin{document}
+
+\begin{center}
+{\small\textsc{KEDGE Business School \quad EBP1 \quad Quantitative Methods 1}}\\[6pt]
+{\Large\bfseries Fiche 5 — Séries temporelles}\\[6pt]
+{\normalsize\bfseries Énoncés des exercices}\\[6pt]
+{\small Badr ABOUFARASSE, PhD \quad --- \quad 2026--2027}
+\end{center}
+\vspace{2mm}\hrule\vspace{6mm}
+
+\hypertarget{applications-fondamentales}{%
+\section{Applications fondamentales}\label{applications-fondamentales}}
+
+Maîtriser les définitions et les calculs essentiels du cours.
+
+\emph{Application du cours --- 10 min}
+
+\hypertarget{exercice-1-composantes-et-moduxe8les}{%
+\subsection{Exercice 1 -- Composantes et modèles}\label{exercice-1-composantes-et-moduxe8les}}
+
+\begin{enumerate}
+\item
+  Associer à {\(T_t\)}, {\(C_t\)}, {\(S_t\)} ou {\(R_t\)} : tendance de long terme, récession, pic récurrent du quatrième trimestre, choc exceptionnel.
+\item
+  Écrire le modèle additif complet et le modèle multiplicatif complet.
+\item
+  Expliquer dans quel cas une saisonnalité multiplicative est plus plausible qu'une saisonnalité additive.
+\end{enumerate}
+
+\emph{Application du cours --- 20 min}
+
+\hypertarget{exercice-2-moyennes-mobiles-et-centrage}{%
+\subsection{Exercice 2 -- Moyennes mobiles et centrage}\label{exercice-2-moyennes-mobiles-et-centrage}}
+
+On observe deux années de demande trimestrielle : {\[80,\ 100,\ 120,\ 140,\ 88,\ 110,\ 132,\
+154.\]}
+
+\begin{enumerate}
+\item
+  Décrire le motif principal de la série.
+\item
+  Calculer les cinq moyennes mobiles d'ordre 4.
+\item
+  Les centrer afin d'obtenir les moyennes mobiles centrées aux périodes 3 à 6.
+\item
+  Expliquer pourquoi une moyenne mobile d'ordre pair doit être recentrée.
+\end{enumerate}
+
+\hypertarget{pruxe9paration-aux-uxe9valuations}{%
+\section{Préparation aux évaluations}\label{pruxe9paration-aux-uxe9valuations}}
+
+Résoudre des exercices de contrôle continu et de partiel en autonomie.
+
+\emph{Préparation CC / partiel --- 25 min}
+
+\hypertarget{exercice-3-duxe9composition-multiplicative-et-pruxe9vision}{%
+\subsection{Exercice 3 -- Décomposition multiplicative et prévision}\label{exercice-3-duxe9composition-multiplicative-et-pruxe9vision}}
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+Année & Q1 & Q2 & Q3 & Q4 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+2005 & 82 & 98 & 120 & 150 \\
+2006 & 91 & 111 & 137 & 171 \\
+2007 & 104 & 126 & 154 & 194 \\
+\end{longtable}
+
+On donne la tendance estimée : {\[\widehat
+T_t=6.343t+86.939.\]} Les coefficients saisonniers normalisés sont : {\[S_{Q1}=0.789,\quad S_{Q2}=0.903,\quad
+S_{Q3}=1.052,\quad S_{Q4}=1.255.\]}
+
+\begin{enumerate}
+\item
+  Interpréter la pente de la tendance.
+\item
+  Vérifier approximativement la normalisation des coefficients saisonniers.
+\item
+  Calculer les quatre prévisions trimestrielles pour 2008.
+\item
+  Expliquer comment désaisonnaliser une observation {\(Y_t\)} dans le modèle multiplicatif.
+\end{enumerate}
+
+\emph{Préparation CC / partiel --- 65 min}
+
+\hypertarget{exercice-5-chauxeene-compluxe8te-de-duxe9composition-saisonniuxe8re-type-partiel}{%
+\subsection{Exercice 5 --- Chaîne complète de décomposition saisonnière --- type partiel}\label{exercice-5-chauxeene-compluxe8te-de-duxe9composition-saisonniuxe8re-type-partiel}}
+
+Une entreprise suit ses ventes trimestrielles pendant trois ans. Utiliser le modèle multiplicatif Yₜ=Tₜ×Sₜ, sans cycle ni composante irrégulière explicites. Ne pas arrondir les résultats intermédiaires.
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+Année / Year & Q1 & Q2 & Q3 & Q4 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+2019 & 40 & 52 & 48 & 68 \\
+2020 & 44 & 58 & 53 & 76 \\
+2021 & 50 & 65 & 60 & 84 \\
+\end{longtable}
+
+\begin{enumerate}
+\tightlist
+\item
+  Tracer la série et calculer les neuf moyennes mobiles d\textquotesingle ordre 4.
+\item
+  Centrer les moyennes mobiles (t=3 à 10). Construire le tableau t, CMA4, t², t×CMA4.
+\item
+  Estimer la tendance Tₜ=at+b par moindres carrés sur les huit CMA4.
+\item
+  Calculer Yₜ/Tₜ pour les 12 trimestres, les quatre moyennes saisonnières et leurs coefficients rectifiés de somme 4.
+\item
+  Prévoir les quatre trimestres de 2022 (t=13 à 16), en valeurs désaisonnalisées puis saisonnalisées.
+\end{enumerate}
+
+\hypertarget{approfondissement-facultatif}{%
+\section{Approfondissement facultatif}\label{approfondissement-facultatif}}
+
+Aller plus loin dans l'interprétation et les applications professionnelles.
+
+\emph{Approfondissement --- 15 min}
+
+\hypertarget{exercice-4-uxe9valuation-des-pruxe9visions}{%
+\subsection{Exercice 4 -- Évaluation des prévisions}\label{exercice-4-uxe9valuation-des-pruxe9visions}}
+
+Pour cet exercice, on suppose que les valeurs effectivement observées en 2008 ont été : {\[136,\ 162,\ 188,\
+245.\]} À partir des prévisions de l'exercice 3 :
+
+\begin{enumerate}
+\item
+  calculer les erreurs {\(e_t=Y_t-\hat Y_t\)} ;
+\item
+  calculer le MAE ;
+\item
+  calculer le RMSE ;
+\item
+  expliquer pourquoi une période de validation distincte de la période d'estimation est utile ;
+\item
+  rappeler pourquoi une prévision naïve constitue un benchmark utile.
+\end{enumerate}
+
+\emph{Approfondissement --- 20 min}
+
+\hypertarget{compluxe9ment-1-validation-des-pruxe9visions-et-rupture-structurelle}{%
+\subsection{Complément 1 --- Validation des prévisions et rupture structurelle}\label{compluxe9ment-1-validation-des-pruxe9visions-et-rupture-structurelle}}
+
+La demande mensuelle observée vaut 100, 104, 108, 150, 154 et 158. Un modèle ajusté sur les trois premiers mois prévoit 100, 104, 108, 112, 116 et 120.
+
+\begin{enumerate}
+\tightlist
+\item
+  Calculez les erreurs des mois 4 à 6.
+\item
+  Calculez la MAE et l'erreur moyenne sur la validation.
+\item
+  Diagnostiquez le modèle.
+\item
+  Proposez une réponse responsable.
+\end{enumerate}
+
+\textbf{Indication méthodologique :}
+
+Utilisez erreur = observé − prévu. Des erreurs toujours positives signalent une sous-prévision systématique.
+
+\end{document}

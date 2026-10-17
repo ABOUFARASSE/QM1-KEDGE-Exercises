@@ -1,0 +1,411 @@
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsfonts,mathtools}
+\usepackage{graphicx,booktabs,longtable,array,tabularx,adjustbox}
+\usepackage{geometry,microtype,fancyhdr,lastpage,etoolbox,enumitem}
+\usepackage{newunicodechar,textcomp}
+\usepackage{hyperref}
+\hypersetup{hidelinks,pdfcreator={XeLaTeX / QM1 academic edition}}
+\geometry{left=20mm,right=20mm,top=22mm,bottom=23mm}
+\setcounter{secnumdepth}{2}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt plus 1pt}
+\setlength{\emergencystretch}{2em}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.16}
+\setlist{nosep,topsep=3pt,itemsep=2pt,leftmargin=7mm}
+\AtBeginEnvironment{longtable}{\footnotesize\setlength{\tabcolsep}{2.2pt}}
+\newcommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\Cov}{\operatorname{Cov}}
+\providecommand{\Var}{\operatorname{Var}}
+\providecommand{\Corr}{\operatorname{Corr}}
+\providecommand{\MAD}{\operatorname{MAD}}
+\providecommand{\E}{\mathbb{E}}
+\providecommand{\R}{\mathbb{R}}
+\newunicodechar{—}{\textemdash}
+\newunicodechar{–}{\textendash}
+\newunicodechar{€}{\texteuro}
+\newunicodechar{≤}{\ensuremath{\leq}}
+\newunicodechar{≥}{\ensuremath{\geq}}
+\newunicodechar{×}{\ensuremath{\times}}
+\newunicodechar{÷}{\ensuremath{\div}}
+\newunicodechar{Σ}{\ensuremath{\Sigma}}
+\newunicodechar{σ}{\ensuremath{\sigma}}
+\newunicodechar{μ}{\ensuremath{\mu}}
+\newunicodechar{Δ}{\ensuremath{\Delta}}
+\newunicodechar{∑}{\ensuremath{\sum}}
+\newunicodechar{≈}{\ensuremath{\approx}}
+\newunicodechar{√}{\ensuremath{\surd}}
+\newunicodechar{≠}{\ensuremath{\ne}}
+\newunicodechar{→}{\ensuremath{\to}}
+\newunicodechar{∞}{\ensuremath{\infty}}
+\newunicodechar{∈}{\ensuremath{\in}}
+\newunicodechar{−}{\ensuremath{-}}
+\newunicodechar{²}{\ensuremath{^{2}}}
+\newunicodechar{³}{\ensuremath{^{3}}}
+\newunicodechar{₀}{\ensuremath{_{0}}}
+\newunicodechar{₁}{\ensuremath{_{1}}}
+\newunicodechar{₂}{\ensuremath{_{2}}}
+\newunicodechar{₃}{\ensuremath{_{3}}}
+\newunicodechar{₄}{\ensuremath{_{4}}}
+\newunicodechar{ₜ}{\ensuremath{_{t}}}
+\newunicodechar{ₚ}{\ensuremath{_{p}}}
+\newunicodechar{ₙ}{\ensuremath{_{n}}}
+\newunicodechar{ₓ}{\ensuremath{_{x}}}
+\newunicodechar{ᵢ}{\ensuremath{_{i}}}
+\newunicodechar{ŷ}{\ensuremath{\hat y}}
+\newunicodechar{Ŷ}{\ensuremath{\widehat Y}}
+\newunicodechar{ₘ}{\ensuremath{_{m}}}
+\newunicodechar{ₑ}{\ensuremath{_{e}}}
+\newunicodechar{ₐ}{\ensuremath{_{a}}}
+\newunicodechar{ₖ}{\ensuremath{_{k}}}
+\newunicodechar{ₛ}{\ensuremath{_{s}}}
+\newunicodechar{ₗ}{\ensuremath{_{l}}}
+\newunicodechar{ₕ}{\ensuremath{_{h}}}
+\newunicodechar{ₒ}{\ensuremath{_{o}}}
+\newunicodechar{₊}{\ensuremath{_{+}}}
+\newunicodechar{₋}{\ensuremath{_{-}}}
+\newunicodechar{₌}{\ensuremath{_{=}}}
+\newunicodechar{₍}{\ensuremath{_{(}}}
+\newunicodechar{₎}{\ensuremath{_{)}}}
+\newunicodechar{⁻}{\ensuremath{^{-}}}
+\newunicodechar{⁺}{\ensuremath{^{+}}}
+\newunicodechar{⁰}{\ensuremath{^{0}}}
+\newunicodechar{¹}{\ensuremath{^{1}}}
+\newunicodechar{⁴}{\ensuremath{^{4}}}
+\newunicodechar{⁵}{\ensuremath{^{5}}}
+\newunicodechar{⁶}{\ensuremath{^{6}}}
+\newunicodechar{⁷}{\ensuremath{^{7}}}
+\newunicodechar{⁸}{\ensuremath{^{8}}}
+\newunicodechar{⁹}{\ensuremath{^{9}}}
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0pt}{2.0ex plus .7ex minus .3ex}{1.0ex}{\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0pt}{1.8ex plus .5ex minus .2ex}{.7ex}{\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0pt}{1.3ex plus .4ex minus .2ex}{.5ex}{\normalsize\bfseries}}
+\makeatother
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead[L]{\small\textsc{KEDGE Business School --- QM1}}
+\fancyhead[R]{\small\textsc{2026--2027}}
+\fancyfoot[L]{\small Badr ABOUFARASSE, PhD}
+\fancyfoot[R]{\small\thepage\ /\ \pageref{LastPage}}
+\setlength{\headheight}{14pt}
+\setkeys{Gin}{keepaspectratio}
+\begin{document}
+
+\begin{center}
+{\small\textsc{KEDGE Business School \quad EBP1 \quad Quantitative Methods 1}}\\[6pt]
+{\Large\bfseries Worksheet 7 — Integrated cases}\\[6pt]
+{\normalsize\bfseries Fully worked solutions}\\[6pt]
+{\small Badr ABOUFARASSE, PhD \quad --- \quad 2026--2027}
+\end{center}
+\vspace{2mm}\hrule\vspace{6mm}
+
+\hypertarget{assessment-and-exam-practice}{%
+\section{Assessment and exam practice}\label{assessment-and-exam-practice}}
+
+Practise independently with assessment and final-exam style questions.
+
+\emph{Assessment / exam practice --- 70 min}
+
+\hypertarget{case-a-continuous-assessment-preparation}{%
+\subsection{Case A -- Continuous-assessment preparation}\label{case-a-continuous-assessment-preparation}}
+
+A school surveys 200 students about the maximum price they would accept for an optional service:
+
+\begin{longtable}[]{@{}lllllll@{}}
+\toprule\noalign{}
+Price & {\([5,10[\)} & {\([10,15[\)} & {\([15,20[\)} & {\([20,30[\)} & {\([30,40[\)} & {\([40,60[\)} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+{\(n_i\)} & 10 & 25 & 45 & 60 & 40 & 20 \\
+\end{longtable}
+
+Identify population, unit and variable type; build the complete table with widths, densities, frequencies, ICC, DCC and midpoints; draw histogram and cumulative curves; calculate modal class, median, quartiles, mean, population variance, standard deviation and CV; find the price affordable to about 65\%; then classify a satisfied/not satisfied variable and choose a graph.
+
+\hypertarget{fully-worked-solution}{%
+\subsubsection{Fully worked solution}\label{fully-worked-solution}}
+
+Observed population: 200 surveyed students. Unit: one student. Variable: maximum acceptable price, continuous quantitative.
+
+\begin{longtable}[]{@{}lllllll@{}}
+\toprule\noalign{}
+Class & {\([5,10[\)} & {\([10,15[\)} & {\([15,20[\)} & {\([20,30[\)} & {\([30,40[\)} & {\([40,60[\)} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+{\(n_i\)} & 10 & 25 & 45 & 60 & 40 & 20 \\
+{\(a_i\)} & 5 & 5 & 5 & 10 & 10 & 20 \\
+{\(d_i\)} & 2 & 5 & 9 & 6 & 4 & 1 \\
+ICC & 10 & 35 & 80 & 140 & 180 & 200 \\
+DCC & 200 & 190 & 165 & 120 & 60 & 20 \\
+{\(c_i\)} & 7.5 & 12.5 & 17.5 & 25 & 35 & 50 \\
+\end{longtable}
+
+The modal class is {\([15,20[\)}. {\[Q_1\approx16.67,\qquad
+Me\approx23.33,\qquad Q_3=32.50.\]} {\[\bar x=\frac{5075}{200}=25.375.\]} {\[V=129.859375,\qquad \sigma\approx11.396,\qquad
+CV\approx44.91\%.\]} For 65\% to afford at least price {\(p\)}, use the 35th percentile: {\[0.35(200)=70,\]} {\[p=15+5\frac{70-35}{45}\approx18.89\text{
+euros}.\]} Satisfied/not satisfied is a binary nominal qualitative variable; a bar chart is appropriate.
+
+Full table, including all cumulative frequencies and the columns required for the mean and variance:
+
+\begin{longtable}[]{@{}llllllllllll@{}}
+\toprule\noalign{}
+Classe & nᵢ & aᵢ & dᵢ & fᵢ (\%) & ECC & ECD & FCC (\%) & FCD (\%) & cᵢ & nᵢcᵢ & nᵢcᵢ² \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+{[}5,10{[} & 10 & 5 & 2 & 5 & 10 & 200 & 5 & 100 & 7.5 & 75 & 562.5 \\
+{[}10,15{[} & 25 & 5 & 5 & 12.5 & 35 & 190 & 17.5 & 95 & 12.5 & 312.5 & 3906.25 \\
+{[}15,20{[} & 45 & 5 & 9 & 22.5 & 80 & 165 & 40 & 82.5 & 17.5 & 787.5 & 13781.25 \\
+{[}20,30{[} & 60 & 10 & 6 & 30 & 140 & 120 & 70 & 60 & 25 & 1500 & 37500 \\
+{[}30,40{[} & 40 & 10 & 4 & 20 & 180 & 60 & 90 & 30 & 35 & 1400 & 49000 \\
+{[}40,60{[} & 20 & 20 & 1 & 10 & 200 & 20 & 100 & 10 & 50 & 1000 & 50000 \\
+TOTAL & 200 & --- & --- & 100 & 200 & --- & 100 & --- & --- & 5075 & 154750 \\
+\end{longtable}
+
+Histogram heights are the densities: 2, 5, 9, 6, 4 and 1.
+
+\includegraphics[width=0.85\textwidth,height=\textheight]{assets/chapter-7-solutions-en-chart-01.pdf}
+
+\emph{Cas A --- histogramme des densités / Density histogram}
+
+\includegraphics[width=0.85\textwidth,height=\textheight]{assets/chapter-7-solutions-en-chart-02.pdf}
+
+\emph{Cas A --- effectifs cumulés / Cumulative counts}
+
+\[\bar x=5075/200=25.375,\quad V=154750/200-(25.375)^2=129.859375.\]
+
+\[\sigma=\sqrt{129.859375}=11.395586,\quad CV=100(11.395586/25.375)=44.9087\%.\]
+
+\[\begin{gathered}
+Me=20+\frac{100-80}{60}(10)=23.333333,\\Q_1=15+\frac{50-35}{45}(5)=16.666667,\\Q_3=30+\frac{150-140}{40}(10)=32.5.
+\end{gathered}\]
+
+\[P_{35}=15+\frac{70-35}{45}(5)=18.888889\ \mathrm{euros}.\]
+
+The price affordable to approximately 65\% of students is the 35th percentile, not the 65th. Results are approximate because the data are grouped.
+
+\emph{Assessment / exam practice --- 110 min}
+
+\hypertarget{case-b-new-mock-final-exam-110-minutes}{%
+\subsection{Case B --- New mock final exam --- 110 minutes}\label{case-b-new-mock-final-exam-110-minutes}}
+
+Independent mock exam: the data below differ from exercises in chapters 4--6. Show every calculation step and justify rounding.
+
+\hypertarget{part-1-two-regressions-40-min}{%
+\subsubsection{Part 1 --- Two regressions (40 min)}\label{part-1-two-regressions-40-min}}
+
+\begin{longtable}[]{@{}lllllll@{}}
+\toprule\noalign{}
+t & 1 & 2 & 3 & 4 & 5 & 6 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+x & 5 & 6 & 8 & 9 & 11 & 13 \\
+y & 12 & 15 & 18 & 20 & 24 & 29 \\
+\end{longtable}
+
+1. Build t, x, y, t², x², y², tx, xy table; calculate both correlations and the regressions x on t and y on x. 2. Forecast x and y for t=8; qualify the forecast.
+
+\hypertarget{part-2-quarterly-series-40-min}{%
+\subsubsection{Part 2 --- Quarterly series (40 min)}\label{part-2-quarterly-series-40-min}}
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+Année / Year & Q1 & Q2 & Q3 & Q4 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+A & 72 & 88 & 80 & 110 \\
+B & 78 & 96 & 88 & 121 \\
+\end{longtable}
+
+1. Plot the series; calculate MA4 and CMA4. 2. With the supplied trend Tₜ=2.8t+78, compute all eight ratios Yₜ/Tₜ. 3. Average by quarter, normalise (sum 4) and forecast t=9 to 12.
+
+\hypertarget{part-3-index-numbers-30-min}{%
+\subsubsection{Part 3 --- Index numbers (30 min)}\label{part-3-index-numbers-30-min}}
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+Produit / Product & p₀ & q₀ & p₁ & q₁ \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+A & 10 & 40 & 12 & 45 \\
+B & 8 & 60 & 9 & 55 \\
+C & 20 & 20 & 22 & 25 \\
+\end{longtable}
+
+Compute all four aggregates; Laspeyres, Paasche and Fisher price and quantity indices; the value index; and verify Fisher\textquotesingle s factor reversal.
+
+\hypertarget{fully-worked-solution-1}{%
+\subsubsection{Fully worked solution}\label{fully-worked-solution-1}}
+
+\hypertarget{part-1-regression}{%
+\subsubsection{Part 1 --- Regression}\label{part-1-regression}}
+
+\begin{longtable}[]{@{}llllllll@{}}
+\toprule\noalign{}
+t & x & y & t² & x² & y² & t×x & x×y \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & 5 & 12 & 1 & 25 & 144 & 5 & 60 \\
+2 & 6 & 15 & 4 & 36 & 225 & 12 & 90 \\
+3 & 8 & 18 & 9 & 64 & 324 & 24 & 144 \\
+4 & 9 & 20 & 16 & 81 & 400 & 36 & 180 \\
+5 & 11 & 24 & 25 & 121 & 576 & 55 & 264 \\
+6 & 13 & 29 & 36 & 169 & 841 & 78 & 377 \\
+Σt=21 & 52 & 118 & 91 & 496 & 2510 & 210 & 1115 \\
+\end{longtable}
+
+\[\bar t=21/6=3.5,\quad\bar x=52/6=8.666667,\quad\bar y=118/6=19.666667.\]
+
+\[\begin{gathered}
+V(t)=91/6-3.5^2=2.916667,\\V(x)=496/6-(52/6)^2=7.555556,\\V(y)=2510/6-(118/6)^2=31.555556.
+\end{gathered}\]
+
+\[\begin{gathered}
+\operatorname{Cov}(t,x)=210/6-3.5(52/6)=4.666667,\\r_{tx}=\frac{4.666667}{\sqrt{2.916667(7.555556)}}=.994100.
+\end{gathered}\]
+
+\[a_1=4.666667/2.916667=1.6,\quad b_1=52/6-1.6(3.5)=3.066667,\quad\widehat x_t=1.6t+3.066667.\]
+
+\[\begin{gathered}
+\operatorname{Cov}(x,y)=1115/6-(52/6)(118/6)=15.388889,\\r_{xy}=\frac{15.388889}{\sqrt{7.555556(31.555556)}}=.996635.
+\end{gathered}\]
+
+\[a_2=15.388889/7.555556=2.036765,\quad b_2=118/6-a_2(52/6)=2.014706.\]
+
+\[\begin{gathered}
+\widehat x_8=1.6(8)+3.066667=15.866667,\\\widehat y_8=2.036765(15.866667)+2.014706=34.331373.
+\end{gathered}\]
+
+Period 8 is beyond the observed 1--6 range: extrapolation. Correlation does not imply causation.
+
+\hypertarget{part-2-time-series}{%
+\subsubsection{Part 2 --- Time series}\label{part-2-time-series}}
+
+\[MA_{2.5}=(72+88+80+110)/4=87.5,\quad MA_{3.5}=(88+80+110+78)/4=89.\]
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+Fenêtre / Window & MA4 & Période médiane / Midperiod \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1--4 & 87.5 & 2.5 \\
+2--5 & 89 & 3.5 \\
+3--6 & 91 & 4.5 \\
+4--7 & 93 & 5.5 \\
+5--8 & 95.75 & 6.5 \\
+\end{longtable}
+
+\[CMA_3=(87.5+89)/2=88.25,\quad CMA_4=(89+91)/2=90.\]
+
+\begin{longtable}[]{@{}p{0.32\linewidth}p{0.62\linewidth}@{}}
+\toprule\noalign{}
+t & CMA4 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+3 & 88.25 \\
+4 & 90 \\
+5 & 92 \\
+6 & 94.375 \\
+\end{longtable}
+
+\begin{longtable}[]{@{}llll@{}}
+\toprule\noalign{}
+t & Yₜ & Tₜ=2.8t+78 & Yₜ/Tₜ \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & 72 & 80.8 & 0.891089 \\
+2 & 88 & 83.6 & 1.052632 \\
+3 & 80 & 86.4 & 0.925926 \\
+4 & 110 & 89.2 & 1.233184 \\
+5 & 78 & 92 & 0.847826 \\
+6 & 96 & 94.8 & 1.012658 \\
+7 & 88 & 97.6 & 0.901639 \\
+8 & 121 & 100.4 & 1.205179 \\
+\end{longtable}
+
+\[\bar S_q=(S_q+S_{q+4})/2,\qquad S'_q=\frac{4\bar S_q}{\sum_{k=1}^4\bar S_k}.\]
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+Quarter & Moyenne / Mean & S\textquotesingle{} normalisé / Normalised \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Q1 & 0.869458 & 0.861902 \\
+Q2 & 1.032645 & 1.023671 \\
+Q3 & 0.913783 & 0.905841 \\
+Q4 & 1.219182 & 1.208586 \\
+TOTAL & 4.035067 & 4 \\
+\end{longtable}
+
+\begin{longtable}[]{@{}llll@{}}
+\toprule\noalign{}
+t & Tₜ & S\textquotesingle{} & Y prévu / Forecast \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+9 & 103.2 & 0.861902 & 88.9482 \\
+10 & 106 & 1.023671 & 108.5091 \\
+11 & 108.8 & 0.905841 & 98.5555 \\
+12 & 111.6 & 1.208586 & 134.8782 \\
+\end{longtable}
+
+\includegraphics[width=0.85\textwidth,height=\textheight]{assets/chapter-7-solutions-en-chart-03.pdf}
+
+\emph{Cas B --- série trimestrielle / Quarterly series}
+
+Forecasts t=9 to 12: 88.95, 108.51, 98.56 and 134.88.
+
+\hypertarget{part-3-indices}{%
+\subsubsection{Part 3 --- Indices}\label{part-3-indices}}
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+Produit / Product & p₀q₀ & p₁q₀ & p₀q₁ & p₁q₁ \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+A & 400 & 480 & 450 & 540 \\
+B & 480 & 540 & 440 & 495 \\
+C & 400 & 440 & 500 & 550 \\
+Σ & 1280 & 1460 & 1390 & 1585 \\
+\end{longtable}
+
+\[L_P=100(1460/1280)=114.0625,\quad P_P=100(1585/1390)=114.028777.\]
+
+\[L_Q=100(1390/1280)=108.59375,\quad P_Q=100(1585/1460)=108.561644.\]
+
+\[F_P=\sqrt{L_PP_P}=114.045637,\quad F_Q=\sqrt{L_QP_Q}=108.577696.\]
+
+\[I_V=100(1585/1280)=123.828125,\quad F_PF_Q/100=123.828125.\]
+
+Total value rises by 23.83\%, reflecting both price and quantity changes.
+
+\end{document}

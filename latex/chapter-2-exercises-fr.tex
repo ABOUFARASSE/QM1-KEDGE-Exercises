@@ -1,0 +1,238 @@
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsfonts,mathtools}
+\usepackage{graphicx,booktabs,longtable,array,tabularx,adjustbox}
+\usepackage{geometry,microtype,fancyhdr,lastpage,etoolbox,enumitem}
+\usepackage{newunicodechar,textcomp}
+\usepackage{hyperref}
+\hypersetup{hidelinks,pdfcreator={XeLaTeX / QM1 academic edition}}
+\geometry{left=20mm,right=20mm,top=22mm,bottom=23mm}
+\setcounter{secnumdepth}{2}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt plus 1pt}
+\setlength{\emergencystretch}{2em}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.16}
+\setlist{nosep,topsep=3pt,itemsep=2pt,leftmargin=7mm}
+\AtBeginEnvironment{longtable}{\footnotesize\setlength{\tabcolsep}{2.2pt}}
+\newcommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\Cov}{\operatorname{Cov}}
+\providecommand{\Var}{\operatorname{Var}}
+\providecommand{\Corr}{\operatorname{Corr}}
+\providecommand{\MAD}{\operatorname{MAD}}
+\providecommand{\E}{\mathbb{E}}
+\providecommand{\R}{\mathbb{R}}
+\newunicodechar{—}{\textemdash}
+\newunicodechar{–}{\textendash}
+\newunicodechar{€}{\texteuro}
+\newunicodechar{≤}{\ensuremath{\leq}}
+\newunicodechar{≥}{\ensuremath{\geq}}
+\newunicodechar{×}{\ensuremath{\times}}
+\newunicodechar{÷}{\ensuremath{\div}}
+\newunicodechar{Σ}{\ensuremath{\Sigma}}
+\newunicodechar{σ}{\ensuremath{\sigma}}
+\newunicodechar{μ}{\ensuremath{\mu}}
+\newunicodechar{Δ}{\ensuremath{\Delta}}
+\newunicodechar{∑}{\ensuremath{\sum}}
+\newunicodechar{≈}{\ensuremath{\approx}}
+\newunicodechar{√}{\ensuremath{\surd}}
+\newunicodechar{≠}{\ensuremath{\ne}}
+\newunicodechar{→}{\ensuremath{\to}}
+\newunicodechar{∞}{\ensuremath{\infty}}
+\newunicodechar{∈}{\ensuremath{\in}}
+\newunicodechar{−}{\ensuremath{-}}
+\newunicodechar{²}{\ensuremath{^{2}}}
+\newunicodechar{³}{\ensuremath{^{3}}}
+\newunicodechar{₀}{\ensuremath{_{0}}}
+\newunicodechar{₁}{\ensuremath{_{1}}}
+\newunicodechar{₂}{\ensuremath{_{2}}}
+\newunicodechar{₃}{\ensuremath{_{3}}}
+\newunicodechar{₄}{\ensuremath{_{4}}}
+\newunicodechar{ₜ}{\ensuremath{_{t}}}
+\newunicodechar{ₚ}{\ensuremath{_{p}}}
+\newunicodechar{ₙ}{\ensuremath{_{n}}}
+\newunicodechar{ₓ}{\ensuremath{_{x}}}
+\newunicodechar{ᵢ}{\ensuremath{_{i}}}
+\newunicodechar{ŷ}{\ensuremath{\hat y}}
+\newunicodechar{Ŷ}{\ensuremath{\widehat Y}}
+\newunicodechar{ₘ}{\ensuremath{_{m}}}
+\newunicodechar{ₑ}{\ensuremath{_{e}}}
+\newunicodechar{ₐ}{\ensuremath{_{a}}}
+\newunicodechar{ₖ}{\ensuremath{_{k}}}
+\newunicodechar{ₛ}{\ensuremath{_{s}}}
+\newunicodechar{ₗ}{\ensuremath{_{l}}}
+\newunicodechar{ₕ}{\ensuremath{_{h}}}
+\newunicodechar{ₒ}{\ensuremath{_{o}}}
+\newunicodechar{₊}{\ensuremath{_{+}}}
+\newunicodechar{₋}{\ensuremath{_{-}}}
+\newunicodechar{₌}{\ensuremath{_{=}}}
+\newunicodechar{₍}{\ensuremath{_{(}}}
+\newunicodechar{₎}{\ensuremath{_{)}}}
+\newunicodechar{⁻}{\ensuremath{^{-}}}
+\newunicodechar{⁺}{\ensuremath{^{+}}}
+\newunicodechar{⁰}{\ensuremath{^{0}}}
+\newunicodechar{¹}{\ensuremath{^{1}}}
+\newunicodechar{⁴}{\ensuremath{^{4}}}
+\newunicodechar{⁵}{\ensuremath{^{5}}}
+\newunicodechar{⁶}{\ensuremath{^{6}}}
+\newunicodechar{⁷}{\ensuremath{^{7}}}
+\newunicodechar{⁸}{\ensuremath{^{8}}}
+\newunicodechar{⁹}{\ensuremath{^{9}}}
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0pt}{2.0ex plus .7ex minus .3ex}{1.0ex}{\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0pt}{1.8ex plus .5ex minus .2ex}{.7ex}{\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0pt}{1.3ex plus .4ex minus .2ex}{.5ex}{\normalsize\bfseries}}
+\makeatother
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead[L]{\small\textsc{KEDGE Business School --- QM1}}
+\fancyhead[R]{\small\textsc{2026--2027}}
+\fancyfoot[L]{\small Badr ABOUFARASSE, PhD}
+\fancyfoot[R]{\small\thepage\ /\ \pageref{LastPage}}
+\setlength{\headheight}{14pt}
+\setkeys{Gin}{keepaspectratio}
+\begin{document}
+
+\begin{center}
+{\small\textsc{KEDGE Business School \quad EBP1 \quad Quantitative Methods 1}}\\[6pt]
+{\Large\bfseries Fiche 2 — Mesures de tendance centrale}\\[6pt]
+{\normalsize\bfseries Énoncés des exercices}\\[6pt]
+{\small Badr ABOUFARASSE, PhD \quad --- \quad 2026--2027}
+\end{center}
+\vspace{2mm}\hrule\vspace{6mm}
+
+\hypertarget{applications-fondamentales}{%
+\section{Applications fondamentales}\label{applications-fondamentales}}
+
+Maîtriser les définitions et les calculs essentiels du cours.
+
+\emph{Application du cours --- 25 min}
+
+\hypertarget{exercice-1-choisir-et-calculer-la-bonne-mesure-de-centre}{%
+\subsection{Exercice 1 -- Choisir et calculer la bonne mesure de centre}\label{exercice-1-choisir-et-calculer-la-bonne-mesure-de-centre}}
+
+\begin{enumerate}
+\item
+  Les paniers de six clients valent : {\(18,20,20,22,25,95\)} euros. Calculer le mode, la médiane et la moyenne arithmétique. Quelle mesure décrit le mieux un client typique ? Pourquoi la moyenne reste-t-elle utile ?
+\item
+  Trois notes sont {\(14\)}, {\(11\)} et {\(16\)}, pondérées respectivement par {\(30\%\)}, {\(30\%\)} et {\(40\%\)}. Calculer la moyenne pondérée.
+\item
+  Un chiffre d'affaires évolue de {\(+5\%\)}, {\(-2\%\)} puis {\(+12\%\)}. Calculer le taux annuel moyen approprié.
+\item
+  Un véhicule parcourt 120 km à 60 km/h puis 120 km à 90 km/h. Calculer la vitesse moyenne appropriée.
+\end{enumerate}
+
+\emph{Application du cours --- 10 min}
+
+\hypertarget{exercice-3-quel-indicateur-utiliser}{%
+\subsection{Exercice 3 -- Quel indicateur utiliser ?}\label{exercice-3-quel-indicateur-utiliser}}
+
+Pour chacune des situations suivantes, choisir l'indicateur le plus pertinent et justifier en une phrase :
+
+\begin{enumerate}
+\item
+  catégorie de produit la plus vendue ;
+\item
+  salaire typique dans une entreprise avec quelques dirigeants très rémunérés ;
+\item
+  prix moyen lorsque les quantités achetées diffèrent fortement ;
+\item
+  taux de croissance moyen sur plusieurs années ;
+\item
+  vitesse moyenne sur des distances égales ;
+\item
+  centre d'une distribution numérique à peu près symétrique sans valeur extrême.
+\end{enumerate}
+
+\emph{Application du cours --- 15 min}
+
+\hypertarget{compluxe9ment-1-centre-robuste-et-performance-de-livraison}{%
+\subsection{Complément 1 --- Centre robuste et performance de livraison}\label{compluxe9ment-1-centre-robuste-et-performance-de-livraison}}
+
+Les temps de livraison (minutes) de 12 commandes sont : 18, 19, 20, 20, 21, 21, 22, 22, 23, 24, 25, 65.
+
+\begin{enumerate}
+\tightlist
+\item
+  Calculez le mode, la médiane et la moyenne.
+\item
+  Recalculez la moyenne sans la livraison de 65 minutes.
+\item
+  Recommandez l'indicateur principal d'un tableau de bord client et justifiez.
+\end{enumerate}
+
+\textbf{Indication méthodologique :}
+
+Comparez les indicateurs avec et sans l'observation inhabituelle ; ne la supprimez pas sans justification.
+
+\hypertarget{pruxe9paration-aux-uxe9valuations}{%
+\section{Préparation aux évaluations}\label{pruxe9paration-aux-uxe9valuations}}
+
+Résoudre des exercices de contrôle continu et de partiel en autonomie.
+
+\emph{Préparation CC / partiel --- 30 min}
+
+\hypertarget{exercice-2-distribution-groupuxe9e}{%
+\subsection{Exercice 2 -- Distribution groupée}\label{exercice-2-distribution-groupuxe9e}}
+
+\begin{longtable}[]{@{}llllllllll@{}}
+\toprule\noalign{}
+Classe & {\([10,14[\)} & {\([14,18[\)} & {\([18,26[\)} & {\([26,30[\)} & {\([30,35[\)} & {\([35,40[\)} & {\([40,45[\)} & {\([45,50[\)} & {\([50,55[\)} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+{\(n_i\)} & 4 & 12 & 32 & 32 & 60 & 35 & 25 & 5 & 5 \\
+\end{longtable}
+
+\begin{enumerate}
+\item
+  Identifier la classe modale en tenant compte des amplitudes.
+\item
+  Calculer la médiane par interpolation linéaire.
+\item
+  Calculer {\(Q_1\)} et {\(Q_3\)} par interpolation.
+\item
+  Calculer la moyenne approchée à l'aide des centres de classes.
+\item
+  Déterminer le prix maximal tel qu'environ 60\% des clients puissent payer au moins ce prix.
+\end{enumerate}
+
+\emph{Préparation CC / partiel --- 20 min}
+
+\hypertarget{compluxe9ment-2-cas-intuxe9gruxe9-choisir-la-mesure-centrale}{%
+\subsection{Complément 2 --- Cas intégré : choisir la mesure centrale}\label{compluxe9ment-2-cas-intuxe9gruxe9-choisir-la-mesure-centrale}}
+
+Un distributeur présente trois situations :
+
+\begin{longtable}[]{@{}p{0.32\linewidth}p{0.62\linewidth}@{}}
+\toprule\noalign{}
+Question & Données \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Panier moyen & 120 paniers, total de 3 600 € \\
+Croissance annuelle typique & +12 \%, −8 \%, +15 \%, +5 \% \\
+Vitesse moyenne & Deux trajets égaux de 90 km à 60 puis 90 km/h \\
+\end{longtable}
+
+\begin{enumerate}
+\tightlist
+\item
+  Choisissez et calculez la moyenne appropriée pour chaque ligne.
+\item
+  Expliquez pourquoi la moyenne arithmétique ne convient pas partout.
+\item
+  Rédigez une courte conclusion managériale.
+\end{enumerate}
+
+\textbf{Indication méthodologique :}
+
+Associez total additif, facteurs composés et vitesses sur distances égales aux moyennes arithmétique, géométrique et harmonique.
+
+\end{document}

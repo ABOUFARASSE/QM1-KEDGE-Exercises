@@ -1,0 +1,228 @@
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsfonts,mathtools}
+\usepackage{graphicx,booktabs,longtable,array,tabularx,adjustbox}
+\usepackage{geometry,microtype,fancyhdr,lastpage,etoolbox,enumitem}
+\usepackage{newunicodechar,textcomp}
+\usepackage{hyperref}
+\hypersetup{hidelinks,pdfcreator={XeLaTeX / QM1 academic edition}}
+\geometry{left=20mm,right=20mm,top=22mm,bottom=23mm}
+\setcounter{secnumdepth}{2}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt plus 1pt}
+\setlength{\emergencystretch}{2em}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.16}
+\setlist{nosep,topsep=3pt,itemsep=2pt,leftmargin=7mm}
+\AtBeginEnvironment{longtable}{\footnotesize\setlength{\tabcolsep}{2.2pt}}
+\newcommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\Cov}{\operatorname{Cov}}
+\providecommand{\Var}{\operatorname{Var}}
+\providecommand{\Corr}{\operatorname{Corr}}
+\providecommand{\MAD}{\operatorname{MAD}}
+\providecommand{\E}{\mathbb{E}}
+\providecommand{\R}{\mathbb{R}}
+\newunicodechar{—}{\textemdash}
+\newunicodechar{–}{\textendash}
+\newunicodechar{€}{\texteuro}
+\newunicodechar{≤}{\ensuremath{\leq}}
+\newunicodechar{≥}{\ensuremath{\geq}}
+\newunicodechar{×}{\ensuremath{\times}}
+\newunicodechar{÷}{\ensuremath{\div}}
+\newunicodechar{Σ}{\ensuremath{\Sigma}}
+\newunicodechar{σ}{\ensuremath{\sigma}}
+\newunicodechar{μ}{\ensuremath{\mu}}
+\newunicodechar{Δ}{\ensuremath{\Delta}}
+\newunicodechar{∑}{\ensuremath{\sum}}
+\newunicodechar{≈}{\ensuremath{\approx}}
+\newunicodechar{√}{\ensuremath{\surd}}
+\newunicodechar{≠}{\ensuremath{\ne}}
+\newunicodechar{→}{\ensuremath{\to}}
+\newunicodechar{∞}{\ensuremath{\infty}}
+\newunicodechar{∈}{\ensuremath{\in}}
+\newunicodechar{−}{\ensuremath{-}}
+\newunicodechar{²}{\ensuremath{^{2}}}
+\newunicodechar{³}{\ensuremath{^{3}}}
+\newunicodechar{₀}{\ensuremath{_{0}}}
+\newunicodechar{₁}{\ensuremath{_{1}}}
+\newunicodechar{₂}{\ensuremath{_{2}}}
+\newunicodechar{₃}{\ensuremath{_{3}}}
+\newunicodechar{₄}{\ensuremath{_{4}}}
+\newunicodechar{ₜ}{\ensuremath{_{t}}}
+\newunicodechar{ₚ}{\ensuremath{_{p}}}
+\newunicodechar{ₙ}{\ensuremath{_{n}}}
+\newunicodechar{ₓ}{\ensuremath{_{x}}}
+\newunicodechar{ᵢ}{\ensuremath{_{i}}}
+\newunicodechar{ŷ}{\ensuremath{\hat y}}
+\newunicodechar{Ŷ}{\ensuremath{\widehat Y}}
+\newunicodechar{ₘ}{\ensuremath{_{m}}}
+\newunicodechar{ₑ}{\ensuremath{_{e}}}
+\newunicodechar{ₐ}{\ensuremath{_{a}}}
+\newunicodechar{ₖ}{\ensuremath{_{k}}}
+\newunicodechar{ₛ}{\ensuremath{_{s}}}
+\newunicodechar{ₗ}{\ensuremath{_{l}}}
+\newunicodechar{ₕ}{\ensuremath{_{h}}}
+\newunicodechar{ₒ}{\ensuremath{_{o}}}
+\newunicodechar{₊}{\ensuremath{_{+}}}
+\newunicodechar{₋}{\ensuremath{_{-}}}
+\newunicodechar{₌}{\ensuremath{_{=}}}
+\newunicodechar{₍}{\ensuremath{_{(}}}
+\newunicodechar{₎}{\ensuremath{_{)}}}
+\newunicodechar{⁻}{\ensuremath{^{-}}}
+\newunicodechar{⁺}{\ensuremath{^{+}}}
+\newunicodechar{⁰}{\ensuremath{^{0}}}
+\newunicodechar{¹}{\ensuremath{^{1}}}
+\newunicodechar{⁴}{\ensuremath{^{4}}}
+\newunicodechar{⁵}{\ensuremath{^{5}}}
+\newunicodechar{⁶}{\ensuremath{^{6}}}
+\newunicodechar{⁷}{\ensuremath{^{7}}}
+\newunicodechar{⁸}{\ensuremath{^{8}}}
+\newunicodechar{⁹}{\ensuremath{^{9}}}
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0pt}{2.0ex plus .7ex minus .3ex}{1.0ex}{\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0pt}{1.8ex plus .5ex minus .2ex}{.7ex}{\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0pt}{1.3ex plus .4ex minus .2ex}{.5ex}{\normalsize\bfseries}}
+\makeatother
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead[L]{\small\textsc{KEDGE Business School --- QM1}}
+\fancyhead[R]{\small\textsc{2026--2027}}
+\fancyfoot[L]{\small Badr ABOUFARASSE, PhD}
+\fancyfoot[R]{\small\thepage\ /\ \pageref{LastPage}}
+\setlength{\headheight}{14pt}
+\setkeys{Gin}{keepaspectratio}
+\begin{document}
+
+\begin{center}
+{\small\textsc{KEDGE Business School \quad EBP1 \quad Quantitative Methods 1}}\\[6pt]
+{\Large\bfseries Worksheet 4 — Bivariate distributions and regression}\\[6pt]
+{\normalsize\bfseries Exercise statements}\\[6pt]
+{\small Badr ABOUFARASSE, PhD \quad --- \quad 2026--2027}
+\end{center}
+\vspace{2mm}\hrule\vspace{6mm}
+
+\hypertarget{core-applications}{%
+\section{Core applications}\label{core-applications}}
+
+Master the essential definitions and calculations from the course.
+
+\emph{Core application --- 15 min}
+
+\hypertarget{exercise-3-mayer-line}{%
+\subsection{Exercise 3 -- Mayer line}\label{exercise-3-mayer-line}}
+
+For {\((1,7),(2,10),(3,10),(4,14),(5,14)\)}, form two sub-clouds, calculate mean points {\(A\)} and {\(B\)} and determine the Mayer line.
+
+\hypertarget{assessment-and-exam-practice}{%
+\section{Assessment and exam practice}\label{assessment-and-exam-practice}}
+
+Practise independently with assessment and final-exam style questions.
+
+\emph{Assessment / exam practice --- 35 min}
+
+\hypertarget{exercise-1-complete-linear-regression}{%
+\subsection{Exercise 1 -- Complete linear regression}\label{exercise-1-complete-linear-regression}}
+
+Consider {\((1,3),(2,5),(3,5),(4,8),(5,9)\)}.
+
+\begin{enumerate}
+\item
+  Draw the scatter plot and describe direction, form and apparent strength.
+\item
+  Calculate {\(\bar x\)}, {\(\bar y\)}, {\(V(x)\)}, {\(V(y)\)}, {\(\Cov(x,y)\)} and correlation {\(r\)}.
+\item
+  Estimate the least-squares line {\(\hat y=ax+b\)}.
+\item
+  Calculate fitted values and residuals {\(e_i=y_i-\hat y_i\)}.
+\item
+  Calculate {\(SSE\)}, {\(SST\)} and {\(R^2\)} and interpret {\(R^2\)}.
+\end{enumerate}
+
+\emph{Assessment / exam practice --- 15 min}
+
+\hypertarget{exercise-4-two-stage-forecast}{%
+\subsection{Exercise 4 -- Two-stage forecast}\label{exercise-4-two-stage-forecast}}
+
+\begin{longtable}[]{@{}lllllllll@{}}
+\toprule\noalign{}
+Month & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Advertising {\(X\)} & 12 & 15 & 14 & 18 & 20 & 22 & 25 & 27 \\
+Sales {\(Y\)} & 48 & 52 & 50 & 59 & 63 & 68 & 73 & 78 \\
+\end{longtable}
+
+Given {\(\widehat Y=2.064X+21.899\)} and {\(\widehat X_t=2.155t+9.429\)}, forecast month-10 advertising and sales, and identify where extrapolation occurs.
+
+\emph{Assessment / exam practice --- 45 min}
+
+\hypertarget{exercise-5-two-successive-regressions-exam-style}{%
+\subsection{Exercise 5 --- Two successive regressions --- exam style}\label{exercise-5-two-successive-regressions-exam-style}}
+
+For six periods, observe period t, advertising x and sales y.
+
+\begin{longtable}[]{@{}lllllll@{}}
+\toprule\noalign{}
+t & 1 & 2 & 3 & 4 & 5 & 6 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+x & 4 & 5 & 7 & 8 & 10 & 11 \\
+y & 10 & 12 & 15 & 18 & 22 & 24 \\
+\end{longtable}
+
+\begin{enumerate}
+\tightlist
+\item
+  Build the complete t, x, y, t², x², y², tx, xy table and sums.
+\item
+  Compute means, variances, covariance, r and the regression of x on t.
+\item
+  Repeat for y on x.
+\item
+  Forecast x then y for t=8; discuss extrapolation.
+\end{enumerate}
+
+\hypertarget{optional-advanced-practice}{%
+\section{Optional advanced practice}\label{optional-advanced-practice}}
+
+Explore additional interpretations and professional applications.
+
+\emph{Advanced practice --- 20 min}
+
+\hypertarget{exercise-2-interpolation-extrapolation-causality-and-influence}{%
+\subsection{Exercise 2 -- Interpolation, extrapolation, causality and influence}\label{exercise-2-interpolation-extrapolation-causality-and-influence}}
+
+Using Exercise 1, forecast {\(Y\)} at {\(X=3.5\)} and {\(X=10\)}, classify each forecast, add point {\((10,30)\)} and recalculate the regression line, then explain why high correlation does not establish causality.
+
+\emph{Advanced practice --- 20 min}
+
+\hypertarget{extra-1-regression-diagnosis-and-responsible-decision}{%
+\subsection{Extra 1 --- Regression diagnosis and responsible decision}\label{extra-1-regression-diagnosis-and-responsible-decision}}
+
+A model linking store traffic to temperature reports r = 0.78 and R² = 0.61. Its residual plot is U-shaped, one summer weekend has a very large residual, and the manager wants to forecast a temperature 12°C above the observed maximum.
+
+\begin{enumerate}
+\tightlist
+\item
+  Interpret r and R² correctly.
+\item
+  Diagnose the residual pattern.
+\item
+  Discuss the unusual weekend and the proposed forecast.
+\item
+  Recommend the next analytical steps.
+\end{enumerate}
+
+\textbf{Method hint:}
+
+Separate strength, functional form, unusual observations, extrapolation and causality.
+
+\end{document}

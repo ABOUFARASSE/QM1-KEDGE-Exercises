@@ -1,0 +1,188 @@
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsfonts,mathtools}
+\usepackage{graphicx,booktabs,longtable,array,tabularx,adjustbox}
+\usepackage{geometry,microtype,fancyhdr,lastpage,etoolbox,enumitem}
+\usepackage{newunicodechar,textcomp}
+\usepackage{hyperref}
+\hypersetup{hidelinks,pdfcreator={XeLaTeX / QM1 academic edition}}
+\geometry{left=20mm,right=20mm,top=22mm,bottom=23mm}
+\setcounter{secnumdepth}{2}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt plus 1pt}
+\setlength{\emergencystretch}{2em}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.16}
+\setlist{nosep,topsep=3pt,itemsep=2pt,leftmargin=7mm}
+\AtBeginEnvironment{longtable}{\footnotesize\setlength{\tabcolsep}{2.2pt}}
+\newcommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\Cov}{\operatorname{Cov}}
+\providecommand{\Var}{\operatorname{Var}}
+\providecommand{\Corr}{\operatorname{Corr}}
+\providecommand{\MAD}{\operatorname{MAD}}
+\providecommand{\E}{\mathbb{E}}
+\providecommand{\R}{\mathbb{R}}
+\newunicodechar{—}{\textemdash}
+\newunicodechar{–}{\textendash}
+\newunicodechar{€}{\texteuro}
+\newunicodechar{≤}{\ensuremath{\leq}}
+\newunicodechar{≥}{\ensuremath{\geq}}
+\newunicodechar{×}{\ensuremath{\times}}
+\newunicodechar{÷}{\ensuremath{\div}}
+\newunicodechar{Σ}{\ensuremath{\Sigma}}
+\newunicodechar{σ}{\ensuremath{\sigma}}
+\newunicodechar{μ}{\ensuremath{\mu}}
+\newunicodechar{Δ}{\ensuremath{\Delta}}
+\newunicodechar{∑}{\ensuremath{\sum}}
+\newunicodechar{≈}{\ensuremath{\approx}}
+\newunicodechar{√}{\ensuremath{\surd}}
+\newunicodechar{≠}{\ensuremath{\ne}}
+\newunicodechar{→}{\ensuremath{\to}}
+\newunicodechar{∞}{\ensuremath{\infty}}
+\newunicodechar{∈}{\ensuremath{\in}}
+\newunicodechar{−}{\ensuremath{-}}
+\newunicodechar{²}{\ensuremath{^{2}}}
+\newunicodechar{³}{\ensuremath{^{3}}}
+\newunicodechar{₀}{\ensuremath{_{0}}}
+\newunicodechar{₁}{\ensuremath{_{1}}}
+\newunicodechar{₂}{\ensuremath{_{2}}}
+\newunicodechar{₃}{\ensuremath{_{3}}}
+\newunicodechar{₄}{\ensuremath{_{4}}}
+\newunicodechar{ₜ}{\ensuremath{_{t}}}
+\newunicodechar{ₚ}{\ensuremath{_{p}}}
+\newunicodechar{ₙ}{\ensuremath{_{n}}}
+\newunicodechar{ₓ}{\ensuremath{_{x}}}
+\newunicodechar{ᵢ}{\ensuremath{_{i}}}
+\newunicodechar{ŷ}{\ensuremath{\hat y}}
+\newunicodechar{Ŷ}{\ensuremath{\widehat Y}}
+\newunicodechar{ₘ}{\ensuremath{_{m}}}
+\newunicodechar{ₑ}{\ensuremath{_{e}}}
+\newunicodechar{ₐ}{\ensuremath{_{a}}}
+\newunicodechar{ₖ}{\ensuremath{_{k}}}
+\newunicodechar{ₛ}{\ensuremath{_{s}}}
+\newunicodechar{ₗ}{\ensuremath{_{l}}}
+\newunicodechar{ₕ}{\ensuremath{_{h}}}
+\newunicodechar{ₒ}{\ensuremath{_{o}}}
+\newunicodechar{₊}{\ensuremath{_{+}}}
+\newunicodechar{₋}{\ensuremath{_{-}}}
+\newunicodechar{₌}{\ensuremath{_{=}}}
+\newunicodechar{₍}{\ensuremath{_{(}}}
+\newunicodechar{₎}{\ensuremath{_{)}}}
+\newunicodechar{⁻}{\ensuremath{^{-}}}
+\newunicodechar{⁺}{\ensuremath{^{+}}}
+\newunicodechar{⁰}{\ensuremath{^{0}}}
+\newunicodechar{¹}{\ensuremath{^{1}}}
+\newunicodechar{⁴}{\ensuremath{^{4}}}
+\newunicodechar{⁵}{\ensuremath{^{5}}}
+\newunicodechar{⁶}{\ensuremath{^{6}}}
+\newunicodechar{⁷}{\ensuremath{^{7}}}
+\newunicodechar{⁸}{\ensuremath{^{8}}}
+\newunicodechar{⁹}{\ensuremath{^{9}}}
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0pt}{2.0ex plus .7ex minus .3ex}{1.0ex}{\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0pt}{1.8ex plus .5ex minus .2ex}{.7ex}{\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0pt}{1.3ex plus .4ex minus .2ex}{.5ex}{\normalsize\bfseries}}
+\makeatother
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead[L]{\small\textsc{KEDGE Business School --- QM1}}
+\fancyhead[R]{\small\textsc{2026--2027}}
+\fancyfoot[L]{\small Badr ABOUFARASSE, PhD}
+\fancyfoot[R]{\small\thepage\ /\ \pageref{LastPage}}
+\setlength{\headheight}{14pt}
+\setkeys{Gin}{keepaspectratio}
+\begin{document}
+
+\begin{center}
+{\small\textsc{KEDGE Business School \quad EBP1 \quad Quantitative Methods 1}}\\[6pt]
+{\Large\bfseries Worksheet 7 — Integrated cases}\\[6pt]
+{\normalsize\bfseries Exercise statements}\\[6pt]
+{\small Badr ABOUFARASSE, PhD \quad --- \quad 2026--2027}
+\end{center}
+\vspace{2mm}\hrule\vspace{6mm}
+
+\hypertarget{assessment-and-exam-practice}{%
+\section{Assessment and exam practice}\label{assessment-and-exam-practice}}
+
+Practise independently with assessment and final-exam style questions.
+
+\emph{Assessment / exam practice --- 70 min}
+
+\hypertarget{case-a-continuous-assessment-preparation}{%
+\subsection{Case A -- Continuous-assessment preparation}\label{case-a-continuous-assessment-preparation}}
+
+A school surveys 200 students about the maximum price they would accept for an optional service:
+
+\begin{longtable}[]{@{}lllllll@{}}
+\toprule\noalign{}
+Price & {\([5,10[\)} & {\([10,15[\)} & {\([15,20[\)} & {\([20,30[\)} & {\([30,40[\)} & {\([40,60[\)} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+{\(n_i\)} & 10 & 25 & 45 & 60 & 40 & 20 \\
+\end{longtable}
+
+Identify population, unit and variable type; build the complete table with widths, densities, frequencies, ICC, DCC and midpoints; draw histogram and cumulative curves; calculate modal class, median, quartiles, mean, population variance, standard deviation and CV; find the price affordable to about 65\%; then classify a satisfied/not satisfied variable and choose a graph.
+
+\emph{Assessment / exam practice --- 110 min}
+
+\hypertarget{case-b-new-mock-final-exam-110-minutes}{%
+\subsection{Case B --- New mock final exam --- 110 minutes}\label{case-b-new-mock-final-exam-110-minutes}}
+
+Independent mock exam: the data below differ from exercises in chapters 4--6. Show every calculation step and justify rounding.
+
+\hypertarget{part-1-two-regressions-40-min}{%
+\subsubsection{Part 1 --- Two regressions (40 min)}\label{part-1-two-regressions-40-min}}
+
+\begin{longtable}[]{@{}lllllll@{}}
+\toprule\noalign{}
+t & 1 & 2 & 3 & 4 & 5 & 6 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+x & 5 & 6 & 8 & 9 & 11 & 13 \\
+y & 12 & 15 & 18 & 20 & 24 & 29 \\
+\end{longtable}
+
+1. Build t, x, y, t², x², y², tx, xy table; calculate both correlations and the regressions x on t and y on x. 2. Forecast x and y for t=8; qualify the forecast.
+
+\hypertarget{part-2-quarterly-series-40-min}{%
+\subsubsection{Part 2 --- Quarterly series (40 min)}\label{part-2-quarterly-series-40-min}}
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+Année / Year & Q1 & Q2 & Q3 & Q4 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+A & 72 & 88 & 80 & 110 \\
+B & 78 & 96 & 88 & 121 \\
+\end{longtable}
+
+1. Plot the series; calculate MA4 and CMA4. 2. With the supplied trend Tₜ=2.8t+78, compute all eight ratios Yₜ/Tₜ. 3. Average by quarter, normalise (sum 4) and forecast t=9 to 12.
+
+\hypertarget{part-3-index-numbers-30-min}{%
+\subsubsection{Part 3 --- Index numbers (30 min)}\label{part-3-index-numbers-30-min}}
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+Produit / Product & p₀ & q₀ & p₁ & q₁ \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+A & 10 & 40 & 12 & 45 \\
+B & 8 & 60 & 9 & 55 \\
+C & 20 & 20 & 22 & 25 \\
+\end{longtable}
+
+Compute all four aggregates; Laspeyres, Paasche and Fisher price and quantity indices; the value index; and verify Fisher\textquotesingle s factor reversal.
+
+\end{document}

@@ -1,0 +1,315 @@
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsfonts,mathtools}
+\usepackage{graphicx,booktabs,longtable,array,tabularx,adjustbox}
+\usepackage{geometry,microtype,fancyhdr,lastpage,etoolbox,enumitem}
+\usepackage{newunicodechar,textcomp}
+\usepackage{hyperref}
+\hypersetup{hidelinks,pdfcreator={XeLaTeX / QM1 academic edition}}
+\geometry{left=20mm,right=20mm,top=22mm,bottom=23mm}
+\setcounter{secnumdepth}{2}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt plus 1pt}
+\setlength{\emergencystretch}{2em}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.16}
+\setlist{nosep,topsep=3pt,itemsep=2pt,leftmargin=7mm}
+\AtBeginEnvironment{longtable}{\footnotesize\setlength{\tabcolsep}{2.2pt}}
+\newcommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\Cov}{\operatorname{Cov}}
+\providecommand{\Var}{\operatorname{Var}}
+\providecommand{\Corr}{\operatorname{Corr}}
+\providecommand{\MAD}{\operatorname{MAD}}
+\providecommand{\E}{\mathbb{E}}
+\providecommand{\R}{\mathbb{R}}
+\newunicodechar{—}{\textemdash}
+\newunicodechar{–}{\textendash}
+\newunicodechar{€}{\texteuro}
+\newunicodechar{≤}{\ensuremath{\leq}}
+\newunicodechar{≥}{\ensuremath{\geq}}
+\newunicodechar{×}{\ensuremath{\times}}
+\newunicodechar{÷}{\ensuremath{\div}}
+\newunicodechar{Σ}{\ensuremath{\Sigma}}
+\newunicodechar{σ}{\ensuremath{\sigma}}
+\newunicodechar{μ}{\ensuremath{\mu}}
+\newunicodechar{Δ}{\ensuremath{\Delta}}
+\newunicodechar{∑}{\ensuremath{\sum}}
+\newunicodechar{≈}{\ensuremath{\approx}}
+\newunicodechar{√}{\ensuremath{\surd}}
+\newunicodechar{≠}{\ensuremath{\ne}}
+\newunicodechar{→}{\ensuremath{\to}}
+\newunicodechar{∞}{\ensuremath{\infty}}
+\newunicodechar{∈}{\ensuremath{\in}}
+\newunicodechar{−}{\ensuremath{-}}
+\newunicodechar{²}{\ensuremath{^{2}}}
+\newunicodechar{³}{\ensuremath{^{3}}}
+\newunicodechar{₀}{\ensuremath{_{0}}}
+\newunicodechar{₁}{\ensuremath{_{1}}}
+\newunicodechar{₂}{\ensuremath{_{2}}}
+\newunicodechar{₃}{\ensuremath{_{3}}}
+\newunicodechar{₄}{\ensuremath{_{4}}}
+\newunicodechar{ₜ}{\ensuremath{_{t}}}
+\newunicodechar{ₚ}{\ensuremath{_{p}}}
+\newunicodechar{ₙ}{\ensuremath{_{n}}}
+\newunicodechar{ₓ}{\ensuremath{_{x}}}
+\newunicodechar{ᵢ}{\ensuremath{_{i}}}
+\newunicodechar{ŷ}{\ensuremath{\hat y}}
+\newunicodechar{Ŷ}{\ensuremath{\widehat Y}}
+\newunicodechar{ₘ}{\ensuremath{_{m}}}
+\newunicodechar{ₑ}{\ensuremath{_{e}}}
+\newunicodechar{ₐ}{\ensuremath{_{a}}}
+\newunicodechar{ₖ}{\ensuremath{_{k}}}
+\newunicodechar{ₛ}{\ensuremath{_{s}}}
+\newunicodechar{ₗ}{\ensuremath{_{l}}}
+\newunicodechar{ₕ}{\ensuremath{_{h}}}
+\newunicodechar{ₒ}{\ensuremath{_{o}}}
+\newunicodechar{₊}{\ensuremath{_{+}}}
+\newunicodechar{₋}{\ensuremath{_{-}}}
+\newunicodechar{₌}{\ensuremath{_{=}}}
+\newunicodechar{₍}{\ensuremath{_{(}}}
+\newunicodechar{₎}{\ensuremath{_{)}}}
+\newunicodechar{⁻}{\ensuremath{^{-}}}
+\newunicodechar{⁺}{\ensuremath{^{+}}}
+\newunicodechar{⁰}{\ensuremath{^{0}}}
+\newunicodechar{¹}{\ensuremath{^{1}}}
+\newunicodechar{⁴}{\ensuremath{^{4}}}
+\newunicodechar{⁵}{\ensuremath{^{5}}}
+\newunicodechar{⁶}{\ensuremath{^{6}}}
+\newunicodechar{⁷}{\ensuremath{^{7}}}
+\newunicodechar{⁸}{\ensuremath{^{8}}}
+\newunicodechar{⁹}{\ensuremath{^{9}}}
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0pt}{2.0ex plus .7ex minus .3ex}{1.0ex}{\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0pt}{1.8ex plus .5ex minus .2ex}{.7ex}{\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0pt}{1.3ex plus .4ex minus .2ex}{.5ex}{\normalsize\bfseries}}
+\makeatother
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead[L]{\small\textsc{KEDGE Business School --- QM1}}
+\fancyhead[R]{\small\textsc{2026--2027}}
+\fancyfoot[L]{\small Badr ABOUFARASSE, PhD}
+\fancyfoot[R]{\small\thepage\ /\ \pageref{LastPage}}
+\setlength{\headheight}{14pt}
+\setkeys{Gin}{keepaspectratio}
+\begin{document}
+
+\begin{center}
+{\small\textsc{KEDGE Business School \quad EBP1 \quad Quantitative Methods 1}}\\[6pt]
+{\Large\bfseries Worksheet 1 — Presenting and organising data}\\[6pt]
+{\normalsize\bfseries Exercise statements}\\[6pt]
+{\small Badr ABOUFARASSE, PhD \quad --- \quad 2026--2027}
+\end{center}
+\vspace{2mm}\hrule\vspace{6mm}
+
+\hypertarget{core-applications}{%
+\section{Core applications}\label{core-applications}}
+
+Master the essential definitions and calculations from the course.
+
+\emph{Core application --- 10 min}
+
+\hypertarget{exercise-1-population-sample-and-variable-types}{%
+\subsection{Exercise 1 -- Population, sample and variable types}\label{exercise-1-population-sample-and-variable-types}}
+
+A store wants to study all customers who made a purchase in September. It surveys a sample of 80 customers and records:
+
+\begin{longtable}[]{@{}p{0.32\linewidth}p{0.62\linewidth}@{}}
+\toprule\noalign{}
+Variable & Example \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Payment method & card, cash, mobile \\
+Number of items purchased & 1, 2, 3, \ldots{} \\
+Time spent in store & minutes \\
+Satisfaction level & very dissatisfied to very satisfied \\
+\end{longtable}
+
+\begin{enumerate}
+\item
+  Identify the target population, the sample and the statistical unit.
+\item
+  Classify each variable as nominal qualitative, ordinal qualitative, discrete quantitative or continuous quantitative.
+\item
+  Choose an appropriate graph for each variable.
+\item
+  For which variables do cumulative frequencies make sense? Explain.
+\item
+  Explain why a large sample is not necessarily representative.
+\end{enumerate}
+
+\emph{Core application --- 20 min}
+
+\hypertarget{exercise-2-discrete-distribution}{%
+\subsection{Exercise 2 -- Discrete distribution}\label{exercise-2-discrete-distribution}}
+
+\begin{longtable}[]{@{}lllllll@{}}
+\toprule\noalign{}
+{\(x_i\)} & 0 & 1 & 2 & 3 & 4 & 5 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+{\(n_i\)} & 3 & 7 & 12 & 10 & 6 & 2 \\
+\end{longtable}
+
+\begin{enumerate}
+\item
+  Check the total count {\(N\)}.
+\item
+  Calculate relative frequencies {\(f_i=n_i/N\)} and increasing cumulative frequencies.
+\item
+  Draw a stick/bar diagram.
+\item
+  Construct the cumulative distribution function {\(F(x)=P(X\leq x)\)}.
+\item
+  Find the proportion of customers who placed at most three orders.
+\end{enumerate}
+
+\emph{Core application --- 15 min}
+
+\hypertarget{extra-1-cross-tabulation-and-conditional-percentages}{%
+\subsection{Extra 1 --- Cross-tabulation and conditional percentages}\label{extra-1-cross-tabulation-and-conditional-percentages}}
+
+Among 120 students, 50 use public transport, including 30 women. Of the 70 other students, 35 are women.
+
+\begin{enumerate}
+\tightlist
+\item
+  Build the gender × transport table.
+\item
+  Compute the public-transport rate within each gender.
+\item
+  State whether an association appears present.
+\end{enumerate}
+
+\textbf{Method hint:}
+
+Conditional percentages use the total of the conditioning group as denominator.
+
+\hypertarget{assessment-and-exam-practice}{%
+\section{Assessment and exam practice}\label{assessment-and-exam-practice}}
+
+Practise independently with assessment and final-exam style questions.
+
+\emph{Assessment / exam practice --- 40 min}
+
+\hypertarget{exercise-3-continuous-variable-with-unequal-class-widths}{%
+\subsection{Exercise 3 -- Continuous variable with unequal class widths}\label{exercise-3-continuous-variable-with-unequal-class-widths}}
+
+\begin{longtable}[]{@{}llllllllll@{}}
+\toprule\noalign{}
+Class & {\([10,14[\)} & {\([14,18[\)} & {\([18,26[\)} & {\([26,30[\)} & {\([30,35[\)} & {\([35,40[\)} & {\([40,45[\)} & {\([45,50[\)} & {\([50,55[\)} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+{\(n_i\)} & 4 & 12 & 32 & 32 & 60 & 35 & 25 & 5 & 5 \\
+\end{longtable}
+
+\begin{enumerate}
+\item
+  For each class, calculate width {\(a_i\)}, relative frequency {\(f_i\)} and count density {\(d_i=n_i/a_i\)}.
+\item
+  Draw the correct histogram and explain why raw counts cannot be used as heights when class widths differ.
+\item
+  Calculate increasing and decreasing cumulative counts and the corresponding cumulative relative frequencies.
+\item
+  Draw the cumulative curves.
+\item
+  Find the number and proportion willing to pay less than 35 euros, then at least 35 euros.
+\end{enumerate}
+
+\emph{Assessment / exam practice --- 35 min}
+
+\hypertarget{extra-3-continuous-assessment-case-willingness-to-pay}{%
+\subsection{Extra 3 --- Continuous-assessment case: willingness to pay}\label{extra-3-continuous-assessment-case-willingness-to-pay}}
+
+\textbf{Case study --- 12 marks.} A food retailer asks 200 customers for the maximum price they would pay for a sustainable lunch box.
+
+\begin{longtable}[]{@{}lllllll@{}}
+\toprule\noalign{}
+Maximum price (€) & {[}20,25{[} & {[}25,30{[} & {[}30,40{[} & {[}40,50{[} & {[}50,60{[} & {[}60,80{[} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Customers & 10 & 20 & 50 & 60 & 40 & 20 \\
+\end{longtable}
+
+\begin{enumerate}
+\tightlist
+\item
+  Identify the population, statistical unit, variable and variable type. \emph{(2 marks)}
+\item
+  Calculate class widths, relative frequencies and frequency densities. \emph{(3 marks)}
+\item
+  Explain how to construct the correct histogram and identify the modal class. \emph{(2 marks)}
+\item
+  Calculate ascending and descending cumulative counts. Give the coordinates needed to draw both cumulative curves. \emph{(3 marks)}
+\item
+  Find the highest price that at least 60\% of surveyed customers would be willing to pay. Explain the percentile used. \emph{(2 marks)}
+\end{enumerate}
+
+\textbf{Method hint:}
+
+Unequal-width classes require frequency density. For the pricing decision, translate ``at least 60\% can pay'' into an ascending cumulative percentage.
+
+\emph{Assessment / exam practice --- 30 min}
+
+\hypertarget{extra-4-exam-style-synthesis-reporting-customer-satisfaction}{%
+\subsection{Extra 4 --- Exam-style synthesis: reporting customer satisfaction}\label{extra-4-exam-style-synthesis-reporting-customer-satisfaction}}
+
+\textbf{Independent case --- 10 marks.} Two stores collect satisfaction ratings on an ordered scale from 1 (very dissatisfied) to 5 (very satisfied).
+
+\begin{longtable}[]{@{}lllllll@{}}
+\toprule\noalign{}
+Rating & 1 & 2 & 3 & 4 & 5 & Total \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Store A & 6 & 10 & 18 & 36 & 30 & 100 \\
+Store B & 4 & 12 & 30 & 34 & 20 & 100 \\
+\end{longtable}
+
+\begin{enumerate}
+\tightlist
+\item
+  Identify the variable and its measurement scale. \emph{(1 mark)}
+\item
+  Choose and justify one graph for comparing the two stores. Describe precisely how it should be constructed. \emph{(2 marks)}
+\item
+  Compute, for each store, the percentages rated 4 or 5 and the cumulative percentage rated at most 2. \emph{(3 marks)}
+\item
+  A manager says: ``Store A is 50\% better because it has 30 ratings of 5 versus 20.'' Criticise this claim. \emph{(2 marks)}
+\item
+  Write a three-sentence statistical conclusion, including one limitation of the survey. \emph{(2 marks)}
+\end{enumerate}
+
+\textbf{Method hint:}
+
+Keep the order of the categories, compare percentages because the store totals could differ in another dataset, and separate description from causation.
+
+\hypertarget{optional-advanced-practice}{%
+\section{Optional advanced practice}\label{optional-advanced-practice}}
+
+Explore additional interpretations and professional applications.
+
+\emph{Advanced practice --- 15 min}
+
+\hypertarget{extra-2-data-quality-and-communication-protocol}{%
+\subsection{Extra 2 --- Data-quality and communication protocol}\label{extra-2-data-quality-and-communication-protocol}}
+
+A CRM extract contains duplicate customers, missing ages coded 999, inconsistent dates and revenue recorded in euros and thousands of euros. Propose a reproducible six-step protocol before producing a management dashboard.
+
+\textbf{Method hint:}
+
+Separate validation, cleaning, documentation and communication.
+
+\end{document}

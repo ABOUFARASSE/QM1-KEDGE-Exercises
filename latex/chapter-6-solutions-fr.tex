@@ -1,0 +1,409 @@
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsfonts,mathtools}
+\usepackage{graphicx,booktabs,longtable,array,tabularx,adjustbox}
+\usepackage{geometry,microtype,fancyhdr,lastpage,etoolbox,enumitem}
+\usepackage{newunicodechar,textcomp}
+\usepackage{hyperref}
+\hypersetup{hidelinks,pdfcreator={XeLaTeX / QM1 academic edition}}
+\geometry{left=20mm,right=20mm,top=22mm,bottom=23mm}
+\setcounter{secnumdepth}{2}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt plus 1pt}
+\setlength{\emergencystretch}{2em}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.16}
+\setlist{nosep,topsep=3pt,itemsep=2pt,leftmargin=7mm}
+\AtBeginEnvironment{longtable}{\footnotesize\setlength{\tabcolsep}{2.2pt}}
+\newcommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\Cov}{\operatorname{Cov}}
+\providecommand{\Var}{\operatorname{Var}}
+\providecommand{\Corr}{\operatorname{Corr}}
+\providecommand{\MAD}{\operatorname{MAD}}
+\providecommand{\E}{\mathbb{E}}
+\providecommand{\R}{\mathbb{R}}
+\newunicodechar{—}{\textemdash}
+\newunicodechar{–}{\textendash}
+\newunicodechar{€}{\texteuro}
+\newunicodechar{≤}{\ensuremath{\leq}}
+\newunicodechar{≥}{\ensuremath{\geq}}
+\newunicodechar{×}{\ensuremath{\times}}
+\newunicodechar{÷}{\ensuremath{\div}}
+\newunicodechar{Σ}{\ensuremath{\Sigma}}
+\newunicodechar{σ}{\ensuremath{\sigma}}
+\newunicodechar{μ}{\ensuremath{\mu}}
+\newunicodechar{Δ}{\ensuremath{\Delta}}
+\newunicodechar{∑}{\ensuremath{\sum}}
+\newunicodechar{≈}{\ensuremath{\approx}}
+\newunicodechar{√}{\ensuremath{\surd}}
+\newunicodechar{≠}{\ensuremath{\ne}}
+\newunicodechar{→}{\ensuremath{\to}}
+\newunicodechar{∞}{\ensuremath{\infty}}
+\newunicodechar{∈}{\ensuremath{\in}}
+\newunicodechar{−}{\ensuremath{-}}
+\newunicodechar{²}{\ensuremath{^{2}}}
+\newunicodechar{³}{\ensuremath{^{3}}}
+\newunicodechar{₀}{\ensuremath{_{0}}}
+\newunicodechar{₁}{\ensuremath{_{1}}}
+\newunicodechar{₂}{\ensuremath{_{2}}}
+\newunicodechar{₃}{\ensuremath{_{3}}}
+\newunicodechar{₄}{\ensuremath{_{4}}}
+\newunicodechar{ₜ}{\ensuremath{_{t}}}
+\newunicodechar{ₚ}{\ensuremath{_{p}}}
+\newunicodechar{ₙ}{\ensuremath{_{n}}}
+\newunicodechar{ₓ}{\ensuremath{_{x}}}
+\newunicodechar{ᵢ}{\ensuremath{_{i}}}
+\newunicodechar{ŷ}{\ensuremath{\hat y}}
+\newunicodechar{Ŷ}{\ensuremath{\widehat Y}}
+\newunicodechar{ₘ}{\ensuremath{_{m}}}
+\newunicodechar{ₑ}{\ensuremath{_{e}}}
+\newunicodechar{ₐ}{\ensuremath{_{a}}}
+\newunicodechar{ₖ}{\ensuremath{_{k}}}
+\newunicodechar{ₛ}{\ensuremath{_{s}}}
+\newunicodechar{ₗ}{\ensuremath{_{l}}}
+\newunicodechar{ₕ}{\ensuremath{_{h}}}
+\newunicodechar{ₒ}{\ensuremath{_{o}}}
+\newunicodechar{₊}{\ensuremath{_{+}}}
+\newunicodechar{₋}{\ensuremath{_{-}}}
+\newunicodechar{₌}{\ensuremath{_{=}}}
+\newunicodechar{₍}{\ensuremath{_{(}}}
+\newunicodechar{₎}{\ensuremath{_{)}}}
+\newunicodechar{⁻}{\ensuremath{^{-}}}
+\newunicodechar{⁺}{\ensuremath{^{+}}}
+\newunicodechar{⁰}{\ensuremath{^{0}}}
+\newunicodechar{¹}{\ensuremath{^{1}}}
+\newunicodechar{⁴}{\ensuremath{^{4}}}
+\newunicodechar{⁵}{\ensuremath{^{5}}}
+\newunicodechar{⁶}{\ensuremath{^{6}}}
+\newunicodechar{⁷}{\ensuremath{^{7}}}
+\newunicodechar{⁸}{\ensuremath{^{8}}}
+\newunicodechar{⁹}{\ensuremath{^{9}}}
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0pt}{2.0ex plus .7ex minus .3ex}{1.0ex}{\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0pt}{1.8ex plus .5ex minus .2ex}{.7ex}{\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0pt}{1.3ex plus .4ex minus .2ex}{.5ex}{\normalsize\bfseries}}
+\makeatother
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead[L]{\small\textsc{KEDGE Business School --- QM1}}
+\fancyhead[R]{\small\textsc{2026--2027}}
+\fancyfoot[L]{\small Badr ABOUFARASSE, PhD}
+\fancyfoot[R]{\small\thepage\ /\ \pageref{LastPage}}
+\setlength{\headheight}{14pt}
+\setkeys{Gin}{keepaspectratio}
+\begin{document}
+
+\begin{center}
+{\small\textsc{KEDGE Business School \quad EBP1 \quad Quantitative Methods 1}}\\[6pt]
+{\Large\bfseries Fiche 6 — Nombres-indices}\\[6pt]
+{\normalsize\bfseries Corrigés intégralement détaillés}\\[6pt]
+{\small Badr ABOUFARASSE, PhD \quad --- \quad 2026--2027}
+\end{center}
+\vspace{2mm}\hrule\vspace{6mm}
+
+\hypertarget{applications-fondamentales}{%
+\section{Applications fondamentales}\label{applications-fondamentales}}
+
+Maîtriser les définitions et les calculs essentiels du cours.
+
+\emph{Application du cours --- 20 min}
+
+\hypertarget{exercice-1-indices-uxe9luxe9mentaires-rebasage-et-propriuxe9tuxe9s}{%
+\subsection{Exercice 1 -- Indices élémentaires, rebasage et propriétés}\label{exercice-1-indices-uxe9luxe9mentaires-rebasage-et-propriuxe9tuxe9s}}
+
+Un service coûte 80 euros en 2023, 92 euros en 2024 et 101.20 euros en 2025.
+
+\begin{enumerate}
+\item
+  Calculer les indices 2024/2023, 2025/2024 et 2025/2023, base 100.
+\item
+  Vérifier la circularité.
+\item
+  Calculer l'indice inverse 2023/2025 et vérifier la réversibilité.
+\item
+  Rebaser la série pour prendre 2024 comme base 100.
+\item
+  Interpréter correctement l'indice 126.5.
+\end{enumerate}
+
+\hypertarget{corriguxe9-duxe9tailluxe9}{%
+\subsubsection{Corrigé détaillé}\label{corriguxe9-duxe9tailluxe9}}
+
+{\[I_{2024/2023}=100\frac{92}{80}=115.\]} {\[I_{2025/2024}=100\frac{101.20}{92}=110.\]} {\[I_{2025/2023}=100\frac{101.20}{80}=126.5.\]} Circularité : {\[\frac{115\times110}{100}=126.5.\]} Indice inverse : {\[I_{2023/2025}=100\frac{80}{101.20}\approx79.0514.\]} Réversibilité : {\[126.5\times79.0514\approx10000.\]} Rebasage en 2024=100 : {\[I_{2023}^{(2024)}=100\frac{100}{115}\approx86.96,\]} {\[I_{2024}^{(2024)}=100,
+\qquad
+I_{2025}^{(2024)}=110.\]} L'indice 126.5 signifie que le niveau de 2025 est 26.5\% supérieur à celui de 2023 ; il ne signifie pas une hausse de 126.5\%.
+
+\emph{Application du cours --- 25 min}
+
+\hypertarget{compluxe9ment-1-duxe9composition-compluxe8te-prixquantituxe9s}{%
+\subsection{Complément 1 --- Décomposition complète prix--quantités}\label{compluxe9ment-1-duxe9composition-compluxe8te-prixquantituxe9s}}
+
+Un service achats observe :
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+Produit & p0 & q0 & p1 & q1 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+A & 4 & 100 & 5 & 90 \\
+B & 10 & 50 & 11 & 60 \\
+C & 20 & 20 & 18 & 30 \\
+\end{longtable}
+
+\begin{enumerate}
+\tightlist
+\item
+  Calculez les quatre totaux Σp0q0, Σp1q0, Σp0q1 et Σp1q1.
+\item
+  Calculez les indices de valeur, de prix de Laspeyres, Paasche et Fisher.
+\item
+  Interprétez l'écart entre valeur et prix.
+\end{enumerate}
+
+\textbf{Indication méthodologique :}
+
+Complétez les quatre colonnes de valeurs croisées avant tout rapport.
+
+\hypertarget{corriguxe9-duxe9tailluxe9-1}{%
+\subsubsection{Corrigé détaillé}\label{corriguxe9-duxe9tailluxe9-1}}
+
+\textbf{Totaux.} Σp0q0 = \textbf{1 300} ; Σp1q0 = \textbf{1 410} ; Σp0q1 = \textbf{1 560} ; Σp1q1 = \textbf{1 650}.
+
+\textbf{Indice de valeur.} 1 650/1 300 × 100 = \textbf{126,92}.
+
+\textbf{Laspeyres-prix.} \textbf{108,46}. \textbf{Paasche-prix.} \textbf{105,77}. \textbf{Fisher-prix.} √(108,46 × 105,77) = \textbf{107,11}.
+
+\textbf{Interprétation.} La valeur des achats augmente de 26,92 \%, alors que la hausse équilibrée des prix est d'environ 7,11 \%. L'essentiel de la hausse de valeur provient donc des quantités ou de la composition du panier, sans que les indices expliquent la cause de ce changement.
+
+Détail de chacun des quatre agrégats (à vérifier produit par produit) :
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+Produit / Product & p₀q₀ & p₁q₀ & p₀q₁ & p₁q₁ \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+A & 400 & 500 & 360 & 450 \\
+B & 500 & 550 & 600 & 660 \\
+C & 400 & 360 & 600 & 540 \\
+Σ & 1300 & 1410 & 1560 & 1650 \\
+\end{longtable}
+
+Laspeyres = 1410/1300 × 100 = 108.4615 ; Paasche = 1650/1560 × 100 = 105.7692 ; Fisher = √(108.4615 × 105.7692) = 107.1069.
+
+\hypertarget{pruxe9paration-aux-uxe9valuations}{%
+\section{Préparation aux évaluations}\label{pruxe9paration-aux-uxe9valuations}}
+
+Résoudre des exercices de contrôle continu et de partiel en autonomie.
+
+\emph{Préparation CC / partiel --- 35 min}
+
+\hypertarget{exercice-2-laspeyres-paasche-fisher-et-factor-reversal}{%
+\subsection{Exercice 2 -- Laspeyres, Paasche, Fisher et factor reversal}\label{exercice-2-laspeyres-paasche-fisher-et-factor-reversal}}
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+& {\(p_0\)} & {\(q_0\)} & {\(p_1\)} & {\(q_1\)} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Produit X & 4 & 100 & 5 & 90 \\
+Produit Y & 10 & 40 & 12 & 50 \\
+\end{longtable}
+
+\begin{enumerate}
+\item
+  Calculer les quatre agrégats {\(\sum p_0q_0\)}, {\(\sum p_1q_0\)}, {\(\sum p_0q_1\)}, {\(\sum p_1q_1\)}.
+\item
+  Calculer les indices de prix de Laspeyres, Paasche et Fisher.
+\item
+  Calculer les indices de quantité de Laspeyres, Paasche et Fisher.
+\item
+  Calculer l'indice de valeur.
+\item
+  Vérifier la propriété de factor reversal de Fisher sur une échelle base 100.
+\end{enumerate}
+
+\hypertarget{corriguxe9-duxe9tailluxe9-2}{%
+\subsubsection{Corrigé détaillé}\label{corriguxe9-duxe9tailluxe9-2}}
+
+Les agrégats sont : {\[\sum
+p_0q_0=4(100)+10(40)=800,\]} {\[\sum
+p_1q_0=5(100)+12(40)=980,\]} {\[\sum
+p_0q_1=4(90)+10(50)=860,\]} {\[\sum
+p_1q_1=5(90)+12(50)=1050.\]} Prix : {\[I_P^L=100\frac{980}{800}=122.50,\]} {\[I_P^P=100\frac{1050}{860}\approx122.09,\]} {\[I_P^F=\sqrt{122.50\times122.09}\approx122.30.\]} Quantités : {\[I_Q^L=100\frac{860}{800}=107.50,\]} {\[I_Q^P=100\frac{1050}{980}\approx107.14,\]} {\[I_Q^F=\sqrt{107.50\times107.14}\approx107.32.\]} Valeur : {\[I_V=100\frac{1050}{800}=131.25.\]} Factor reversal : {\[\frac{I_P^F I_Q^F}{100}
+\approx\frac{122.2963\times107.3213}{100}
+=131.25=I_V.\]}
+
+\hypertarget{vuxe9rification-des-quatre-agruxe9gats-produit-par-produit}{%
+\subsubsection{Vérification des quatre agrégats produit par produit}\label{vuxe9rification-des-quatre-agruxe9gats-produit-par-produit}}
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+Produit & p₀q₀ & p₁q₀ & p₀q₁ & p₁q₁ \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+X & 4×100=400 & 5×100=500 & 4×90=360 & 5×90=450 \\
+Y & 10×40=400 & 12×40=480 & 10×50=500 & 12×50=600 \\
+Σ & 800 & 980 & 860 & 1050 \\
+\end{longtable}
+
+\[\begin{gathered}
+L_P=100\frac{980}{800},\\P_P=100\frac{1050}{860},\\L_Q=100\frac{860}{800},\\P_Q=100\frac{1050}{980}.
+\end{gathered}\]
+
+Vérifier la propriété de Fisher sur les rapports non arrondis : Fp×Fq/100=100×1050/800=131,25.
+
+\emph{Préparation CC / partiel --- 45 min}
+
+\hypertarget{exercice-4-indices-complets-sur-quatre-produits-type-partiel}{%
+\subsection{Exercice 4 --- Indices complets sur quatre produits --- type partiel}\label{exercice-4-indices-complets-sur-quatre-produits-type-partiel}}
+
+Pour quatre produits, les prix et quantités sont observés à deux dates. Base 0 = 100.
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+Produit / Product & p₀ & q₀ & p₁ & q₁ \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+A & 53 & 20 & 62 & 25 \\
+B & 41 & 28 & 52 & 34 \\
+C & 75 & 35 & 82 & 38 \\
+D & 25 & 30 & 38 & 33 \\
+\end{longtable}
+
+\begin{enumerate}
+\tightlist
+\item
+  Construire les quatre colonnes de produits p₀q₀, p₁q₀, p₀q₁, p₁q₁ et leurs totaux.
+\item
+  Calculer les indices de prix et de quantité de Laspeyres, Paasche et Fisher.
+\item
+  Calculer l\textquotesingle indice de valeur et vérifier la propriété de Fisher. Interpréter les trois indices.
+\end{enumerate}
+
+\hypertarget{corriguxe9-duxe9tailluxe9-3}{%
+\subsubsection{Corrigé détaillé}\label{corriguxe9-duxe9tailluxe9-3}}
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+Produit / Product & p₀q₀ & p₁q₀ & p₀q₁ & p₁q₁ \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+A & 1060 & 1240 & 1325 & 1550 \\
+B & 1148 & 1456 & 1394 & 1768 \\
+C & 2625 & 2870 & 2850 & 3116 \\
+D & 750 & 1140 & 825 & 1254 \\
+Σ & 5583 & 6706 & 6394 & 7688 \\
+\end{longtable}
+
+Les quatre agrégats sont A=Σp₀q₀=5583, B=Σp₁q₀=6706, C=Σp₀q₁=6394, D=Σp₁q₁=7688.
+
+\[L_P=100B/A=100(6706/5583)=120.114634,\quad P_P=100D/C=100(7688/6394)=120.237723.\]
+
+\[L_Q=100C/A=100(6394/5583)=114.526240,\quad P_Q=100D/B=100(7688/6706)=114.643603.\]
+
+\[F_P=\sqrt{L_P P_P}=120.176163,\quad F_Q=\sqrt{L_Q P_Q}=114.584907.\]
+
+\[I_V=100D/A=100(7688/5583)=137.703744,\quad\frac{F_PF_Q}{100}=137.703744.\]
+
+Les prix augmentent d\textquotesingle environ 20,18 \%, les quantités d\textquotesingle environ 14,58 \%, et la valeur totale de 37,70 \%. Ne pas additionner les variations de prix et de quantités : leur composition est multiplicative.
+
+\hypertarget{approfondissement-facultatif}{%
+\section{Approfondissement facultatif}\label{approfondissement-facultatif}}
+
+Aller plus loin dans l'interprétation et les applications professionnelles.
+
+\emph{Approfondissement --- 15 min}
+
+\hypertarget{exercice-3-indices-chauxeenuxe9s-et-duxe9flation}{%
+\subsection{Exercice 3 -- Indices chaînés et déflation}\label{exercice-3-indices-chauxeenuxe9s-et-duxe9flation}}
+
+Les indices annuels chaînés sont 105, 108 et 97.
+
+\begin{enumerate}
+\item
+  Calculer l'indice cumulé sur les trois périodes.
+\item
+  Interpréter le résultat et expliquer pourquoi il ne faut pas additionner les variations annuelles.
+\item
+  Un chiffre d'affaires nominal vaut 2.4 millions d'euros lorsque l'indice des prix vaut 120. Calculer la valeur réelle en prix de la période de base.
+\end{enumerate}
+
+\hypertarget{corriguxe9-duxe9tailluxe9-4}{%
+\subsubsection{Corrigé détaillé}\label{corriguxe9-duxe9tailluxe9-4}}
+
+{\[I_{3/0}^{chain}=100\times1.05\times1.08\times0.97.\]} {\[I_{3/0}^{chain}=109.998\approx110.\]} Le niveau final est donc environ 10\% supérieur au niveau initial, malgré la baisse de 3\% de la dernière période. Les taux successifs se composent multiplicativement et ne s'additionnent pas.
+
+Déflation : {\[\text{Valeur réelle}=\frac{2.4}{120/100}=\frac{2.4}{1.20}=2.0\text{ millions
+d'euros}.\]}
+
+\hypertarget{tableau-des-facteurs-chauxeenuxe9s}{%
+\subsubsection{Tableau des facteurs chaînés}\label{tableau-des-facteurs-chauxeenuxe9s}}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+Période & Facteur & Indice cumulé \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+0 & 1 & 100 \\
+1 & 1.05 & 105 \\
+2 & 1.05×1.08=1.134 & 113.4 \\
+3 & 1.134×0.97=1.09998 & 109.998 \\
+\end{longtable}
+
+\[I_{3/0}=100(1.05)(1.08)(0.97)=109.998.\]
+
+La somme des pourcentages (+5+8−3=10) ne donne qu'une approximation fortuite du taux composé exact (+9,998 \%). Le déflateur 120 signifie un facteur de prix 1,20 : 2,4/1,20=2,0 millions d'euros réels.
+
+\emph{Approfondissement --- 25 min}
+
+\hypertarget{compluxe9ment-2-changement-de-base-inflation-et-performance-ruxe9elle}{%
+\subsection{Complément 2 --- Changement de base, inflation et performance réelle}\label{compluxe9ment-2-changement-de-base-inflation-et-performance-ruxe9elle}}
+
+Le chiffre d'affaires nominal vaut 500 k€, 560 k€ et 630 k€. L'indice des prix correspondant (année 1 = 100) vaut 100, 108 et 120.
+
+\begin{enumerate}
+\tightlist
+\item
+  Calculez le chiffre d'affaires réel en euros de l'année 1.
+\item
+  Calculez les croissances nominale et réelle entre les années 1 et 3.
+\item
+  Rebasez l'indice des prix avec année 2 = 100.
+\item
+  Répondez au responsable qui affirme que l'activité a progressé de 26 \%.
+\end{enumerate}
+
+\textbf{Indication méthodologique :}
+
+Déflatez en divisant la valeur nominale par indice/100. Le changement de base ne modifie pas la trajectoire d'inflation.
+
+\hypertarget{corriguxe9-duxe9tailluxe9-5}{%
+\subsubsection{Corrigé détaillé}\label{corriguxe9-duxe9tailluxe9-5}}
+
+\textbf{Chiffre d'affaires réel.} Année 1 : \textbf{500 k€} ; année 2 : 560/1,08 = \textbf{518,52 k€} ; année 3 : 630/1,20 = \textbf{525 k€}.
+
+\textbf{Croissance.} Nominale : 630/500 − 1 = \textbf{26 \%}. Réelle : 525/500 − 1 = \textbf{5 \%}.
+
+\textbf{Indice rebasé.} On divise par 108 puis on multiplie par 100 : \textbf{92,59 ; 100 ; 111,11}.
+
+\textbf{Interprétation.} Le chiffre d'affaires en euros courants augmente de 26 \%, mais son pouvoir d'achat n'augmente que de 5 \% après correction de la hausse des prix. Le changement de base modifie l'affichage, pas la conclusion économique. Le déflateur doit rester pertinent pour les produits de l'entreprise.
+
+\end{document}

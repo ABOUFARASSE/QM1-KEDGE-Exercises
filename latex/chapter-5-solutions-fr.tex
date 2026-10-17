@@ -1,0 +1,490 @@
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsfonts,mathtools}
+\usepackage{graphicx,booktabs,longtable,array,tabularx,adjustbox}
+\usepackage{geometry,microtype,fancyhdr,lastpage,etoolbox,enumitem}
+\usepackage{newunicodechar,textcomp}
+\usepackage{hyperref}
+\hypersetup{hidelinks,pdfcreator={XeLaTeX / QM1 academic edition}}
+\geometry{left=20mm,right=20mm,top=22mm,bottom=23mm}
+\setcounter{secnumdepth}{2}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt plus 1pt}
+\setlength{\emergencystretch}{2em}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.16}
+\setlist{nosep,topsep=3pt,itemsep=2pt,leftmargin=7mm}
+\AtBeginEnvironment{longtable}{\footnotesize\setlength{\tabcolsep}{2.2pt}}
+\newcommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\Cov}{\operatorname{Cov}}
+\providecommand{\Var}{\operatorname{Var}}
+\providecommand{\Corr}{\operatorname{Corr}}
+\providecommand{\MAD}{\operatorname{MAD}}
+\providecommand{\E}{\mathbb{E}}
+\providecommand{\R}{\mathbb{R}}
+\newunicodechar{—}{\textemdash}
+\newunicodechar{–}{\textendash}
+\newunicodechar{€}{\texteuro}
+\newunicodechar{≤}{\ensuremath{\leq}}
+\newunicodechar{≥}{\ensuremath{\geq}}
+\newunicodechar{×}{\ensuremath{\times}}
+\newunicodechar{÷}{\ensuremath{\div}}
+\newunicodechar{Σ}{\ensuremath{\Sigma}}
+\newunicodechar{σ}{\ensuremath{\sigma}}
+\newunicodechar{μ}{\ensuremath{\mu}}
+\newunicodechar{Δ}{\ensuremath{\Delta}}
+\newunicodechar{∑}{\ensuremath{\sum}}
+\newunicodechar{≈}{\ensuremath{\approx}}
+\newunicodechar{√}{\ensuremath{\surd}}
+\newunicodechar{≠}{\ensuremath{\ne}}
+\newunicodechar{→}{\ensuremath{\to}}
+\newunicodechar{∞}{\ensuremath{\infty}}
+\newunicodechar{∈}{\ensuremath{\in}}
+\newunicodechar{−}{\ensuremath{-}}
+\newunicodechar{²}{\ensuremath{^{2}}}
+\newunicodechar{³}{\ensuremath{^{3}}}
+\newunicodechar{₀}{\ensuremath{_{0}}}
+\newunicodechar{₁}{\ensuremath{_{1}}}
+\newunicodechar{₂}{\ensuremath{_{2}}}
+\newunicodechar{₃}{\ensuremath{_{3}}}
+\newunicodechar{₄}{\ensuremath{_{4}}}
+\newunicodechar{ₜ}{\ensuremath{_{t}}}
+\newunicodechar{ₚ}{\ensuremath{_{p}}}
+\newunicodechar{ₙ}{\ensuremath{_{n}}}
+\newunicodechar{ₓ}{\ensuremath{_{x}}}
+\newunicodechar{ᵢ}{\ensuremath{_{i}}}
+\newunicodechar{ŷ}{\ensuremath{\hat y}}
+\newunicodechar{Ŷ}{\ensuremath{\widehat Y}}
+\newunicodechar{ₘ}{\ensuremath{_{m}}}
+\newunicodechar{ₑ}{\ensuremath{_{e}}}
+\newunicodechar{ₐ}{\ensuremath{_{a}}}
+\newunicodechar{ₖ}{\ensuremath{_{k}}}
+\newunicodechar{ₛ}{\ensuremath{_{s}}}
+\newunicodechar{ₗ}{\ensuremath{_{l}}}
+\newunicodechar{ₕ}{\ensuremath{_{h}}}
+\newunicodechar{ₒ}{\ensuremath{_{o}}}
+\newunicodechar{₊}{\ensuremath{_{+}}}
+\newunicodechar{₋}{\ensuremath{_{-}}}
+\newunicodechar{₌}{\ensuremath{_{=}}}
+\newunicodechar{₍}{\ensuremath{_{(}}}
+\newunicodechar{₎}{\ensuremath{_{)}}}
+\newunicodechar{⁻}{\ensuremath{^{-}}}
+\newunicodechar{⁺}{\ensuremath{^{+}}}
+\newunicodechar{⁰}{\ensuremath{^{0}}}
+\newunicodechar{¹}{\ensuremath{^{1}}}
+\newunicodechar{⁴}{\ensuremath{^{4}}}
+\newunicodechar{⁵}{\ensuremath{^{5}}}
+\newunicodechar{⁶}{\ensuremath{^{6}}}
+\newunicodechar{⁷}{\ensuremath{^{7}}}
+\newunicodechar{⁸}{\ensuremath{^{8}}}
+\newunicodechar{⁹}{\ensuremath{^{9}}}
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0pt}{2.0ex plus .7ex minus .3ex}{1.0ex}{\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0pt}{1.8ex plus .5ex minus .2ex}{.7ex}{\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0pt}{1.3ex plus .4ex minus .2ex}{.5ex}{\normalsize\bfseries}}
+\makeatother
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead[L]{\small\textsc{KEDGE Business School --- QM1}}
+\fancyhead[R]{\small\textsc{2026--2027}}
+\fancyfoot[L]{\small Badr ABOUFARASSE, PhD}
+\fancyfoot[R]{\small\thepage\ /\ \pageref{LastPage}}
+\setlength{\headheight}{14pt}
+\setkeys{Gin}{keepaspectratio}
+\begin{document}
+
+\begin{center}
+{\small\textsc{KEDGE Business School \quad EBP1 \quad Quantitative Methods 1}}\\[6pt]
+{\Large\bfseries Fiche 5 — Séries temporelles}\\[6pt]
+{\normalsize\bfseries Corrigés intégralement détaillés}\\[6pt]
+{\small Badr ABOUFARASSE, PhD \quad --- \quad 2026--2027}
+\end{center}
+\vspace{2mm}\hrule\vspace{6mm}
+
+\hypertarget{applications-fondamentales}{%
+\section{Applications fondamentales}\label{applications-fondamentales}}
+
+Maîtriser les définitions et les calculs essentiels du cours.
+
+\emph{Application du cours --- 10 min}
+
+\hypertarget{exercice-1-composantes-et-moduxe8les}{%
+\subsection{Exercice 1 -- Composantes et modèles}\label{exercice-1-composantes-et-moduxe8les}}
+
+\begin{enumerate}
+\item
+  Associer à {\(T_t\)}, {\(C_t\)}, {\(S_t\)} ou {\(R_t\)} : tendance de long terme, récession, pic récurrent du quatrième trimestre, choc exceptionnel.
+\item
+  Écrire le modèle additif complet et le modèle multiplicatif complet.
+\item
+  Expliquer dans quel cas une saisonnalité multiplicative est plus plausible qu'une saisonnalité additive.
+\end{enumerate}
+
+\hypertarget{corriguxe9-duxe9tailluxe9}{%
+\subsubsection{Corrigé détaillé}\label{corriguxe9-duxe9tailluxe9}}
+
+{\[\begin{gathered}
+T_t:\text{ tendance de long terme},\\C_t:\text{ cycle},\\S_t:\text{ saisonnalité},\\R_t:\text{ irrégulier/résiduel}.
+\end{gathered}\]} Modèle additif : {\[Y_t=T_t+C_t+S_t+R_t.\]} Modèle multiplicatif : {\[Y_t=T_t\times C_t\times
+S_t\times R_t.\]} Le modèle multiplicatif est particulièrement plausible lorsque l'amplitude saisonnière augmente avec le niveau de la série.
+
+\hypertarget{distinguer-les-unituxe9s-et-les-facteurs}{%
+\subsubsection{Distinguer les unités et les facteurs}\label{distinguer-les-unituxe9s-et-les-facteurs}}
+
+Une composante saisonnière additive s'exprime en unités de Y et conserve la même amplitude absolue. Une composante saisonnière multiplicative s'exprime comme un facteur (par exemple 1,20 pour +20 \%), dont l'effet absolu varie avec le niveau de tendance. Le cycle correspond à des fluctuations de plus longue durée, tandis qu'un choc irrégulier n'est pas périodique.
+
+\emph{Application du cours --- 20 min}
+
+\hypertarget{exercice-2-moyennes-mobiles-et-centrage}{%
+\subsection{Exercice 2 -- Moyennes mobiles et centrage}\label{exercice-2-moyennes-mobiles-et-centrage}}
+
+On observe deux années de demande trimestrielle : {\[80,\ 100,\ 120,\ 140,\ 88,\ 110,\ 132,\
+154.\]}
+
+\begin{enumerate}
+\item
+  Décrire le motif principal de la série.
+\item
+  Calculer les cinq moyennes mobiles d'ordre 4.
+\item
+  Les centrer afin d'obtenir les moyennes mobiles centrées aux périodes 3 à 6.
+\item
+  Expliquer pourquoi une moyenne mobile d'ordre pair doit être recentrée.
+\end{enumerate}
+
+\hypertarget{corriguxe9-duxe9tailluxe9-1}{%
+\subsubsection{Corrigé détaillé}\label{corriguxe9-duxe9tailluxe9-1}}
+
+{\[MA_{2.5}=\frac{80+100+120+140}{4}=110.\]} {\[MA_{3.5}=\frac{100+120+140+88}{4}=112.\]} {\[MA_{4.5}=\frac{120+140+88+110}{4}=114.5.\]} {\[MA_{5.5}=\frac{140+88+110+132}{4}=117.5.\]} {\[MA_{6.5}=\frac{88+110+132+154}{4}=121.\]} Les moyennes mobiles centrées sont : {\[CMA_3=\frac{110+112}{2}=111,\]} {\[CMA_4=\frac{112+114.5}{2}=113.25,\]} {\[CMA_5=\frac{114.5+117.5}{2}=116,\]} {\[CMA_6=\frac{117.5+121}{2}=119.25.\]} Une moyenne d'ordre 4 se situe entre deux périodes. Le centrage replace l'estimation sur une période observée.
+
+\hypertarget{tableau-dalignement-des-moyennes-mobiles}{%
+\subsubsection{Tableau d'alignement des moyennes mobiles}\label{tableau-dalignement-des-moyennes-mobiles}}
+
+\begin{longtable}[]{@{}llll@{}}
+\toprule\noalign{}
+Fenêtre & Somme & MA4 & Centre \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1--4 & 440 & 110 & 2.5 \\
+2--5 & 448 & 112 & 3.5 \\
+3--6 & 458 & 114.5 & 4.5 \\
+4--7 & 470 & 117.5 & 5.5 \\
+5--8 & 484 & 121 & 6.5 \\
+\end{longtable}
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+t & 3 & 4 & 5 & 6 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+CMA4 & (110+112)/2=111 & (112+114.5)/2=113.25 & (114.5+117.5)/2=116 & (117.5+121)/2=119.25 \\
+\end{longtable}
+
+L'ordre 4 étant pair, la première moyenne mobile est centrée entre t=2 et t=3. Le centrage fournit des valeurs aux dates entières t=3 à 6.
+
+\hypertarget{pruxe9paration-aux-uxe9valuations}{%
+\section{Préparation aux évaluations}\label{pruxe9paration-aux-uxe9valuations}}
+
+Résoudre des exercices de contrôle continu et de partiel en autonomie.
+
+\emph{Préparation CC / partiel --- 25 min}
+
+\hypertarget{exercice-3-duxe9composition-multiplicative-et-pruxe9vision}{%
+\subsection{Exercice 3 -- Décomposition multiplicative et prévision}\label{exercice-3-duxe9composition-multiplicative-et-pruxe9vision}}
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+Année & Q1 & Q2 & Q3 & Q4 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+2005 & 82 & 98 & 120 & 150 \\
+2006 & 91 & 111 & 137 & 171 \\
+2007 & 104 & 126 & 154 & 194 \\
+\end{longtable}
+
+On donne la tendance estimée : {\[\widehat
+T_t=6.343t+86.939.\]} Les coefficients saisonniers normalisés sont : {\[S_{Q1}=0.789,\quad S_{Q2}=0.903,\quad
+S_{Q3}=1.052,\quad S_{Q4}=1.255.\]}
+
+\begin{enumerate}
+\item
+  Interpréter la pente de la tendance.
+\item
+  Vérifier approximativement la normalisation des coefficients saisonniers.
+\item
+  Calculer les quatre prévisions trimestrielles pour 2008.
+\item
+  Expliquer comment désaisonnaliser une observation {\(Y_t\)} dans le modèle multiplicatif.
+\end{enumerate}
+
+\hypertarget{corriguxe9-duxe9tailluxe9-2}{%
+\subsubsection{Corrigé détaillé}\label{corriguxe9-duxe9tailluxe9-2}}
+
+La pente 6,343 signifie une hausse tendancielle de 6,343 unités par trimestre. Les coefficients saisonniers fournis totalisent 3,999, soit environ 4 (écart d\textquotesingle arrondi).
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+t & Q & Tₜ=6.343t+86.939 & S\textquotesingle{} & Tₜ×S\textquotesingle{} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+13 & Q1 & 169.398 & 0.789 & 133.655022 \\
+14 & Q2 & 175.741 & 0.903 & 158.694123 \\
+15 & Q3 & 182.084 & 1.052 & 191.552368 \\
+16 & Q4 & 188.427 & 1.255 & 236.475885 \\
+\end{longtable}
+
+\[\widehat Y_{13}=169.398(0.789)=133.655022,\quad\widehat Y_{14}=175.741(0.903)=158.694123.\]
+
+\[\widehat Y_{15}=182.084(1.052)=191.552368,\quad\widehat Y_{16}=188.427(1.255)=236.475885.\]
+
+Pour désaisonnaliser une observation, diviser Yₜ par le coefficient S\textquotesingle{} du trimestre correspondant. Garder les valeurs non arrondies jusqu\textquotesingle au résultat final.
+
+\emph{Préparation CC / partiel --- 65 min}
+
+\hypertarget{exercice-5-chauxeene-compluxe8te-de-duxe9composition-saisonniuxe8re-type-partiel}{%
+\subsection{Exercice 5 --- Chaîne complète de décomposition saisonnière --- type partiel}\label{exercice-5-chauxeene-compluxe8te-de-duxe9composition-saisonniuxe8re-type-partiel}}
+
+Une entreprise suit ses ventes trimestrielles pendant trois ans. Utiliser le modèle multiplicatif Yₜ=Tₜ×Sₜ, sans cycle ni composante irrégulière explicites. Ne pas arrondir les résultats intermédiaires.
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+Année / Year & Q1 & Q2 & Q3 & Q4 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+2019 & 40 & 52 & 48 & 68 \\
+2020 & 44 & 58 & 53 & 76 \\
+2021 & 50 & 65 & 60 & 84 \\
+\end{longtable}
+
+\begin{enumerate}
+\tightlist
+\item
+  Tracer la série et calculer les neuf moyennes mobiles d\textquotesingle ordre 4.
+\item
+  Centrer les moyennes mobiles (t=3 à 10). Construire le tableau t, CMA4, t², t×CMA4.
+\item
+  Estimer la tendance Tₜ=at+b par moindres carrés sur les huit CMA4.
+\item
+  Calculer Yₜ/Tₜ pour les 12 trimestres, les quatre moyennes saisonnières et leurs coefficients rectifiés de somme 4.
+\item
+  Prévoir les quatre trimestres de 2022 (t=13 à 16), en valeurs désaisonnalisées puis saisonnalisées.
+\end{enumerate}
+
+\hypertarget{corriguxe9-duxe9tailluxe9-3}{%
+\subsubsection{Corrigé détaillé}\label{corriguxe9-duxe9tailluxe9-3}}
+
+1. Moyennes mobiles d\textquotesingle ordre 4 :
+
+\[MA_{2.5}=(40+52+48+68)/4=52,\quad MA_{3.5}=(52+48+68+44)/4=53.\]
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+Fenêtre / Window & Périodes / Periods & Somme / Sum & MA4 & Centre / Midpoint \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & 1--4 & 208 & 52 & 2.5 \\
+2 & 2--5 & 212 & 53 & 3.5 \\
+3 & 3--6 & 218 & 54.5 & 4.5 \\
+4 & 4--7 & 223 & 55.75 & 5.5 \\
+5 & 5--8 & 231 & 57.75 & 6.5 \\
+6 & 6--9 & 237 & 59.25 & 7.5 \\
+7 & 7--10 & 244 & 61 & 8.5 \\
+8 & 8--11 & 251 & 62.75 & 9.5 \\
+9 & 9--12 & 259 & 64.75 & 10.5 \\
+\end{longtable}
+
+2. Centrage : les neuf MA4, situées à des demi-périodes, donnent huit CMA4 aux périodes entières 3 à 10.
+
+\[CMA_3=(52+53)/2=52.5,\quad CMA_4=(53+54.5)/2=53.75.\]
+
+\begin{longtable}[]{@{}llll@{}}
+\toprule\noalign{}
+t & CMA4 & t² & t×CMA4 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+3 & 52.5 & 9 & 157.5 \\
+4 & 53.75 & 16 & 215 \\
+5 & 55.125 & 25 & 275.625 \\
+6 & 56.75 & 36 & 340.5 \\
+7 & 58.5 & 49 & 409.5 \\
+8 & 60.125 & 64 & 481 \\
+9 & 61.875 & 81 & 556.875 \\
+10 & 63.75 & 100 & 637.5 \\
+Σt=52 & 462.375 & 380 & 3073.5 \\
+\end{longtable}
+
+3. Estimation de la tendance à partir des CMA4 :
+
+\[\bar t=52/8=6.5,\quad\overline{CMA}=462.375/8=57.796875.\]
+
+\[V(t)=380/8-6.5^2=5.25,\quad\operatorname{Cov}(t,CMA)=3073.5/8-6.5(57.796875)=8.5078125.\]
+
+\[a=8.5078125/5.25=1.620535714,\quad b=57.796875-a(6.5)=47.263392857.\]
+
+\[\widehat T_t=1.620535714t+47.263392857.\]
+
+4. Ratios saisonniers de chaque observation et normalisation :
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+t & Trimestre / Quarter & Y & Tₜ & Sₜ=Y/Tₜ \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & Q1 & 40 & 48.8839 & 0.81826 \\
+2 & Q2 & 52 & 50.5045 & 1.02961 \\
+3 & Q3 & 48 & 52.125 & 0.92086 \\
+4 & Q4 & 68 & 53.7455 & 1.26522 \\
+5 & Q1 & 44 & 55.3661 & 0.79471 \\
+6 & Q2 & 58 & 56.9866 & 1.01778 \\
+7 & Q3 & 53 & 58.6071 & 0.90433 \\
+8 & Q4 & 76 & 60.2277 & 1.26188 \\
+9 & Q1 & 50 & 61.8482 & 0.80843 \\
+10 & Q2 & 65 & 63.4688 & 1.02413 \\
+11 & Q3 & 60 & 65.0893 & 0.92181 \\
+12 & Q4 & 84 & 66.7098 & 1.25918 \\
+\end{longtable}
+
+\[\bar S_q=\frac{1}{3}\sum_{j=0}^2(Y_{4j+q}/\widehat T_{4j+q}),\qquad S'_q=\frac{4\bar S_q}{\sum_{k=1}^4\bar S_k}.\]
+
+\begin{longtable}[]{@{}llll@{}}
+\toprule\noalign{}
+Trimestre / Quarter & Ratios / Ratios & Moyenne / Mean & S\textquotesingle{} normalisé / Normalised \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Q1 & 0.81826 ; 0.79471 ; 0.80843 & 0.807135 & 0.805376 \\
+Q2 & 1.02961 ; 1.01778 ; 1.02413 & 1.02384 & 1.021609 \\
+Q3 & 0.92086 ; 0.90433 ; 0.92181 & 0.915667 & 0.913671 \\
+Q4 & 1.26522 ; 1.26188 ; 1.25918 & 1.262095 & 1.259344 \\
+TOTAL & --- & 4.008737 & 4 \\
+\end{longtable}
+
+5. Prévision : Tₜ représente la prévision désaisonnalisée ; la prévision finale est Tₜ×S\textquotesingle{} du trimestre.
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+t & Trimestre / Quarter & Tₜ & S\textquotesingle{} & Prévision / Forecast \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+13 & Q1 & 68.3304 & 0.805376 & 55.0316 \\
+14 & Q2 & 69.9509 & 1.021609 & 71.4624 \\
+15 & Q3 & 71.5714 & 0.913671 & 65.3927 \\
+16 & Q4 & 73.192 & 1.259344 & 92.1739 \\
+\end{longtable}
+
+\includegraphics[width=0.85\textwidth,height=\textheight]{assets/chapter-5-solutions-fr-chart-01.pdf}
+
+\emph{Ventes observées et prévisions 2022 / Observed and 2022 forecasts}
+
+Contrôle : la somme des quatre coefficients normalisés est égale à 4. Les prévisions finales 2022 sont environ 55,03 ; 71,46 ; 65,39 ; 92,17.
+
+\hypertarget{approfondissement-facultatif}{%
+\section{Approfondissement facultatif}\label{approfondissement-facultatif}}
+
+Aller plus loin dans l'interprétation et les applications professionnelles.
+
+\emph{Approfondissement --- 15 min}
+
+\hypertarget{exercice-4-uxe9valuation-des-pruxe9visions}{%
+\subsection{Exercice 4 -- Évaluation des prévisions}\label{exercice-4-uxe9valuation-des-pruxe9visions}}
+
+Pour cet exercice, on suppose que les valeurs effectivement observées en 2008 ont été : {\[136,\ 162,\ 188,\
+245.\]} À partir des prévisions de l'exercice 3 :
+
+\begin{enumerate}
+\item
+  calculer les erreurs {\(e_t=Y_t-\hat Y_t\)} ;
+\item
+  calculer le MAE ;
+\item
+  calculer le RMSE ;
+\item
+  expliquer pourquoi une période de validation distincte de la période d'estimation est utile ;
+\item
+  rappeler pourquoi une prévision naïve constitue un benchmark utile.
+\end{enumerate}
+
+\hypertarget{corriguxe9-duxe9tailluxe9-4}{%
+\subsubsection{Corrigé détaillé}\label{corriguxe9-duxe9tailluxe9-4}}
+
+Les prévisions sont celles effectivement obtenues à l\textquotesingle exercice 3, sans substitution de chiffres arrondis issus d\textquotesingle un autre support.
+
+\begin{longtable}[]{@{}llllll@{}}
+\toprule\noalign{}
+Q & Y & Prévision / Forecast & e=Y−Ŷ & \textbar e\textbar{} & e² \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & 136 & 133.655022 & 2.344978 & 2.344978 & 5.49892 \\
+2 & 162 & 158.694123 & 3.305877 & 3.305877 & 10.92882 \\
+3 & 188 & 191.552368 & -3.552368 & 3.552368 & 12.61932 \\
+4 & 245 & 236.475885 & 8.524115 & 8.524115 & 72.66054 \\
+\end{longtable}
+
+\[MAE=(2.344978+3.305877+3.552368+8.524115)/4=4.431835.\]
+
+\[RMSE=\sqrt{(2.344978^2+3.305877^2+(-3.552368)^2+8.524115^2)/4}=5.042509.\]
+
+\[ME=(2.344978+3.305877-3.552368+8.524115)/4=2.655651.\]
+
+Le modèle sous-prévoit en moyenne. La validation doit être hors échantillon ; une prévision naïve est un benchmark utile.
+
+\emph{Approfondissement --- 20 min}
+
+\hypertarget{compluxe9ment-1-validation-des-pruxe9visions-et-rupture-structurelle}{%
+\subsection{Complément 1 --- Validation des prévisions et rupture structurelle}\label{compluxe9ment-1-validation-des-pruxe9visions-et-rupture-structurelle}}
+
+La demande mensuelle observée vaut 100, 104, 108, 150, 154 et 158. Un modèle ajusté sur les trois premiers mois prévoit 100, 104, 108, 112, 116 et 120.
+
+\begin{enumerate}
+\tightlist
+\item
+  Calculez les erreurs des mois 4 à 6.
+\item
+  Calculez la MAE et l'erreur moyenne sur la validation.
+\item
+  Diagnostiquez le modèle.
+\item
+  Proposez une réponse responsable.
+\end{enumerate}
+
+\textbf{Indication méthodologique :}
+
+Utilisez erreur = observé − prévu. Des erreurs toujours positives signalent une sous-prévision systématique.
+
+\hypertarget{corriguxe9-duxe9tailluxe9-5}{%
+\subsubsection{Corrigé détaillé}\label{corriguxe9-duxe9tailluxe9-5}}
+
+\textbf{Erreurs.} Mois 4 : 150−112 = 38 ; mois 5 : 154−116 = 38 ; mois 6 : 158−120 = 38.
+
+\textbf{Indicateurs.} MAE = \textbf{38} et erreur moyenne = \textbf{+38} : la sous-prévision est systématique.
+
+\textbf{Diagnostic.} Le niveau saute entre les mois 3 et 4, puis la pente reste proche de quatre unités par mois. Il s'agit vraisemblablement d'une rupture de niveau ; le modèle pré-rupture est obsolète.
+
+\textbf{Réponse.} Identifier l'événement économique, réestimer le niveau sur les données post-rupture, comparer à une prévision naïve, conserver une période de validation et communiquer des intervalles de prévision.
+
+\end{document}

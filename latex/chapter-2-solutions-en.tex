@@ -1,0 +1,326 @@
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsfonts,mathtools}
+\usepackage{graphicx,booktabs,longtable,array,tabularx,adjustbox}
+\usepackage{geometry,microtype,fancyhdr,lastpage,etoolbox,enumitem}
+\usepackage{newunicodechar,textcomp}
+\usepackage{hyperref}
+\hypersetup{hidelinks,pdfcreator={XeLaTeX / QM1 academic edition}}
+\geometry{left=20mm,right=20mm,top=22mm,bottom=23mm}
+\setcounter{secnumdepth}{2}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt plus 1pt}
+\setlength{\emergencystretch}{2em}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.16}
+\setlist{nosep,topsep=3pt,itemsep=2pt,leftmargin=7mm}
+\AtBeginEnvironment{longtable}{\footnotesize\setlength{\tabcolsep}{2.2pt}}
+\newcommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\Cov}{\operatorname{Cov}}
+\providecommand{\Var}{\operatorname{Var}}
+\providecommand{\Corr}{\operatorname{Corr}}
+\providecommand{\MAD}{\operatorname{MAD}}
+\providecommand{\E}{\mathbb{E}}
+\providecommand{\R}{\mathbb{R}}
+\newunicodechar{—}{\textemdash}
+\newunicodechar{–}{\textendash}
+\newunicodechar{€}{\texteuro}
+\newunicodechar{≤}{\ensuremath{\leq}}
+\newunicodechar{≥}{\ensuremath{\geq}}
+\newunicodechar{×}{\ensuremath{\times}}
+\newunicodechar{÷}{\ensuremath{\div}}
+\newunicodechar{Σ}{\ensuremath{\Sigma}}
+\newunicodechar{σ}{\ensuremath{\sigma}}
+\newunicodechar{μ}{\ensuremath{\mu}}
+\newunicodechar{Δ}{\ensuremath{\Delta}}
+\newunicodechar{∑}{\ensuremath{\sum}}
+\newunicodechar{≈}{\ensuremath{\approx}}
+\newunicodechar{√}{\ensuremath{\surd}}
+\newunicodechar{≠}{\ensuremath{\ne}}
+\newunicodechar{→}{\ensuremath{\to}}
+\newunicodechar{∞}{\ensuremath{\infty}}
+\newunicodechar{∈}{\ensuremath{\in}}
+\newunicodechar{−}{\ensuremath{-}}
+\newunicodechar{²}{\ensuremath{^{2}}}
+\newunicodechar{³}{\ensuremath{^{3}}}
+\newunicodechar{₀}{\ensuremath{_{0}}}
+\newunicodechar{₁}{\ensuremath{_{1}}}
+\newunicodechar{₂}{\ensuremath{_{2}}}
+\newunicodechar{₃}{\ensuremath{_{3}}}
+\newunicodechar{₄}{\ensuremath{_{4}}}
+\newunicodechar{ₜ}{\ensuremath{_{t}}}
+\newunicodechar{ₚ}{\ensuremath{_{p}}}
+\newunicodechar{ₙ}{\ensuremath{_{n}}}
+\newunicodechar{ₓ}{\ensuremath{_{x}}}
+\newunicodechar{ᵢ}{\ensuremath{_{i}}}
+\newunicodechar{ŷ}{\ensuremath{\hat y}}
+\newunicodechar{Ŷ}{\ensuremath{\widehat Y}}
+\newunicodechar{ₘ}{\ensuremath{_{m}}}
+\newunicodechar{ₑ}{\ensuremath{_{e}}}
+\newunicodechar{ₐ}{\ensuremath{_{a}}}
+\newunicodechar{ₖ}{\ensuremath{_{k}}}
+\newunicodechar{ₛ}{\ensuremath{_{s}}}
+\newunicodechar{ₗ}{\ensuremath{_{l}}}
+\newunicodechar{ₕ}{\ensuremath{_{h}}}
+\newunicodechar{ₒ}{\ensuremath{_{o}}}
+\newunicodechar{₊}{\ensuremath{_{+}}}
+\newunicodechar{₋}{\ensuremath{_{-}}}
+\newunicodechar{₌}{\ensuremath{_{=}}}
+\newunicodechar{₍}{\ensuremath{_{(}}}
+\newunicodechar{₎}{\ensuremath{_{)}}}
+\newunicodechar{⁻}{\ensuremath{^{-}}}
+\newunicodechar{⁺}{\ensuremath{^{+}}}
+\newunicodechar{⁰}{\ensuremath{^{0}}}
+\newunicodechar{¹}{\ensuremath{^{1}}}
+\newunicodechar{⁴}{\ensuremath{^{4}}}
+\newunicodechar{⁵}{\ensuremath{^{5}}}
+\newunicodechar{⁶}{\ensuremath{^{6}}}
+\newunicodechar{⁷}{\ensuremath{^{7}}}
+\newunicodechar{⁸}{\ensuremath{^{8}}}
+\newunicodechar{⁹}{\ensuremath{^{9}}}
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0pt}{2.0ex plus .7ex minus .3ex}{1.0ex}{\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0pt}{1.8ex plus .5ex minus .2ex}{.7ex}{\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0pt}{1.3ex plus .4ex minus .2ex}{.5ex}{\normalsize\bfseries}}
+\makeatother
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead[L]{\small\textsc{KEDGE Business School --- QM1}}
+\fancyhead[R]{\small\textsc{2026--2027}}
+\fancyfoot[L]{\small Badr ABOUFARASSE, PhD}
+\fancyfoot[R]{\small\thepage\ /\ \pageref{LastPage}}
+\setlength{\headheight}{14pt}
+\setkeys{Gin}{keepaspectratio}
+\begin{document}
+
+\begin{center}
+{\small\textsc{KEDGE Business School \quad EBP1 \quad Quantitative Methods 1}}\\[6pt]
+{\Large\bfseries Worksheet 2 — Measures of central tendency}\\[6pt]
+{\normalsize\bfseries Fully worked solutions}\\[6pt]
+{\small Badr ABOUFARASSE, PhD \quad --- \quad 2026--2027}
+\end{center}
+\vspace{2mm}\hrule\vspace{6mm}
+
+\hypertarget{core-applications}{%
+\section{Core applications}\label{core-applications}}
+
+Master the essential definitions and calculations from the course.
+
+\emph{Core application --- 25 min}
+
+\hypertarget{exercise-1-choosing-and-calculating-the-appropriate-measure-of-centre}{%
+\subsection{Exercise 1 -- Choosing and calculating the appropriate measure of centre}\label{exercise-1-choosing-and-calculating-the-appropriate-measure-of-centre}}
+
+\begin{enumerate}
+\item
+  Basket values are {\(18,20,20,22,25,95\)} euros. Calculate mode, median and arithmetic mean. Which measure best represents a typical customer? Why can the mean still matter?
+\item
+  Three grades are {\(14\)}, {\(11\)} and {\(16\)}, weighted by {\(30\%\)}, {\(30\%\)} and {\(40\%\)}. Calculate the weighted mean.
+\item
+  Revenue changes by {\(+5\%\)}, {\(-2\%\)} and {\(+12\%\)}. Calculate the appropriate average annual growth rate.
+\item
+  A vehicle travels 120 km at 60 km/h and then 120 km at 90 km/h. Calculate the appropriate average speed.
+\end{enumerate}
+
+\hypertarget{fully-worked-solution}{%
+\subsubsection{Fully worked solution}\label{fully-worked-solution}}
+
+\hypertarget{a.-mode-median-and-mean}{%
+\subsubsection{A. Mode, median and mean}\label{a.-mode-median-and-mean}}
+
+{\[Mo=20,\qquad
+Me=\frac{20+22}{2}=21,\]} {\[\bar
+x=\frac{18+20+20+22+25+95}{6}=33.33.\]} The median better represents a typical customer because 95 is extreme. The mean is still useful for revenue because {\(n\bar x\)} reproduces the total basket value.
+
+\hypertarget{b.-weighted-mean}{%
+\subsubsection{B. Weighted mean}\label{b.-weighted-mean}}
+
+{\[\bar
+x_w=14(0.30)+11(0.30)+16(0.40)=13.90.\]}
+
+\hypertarget{c.-geometric-mean}{%
+\subsubsection{C. Geometric mean}\label{c.-geometric-mean}}
+
+{\[1+g=\sqrt[3]{1.05\times0.98\times1.12}\approx1.048442,\]} {\[g\approx4.84\%.\]}
+
+\hypertarget{d.-harmonic-mean}{%
+\subsubsection{D. Harmonic mean}\label{d.-harmonic-mean}}
+
+{\[H=\frac{2}{\frac1{60}+\frac1{90}}=72\text{
+km/h}.\]}
+
+\emph{Core application --- 10 min}
+
+\hypertarget{exercise-3-which-indicator-should-be-used}{%
+\subsection{Exercise 3 -- Which indicator should be used?}\label{exercise-3-which-indicator-should-be-used}}
+
+For each situation, choose the most appropriate indicator and justify in one sentence: most frequently sold product category; typical salary with a few very highly paid executives; average price when purchased quantities differ; average multi-year growth; average speed over equal distances; centre of a roughly symmetric numerical distribution without extreme values.
+
+\hypertarget{fully-worked-solution-1}{%
+\subsubsection{Fully worked solution}\label{fully-worked-solution-1}}
+
+\begin{longtable}[]{@{}p{0.32\linewidth}p{0.62\linewidth}@{}}
+\toprule\noalign{}
+Situation & Preferred indicator \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Most frequently sold category & Mode. \\
+Typical salary with a few extreme high salaries & Median. \\
+Average price with different quantities & Weighted mean. \\
+Average growth over several years & Geometric mean. \\
+Average speed over equal distances & Harmonic mean. \\
+Symmetric numerical distribution without extremes & Arithmetic mean. \\
+\end{longtable}
+
+\emph{Core application --- 15 min}
+
+\hypertarget{extra-1-robust-centre-for-delivery-performance}{%
+\subsection{Extra 1 --- Robust centre for delivery performance}\label{extra-1-robust-centre-for-delivery-performance}}
+
+Delivery times (minutes) for 12 orders are: 18, 19, 20, 20, 21, 21, 22, 22, 23, 24, 25, 65.
+
+\begin{enumerate}
+\tightlist
+\item
+  Calculate the mode, median and mean.
+\item
+  Recalculate the mean without the 65-minute delivery.
+\item
+  Recommend the principal indicator for a customer-facing dashboard and justify your choice.
+\end{enumerate}
+
+\textbf{Method hint:}
+
+Compare the indicators before and after removing the unusual observation; do not delete it without explanation.
+
+\hypertarget{fully-worked-solution-2}{%
+\subsubsection{Fully worked solution}\label{fully-worked-solution-2}}
+
+\textbf{Step 1 --- mode.} The values 20, 21 and 22 each occur twice, so the distribution is multimodal.
+
+\textbf{Step 2 --- median.} With 12 observations, use positions 6 and 7: (21 + 22)/2 = \textbf{21.5 minutes}.
+
+\textbf{Step 3 --- mean.} The total is 300, hence the mean is 300/12 = \textbf{25 minutes}. Without the unusual delivery, the total is 235 for 11 orders and the mean is 235/11 = \textbf{21.36 minutes}.
+
+\textbf{Interpretation.} A single long delivery raises the mean by 3.64 minutes. The median is the best principal description of a typical customer experience, but the dashboard should also report the mean and the 65-minute incident because the latter matters for capacity and service recovery.
+
+\hypertarget{assessment-and-exam-practice}{%
+\section{Assessment and exam practice}\label{assessment-and-exam-practice}}
+
+Practise independently with assessment and final-exam style questions.
+
+\emph{Assessment / exam practice --- 30 min}
+
+\hypertarget{exercise-2-grouped-distribution}{%
+\subsection{Exercise 2 -- Grouped distribution}\label{exercise-2-grouped-distribution}}
+
+\begin{longtable}[]{@{}llllllllll@{}}
+\toprule\noalign{}
+Class & {\([10,14[\)} & {\([14,18[\)} & {\([18,26[\)} & {\([26,30[\)} & {\([30,35[\)} & {\([35,40[\)} & {\([40,45[\)} & {\([45,50[\)} & {\([50,55[\)} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+{\(n_i\)} & 4 & 12 & 32 & 32 & 60 & 35 & 25 & 5 & 5 \\
+\end{longtable}
+
+\begin{enumerate}
+\item
+  Identify the modal class, taking unequal widths into account.
+\item
+  Calculate the median by linear interpolation.
+\item
+  Calculate {\(Q_1\)} and {\(Q_3\)} by interpolation.
+\item
+  Calculate the approximate mean using class midpoints.
+\item
+  Find the maximum price such that about 60\% of customers can afford at least that price.
+\end{enumerate}
+
+\hypertarget{fully-worked-solution-3}{%
+\subsubsection{Fully worked solution}\label{fully-worked-solution-3}}
+
+The count densities are {\(1,3,4,8,12,7,5,1,1\)}, so the modal class is {\([30,35[\)}. {\[Me=30+5\frac{105-80}{60}\approx32.08.\]} {\[Q_1=26+4\frac{52.5-48}{32}\approx26.56,\]} {\[Q_3=35+5\frac{157.5-140}{35}=37.50.\]} Class midpoints are {\(12,16,22,28,32.5,37.5,42.5,47.5,52.5\)} and {\[\sum n_ic_i=6665.\]} Hence: {\[\bar x=\frac{6665}{210}\approx31.74.\]} For 60\% to afford at least price {\(p\)}, 40\% must lie below it: {\[0.40(210)=84,\]} {\[p=30+5\frac{84-80}{60}\approx30.33\text{
+euros}.\]}
+
+\hypertarget{full-table-for-interpolation}{%
+\subsubsection{Full table for interpolation}\label{full-table-for-interpolation}}
+
+\begin{longtable}[]{@{}lllllll@{}}
+\toprule\noalign{}
+Class & n & a & d=n/a & ECC & c & n×c \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+{[}10,14{[} & 4 & 4 & 1 & 4 & 12 & 48 \\
+{[}14,18{[} & 12 & 4 & 3 & 16 & 16 & 192 \\
+{[}18,26{[} & 32 & 8 & 4 & 48 & 22 & 704 \\
+{[}26,30{[} & 32 & 4 & 8 & 80 & 28 & 896 \\
+{[}30,35{[} & 60 & 5 & 12 & 140 & 32.5 & 1950 \\
+{[}35,40{[} & 35 & 5 & 7 & 175 & 37.5 & 1312.5 \\
+{[}40,45{[} & 25 & 5 & 5 & 200 & 42.5 & 1062.5 \\
+{[}45,50{[} & 5 & 5 & 1 & 205 & 47.5 & 237.5 \\
+{[}50,55{[} & 5 & 5 & 1 & 210 & 52.5 & 262.5 \\
+Σ & 210 & --- & --- & --- & --- & 6665 \\
+\end{longtable}
+
+\[\begin{gathered}
+Q_1=26+4\frac{52.5-48}{32}=26.5625,\\Me=30+5\frac{105-80}{60}=32.0833,\\Q_3=35+5\frac{157.5-140}{35}=37.5.
+\end{gathered}\]
+
+Ranks: 0.25×210=52.5; 0.50×210=105; 0.75×210=157.5. Interpolation is approximate because the underlying individual observations are unknown.
+
+\emph{Assessment / exam practice --- 20 min}
+
+\hypertarget{extra-2-integrated-centre-selection-case}{%
+\subsection{Extra 2 --- Integrated centre-selection case}\label{extra-2-integrated-centre-selection-case}}
+
+A retailer reports three indicators:
+
+\begin{longtable}[]{@{}p{0.32\linewidth}p{0.62\linewidth}@{}}
+\toprule\noalign{}
+Question & Data \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Average basket value & 120 baskets: €3,600 total \\
+Typical annual growth & +12\%, −8\%, +15\%, +5\% \\
+Average speed & Two equal 90-km legs at 60 and 90 km/h \\
+\end{longtable}
+
+\begin{enumerate}
+\tightlist
+\item
+  Choose and calculate the appropriate mean for each row.
+\item
+  Explain why using the arithmetic mean in all three cases is incorrect.
+\item
+  Write a short managerial conclusion.
+\end{enumerate}
+
+\textbf{Method hint:}
+
+Match additive totals, compounded factors and equal-distance rates with arithmetic, geometric and harmonic means.
+
+\hypertarget{fully-worked-solution-4}{%
+\subsubsection{Fully worked solution}\label{fully-worked-solution-4}}
+
+\textbf{Basket value.} The arithmetic mean preserves the total: 3,600/120 = \textbf{€30}.
+
+\textbf{Growth.} Multiply the growth factors: 1.12 × 0.92 × 1.15 × 1.05 = 1.244208. The equivalent annual factor is 1.244208\textsuperscript{1/4} = 1.0561, hence \textbf{5.61\% per year}.
+
+\textbf{Speed.} Equal distances require the harmonic mean: 2/(1/60 + 1/90) = \textbf{72 km/h}.
+
+\textbf{Why the methods differ.} Basket values combine additively, growth compounds multiplicatively, and equal-distance speeds imply unequal travel times. The arithmetic alternatives (6\% growth and 75 km/h) do not preserve the relevant totals.
+
+\textbf{Managerial conclusion.} The average basket is €30, the equivalent annual growth rate is about 5.6\%, and the route's average speed is 72 km/h. Each result is valid because the averaging rule matches the business mechanism.
+
+\end{document}

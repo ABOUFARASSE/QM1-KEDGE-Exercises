@@ -1,0 +1,319 @@
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsfonts,mathtools}
+\usepackage{graphicx,booktabs,longtable,array,tabularx,adjustbox}
+\usepackage{geometry,microtype,fancyhdr,lastpage,etoolbox,enumitem}
+\usepackage{newunicodechar,textcomp}
+\usepackage{hyperref}
+\hypersetup{hidelinks,pdfcreator={XeLaTeX / QM1 academic edition}}
+\geometry{left=20mm,right=20mm,top=22mm,bottom=23mm}
+\setcounter{secnumdepth}{2}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt plus 1pt}
+\setlength{\emergencystretch}{2em}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.16}
+\setlist{nosep,topsep=3pt,itemsep=2pt,leftmargin=7mm}
+\AtBeginEnvironment{longtable}{\footnotesize\setlength{\tabcolsep}{2.2pt}}
+\newcommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\Cov}{\operatorname{Cov}}
+\providecommand{\Var}{\operatorname{Var}}
+\providecommand{\Corr}{\operatorname{Corr}}
+\providecommand{\MAD}{\operatorname{MAD}}
+\providecommand{\E}{\mathbb{E}}
+\providecommand{\R}{\mathbb{R}}
+\newunicodechar{—}{\textemdash}
+\newunicodechar{–}{\textendash}
+\newunicodechar{€}{\texteuro}
+\newunicodechar{≤}{\ensuremath{\leq}}
+\newunicodechar{≥}{\ensuremath{\geq}}
+\newunicodechar{×}{\ensuremath{\times}}
+\newunicodechar{÷}{\ensuremath{\div}}
+\newunicodechar{Σ}{\ensuremath{\Sigma}}
+\newunicodechar{σ}{\ensuremath{\sigma}}
+\newunicodechar{μ}{\ensuremath{\mu}}
+\newunicodechar{Δ}{\ensuremath{\Delta}}
+\newunicodechar{∑}{\ensuremath{\sum}}
+\newunicodechar{≈}{\ensuremath{\approx}}
+\newunicodechar{√}{\ensuremath{\surd}}
+\newunicodechar{≠}{\ensuremath{\ne}}
+\newunicodechar{→}{\ensuremath{\to}}
+\newunicodechar{∞}{\ensuremath{\infty}}
+\newunicodechar{∈}{\ensuremath{\in}}
+\newunicodechar{−}{\ensuremath{-}}
+\newunicodechar{²}{\ensuremath{^{2}}}
+\newunicodechar{³}{\ensuremath{^{3}}}
+\newunicodechar{₀}{\ensuremath{_{0}}}
+\newunicodechar{₁}{\ensuremath{_{1}}}
+\newunicodechar{₂}{\ensuremath{_{2}}}
+\newunicodechar{₃}{\ensuremath{_{3}}}
+\newunicodechar{₄}{\ensuremath{_{4}}}
+\newunicodechar{ₜ}{\ensuremath{_{t}}}
+\newunicodechar{ₚ}{\ensuremath{_{p}}}
+\newunicodechar{ₙ}{\ensuremath{_{n}}}
+\newunicodechar{ₓ}{\ensuremath{_{x}}}
+\newunicodechar{ᵢ}{\ensuremath{_{i}}}
+\newunicodechar{ŷ}{\ensuremath{\hat y}}
+\newunicodechar{Ŷ}{\ensuremath{\widehat Y}}
+\newunicodechar{ₘ}{\ensuremath{_{m}}}
+\newunicodechar{ₑ}{\ensuremath{_{e}}}
+\newunicodechar{ₐ}{\ensuremath{_{a}}}
+\newunicodechar{ₖ}{\ensuremath{_{k}}}
+\newunicodechar{ₛ}{\ensuremath{_{s}}}
+\newunicodechar{ₗ}{\ensuremath{_{l}}}
+\newunicodechar{ₕ}{\ensuremath{_{h}}}
+\newunicodechar{ₒ}{\ensuremath{_{o}}}
+\newunicodechar{₊}{\ensuremath{_{+}}}
+\newunicodechar{₋}{\ensuremath{_{-}}}
+\newunicodechar{₌}{\ensuremath{_{=}}}
+\newunicodechar{₍}{\ensuremath{_{(}}}
+\newunicodechar{₎}{\ensuremath{_{)}}}
+\newunicodechar{⁻}{\ensuremath{^{-}}}
+\newunicodechar{⁺}{\ensuremath{^{+}}}
+\newunicodechar{⁰}{\ensuremath{^{0}}}
+\newunicodechar{¹}{\ensuremath{^{1}}}
+\newunicodechar{⁴}{\ensuremath{^{4}}}
+\newunicodechar{⁵}{\ensuremath{^{5}}}
+\newunicodechar{⁶}{\ensuremath{^{6}}}
+\newunicodechar{⁷}{\ensuremath{^{7}}}
+\newunicodechar{⁸}{\ensuremath{^{8}}}
+\newunicodechar{⁹}{\ensuremath{^{9}}}
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0pt}{2.0ex plus .7ex minus .3ex}{1.0ex}{\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0pt}{1.8ex plus .5ex minus .2ex}{.7ex}{\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0pt}{1.3ex plus .4ex minus .2ex}{.5ex}{\normalsize\bfseries}}
+\makeatother
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead[L]{\small\textsc{KEDGE Business School --- QM1}}
+\fancyhead[R]{\small\textsc{2026--2027}}
+\fancyfoot[L]{\small Badr ABOUFARASSE, PhD}
+\fancyfoot[R]{\small\thepage\ /\ \pageref{LastPage}}
+\setlength{\headheight}{14pt}
+\setkeys{Gin}{keepaspectratio}
+\begin{document}
+
+\begin{center}
+{\small\textsc{KEDGE Business School \quad EBP1 \quad Quantitative Methods 1}}\\[6pt]
+{\Large\bfseries Fiche 1 — Présenter et organiser les données}\\[6pt]
+{\normalsize\bfseries Énoncés des exercices}\\[6pt]
+{\small Badr ABOUFARASSE, PhD \quad --- \quad 2026--2027}
+\end{center}
+\vspace{2mm}\hrule\vspace{6mm}
+
+\hypertarget{applications-fondamentales}{%
+\section{Applications fondamentales}\label{applications-fondamentales}}
+
+Maîtriser les définitions et les calculs essentiels du cours.
+
+\emph{Application du cours --- 10 min}
+
+\hypertarget{exercice-1-population-uxe9chantillon-et-nature-des-variables}{%
+\subsection{Exercice 1 -- Population, échantillon et nature des variables}\label{exercice-1-population-uxe9chantillon-et-nature-des-variables}}
+
+Un magasin souhaite étudier l'ensemble de ses clients ayant effectué un achat au mois de septembre. Il interroge un échantillon de 80 clients et relève :
+
+\begin{longtable}[]{@{}p{0.32\linewidth}p{0.62\linewidth}@{}}
+\toprule\noalign{}
+Variable & Exemple \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Mode de paiement & carte, espèces, mobile \\
+Nombre d'articles achetés & 1, 2, 3, \ldots{} \\
+Temps passé en magasin & en minutes \\
+Niveau de satisfaction & très insatisfait à très satisfait \\
+\end{longtable}
+
+\begin{enumerate}
+\item
+  Identifier la population cible, l'échantillon et l'unité statistique.
+\item
+  Classer chaque variable comme qualitative nominale, qualitative ordinale, quantitative discrète ou quantitative continue.
+\item
+  Choisir une représentation graphique adaptée à chaque variable.
+\item
+  Pour quelles variables les fréquences cumulées ont-elles un sens ? Justifier.
+\item
+  Expliquer pourquoi un échantillon de grande taille n'est pas nécessairement représentatif.
+\end{enumerate}
+
+\emph{Application du cours --- 20 min}
+
+\hypertarget{exercice-2-distribution-discruxe8te}{%
+\subsection{Exercice 2 -- Distribution discrète}\label{exercice-2-distribution-discruxe8te}}
+
+Le nombre de commandes passées par 40 clients est résumé par :
+
+\begin{longtable}[]{@{}lllllll@{}}
+\toprule\noalign{}
+{\(x_i\)} & 0 & 1 & 2 & 3 & 4 & 5 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+{\(n_i\)} & 3 & 7 & 12 & 10 & 6 & 2 \\
+\end{longtable}
+
+\begin{enumerate}
+\item
+  Vérifier l'effectif total {\(N\)}.
+\item
+  Calculer les fréquences {\(f_i=n_i/N\)} et les fréquences cumulées croissantes.
+\item
+  Représenter la distribution par un diagramme en bâtons.
+\item
+  Construire la fonction de répartition {\(F(x)=P(X\leq x)\)}.
+\item
+  Déterminer la proportion de clients ayant passé au plus trois commandes.
+\end{enumerate}
+
+\emph{Application du cours --- 15 min}
+
+\hypertarget{compluxe9ment-1-tableau-croisuxe9-et-pourcentages-conditionnels}{%
+\subsection{Complément 1 --- Tableau croisé et pourcentages conditionnels}\label{compluxe9ment-1-tableau-croisuxe9-et-pourcentages-conditionnels}}
+
+Parmi 120 étudiants, 50 utilisent les transports publics, dont 30 femmes. Parmi les 70 autres étudiants, 35 sont des femmes.
+
+\begin{enumerate}
+\tightlist
+\item
+  Construisez le tableau sexe × transport.
+\item
+  Calculez le taux d'utilisation des transports publics dans chaque groupe.
+\item
+  Indiquez si une association semble présente.
+\end{enumerate}
+
+\textbf{Indication méthodologique :}
+
+Un pourcentage conditionnel utilise comme dénominateur le total du groupe conditionnant.
+
+\hypertarget{pruxe9paration-aux-uxe9valuations}{%
+\section{Préparation aux évaluations}\label{pruxe9paration-aux-uxe9valuations}}
+
+Résoudre des exercices de contrôle continu et de partiel en autonomie.
+
+\emph{Préparation CC / partiel --- 40 min}
+
+\hypertarget{exercice-3-variable-continue-et-classes-damplitudes-inuxe9gales}{%
+\subsection{Exercice 3 -- Variable continue et classes d'amplitudes inégales}\label{exercice-3-variable-continue-et-classes-damplitudes-inuxe9gales}}
+
+On observe le prix maximal, en euros, que 210 clients sont prêts à payer :
+
+\begin{longtable}[]{@{}llllllllll@{}}
+\toprule\noalign{}
+Classe & {\([10,14[\)} & {\([14,18[\)} & {\([18,26[\)} & {\([26,30[\)} & {\([30,35[\)} & {\([35,40[\)} & {\([40,45[\)} & {\([45,50[\)} & {\([50,55[\)} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+{\(n_i\)} & 4 & 12 & 32 & 32 & 60 & 35 & 25 & 5 & 5 \\
+\end{longtable}
+
+\begin{enumerate}
+\item
+  Calculer, pour chaque classe, l'amplitude {\(a_i\)}, la fréquence {\(f_i\)} et la densité d'effectif {\(d_i=n_i/a_i\)}.
+\item
+  Construire l'histogramme correct et expliquer pourquoi la hauteur ne peut pas être directement l'effectif lorsque les amplitudes sont différentes.
+\item
+  Calculer les effectifs cumulés croissants (ECC) et décroissants (ECD), ainsi que les fréquences cumulées correspondantes.
+\item
+  Tracer les courbes cumulatives.
+\item
+  Déterminer le nombre et la proportion de clients prêts à payer moins de 35 euros, puis au moins 35 euros.
+\end{enumerate}
+
+\emph{Préparation CC / partiel --- 35 min}
+
+\hypertarget{compluxe9ment-3-cas-de-pruxe9paration-au-contruxf4le-consentement-uxe0-payer}{%
+\subsection{Complément 3 --- Cas de préparation au contrôle : consentement à payer}\label{compluxe9ment-3-cas-de-pruxe9paration-au-contruxf4le-consentement-uxe0-payer}}
+
+\textbf{Étude de cas --- 12 points.} Une enseigne alimentaire interroge 200 clients sur le prix maximal qu'ils accepteraient de payer pour une boîte-repas durable.
+
+\begin{longtable}[]{@{}lllllll@{}}
+\toprule\noalign{}
+Prix maximal (€) & {[}20,25{[} & {[}25,30{[} & {[}30,40{[} & {[}40,50{[} & {[}50,60{[} & {[}60,80{[} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Clients & 10 & 20 & 50 & 60 & 40 & 20 \\
+\end{longtable}
+
+\begin{enumerate}
+\tightlist
+\item
+  Identifiez la population, l'unité statistique, la variable et sa nature. \emph{(2 points)}
+\item
+  Calculez les amplitudes, les fréquences relatives et les densités. \emph{(3 points)}
+\item
+  Expliquez la construction de l'histogramme correct et identifiez la classe modale. \emph{(2 points)}
+\item
+  Calculez les effectifs cumulés croissants et décroissants. Donnez les coordonnées nécessaires aux deux courbes cumulées. \emph{(3 points)}
+\item
+  Déterminez le prix maximal qu'au moins 60 \% des clients interrogés accepteraient de payer. Expliquez le percentile utilisé. \emph{(2 points)}
+\end{enumerate}
+
+\textbf{Indication méthodologique :}
+
+Avec des classes d'amplitudes différentes, utilisez les densités. Pour la décision de prix, traduisez « au moins 60 \% peuvent payer » en pourcentage cumulé croissant.
+
+\emph{Préparation CC / partiel --- 30 min}
+
+\hypertarget{compluxe9ment-4-synthuxe8se-type-examen-pruxe9senter-la-satisfaction-client}{%
+\subsection{Complément 4 --- Synthèse type examen : présenter la satisfaction client}\label{compluxe9ment-4-synthuxe8se-type-examen-pruxe9senter-la-satisfaction-client}}
+
+\textbf{Cas autonome --- 10 points.} Deux magasins recueillent la satisfaction sur une échelle ordonnée de 1 (très insatisfait) à 5 (très satisfait).
+
+\begin{longtable}[]{@{}lllllll@{}}
+\toprule\noalign{}
+Note & 1 & 2 & 3 & 4 & 5 & Total \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Magasin A & 6 & 10 & 18 & 36 & 30 & 100 \\
+Magasin B & 4 & 12 & 30 & 34 & 20 & 100 \\
+\end{longtable}
+
+\begin{enumerate}
+\tightlist
+\item
+  Identifiez la variable et son échelle de mesure. \emph{(1 point)}
+\item
+  Choisissez et justifiez un graphique permettant de comparer les deux magasins. Décrivez précisément sa construction. \emph{(2 points)}
+\item
+  Calculez, pour chaque magasin, la proportion de notes 4 ou 5 et le pourcentage cumulé de notes inférieures ou égales à 2. \emph{(3 points)}
+\item
+  Un responsable affirme : « Le magasin A est 50 \% meilleur, car il obtient 30 notes de 5 contre 20. » Critiquez cette affirmation. \emph{(2 points)}
+\item
+  Rédigez une conclusion statistique en trois phrases incluant une limite de l'enquête. \emph{(2 points)}
+\end{enumerate}
+
+\textbf{Indication méthodologique :}
+
+Conservez l'ordre des modalités, comparez les pourcentages et distinguez description et causalité.
+
+\hypertarget{approfondissement-facultatif}{%
+\section{Approfondissement facultatif}\label{approfondissement-facultatif}}
+
+Aller plus loin dans l'interprétation et les applications professionnelles.
+
+\emph{Approfondissement --- 15 min}
+
+\hypertarget{compluxe9ment-2-protocole-de-qualituxe9-et-de-communication}{%
+\subsection{Complément 2 --- Protocole de qualité et de communication}\label{compluxe9ment-2-protocole-de-qualituxe9-et-de-communication}}
+
+Un export CRM contient des clients dupliqués, des âges manquants codés 999, des dates incohérentes et des revenus saisis en euros ou en milliers d'euros. Proposez un protocole reproductible en six étapes avant de produire un tableau de bord.
+
+\textbf{Indication méthodologique :}
+
+Séparez validation, nettoyage, documentation et communication.
+
+\end{document}

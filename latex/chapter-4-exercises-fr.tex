@@ -1,0 +1,242 @@
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsfonts,mathtools}
+\usepackage{graphicx,booktabs,longtable,array,tabularx,adjustbox}
+\usepackage{geometry,microtype,fancyhdr,lastpage,etoolbox,enumitem}
+\usepackage{newunicodechar,textcomp}
+\usepackage{hyperref}
+\hypersetup{hidelinks,pdfcreator={XeLaTeX / QM1 academic edition}}
+\geometry{left=20mm,right=20mm,top=22mm,bottom=23mm}
+\setcounter{secnumdepth}{2}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt plus 1pt}
+\setlength{\emergencystretch}{2em}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.16}
+\setlist{nosep,topsep=3pt,itemsep=2pt,leftmargin=7mm}
+\AtBeginEnvironment{longtable}{\footnotesize\setlength{\tabcolsep}{2.2pt}}
+\newcommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\Cov}{\operatorname{Cov}}
+\providecommand{\Var}{\operatorname{Var}}
+\providecommand{\Corr}{\operatorname{Corr}}
+\providecommand{\MAD}{\operatorname{MAD}}
+\providecommand{\E}{\mathbb{E}}
+\providecommand{\R}{\mathbb{R}}
+\newunicodechar{—}{\textemdash}
+\newunicodechar{–}{\textendash}
+\newunicodechar{€}{\texteuro}
+\newunicodechar{≤}{\ensuremath{\leq}}
+\newunicodechar{≥}{\ensuremath{\geq}}
+\newunicodechar{×}{\ensuremath{\times}}
+\newunicodechar{÷}{\ensuremath{\div}}
+\newunicodechar{Σ}{\ensuremath{\Sigma}}
+\newunicodechar{σ}{\ensuremath{\sigma}}
+\newunicodechar{μ}{\ensuremath{\mu}}
+\newunicodechar{Δ}{\ensuremath{\Delta}}
+\newunicodechar{∑}{\ensuremath{\sum}}
+\newunicodechar{≈}{\ensuremath{\approx}}
+\newunicodechar{√}{\ensuremath{\surd}}
+\newunicodechar{≠}{\ensuremath{\ne}}
+\newunicodechar{→}{\ensuremath{\to}}
+\newunicodechar{∞}{\ensuremath{\infty}}
+\newunicodechar{∈}{\ensuremath{\in}}
+\newunicodechar{−}{\ensuremath{-}}
+\newunicodechar{²}{\ensuremath{^{2}}}
+\newunicodechar{³}{\ensuremath{^{3}}}
+\newunicodechar{₀}{\ensuremath{_{0}}}
+\newunicodechar{₁}{\ensuremath{_{1}}}
+\newunicodechar{₂}{\ensuremath{_{2}}}
+\newunicodechar{₃}{\ensuremath{_{3}}}
+\newunicodechar{₄}{\ensuremath{_{4}}}
+\newunicodechar{ₜ}{\ensuremath{_{t}}}
+\newunicodechar{ₚ}{\ensuremath{_{p}}}
+\newunicodechar{ₙ}{\ensuremath{_{n}}}
+\newunicodechar{ₓ}{\ensuremath{_{x}}}
+\newunicodechar{ᵢ}{\ensuremath{_{i}}}
+\newunicodechar{ŷ}{\ensuremath{\hat y}}
+\newunicodechar{Ŷ}{\ensuremath{\widehat Y}}
+\newunicodechar{ₘ}{\ensuremath{_{m}}}
+\newunicodechar{ₑ}{\ensuremath{_{e}}}
+\newunicodechar{ₐ}{\ensuremath{_{a}}}
+\newunicodechar{ₖ}{\ensuremath{_{k}}}
+\newunicodechar{ₛ}{\ensuremath{_{s}}}
+\newunicodechar{ₗ}{\ensuremath{_{l}}}
+\newunicodechar{ₕ}{\ensuremath{_{h}}}
+\newunicodechar{ₒ}{\ensuremath{_{o}}}
+\newunicodechar{₊}{\ensuremath{_{+}}}
+\newunicodechar{₋}{\ensuremath{_{-}}}
+\newunicodechar{₌}{\ensuremath{_{=}}}
+\newunicodechar{₍}{\ensuremath{_{(}}}
+\newunicodechar{₎}{\ensuremath{_{)}}}
+\newunicodechar{⁻}{\ensuremath{^{-}}}
+\newunicodechar{⁺}{\ensuremath{^{+}}}
+\newunicodechar{⁰}{\ensuremath{^{0}}}
+\newunicodechar{¹}{\ensuremath{^{1}}}
+\newunicodechar{⁴}{\ensuremath{^{4}}}
+\newunicodechar{⁵}{\ensuremath{^{5}}}
+\newunicodechar{⁶}{\ensuremath{^{6}}}
+\newunicodechar{⁷}{\ensuremath{^{7}}}
+\newunicodechar{⁸}{\ensuremath{^{8}}}
+\newunicodechar{⁹}{\ensuremath{^{9}}}
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0pt}{2.0ex plus .7ex minus .3ex}{1.0ex}{\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0pt}{1.8ex plus .5ex minus .2ex}{.7ex}{\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0pt}{1.3ex plus .4ex minus .2ex}{.5ex}{\normalsize\bfseries}}
+\makeatother
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead[L]{\small\textsc{KEDGE Business School --- QM1}}
+\fancyhead[R]{\small\textsc{2026--2027}}
+\fancyfoot[L]{\small Badr ABOUFARASSE, PhD}
+\fancyfoot[R]{\small\thepage\ /\ \pageref{LastPage}}
+\setlength{\headheight}{14pt}
+\setkeys{Gin}{keepaspectratio}
+\begin{document}
+
+\begin{center}
+{\small\textsc{KEDGE Business School \quad EBP1 \quad Quantitative Methods 1}}\\[6pt]
+{\Large\bfseries Fiche 4 — Distributions bivariées et régression}\\[6pt]
+{\normalsize\bfseries Énoncés des exercices}\\[6pt]
+{\small Badr ABOUFARASSE, PhD \quad --- \quad 2026--2027}
+\end{center}
+\vspace{2mm}\hrule\vspace{6mm}
+
+\hypertarget{applications-fondamentales}{%
+\section{Applications fondamentales}\label{applications-fondamentales}}
+
+Maîtriser les définitions et les calculs essentiels du cours.
+
+\emph{Application du cours --- 15 min}
+
+\hypertarget{exercice-3-droite-de-mayer}{%
+\subsection{Exercice 3 -- Droite de Mayer}\label{exercice-3-droite-de-mayer}}
+
+Pour les points {\((1,7),(2,10),(3,10),(4,14),(5,14)\)} : former deux sous-nuages, calculer leurs points moyens {\(A\)} et {\(B\)}, puis déterminer la droite de Mayer.
+
+\hypertarget{pruxe9paration-aux-uxe9valuations}{%
+\section{Préparation aux évaluations}\label{pruxe9paration-aux-uxe9valuations}}
+
+Résoudre des exercices de contrôle continu et de partiel en autonomie.
+
+\emph{Préparation CC / partiel --- 35 min}
+
+\hypertarget{exercice-1-ruxe9gression-linuxe9aire-compluxe8te}{%
+\subsection{Exercice 1 -- Régression linéaire complète}\label{exercice-1-ruxe9gression-linuxe9aire-compluxe8te}}
+
+On observe : {\[(1,3),\ (2,5),\ (3,5),\
+(4,8),\ (5,9).\]}
+
+\begin{enumerate}
+\item
+  Tracer le nuage de points et décrire direction, forme et intensité apparente.
+\item
+  Calculer {\(\bar x\)}, {\(\bar y\)}, {\(V(x)\)}, {\(V(y)\)}, {\(\Cov(x,y)\)} et le coefficient de corrélation {\(r\)}.
+\item
+  Estimer la droite des moindres carrés {\(\hat y=ax+b\)}.
+\item
+  Calculer les valeurs ajustées et les résidus {\(e_i=y_i-\hat y_i\)}.
+\item
+  Calculer {\(SSE\)}, {\(SST\)} et {\(R^2\)} ; interpréter {\(R^2\)}.
+\end{enumerate}
+
+\emph{Préparation CC / partiel --- 15 min}
+
+\hypertarget{exercice-4-pruxe9vision-en-deux-uxe9tapes}{%
+\subsection{Exercice 4 -- Prévision en deux étapes}\label{exercice-4-pruxe9vision-en-deux-uxe9tapes}}
+
+\begin{longtable}[]{@{}lllllllll@{}}
+\toprule\noalign{}
+Mois & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Publicité {\(X\)} & 12 & 15 & 14 & 18 & 20 & 22 & 25 & 27 \\
+Ventes {\(Y\)} & 48 & 52 & 50 & 59 & 63 & 68 & 73 & 78 \\
+\end{longtable}
+
+On donne les deux ajustements : {\[\widehat{Y}=2.064X+21.899,
+\qquad
+\widehat{X}_t=2.155t+9.429.\]} Prévoir la dépense publicitaire puis les ventes au mois 10. Identifier le caractère d'extrapolation de la première étape.
+
+\emph{Préparation CC / partiel --- 45 min}
+
+\hypertarget{exercice-5-deux-ruxe9gressions-successives-type-partiel}{%
+\subsection{Exercice 5 --- Deux régressions successives --- type partiel}\label{exercice-5-deux-ruxe9gressions-successives-type-partiel}}
+
+Sur six périodes, on observe le rang t, la publicité x et les ventes y.
+
+\begin{longtable}[]{@{}lllllll@{}}
+\toprule\noalign{}
+t & 1 & 2 & 3 & 4 & 5 & 6 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+x & 4 & 5 & 7 & 8 & 10 & 11 \\
+y & 10 & 12 & 15 & 18 & 22 & 24 \\
+\end{longtable}
+
+\begin{enumerate}
+\tightlist
+\item
+  Construire le tableau complet t, x, y, t², x², y², tx, xy et les sommes.
+\item
+  Calculer les moyennes, variances, covariance, r et la droite de x en fonction de t.
+\item
+  Faire de même pour y en fonction de x.
+\item
+  Prévoir x puis y pour t=8 ; qualifier les extrapolations.
+\end{enumerate}
+
+\hypertarget{approfondissement-facultatif}{%
+\section{Approfondissement facultatif}\label{approfondissement-facultatif}}
+
+Aller plus loin dans l'interprétation et les applications professionnelles.
+
+\emph{Approfondissement --- 20 min}
+
+\hypertarget{exercice-2-interpolation-extrapolation-causalituxe9-et-influence}{%
+\subsection{Exercice 2 -- Interpolation, extrapolation, causalité et influence}\label{exercice-2-interpolation-extrapolation-causalituxe9-et-influence}}
+
+À partir du modèle de l'exercice 1 :
+
+\begin{enumerate}
+\item
+  prévoir {\(Y\)} pour {\(X=3.5\)} et qualifier la prévision ;
+\item
+  prévoir {\(Y\)} pour {\(X=10\)} et expliquer pourquoi cette prévision est risquée ;
+\item
+  ajouter le point {\((10,30)\)} et recalculer la pente et l'ordonnée à l'origine ; commenter l'influence de ce point ;
+\item
+  expliquer pourquoi une forte corrélation ne prouve pas une relation causale.
+\end{enumerate}
+
+\emph{Approfondissement --- 20 min}
+
+\hypertarget{compluxe9ment-1-diagnostic-de-ruxe9gression-et-duxe9cision-responsable}{%
+\subsection{Complément 1 --- Diagnostic de régression et décision responsable}\label{compluxe9ment-1-diagnostic-de-ruxe9gression-et-duxe9cision-responsable}}
+
+Un modèle reliant fréquentation et température donne r = 0,78 et R² = 0,61. Le graphique des résidus est en U, un week-end d'été présente un résidu très élevé et le responsable veut prévoir une température supérieure de 12 °C au maximum observé.
+
+\begin{enumerate}
+\tightlist
+\item
+  Interprétez r et R².
+\item
+  Diagnostiquez les résidus.
+\item
+  Discutez le week-end atypique et la prévision.
+\item
+  Recommandez les étapes suivantes.
+\end{enumerate}
+
+\textbf{Indication méthodologique :}
+
+Distinguez intensité, forme fonctionnelle, observation inhabituelle, extrapolation et causalité.
+
+\end{document}

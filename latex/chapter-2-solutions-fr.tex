@@ -1,0 +1,350 @@
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsfonts,mathtools}
+\usepackage{graphicx,booktabs,longtable,array,tabularx,adjustbox}
+\usepackage{geometry,microtype,fancyhdr,lastpage,etoolbox,enumitem}
+\usepackage{newunicodechar,textcomp}
+\usepackage{hyperref}
+\hypersetup{hidelinks,pdfcreator={XeLaTeX / QM1 academic edition}}
+\geometry{left=20mm,right=20mm,top=22mm,bottom=23mm}
+\setcounter{secnumdepth}{2}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt plus 1pt}
+\setlength{\emergencystretch}{2em}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.16}
+\setlist{nosep,topsep=3pt,itemsep=2pt,leftmargin=7mm}
+\AtBeginEnvironment{longtable}{\footnotesize\setlength{\tabcolsep}{2.2pt}}
+\newcommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\Cov}{\operatorname{Cov}}
+\providecommand{\Var}{\operatorname{Var}}
+\providecommand{\Corr}{\operatorname{Corr}}
+\providecommand{\MAD}{\operatorname{MAD}}
+\providecommand{\E}{\mathbb{E}}
+\providecommand{\R}{\mathbb{R}}
+\newunicodechar{—}{\textemdash}
+\newunicodechar{–}{\textendash}
+\newunicodechar{€}{\texteuro}
+\newunicodechar{≤}{\ensuremath{\leq}}
+\newunicodechar{≥}{\ensuremath{\geq}}
+\newunicodechar{×}{\ensuremath{\times}}
+\newunicodechar{÷}{\ensuremath{\div}}
+\newunicodechar{Σ}{\ensuremath{\Sigma}}
+\newunicodechar{σ}{\ensuremath{\sigma}}
+\newunicodechar{μ}{\ensuremath{\mu}}
+\newunicodechar{Δ}{\ensuremath{\Delta}}
+\newunicodechar{∑}{\ensuremath{\sum}}
+\newunicodechar{≈}{\ensuremath{\approx}}
+\newunicodechar{√}{\ensuremath{\surd}}
+\newunicodechar{≠}{\ensuremath{\ne}}
+\newunicodechar{→}{\ensuremath{\to}}
+\newunicodechar{∞}{\ensuremath{\infty}}
+\newunicodechar{∈}{\ensuremath{\in}}
+\newunicodechar{−}{\ensuremath{-}}
+\newunicodechar{²}{\ensuremath{^{2}}}
+\newunicodechar{³}{\ensuremath{^{3}}}
+\newunicodechar{₀}{\ensuremath{_{0}}}
+\newunicodechar{₁}{\ensuremath{_{1}}}
+\newunicodechar{₂}{\ensuremath{_{2}}}
+\newunicodechar{₃}{\ensuremath{_{3}}}
+\newunicodechar{₄}{\ensuremath{_{4}}}
+\newunicodechar{ₜ}{\ensuremath{_{t}}}
+\newunicodechar{ₚ}{\ensuremath{_{p}}}
+\newunicodechar{ₙ}{\ensuremath{_{n}}}
+\newunicodechar{ₓ}{\ensuremath{_{x}}}
+\newunicodechar{ᵢ}{\ensuremath{_{i}}}
+\newunicodechar{ŷ}{\ensuremath{\hat y}}
+\newunicodechar{Ŷ}{\ensuremath{\widehat Y}}
+\newunicodechar{ₘ}{\ensuremath{_{m}}}
+\newunicodechar{ₑ}{\ensuremath{_{e}}}
+\newunicodechar{ₐ}{\ensuremath{_{a}}}
+\newunicodechar{ₖ}{\ensuremath{_{k}}}
+\newunicodechar{ₛ}{\ensuremath{_{s}}}
+\newunicodechar{ₗ}{\ensuremath{_{l}}}
+\newunicodechar{ₕ}{\ensuremath{_{h}}}
+\newunicodechar{ₒ}{\ensuremath{_{o}}}
+\newunicodechar{₊}{\ensuremath{_{+}}}
+\newunicodechar{₋}{\ensuremath{_{-}}}
+\newunicodechar{₌}{\ensuremath{_{=}}}
+\newunicodechar{₍}{\ensuremath{_{(}}}
+\newunicodechar{₎}{\ensuremath{_{)}}}
+\newunicodechar{⁻}{\ensuremath{^{-}}}
+\newunicodechar{⁺}{\ensuremath{^{+}}}
+\newunicodechar{⁰}{\ensuremath{^{0}}}
+\newunicodechar{¹}{\ensuremath{^{1}}}
+\newunicodechar{⁴}{\ensuremath{^{4}}}
+\newunicodechar{⁵}{\ensuremath{^{5}}}
+\newunicodechar{⁶}{\ensuremath{^{6}}}
+\newunicodechar{⁷}{\ensuremath{^{7}}}
+\newunicodechar{⁸}{\ensuremath{^{8}}}
+\newunicodechar{⁹}{\ensuremath{^{9}}}
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0pt}{2.0ex plus .7ex minus .3ex}{1.0ex}{\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0pt}{1.8ex plus .5ex minus .2ex}{.7ex}{\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0pt}{1.3ex plus .4ex minus .2ex}{.5ex}{\normalsize\bfseries}}
+\makeatother
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead[L]{\small\textsc{KEDGE Business School --- QM1}}
+\fancyhead[R]{\small\textsc{2026--2027}}
+\fancyfoot[L]{\small Badr ABOUFARASSE, PhD}
+\fancyfoot[R]{\small\thepage\ /\ \pageref{LastPage}}
+\setlength{\headheight}{14pt}
+\setkeys{Gin}{keepaspectratio}
+\begin{document}
+
+\begin{center}
+{\small\textsc{KEDGE Business School \quad EBP1 \quad Quantitative Methods 1}}\\[6pt]
+{\Large\bfseries Fiche 2 — Mesures de tendance centrale}\\[6pt]
+{\normalsize\bfseries Corrigés intégralement détaillés}\\[6pt]
+{\small Badr ABOUFARASSE, PhD \quad --- \quad 2026--2027}
+\end{center}
+\vspace{2mm}\hrule\vspace{6mm}
+
+\hypertarget{applications-fondamentales}{%
+\section{Applications fondamentales}\label{applications-fondamentales}}
+
+Maîtriser les définitions et les calculs essentiels du cours.
+
+\emph{Application du cours --- 25 min}
+
+\hypertarget{exercice-1-choisir-et-calculer-la-bonne-mesure-de-centre}{%
+\subsection{Exercice 1 -- Choisir et calculer la bonne mesure de centre}\label{exercice-1-choisir-et-calculer-la-bonne-mesure-de-centre}}
+
+\begin{enumerate}
+\item
+  Les paniers de six clients valent : {\(18,20,20,22,25,95\)} euros. Calculer le mode, la médiane et la moyenne arithmétique. Quelle mesure décrit le mieux un client typique ? Pourquoi la moyenne reste-t-elle utile ?
+\item
+  Trois notes sont {\(14\)}, {\(11\)} et {\(16\)}, pondérées respectivement par {\(30\%\)}, {\(30\%\)} et {\(40\%\)}. Calculer la moyenne pondérée.
+\item
+  Un chiffre d'affaires évolue de {\(+5\%\)}, {\(-2\%\)} puis {\(+12\%\)}. Calculer le taux annuel moyen approprié.
+\item
+  Un véhicule parcourt 120 km à 60 km/h puis 120 km à 90 km/h. Calculer la vitesse moyenne appropriée.
+\end{enumerate}
+
+\hypertarget{corriguxe9-duxe9tailluxe9}{%
+\subsubsection{Corrigé détaillé}\label{corriguxe9-duxe9tailluxe9}}
+
+\hypertarget{a.-mode-muxe9diane-et-moyenne}{%
+\subsubsection{A. Mode, médiane et moyenne}\label{a.-mode-muxe9diane-et-moyenne}}
+
+Données ordonnées : {\(18,20,20,22,25,95\)}. {\[Mo=20.\]} {\[Me=\frac{20+22}{2}=21.\]} {\[\bar
+x=\frac{18+20+20+22+25+95}{6}=\frac{200}{6}\approx33.33.\]} La médiane décrit mieux le client typique car 95 est une valeur extrême. La moyenne reste utile pour l'analyse du chiffre d'affaires total car {\(n\bar x\)} restitue la somme des paniers.
+
+\hypertarget{b.-moyenne-ponduxe9ruxe9e}{%
+\subsubsection{B. Moyenne pondérée}\label{b.-moyenne-ponduxe9ruxe9e}}
+
+{\[\bar
+x_w=14(0.30)+11(0.30)+16(0.40)=4.20+3.30+6.40=13.90.\]}
+
+\hypertarget{c.-moyenne-guxe9omuxe9trique}{%
+\subsubsection{C. Moyenne géométrique}\label{c.-moyenne-guxe9omuxe9trique}}
+
+On moyenne les facteurs multiplicatifs : {\[1+g=\sqrt[3]{1.05\times0.98\times1.12}.\]} {\[1+g\approx1.048442
+\qquad\Longrightarrow\qquad
+g\approx4.84\%.\]}
+
+\hypertarget{d.-moyenne-harmonique}{%
+\subsubsection{D. Moyenne harmonique}\label{d.-moyenne-harmonique}}
+
+Les distances sont égales : {\[H=\frac{2}{\frac1{60}+\frac1{90}}
+=\frac{2}{\frac5{180}}
+=72\text{ km/h}.\]}
+
+\emph{Application du cours --- 10 min}
+
+\hypertarget{exercice-3-quel-indicateur-utiliser}{%
+\subsection{Exercice 3 -- Quel indicateur utiliser ?}\label{exercice-3-quel-indicateur-utiliser}}
+
+Pour chacune des situations suivantes, choisir l'indicateur le plus pertinent et justifier en une phrase :
+
+\begin{enumerate}
+\item
+  catégorie de produit la plus vendue ;
+\item
+  salaire typique dans une entreprise avec quelques dirigeants très rémunérés ;
+\item
+  prix moyen lorsque les quantités achetées diffèrent fortement ;
+\item
+  taux de croissance moyen sur plusieurs années ;
+\item
+  vitesse moyenne sur des distances égales ;
+\item
+  centre d'une distribution numérique à peu près symétrique sans valeur extrême.
+\end{enumerate}
+
+\hypertarget{corriguxe9-duxe9tailluxe9-1}{%
+\subsubsection{Corrigé détaillé}\label{corriguxe9-duxe9tailluxe9-1}}
+
+\begin{longtable}[]{@{}p{0.32\linewidth}p{0.62\linewidth}@{}}
+\toprule\noalign{}
+Situation & Indicateur et justification \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Produit le plus vendu & Mode : modalité la plus fréquente. \\
+Salaire typique avec hauts salaires extrêmes & Médiane : robuste aux valeurs extrêmes. \\
+Prix moyen avec quantités différentes & Moyenne pondérée : chaque prix reçoit le poids de sa quantité. \\
+Croissance moyenne sur plusieurs années & Moyenne géométrique : les facteurs de croissance se composent multiplicativement. \\
+Vitesses sur distances égales & Moyenne harmonique : moyenne appropriée de taux à numérateur égal. \\
+Distribution symétrique sans extrême & Moyenne arithmétique : centre naturel d'une distribution équilibrée. \\
+\end{longtable}
+
+\emph{Application du cours --- 15 min}
+
+\hypertarget{compluxe9ment-1-centre-robuste-et-performance-de-livraison}{%
+\subsection{Complément 1 --- Centre robuste et performance de livraison}\label{compluxe9ment-1-centre-robuste-et-performance-de-livraison}}
+
+Les temps de livraison (minutes) de 12 commandes sont : 18, 19, 20, 20, 21, 21, 22, 22, 23, 24, 25, 65.
+
+\begin{enumerate}
+\tightlist
+\item
+  Calculez le mode, la médiane et la moyenne.
+\item
+  Recalculez la moyenne sans la livraison de 65 minutes.
+\item
+  Recommandez l'indicateur principal d'un tableau de bord client et justifiez.
+\end{enumerate}
+
+\textbf{Indication méthodologique :}
+
+Comparez les indicateurs avec et sans l'observation inhabituelle ; ne la supprimez pas sans justification.
+
+\hypertarget{corriguxe9-duxe9tailluxe9-2}{%
+\subsubsection{Corrigé détaillé}\label{corriguxe9-duxe9tailluxe9-2}}
+
+\textbf{Étape 1 --- mode.} Les valeurs 20, 21 et 22 apparaissent chacune deux fois : la distribution est multimodale.
+
+\textbf{Étape 2 --- médiane.} Avec 12 observations, on utilise les positions 6 et 7 : (21 + 22)/2 = \textbf{21,5 minutes}.
+
+\textbf{Étape 3 --- moyenne.} Le total vaut 300 ; la moyenne est donc 300/12 = \textbf{25 minutes}. Sans l'observation inhabituelle, le total vaut 235 pour 11 commandes : 235/11 = \textbf{21,36 minutes}.
+
+\textbf{Interprétation.} Une seule livraison longue augmente la moyenne de 3,64 minutes. La médiane décrit mieux l'expérience habituelle, mais le tableau de bord doit aussi présenter la moyenne et signaler l'incident de 65 minutes, utile pour la gestion de capacité.
+
+\hypertarget{pruxe9paration-aux-uxe9valuations}{%
+\section{Préparation aux évaluations}\label{pruxe9paration-aux-uxe9valuations}}
+
+Résoudre des exercices de contrôle continu et de partiel en autonomie.
+
+\emph{Préparation CC / partiel --- 30 min}
+
+\hypertarget{exercice-2-distribution-groupuxe9e}{%
+\subsection{Exercice 2 -- Distribution groupée}\label{exercice-2-distribution-groupuxe9e}}
+
+\begin{longtable}[]{@{}llllllllll@{}}
+\toprule\noalign{}
+Classe & {\([10,14[\)} & {\([14,18[\)} & {\([18,26[\)} & {\([26,30[\)} & {\([30,35[\)} & {\([35,40[\)} & {\([40,45[\)} & {\([45,50[\)} & {\([50,55[\)} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+{\(n_i\)} & 4 & 12 & 32 & 32 & 60 & 35 & 25 & 5 & 5 \\
+\end{longtable}
+
+\begin{enumerate}
+\item
+  Identifier la classe modale en tenant compte des amplitudes.
+\item
+  Calculer la médiane par interpolation linéaire.
+\item
+  Calculer {\(Q_1\)} et {\(Q_3\)} par interpolation.
+\item
+  Calculer la moyenne approchée à l'aide des centres de classes.
+\item
+  Déterminer le prix maximal tel qu'environ 60\% des clients puissent payer au moins ce prix.
+\end{enumerate}
+
+\hypertarget{corriguxe9-duxe9tailluxe9-3}{%
+\subsubsection{Corrigé détaillé}\label{corriguxe9-duxe9tailluxe9-3}}
+
+Les amplitudes sont {\(4,4,8,4,5,5,5,5,5\)} et les densités : {\[1,3,4,8,12,7,5,1,1.\]} La classe modale est donc : {\[\boxed{[30,35[}.\]} Effectif total : {\(N=210\)}.
+
+Pour la médiane, le rang est {\(N/2=105\)}. Le cumul avant {\([30,35[\)} est 80 : {\[Me=30+5\frac{105-80}{60}
+=30+\frac{125}{60}
+\approx32.08\text{ euros}.\]} Pour {\(Q_1\)}, le rang est {\(52.5\)} : {\[Q_1=26+4\frac{52.5-48}{32}
+\approx26.56.\]} Pour {\(Q_3\)}, le rang est {\(157.5\)} : {\[Q_3=35+5\frac{157.5-140}{35}=37.50.\]} Les centres de classes sont : {\[12,16,22,28,32.5,37.5,42.5,47.5,52.5.\]} La somme pondérée vaut : {\[\sum
+n_ic_i=6665.\]} Donc : {\[\bar
+x=\frac{6665}{210}\approx31.74\text{ euros}.\]} Si 60\% doivent pouvoir payer au moins le prix {\(p\)}, alors 40\% se situent au-dessous : {\[0.40\times210=84.\]} Le rang 84 est dans {\([30,35[\)} : {\[p=30+5\frac{84-80}{60}\approx30.33\text{
+euros}.\]}
+
+\hypertarget{tableau-complet-pour-les-interpolations}{%
+\subsubsection{Tableau complet pour les interpolations}\label{tableau-complet-pour-les-interpolations}}
+
+\begin{longtable}[]{@{}lllllll@{}}
+\toprule\noalign{}
+Classe & n & a & d=n/a & ECC & c & n×c \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+{[}10,14{[} & 4 & 4 & 1 & 4 & 12 & 48 \\
+{[}14,18{[} & 12 & 4 & 3 & 16 & 16 & 192 \\
+{[}18,26{[} & 32 & 8 & 4 & 48 & 22 & 704 \\
+{[}26,30{[} & 32 & 4 & 8 & 80 & 28 & 896 \\
+{[}30,35{[} & 60 & 5 & 12 & 140 & 32.5 & 1950 \\
+{[}35,40{[} & 35 & 5 & 7 & 175 & 37.5 & 1312.5 \\
+{[}40,45{[} & 25 & 5 & 5 & 200 & 42.5 & 1062.5 \\
+{[}45,50{[} & 5 & 5 & 1 & 205 & 47.5 & 237.5 \\
+{[}50,55{[} & 5 & 5 & 1 & 210 & 52.5 & 262.5 \\
+Σ & 210 & --- & --- & --- & --- & 6665 \\
+\end{longtable}
+
+\[\begin{gathered}
+Q_1=26+4\frac{52.5-48}{32}=26.5625,\\Me=30+5\frac{105-80}{60}=32.0833,\\Q_3=35+5\frac{157.5-140}{35}=37.5.
+\end{gathered}\]
+
+Rangs : 0,25×210=52,5 ; 0,50×210=105 ; 0,75×210=157,5. Les interpolations sont approximatives car les observations individuelles sont inconnues.
+
+\emph{Préparation CC / partiel --- 20 min}
+
+\hypertarget{compluxe9ment-2-cas-intuxe9gruxe9-choisir-la-mesure-centrale}{%
+\subsection{Complément 2 --- Cas intégré : choisir la mesure centrale}\label{compluxe9ment-2-cas-intuxe9gruxe9-choisir-la-mesure-centrale}}
+
+Un distributeur présente trois situations :
+
+\begin{longtable}[]{@{}p{0.32\linewidth}p{0.62\linewidth}@{}}
+\toprule\noalign{}
+Question & Données \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Panier moyen & 120 paniers, total de 3 600 € \\
+Croissance annuelle typique & +12 \%, −8 \%, +15 \%, +5 \% \\
+Vitesse moyenne & Deux trajets égaux de 90 km à 60 puis 90 km/h \\
+\end{longtable}
+
+\begin{enumerate}
+\tightlist
+\item
+  Choisissez et calculez la moyenne appropriée pour chaque ligne.
+\item
+  Expliquez pourquoi la moyenne arithmétique ne convient pas partout.
+\item
+  Rédigez une courte conclusion managériale.
+\end{enumerate}
+
+\textbf{Indication méthodologique :}
+
+Associez total additif, facteurs composés et vitesses sur distances égales aux moyennes arithmétique, géométrique et harmonique.
+
+\hypertarget{corriguxe9-duxe9tailluxe9-4}{%
+\subsubsection{Corrigé détaillé}\label{corriguxe9-duxe9tailluxe9-4}}
+
+\textbf{Panier.} La moyenne arithmétique conserve le total : 3 600/120 = \textbf{30 €}.
+
+\textbf{Croissance.} Le produit des facteurs vaut 1,12 × 0,92 × 1,15 × 1,05 = 1,244208. Le facteur annuel équivalent est 1,244208\textsuperscript{1/4} = 1,0561, soit \textbf{5,61 \% par an}.
+
+\textbf{Vitesse.} Des distances égales exigent la moyenne harmonique : 2/(1/60 + 1/90) = \textbf{72 km/h}.
+
+\textbf{Pourquoi ?} Les paniers s'additionnent, la croissance se compose et les vitesses correspondent à des durées différentes. Les moyennes arithmétiques alternatives (6 \% et 75 km/h) ne conservent pas les bonnes grandeurs.
+
+\textbf{Conclusion.} Le panier moyen est de 30 €, la croissance annuelle équivalente d'environ 5,6 \% et la vitesse moyenne de 72 km/h. Chaque calcul répond à un mécanisme différent.
+
+\end{document}

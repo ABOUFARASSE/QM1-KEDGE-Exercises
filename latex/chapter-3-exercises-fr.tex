@@ -1,0 +1,276 @@
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsfonts,mathtools}
+\usepackage{graphicx,booktabs,longtable,array,tabularx,adjustbox}
+\usepackage{geometry,microtype,fancyhdr,lastpage,etoolbox,enumitem}
+\usepackage{newunicodechar,textcomp}
+\usepackage{hyperref}
+\hypersetup{hidelinks,pdfcreator={XeLaTeX / QM1 academic edition}}
+\geometry{left=20mm,right=20mm,top=22mm,bottom=23mm}
+\setcounter{secnumdepth}{2}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt plus 1pt}
+\setlength{\emergencystretch}{2em}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.16}
+\setlist{nosep,topsep=3pt,itemsep=2pt,leftmargin=7mm}
+\AtBeginEnvironment{longtable}{\footnotesize\setlength{\tabcolsep}{2.2pt}}
+\newcommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\Cov}{\operatorname{Cov}}
+\providecommand{\Var}{\operatorname{Var}}
+\providecommand{\Corr}{\operatorname{Corr}}
+\providecommand{\MAD}{\operatorname{MAD}}
+\providecommand{\E}{\mathbb{E}}
+\providecommand{\R}{\mathbb{R}}
+\newunicodechar{—}{\textemdash}
+\newunicodechar{–}{\textendash}
+\newunicodechar{€}{\texteuro}
+\newunicodechar{≤}{\ensuremath{\leq}}
+\newunicodechar{≥}{\ensuremath{\geq}}
+\newunicodechar{×}{\ensuremath{\times}}
+\newunicodechar{÷}{\ensuremath{\div}}
+\newunicodechar{Σ}{\ensuremath{\Sigma}}
+\newunicodechar{σ}{\ensuremath{\sigma}}
+\newunicodechar{μ}{\ensuremath{\mu}}
+\newunicodechar{Δ}{\ensuremath{\Delta}}
+\newunicodechar{∑}{\ensuremath{\sum}}
+\newunicodechar{≈}{\ensuremath{\approx}}
+\newunicodechar{√}{\ensuremath{\surd}}
+\newunicodechar{≠}{\ensuremath{\ne}}
+\newunicodechar{→}{\ensuremath{\to}}
+\newunicodechar{∞}{\ensuremath{\infty}}
+\newunicodechar{∈}{\ensuremath{\in}}
+\newunicodechar{−}{\ensuremath{-}}
+\newunicodechar{²}{\ensuremath{^{2}}}
+\newunicodechar{³}{\ensuremath{^{3}}}
+\newunicodechar{₀}{\ensuremath{_{0}}}
+\newunicodechar{₁}{\ensuremath{_{1}}}
+\newunicodechar{₂}{\ensuremath{_{2}}}
+\newunicodechar{₃}{\ensuremath{_{3}}}
+\newunicodechar{₄}{\ensuremath{_{4}}}
+\newunicodechar{ₜ}{\ensuremath{_{t}}}
+\newunicodechar{ₚ}{\ensuremath{_{p}}}
+\newunicodechar{ₙ}{\ensuremath{_{n}}}
+\newunicodechar{ₓ}{\ensuremath{_{x}}}
+\newunicodechar{ᵢ}{\ensuremath{_{i}}}
+\newunicodechar{ŷ}{\ensuremath{\hat y}}
+\newunicodechar{Ŷ}{\ensuremath{\widehat Y}}
+\newunicodechar{ₘ}{\ensuremath{_{m}}}
+\newunicodechar{ₑ}{\ensuremath{_{e}}}
+\newunicodechar{ₐ}{\ensuremath{_{a}}}
+\newunicodechar{ₖ}{\ensuremath{_{k}}}
+\newunicodechar{ₛ}{\ensuremath{_{s}}}
+\newunicodechar{ₗ}{\ensuremath{_{l}}}
+\newunicodechar{ₕ}{\ensuremath{_{h}}}
+\newunicodechar{ₒ}{\ensuremath{_{o}}}
+\newunicodechar{₊}{\ensuremath{_{+}}}
+\newunicodechar{₋}{\ensuremath{_{-}}}
+\newunicodechar{₌}{\ensuremath{_{=}}}
+\newunicodechar{₍}{\ensuremath{_{(}}}
+\newunicodechar{₎}{\ensuremath{_{)}}}
+\newunicodechar{⁻}{\ensuremath{^{-}}}
+\newunicodechar{⁺}{\ensuremath{^{+}}}
+\newunicodechar{⁰}{\ensuremath{^{0}}}
+\newunicodechar{¹}{\ensuremath{^{1}}}
+\newunicodechar{⁴}{\ensuremath{^{4}}}
+\newunicodechar{⁵}{\ensuremath{^{5}}}
+\newunicodechar{⁶}{\ensuremath{^{6}}}
+\newunicodechar{⁷}{\ensuremath{^{7}}}
+\newunicodechar{⁸}{\ensuremath{^{8}}}
+\newunicodechar{⁹}{\ensuremath{^{9}}}
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0pt}{2.0ex plus .7ex minus .3ex}{1.0ex}{\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0pt}{1.8ex plus .5ex minus .2ex}{.7ex}{\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0pt}{1.3ex plus .4ex minus .2ex}{.5ex}{\normalsize\bfseries}}
+\makeatother
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead[L]{\small\textsc{KEDGE Business School --- QM1}}
+\fancyhead[R]{\small\textsc{2026--2027}}
+\fancyfoot[L]{\small Badr ABOUFARASSE, PhD}
+\fancyfoot[R]{\small\thepage\ /\ \pageref{LastPage}}
+\setlength{\headheight}{14pt}
+\setkeys{Gin}{keepaspectratio}
+\begin{document}
+
+\begin{center}
+{\small\textsc{KEDGE Business School \quad EBP1 \quad Quantitative Methods 1}}\\[6pt]
+{\Large\bfseries Fiche 3 — Dispersion et concentration}\\[6pt]
+{\normalsize\bfseries Énoncés des exercices}\\[6pt]
+{\small Badr ABOUFARASSE, PhD \quad --- \quad 2026--2027}
+\end{center}
+\vspace{2mm}\hrule\vspace{6mm}
+
+\hypertarget{applications-fondamentales}{%
+\section{Applications fondamentales}\label{applications-fondamentales}}
+
+Maîtriser les définitions et les calculs essentiels du cours.
+
+\emph{Application du cours --- 25 min}
+
+\hypertarget{exercice-4-muxe9diale-et-masses-relatives}{%
+\subsection{Exercice 4 --- Médiale et masses relatives}\label{exercice-4-muxe9diale-et-masses-relatives}}
+
+On observe la dépense (en €) de 40 clients. Approcher la masse monétaire de chaque classe par nᵢ × centre de classe.
+
+\begin{longtable}[]{@{}llllll@{}}
+\toprule\noalign{}
+Classe / Class & {[}10,20{[} & {[}20,30{[} & {[}30,40{[} & {[}40,50{[} & {[}50,60{[} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+nᵢ & 8 & 12 & 10 & 6 & 4 \\
+\end{longtable}
+
+\begin{enumerate}
+\tightlist
+\item
+  Calculer les centres, masses, masses cumulées et parts relatives cumulées.
+\item
+  Calculer la médiale par interpolation dans la classe contenant 50 \% de la masse.
+\item
+  Calculer la médiane des effectifs et comparer les deux mesures.
+\end{enumerate}
+
+\emph{Application du cours --- 20 min}
+
+\hypertarget{compluxe9ment-1-dispersion-uxe0-partir-dun-tableau-de-fruxe9quences}{%
+\subsection{Complément 1 --- Dispersion à partir d'un tableau de fréquences}\label{compluxe9ment-1-dispersion-uxe0-partir-dun-tableau-de-fruxe9quences}}
+
+Le nombre de réclamations hebdomadaires par magasin est distribué ainsi :
+
+\begin{longtable}[]{@{}llllll@{}}
+\toprule\noalign{}
+Réclamations x & 0 & 1 & 2 & 3 & 4 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Magasins n & 4 & 8 & 10 & 6 & 2 \\
+\end{longtable}
+
+\begin{enumerate}
+\tightlist
+\item
+  Calculez la moyenne, la variance de population et l'écart-type.
+\item
+  Calculez le coefficient de variation.
+\item
+  Interprétez chaque résultat.
+\end{enumerate}
+
+\textbf{Indication méthodologique :}
+
+Construisez les colonnes nx et nx². Utilisez E(X²) − {[}E(X){]}² pour la variance de population.
+
+\hypertarget{pruxe9paration-aux-uxe9valuations}{%
+\section{Préparation aux évaluations}\label{pruxe9paration-aux-uxe9valuations}}
+
+Résoudre des exercices de contrôle continu et de partiel en autonomie.
+
+\emph{Préparation CC / partiel --- 35 min}
+
+\hypertarget{exercice-2-dispersion-dune-distribution-groupuxe9e}{%
+\subsection{Exercice 2 -- Dispersion d'une distribution groupée}\label{exercice-2-dispersion-dune-distribution-groupuxe9e}}
+
+Reprendre la distribution des 210 clients de la fiche 2. À partir des centres de classes :
+
+\begin{enumerate}
+\item
+  calculer {\(\sum n_ic_i\)} et {\(\sum n_ic_i^2\)} ;
+\item
+  calculer la moyenne, la variance de population et l'écart-type ;
+\item
+  calculer le coefficient de variation ;
+\item
+  calculer l'écart interquartile ;
+\item
+  comparer l'information fournie par l'écart-type et par l'IQR.
+\end{enumerate}
+
+\emph{Préparation CC / partiel --- 30 min}
+
+\hypertarget{exercice-3-courbe-de-lorenz-et-indice-de-gini}{%
+\subsection{Exercice 3 -- Courbe de Lorenz et indice de Gini}\label{exercice-3-courbe-de-lorenz-et-indice-de-gini}}
+
+Cinq revenus, déjà classés par ordre croissant, valent : {\[10,\ 12,\ 18,\ 25,\ 35.\]}
+
+\begin{enumerate}
+\item
+  Calculer le revenu total et les parts cumulées de population et de revenu.
+\item
+  Construire la courbe de Lorenz.
+\item
+  Calculer l'aire sous la courbe par la méthode des trapèzes.
+\item
+  En déduire le coefficient de Gini et l'interpréter.
+\item
+  Expliquer pourquoi le Gini décrit la concentration sans expliquer ses causes.
+\end{enumerate}
+
+\hypertarget{approfondissement-facultatif}{%
+\section{Approfondissement facultatif}\label{approfondissement-facultatif}}
+
+Aller plus loin dans l'interprétation et les applications professionnelles.
+
+\emph{Approfondissement --- 30 min}
+
+\hypertarget{exercice-1-boxplot-valeurs-atypiques-et-choix-de-la-variance}{%
+\subsection{Exercice 1 -- Boxplot, valeurs atypiques et choix de la variance}\label{exercice-1-boxplot-valeurs-atypiques-et-choix-de-la-variance}}
+
+On observe : {\[5,6,6,7,7,8,8,9,9,10,11,20.\]} On utilisera la convention « médiane des moitiés » pour les quartiles.
+
+\begin{enumerate}
+\item
+  Calculer le résumé à cinq nombres : minimum, {\(Q_1\)}, médiane, {\(Q_3\)}, maximum.
+\item
+  Calculer l'étendue et l'écart interquartile {\(IQR\)}.
+\item
+  Calculer les bornes {\(Q_1-1.5IQR\)} et {\(Q_3+1.5IQR\)} et identifier les valeurs atypiques potentielles.
+\item
+  Calculer la moyenne et l'écart absolu moyen.
+\item
+  Calculer la variance et l'écart-type si ces 12 observations constituent toute la population.
+\item
+  Calculer la variance et l'écart-type corrigés si elles constituent un échantillon.
+\end{enumerate}
+
+\emph{Approfondissement --- 25 min}
+
+\hypertarget{compluxe9ment-2-comparer-concentration-et-robustesse}{%
+\subsection{Complément 2 --- Comparer concentration et robustesse}\label{compluxe9ment-2-comparer-concentration-et-robustesse}}
+
+Deux marchés présentent les parts de marché ordonnées suivantes :
+
+\begin{longtable}[]{@{}llllll@{}}
+\toprule\noalign{}
+Marché A & 10 \% & 15 \% & 20 \% & 25 \% & 30 \% \\
+Marché B & 2 \% & 8 \% & 10 \% & 20 \% & 60 \% \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\end{longtable}
+
+\begin{enumerate}
+\tightlist
+\item
+  Construisez les parts cumulées.
+\item
+  Indiquez quelle courbe de Lorenz est la plus éloignée de l'égalité.
+\item
+  Calculez les étendues et expliquez leur limite.
+\item
+  Formulez une conclusion défendable.
+\end{enumerate}
+
+\textbf{Indication méthodologique :}
+
+Avec cinq entreprises de même poids, les parts cumulées de population progressent de 20 points.
+
+\end{document}

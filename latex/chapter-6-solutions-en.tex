@@ -1,0 +1,373 @@
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsfonts,mathtools}
+\usepackage{graphicx,booktabs,longtable,array,tabularx,adjustbox}
+\usepackage{geometry,microtype,fancyhdr,lastpage,etoolbox,enumitem}
+\usepackage{newunicodechar,textcomp}
+\usepackage{hyperref}
+\hypersetup{hidelinks,pdfcreator={XeLaTeX / QM1 academic edition}}
+\geometry{left=20mm,right=20mm,top=22mm,bottom=23mm}
+\setcounter{secnumdepth}{2}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt plus 1pt}
+\setlength{\emergencystretch}{2em}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.16}
+\setlist{nosep,topsep=3pt,itemsep=2pt,leftmargin=7mm}
+\AtBeginEnvironment{longtable}{\footnotesize\setlength{\tabcolsep}{2.2pt}}
+\newcommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\Cov}{\operatorname{Cov}}
+\providecommand{\Var}{\operatorname{Var}}
+\providecommand{\Corr}{\operatorname{Corr}}
+\providecommand{\MAD}{\operatorname{MAD}}
+\providecommand{\E}{\mathbb{E}}
+\providecommand{\R}{\mathbb{R}}
+\newunicodechar{—}{\textemdash}
+\newunicodechar{–}{\textendash}
+\newunicodechar{€}{\texteuro}
+\newunicodechar{≤}{\ensuremath{\leq}}
+\newunicodechar{≥}{\ensuremath{\geq}}
+\newunicodechar{×}{\ensuremath{\times}}
+\newunicodechar{÷}{\ensuremath{\div}}
+\newunicodechar{Σ}{\ensuremath{\Sigma}}
+\newunicodechar{σ}{\ensuremath{\sigma}}
+\newunicodechar{μ}{\ensuremath{\mu}}
+\newunicodechar{Δ}{\ensuremath{\Delta}}
+\newunicodechar{∑}{\ensuremath{\sum}}
+\newunicodechar{≈}{\ensuremath{\approx}}
+\newunicodechar{√}{\ensuremath{\surd}}
+\newunicodechar{≠}{\ensuremath{\ne}}
+\newunicodechar{→}{\ensuremath{\to}}
+\newunicodechar{∞}{\ensuremath{\infty}}
+\newunicodechar{∈}{\ensuremath{\in}}
+\newunicodechar{−}{\ensuremath{-}}
+\newunicodechar{²}{\ensuremath{^{2}}}
+\newunicodechar{³}{\ensuremath{^{3}}}
+\newunicodechar{₀}{\ensuremath{_{0}}}
+\newunicodechar{₁}{\ensuremath{_{1}}}
+\newunicodechar{₂}{\ensuremath{_{2}}}
+\newunicodechar{₃}{\ensuremath{_{3}}}
+\newunicodechar{₄}{\ensuremath{_{4}}}
+\newunicodechar{ₜ}{\ensuremath{_{t}}}
+\newunicodechar{ₚ}{\ensuremath{_{p}}}
+\newunicodechar{ₙ}{\ensuremath{_{n}}}
+\newunicodechar{ₓ}{\ensuremath{_{x}}}
+\newunicodechar{ᵢ}{\ensuremath{_{i}}}
+\newunicodechar{ŷ}{\ensuremath{\hat y}}
+\newunicodechar{Ŷ}{\ensuremath{\widehat Y}}
+\newunicodechar{ₘ}{\ensuremath{_{m}}}
+\newunicodechar{ₑ}{\ensuremath{_{e}}}
+\newunicodechar{ₐ}{\ensuremath{_{a}}}
+\newunicodechar{ₖ}{\ensuremath{_{k}}}
+\newunicodechar{ₛ}{\ensuremath{_{s}}}
+\newunicodechar{ₗ}{\ensuremath{_{l}}}
+\newunicodechar{ₕ}{\ensuremath{_{h}}}
+\newunicodechar{ₒ}{\ensuremath{_{o}}}
+\newunicodechar{₊}{\ensuremath{_{+}}}
+\newunicodechar{₋}{\ensuremath{_{-}}}
+\newunicodechar{₌}{\ensuremath{_{=}}}
+\newunicodechar{₍}{\ensuremath{_{(}}}
+\newunicodechar{₎}{\ensuremath{_{)}}}
+\newunicodechar{⁻}{\ensuremath{^{-}}}
+\newunicodechar{⁺}{\ensuremath{^{+}}}
+\newunicodechar{⁰}{\ensuremath{^{0}}}
+\newunicodechar{¹}{\ensuremath{^{1}}}
+\newunicodechar{⁴}{\ensuremath{^{4}}}
+\newunicodechar{⁵}{\ensuremath{^{5}}}
+\newunicodechar{⁶}{\ensuremath{^{6}}}
+\newunicodechar{⁷}{\ensuremath{^{7}}}
+\newunicodechar{⁸}{\ensuremath{^{8}}}
+\newunicodechar{⁹}{\ensuremath{^{9}}}
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0pt}{2.0ex plus .7ex minus .3ex}{1.0ex}{\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0pt}{1.8ex plus .5ex minus .2ex}{.7ex}{\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0pt}{1.3ex plus .4ex minus .2ex}{.5ex}{\normalsize\bfseries}}
+\makeatother
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead[L]{\small\textsc{KEDGE Business School --- QM1}}
+\fancyhead[R]{\small\textsc{2026--2027}}
+\fancyfoot[L]{\small Badr ABOUFARASSE, PhD}
+\fancyfoot[R]{\small\thepage\ /\ \pageref{LastPage}}
+\setlength{\headheight}{14pt}
+\setkeys{Gin}{keepaspectratio}
+\begin{document}
+
+\begin{center}
+{\small\textsc{KEDGE Business School \quad EBP1 \quad Quantitative Methods 1}}\\[6pt]
+{\Large\bfseries Worksheet 6 — Index numbers}\\[6pt]
+{\normalsize\bfseries Fully worked solutions}\\[6pt]
+{\small Badr ABOUFARASSE, PhD \quad --- \quad 2026--2027}
+\end{center}
+\vspace{2mm}\hrule\vspace{6mm}
+
+\hypertarget{core-applications}{%
+\section{Core applications}\label{core-applications}}
+
+Master the essential definitions and calculations from the course.
+
+\emph{Core application --- 20 min}
+
+\hypertarget{exercise-1-elementary-indices-rebasing-and-properties}{%
+\subsection{Exercise 1 -- Elementary indices, rebasing and properties}\label{exercise-1-elementary-indices-rebasing-and-properties}}
+
+A service costs 80 euros in 2023, 92 euros in 2024 and 101.20 euros in 2025. Calculate the three base-100 indices, verify circularity, calculate the reverse index and verify reversibility, rebase the series to 2024=100, and interpret index 126.5 correctly.
+
+\hypertarget{fully-worked-solution}{%
+\subsubsection{Fully worked solution}\label{fully-worked-solution}}
+
+{\[I_{2024/2023}=115,\qquad
+I_{2025/2024}=110,\qquad I_{2025/2023}=126.5.\]} Circularity: {\[\frac{115\times110}{100}=126.5.\]} Reverse index: {\[I_{2023/2025}=100\frac{80}{101.20}\approx79.0514.\]} Reversibility: {\[126.5\times79.0514\approx10000.\]} Rebasing to 2024=100: {\[I_{2023}^{(2024)}\approx86.96,\qquad
+I_{2024}^{(2024)}=100,\qquad I_{2025}^{(2024)}=110.\]} Index 126.5 means the 2025 level is 26.5\% above 2023, not 126.5\% higher.
+
+\emph{Core application --- 25 min}
+
+\hypertarget{extra-1-complete-pricequantity-decomposition}{%
+\subsection{Extra 1 --- Complete price--quantity decomposition}\label{extra-1-complete-pricequantity-decomposition}}
+
+A purchasing department observes:
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+Product & p0 & q0 & p1 & q1 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+A & 4 & 100 & 5 & 90 \\
+B & 10 & 50 & 11 & 60 \\
+C & 20 & 20 & 18 & 30 \\
+\end{longtable}
+
+\begin{enumerate}
+\tightlist
+\item
+  Calculate the four totals Σp0q0, Σp1q0, Σp0q1 and Σp1q1.
+\item
+  Calculate the value, Laspeyres-price, Paasche-price and Fisher-price indices.
+\item
+  Interpret the gap between value and price change.
+\end{enumerate}
+
+\textbf{Method hint:}
+
+Complete all four cross-value columns before forming any index.
+
+\hypertarget{fully-worked-solution-1}{%
+\subsubsection{Fully worked solution}\label{fully-worked-solution-1}}
+
+\textbf{Four totals.} Σp0q0 = 400+500+400 = \textbf{1,300}. Σp1q0 = 500+550+360 = \textbf{1,410}. Σp0q1 = 360+600+600 = \textbf{1,560}. Σp1q1 = 450+660+540 = \textbf{1,650}.
+
+\textbf{Value index.} 1,650/1,300 × 100 = \textbf{126.92}.
+
+\textbf{Laspeyres price.} 1,410/1,300 × 100 = \textbf{108.46}. \textbf{Paasche price.} 1,650/1,560 × 100 = \textbf{105.77}. \textbf{Fisher price.} √(108.46 × 105.77) = \textbf{107.11}.
+
+\textbf{Interpretation.} Total purchasing value increased by 26.92\%, whereas the balanced price increase is about 7.11\%. Most of the value rise therefore reflects a positive quantity or mix effect, not prices alone. The formulas do not by themselves establish why quantities changed.
+
+All four aggregates, computed product by product:
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+Produit / Product & p₀q₀ & p₁q₀ & p₀q₁ & p₁q₁ \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+A & 400 & 500 & 360 & 450 \\
+B & 500 & 550 & 600 & 660 \\
+C & 400 & 360 & 600 & 540 \\
+Σ & 1300 & 1410 & 1560 & 1650 \\
+\end{longtable}
+
+Laspeyres = 1410/1300 × 100 = 108.4615 ; Paasche = 1650/1560 × 100 = 105.7692 ; Fisher = √(108.4615 × 105.7692) = 107.1069.
+
+\hypertarget{assessment-and-exam-practice}{%
+\section{Assessment and exam practice}\label{assessment-and-exam-practice}}
+
+Practise independently with assessment and final-exam style questions.
+
+\emph{Assessment / exam practice --- 35 min}
+
+\hypertarget{exercise-2-laspeyres-paasche-fisher-and-factor-reversal}{%
+\subsection{Exercise 2 -- Laspeyres, Paasche, Fisher and factor reversal}\label{exercise-2-laspeyres-paasche-fisher-and-factor-reversal}}
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+& {\(p_0\)} & {\(q_0\)} & {\(p_1\)} & {\(q_1\)} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Product X & 4 & 100 & 5 & 90 \\
+Product Y & 10 & 40 & 12 & 50 \\
+\end{longtable}
+
+Calculate the four aggregates, Laspeyres, Paasche and Fisher price indices, the corresponding quantity indices, the value index, and verify Fisher factor reversal on a base-100 scale.
+
+\hypertarget{fully-worked-solution-2}{%
+\subsubsection{Fully worked solution}\label{fully-worked-solution-2}}
+
+{\[\sum p_0q_0=800,\quad \sum
+p_1q_0=980,\quad \sum p_0q_1=860,\quad \sum p_1q_1=1050.\]} Price indices: {\[I_P^L=122.50,\qquad
+I_P^P\approx122.09,\qquad I_P^F\approx122.30.\]} Quantity indices: {\[I_Q^L=107.50,\qquad
+I_Q^P\approx107.14,\qquad I_Q^F\approx107.32.\]} Value index: {\[I_V=131.25.\]} Factor reversal: {\[\frac{I_P^FI_Q^F}{100}\approx131.25=I_V.\]}
+
+\hypertarget{verification-of-the-four-aggregates-by-product}{%
+\subsubsection{Verification of the four aggregates by product}\label{verification-of-the-four-aggregates-by-product}}
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+Product & p₀q₀ & p₁q₀ & p₀q₁ & p₁q₁ \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+X & 4×100=400 & 5×100=500 & 4×90=360 & 5×90=450 \\
+Y & 10×40=400 & 12×40=480 & 10×50=500 & 12×50=600 \\
+Σ & 800 & 980 & 860 & 1050 \\
+\end{longtable}
+
+\[\begin{gathered}
+L_P=100\frac{980}{800},\\P_P=100\frac{1050}{860},\\L_Q=100\frac{860}{800},\\P_Q=100\frac{1050}{980}.
+\end{gathered}\]
+
+Verify the Fisher identity using unrounded ratios: Fp×Fq/100=100×1050/800=131.25.
+
+\emph{Assessment / exam practice --- 45 min}
+
+\hypertarget{exercise-4-complete-four-product-indices-exam-style}{%
+\subsection{Exercise 4 --- Complete four-product indices --- exam style}\label{exercise-4-complete-four-product-indices-exam-style}}
+
+For four products, prices and quantities are observed in two periods. Base 0 = 100.
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+Produit / Product & p₀ & q₀ & p₁ & q₁ \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+A & 53 & 20 & 62 & 25 \\
+B & 41 & 28 & 52 & 34 \\
+C & 75 & 35 & 82 & 38 \\
+D & 25 & 30 & 38 & 33 \\
+\end{longtable}
+
+\begin{enumerate}
+\tightlist
+\item
+  Build the four product columns p₀q₀, p₁q₀, p₀q₁, p₁q₁ and totals.
+\item
+  Compute Laspeyres, Paasche and Fisher price and quantity indices.
+\item
+  Compute the value index and verify Fisher\textquotesingle s factor reversal. Interpret the three indices.
+\end{enumerate}
+
+\hypertarget{fully-worked-solution-3}{%
+\subsubsection{Fully worked solution}\label{fully-worked-solution-3}}
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+Produit / Product & p₀q₀ & p₁q₀ & p₀q₁ & p₁q₁ \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+A & 1060 & 1240 & 1325 & 1550 \\
+B & 1148 & 1456 & 1394 & 1768 \\
+C & 2625 & 2870 & 2850 & 3116 \\
+D & 750 & 1140 & 825 & 1254 \\
+Σ & 5583 & 6706 & 6394 & 7688 \\
+\end{longtable}
+
+The four aggregates are A=Σp₀q₀=5583, B=Σp₁q₀=6706, C=Σp₀q₁=6394, D=Σp₁q₁=7688.
+
+\[L_P=100B/A=100(6706/5583)=120.114634,\quad P_P=100D/C=100(7688/6394)=120.237723.\]
+
+\[L_Q=100C/A=100(6394/5583)=114.526240,\quad P_Q=100D/B=100(7688/6706)=114.643603.\]
+
+\[F_P=\sqrt{L_P P_P}=120.176163,\quad F_Q=\sqrt{L_Q P_Q}=114.584907.\]
+
+\[I_V=100D/A=100(7688/5583)=137.703744,\quad\frac{F_PF_Q}{100}=137.703744.\]
+
+Prices rise by approximately 20.18\%, quantities by 14.58\%, and total value by 37.70\%. Do not add price and quantity changes: their composition is multiplicative.
+
+\hypertarget{optional-advanced-practice}{%
+\section{Optional advanced practice}\label{optional-advanced-practice}}
+
+Explore additional interpretations and professional applications.
+
+\emph{Advanced practice --- 15 min}
+
+\hypertarget{exercise-3-chain-indices-and-deflation}{%
+\subsection{Exercise 3 -- Chain indices and deflation}\label{exercise-3-chain-indices-and-deflation}}
+
+Annual link indices are 105, 108 and 97. Calculate the cumulative chain index and interpret it. Explain why annual changes must be compounded rather than added. Then deflate nominal revenue of 2.4 million euros when the price index equals 120.
+
+\hypertarget{fully-worked-solution-4}{%
+\subsubsection{Fully worked solution}\label{fully-worked-solution-4}}
+
+{\[I_{3/0}^{chain}=100(1.05)(1.08)(0.97)=109.998\approx110.\]} The final level is about 10\% above the initial level despite the final 3\% annual decrease. Successive changes compound multiplicatively.
+
+Deflation: {\[Real\
+value=\frac{2.4}{120/100}=2.0\text{ million euros}.\]}
+
+\hypertarget{compounding-table}{%
+\subsubsection{Compounding table}\label{compounding-table}}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+Period & Factor & Cumulative index \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+0 & 1 & 100 \\
+1 & 1.05 & 105 \\
+2 & 1.05×1.08=1.134 & 113.4 \\
+3 & 1.134×0.97=1.09998 & 109.998 \\
+\end{longtable}
+
+\[I_{3/0}=100(1.05)(1.08)(0.97)=109.998.\]
+
+Adding annual percentages (+5+8−3=10) happens to approximate the exact compounded rate (+9.998\%). A deflator of 120 means a price factor of 1.20: 2.4/1.20=2.0 million real euros.
+
+\emph{Advanced practice --- 25 min}
+
+\hypertarget{extra-2-rebasing-inflation-and-real-performance}{%
+\subsection{Extra 2 --- Rebasing, inflation and real performance}\label{extra-2-rebasing-inflation-and-real-performance}}
+
+A nominal revenue series is €500k, €560k and €630k. The corresponding price index (year 1 = 100) is 100, 108 and 120.
+
+\begin{enumerate}
+\tightlist
+\item
+  Calculate real revenue in year-1 euros.
+\item
+  Calculate nominal and real growth from year 1 to year 3.
+\item
+  Rebase the price index so year 2 = 100.
+\item
+  Explain the result to a manager who claims that activity grew by 26\%.
+\end{enumerate}
+
+\textbf{Method hint:}
+
+Deflate by dividing nominal value by index/100. Rebasing changes the reference, not the underlying inflation path.
+
+\hypertarget{fully-worked-solution-5}{%
+\subsubsection{Fully worked solution}\label{fully-worked-solution-5}}
+
+\textbf{Real revenue.} Year 1: 500/1 = \textbf{€500k}. Year 2: 560/1.08 = \textbf{€518.52k}. Year 3: 630/1.20 = \textbf{€525k}.
+
+\textbf{Growth.} Nominal growth is 630/500 − 1 = \textbf{26\%}. Real growth is 525/500 − 1 = \textbf{5\%}.
+
+\textbf{Rebased price index.} Divide each value by 108 and multiply by 100: \textbf{92.59, 100, 111.11}.
+
+\textbf{Managerial interpretation.} Revenue received in current euros rose by 26\%, but after adjusting for the 20\% rise in the price level, purchasing-power-equivalent revenue rose by only 5\%. Rebasing to year 2 changes the displayed levels, not this economic conclusion. The selected deflator must match the firm's product mix and coverage.
+
+\end{document}
