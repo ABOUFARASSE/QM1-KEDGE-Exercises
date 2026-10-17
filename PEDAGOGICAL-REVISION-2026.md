@@ -42,3 +42,10 @@ Les 28 PDF (7 chapitres × 2 langues × énoncés/corrigés) sont reconstruits �
 Des tableaux supplémentaires explicitent les cumuls et fréquences (chapitre 1), les interpolations (chapitre 2), les écarts et produits pondérés (chapitre 3), la droite de Mayer et la double prévision (chapitre 4), les moyennes mobiles (chapitre 5) et les indices prix–quantités et chaînés (chapitre 6).
 
 La génération automatisée (scripts/build_complete_pdfs.py et .github/workflows/qm1-complete-pdfs.yml) vérifie les appariements, les formules MathJax, les graphiques, la lisibilité des PDF, le nombre de pages et les empreintes SHA-256. Le ZIP complet et le manifeste de contrôle sont disponibles dans downloads/.
+
+
+## Édition académique LaTeX — PDF téléchargeables
+
+Les 28 PDF sont désormais reconstruits par compilation **XeLaTeX**, à partir des mêmes 38 énoncés et corrigés FR/EN que la plateforme. Présentation homogène : A4, Latin Modern Roman 11 points, titres hiérarchisés, formules mathématiques LaTeX, tableaux ajustés, graphiques vectoriels en niveaux de gris, en-têtes et pagination. Les contenus et le mécanisme de déverrouillage de l'application ne sont pas modifiés.
+
+Les fichiers sources éditables (28 fichiers `.tex` et leurs figures PDF) sont fournis dans `downloads/QM1_2026-2027_LaTeX_sources_academic.zip`. La compilation est automatisée par `.github/workflows/qm1-academic-latex.yml` et `scripts/build_academic_latex.py`, avec contrôles de complétude, de calculs, des glyphes et des débordements.
