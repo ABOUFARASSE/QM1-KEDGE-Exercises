@@ -30,7 +30,7 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y --no-install-recommends pandoc texlive-xetex texlive-latex-extra texlive-fonts-recommended texlive-lang-french lmodern fonts-lmodern libcairo2 libpango-1.0-0
-          python -m pip install --disable-pip-version-check playwright==1.55.0 pymupdf==1.26.5 beautifulsoup4==4.12.3 cairosvg==2.7.1
+          python -m pip install --disable-pip-version-check playwright==1.55.0 pymupdf==1.26.5 beautifulsoup4==4.12.3 lxml==5.4.0 cairosvg==2.7.1
           python -m playwright install --with-deps chromium
       - name: Audit numerical examples independently
         run: python scripts/audit_numeric.py
