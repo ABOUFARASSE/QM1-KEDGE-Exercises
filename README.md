@@ -17,7 +17,7 @@ Bilingual Quantitative Methods 1 practice platform for EBP1, maintained by Badr 
 
 All **38 exercises/cases** are included, with supplementary cases, tables, charts, formula derivations and the new October 2026 material.
 
-The instructor archive is downloads/QM1_2026-2027_28_PDF_FR_EN.zip (all 28 PDFs). The machine-readable audit file is downloads/QM1_PDF_manifest_2026.json (pages, exercise counts, math/chart counts, sizes and SHA-256).
+The instructor archive is downloads/QM1_2026-2027_28_PDF_FR_EN.zip (all 28 PDFs). The machine-readable audit file is downloads/QM1_PDF_manifest_2026.json (pages, exercise counts, vector-chart counts, source paths, sizes and SHA-256).
 
 The older downloads/QM1_2026_LaTeX_sources.zip is a **historical archive**; the authoritative current PDF sources are the website's JSON files.
 
@@ -35,7 +35,7 @@ The workflow `.github/workflows/qm1-academic-latex.yml` rebuilds all 28 document
 
 ## Reproducible PDF generation and checks
 
-The GitHub Actions workflow .github/workflows/qm1-academic-latex.yml runs whenever the exercise sources, rendering code or LaTeX generator change. It installs Chromium, Playwright, Pandoc, XeLaTeX, CairoSVG and PyMuPDF and invokes scripts/build_academic_latex.py. This generator uses the **same** renderPairedWorksheet and renderQM1Charts functions as the website. It checks for missing/duplicated exercises, absent or very short solutions, unresolved charts, MathJax errors, empty PDFs and unsearchable documents.
+The GitHub Actions workflow .github/workflows/qm1-academic-latex.yml runs whenever the exercise sources, rendering code or LaTeX generator change. It installs Chromium, Playwright, Pandoc, XeLaTeX, CairoSVG and PyMuPDF and invokes scripts/build_academic_latex.py. This generator uses the **same** renderPairedWorksheet and renderQM1Charts functions as the website. It checks for missing/duplicated exercises, absent or very short solutions, unresolved charts, XeLaTeX compilation failures, missing glyphs, overfull text, empty PDFs and unsearchable documents.
 
 All 28 PDFs are published to main only after the entire build passes. To rebuild locally, install the required dependencies and run: python scripts/build_academic_latex.py.
 
