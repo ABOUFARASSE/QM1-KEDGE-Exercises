@@ -35,6 +35,10 @@ jobs:
           python -m playwright install --with-deps chromium
       - name: Audit numerical examples independently
         run: python scripts/audit_numeric.py
+      - name: Remove obsolete vector assets before regeneration
+        run: |
+          mkdir -p latex/assets
+          rm -f latex/assets/*.pdf
       - name: Generate and high-assurance audit 28 academic LaTeX PDFs
         run: python scripts/build_academic_latex_quality.py
       - name: Publish only fully audited PDFs and sources
@@ -44,7 +48,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add downloads/chapter-*-exercises-*.pdf downloads/chapter-*-solutions-*.pdf
           git add downloads/QM1_2026-2027_28_PDF_FR_EN.zip downloads/QM1_2026-2027_LaTeX_sources_academic.zip downloads/QM1_PDF_manifest_2026.json downloads/QM1_PDF_quality_audit_2026.json
-          git add latex/chapter-*.tex latex/assets/*.pdf
+          git add -A latex/chapter-*.tex latex/assets
           if ! git diff --cached --quiet; then
             git commit -m "Publish fully audited QM1 XeLaTeX PDFs with complete vector charts"
             git push origin HEAD:main
