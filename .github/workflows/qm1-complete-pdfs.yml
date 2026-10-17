@@ -1,18 +1,6 @@
-name: Build complete QM1 PDFs
+name: Build original browser-rendered QM1 PDFs (legacy, manual)
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
-      - qm1-complete-pdfs-20261017
-    paths:
-      - 'scripts/build_complete_pdfs.py'
-      - 'scripts/audit_numeric.py'
-      - 'revised-worksheets-2026.json'
-      - 'exercise-data-export.json'
-      - 'pedagogy-upgrade-2026.json'
-      - 'app.js'
-      - '.github/workflows/qm1-complete-pdfs.yml'
 permissions:
   contents: write
 jobs:
