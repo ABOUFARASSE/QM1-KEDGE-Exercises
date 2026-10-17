@@ -175,7 +175,8 @@ def prepare_html(rendered: str, name: str, lang: str, kind: str):
     for svg in list(soup.find_all("svg")):
         count+=1
         pdfname=f"{name}-chart-{count:02d}.pdf"
-        raw=str(svg)
+        raw=str(svg).replace("viewbox=", "viewBox=")
+        raw=raw.replace("<svg ", '<svg width="720" height="380" ', 1)
         # Black-and-white print-optimised vector graphics, same data and geometry.
         for old,new in (("#315d85","#222222"),("#bb6a32","#777777"),
                         ("#25806b","#aaaaaa"),("#43556a","#222222"),
