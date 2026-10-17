@@ -44,7 +44,7 @@ PREAMBLE = r"""
 \usepackage{amsmath,amssymb,amsfonts,mathtools}
 \usepackage{graphicx,booktabs,longtable,array,tabularx,adjustbox}
 \usepackage{geometry,microtype,fancyhdr,lastpage,etoolbox,enumitem}
-\usepackage{newunicodechar}
+\usepackage{newunicodechar,textcomp}
 \usepackage{hyperref}
 \hypersetup{hidelinks,pdfcreator={XeLaTeX / QM1 academic edition}}
 \geometry{left=20mm,right=20mm,top=22mm,bottom=23mm}
@@ -62,6 +62,9 @@ PREAMBLE = r"""
 \providecommand{\MAD}{\operatorname{MAD}}
 \providecommand{\E}{\mathbb{E}}
 \providecommand{\R}{\mathbb{R}}
+\newunicodechar{—}{\textemdash}
+\newunicodechar{–}{\textendash}
+\newunicodechar{€}{\texteuro}
 \newunicodechar{≤}{\ensuremath{\leq}}
 \newunicodechar{≥}{\ensuremath{\geq}}
 \newunicodechar{×}{\ensuremath{\times}}
@@ -72,6 +75,7 @@ PREAMBLE = r"""
 \newunicodechar{Δ}{\ensuremath{\Delta}}
 \newunicodechar{∑}{\ensuremath{\sum}}
 \newunicodechar{≈}{\ensuremath{\approx}}
+\newunicodechar{√}{\ensuremath{\sqrt{\;}}}
 \newunicodechar{≠}{\ensuremath{\ne}}
 \newunicodechar{→}{\ensuremath{\to}}
 \newunicodechar{∞}{\ensuremath{\infty}}
@@ -88,6 +92,7 @@ PREAMBLE = r"""
 \newunicodechar{ₚ}{\ensuremath{_{p}}}
 \newunicodechar{ₙ}{\ensuremath{_{n}}}
 \newunicodechar{ₓ}{\ensuremath{_{x}}}
+\newunicodechar{ᵢ}{\ensuremath{_{i}}}
 \newunicodechar{ₘ}{\ensuremath{_{m}}}
 \newunicodechar{ₑ}{\ensuremath{_{e}}}
 \newunicodechar{ₐ}{\ensuremath{_{a}}}
@@ -175,8 +180,10 @@ def prepare_html(rendered: str, name: str, lang: str, kind: str):
     for svg in list(soup.find_all("svg")):
         count+=1
         pdfname=f"{name}-chart-{count:02d}.pdf"
+        view=svg.get("viewbox",svg.get("viewBox","0 0 720 380")).split()
+        svg["width"]=str(int(float(view[2])))
+        svg["height"]=str(int(float(view[3])))
         raw=str(svg).replace("viewbox=", "viewBox=")
-        raw=raw.replace("<svg ", '<svg width="720" height="380" ', 1)
         # Black-and-white print-optimised vector graphics, same data and geometry.
         for old,new in (("#315d85","#222222"),("#bb6a32","#777777"),
                         ("#25806b","#aaaaaa"),("#43556a","#222222"),
@@ -236,7 +243,7 @@ def convert(ch,lang,kind,rendered,keys,solution_sizes):
     txt=" ".join(page.get_text() for page in doc)
     assert len(doc)>=1 and len(txt)>550,(stem,"empty PDF",len(doc),len(txt))
     assert len(keys)==EXPECTED[ch] and len(set(keys))==len(keys),(stem,"pairing mismatch",keys)
-    assert all(len(x)>=100 for x in solution_sizes) if kind=="solutions" else not any(solution_sizes),(stem,"missing/leaked solution")
+    assert all(x>=100 for x in solution_sizes) if kind=="solutions" else "qm1-exercise-solution" not in html,(stem,"missing/leaked solution")
     assert all(abs(page.rect.width-595)<2 and abs(page.rect.height-842)<2 for page in doc),(stem,"non-A4")
     assert "\ufffd" not in txt,(stem,"replacement glyph")
     record={"file":target.name,"chapter":int(ch),"language":lang,"type":kind,"engine":"XeLaTeX",
