@@ -258,7 +258,7 @@ def convert(ch,lang,kind,rendered,keys,solution_sizes):
         lines=[part.strip()+(r"," if i<len(parts)-1 else "") for i,part in enumerate(parts)]
         return r"\[\begin{gathered}"+"\n"+r"\\".join(lines)+"\n"+r"\end{gathered}\]"
     output=re.sub(r"(?<!\\)\\\[(.*?)(?<!\\)\\\]",split_display,output,flags=re.S)
-    tex=document_preamble(ch,lang,kind)+output+"\n\\end{document}\n
+    tex=document_preamble(ch,lang,kind)+output+"\n\\end{document}\n"
     tex_path=LATEX/(stem+".tex")
     tex_path.write_text(tex,encoding="utf8")
     log=execute(["xelatex","-interaction=nonstopmode","-halt-on-error","-file-line-error",
