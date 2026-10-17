@@ -48,6 +48,7 @@ PREAMBLE = r"""
 \usepackage{hyperref}
 \hypersetup{hidelinks,pdfcreator={XeLaTeX / QM1 academic edition}}
 \geometry{left=20mm,right=20mm,top=22mm,bottom=23mm}
+\setcounter{secnumdepth}{2}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{4pt plus 1pt}
 \setlength{\emergencystretch}{2em}
@@ -75,7 +76,7 @@ PREAMBLE = r"""
 \newunicodechar{Δ}{\ensuremath{\Delta}}
 \newunicodechar{∑}{\ensuremath{\sum}}
 \newunicodechar{≈}{\ensuremath{\approx}}
-\newunicodechar{√}{\ensuremath{\sqrt{\;}}}
+\newunicodechar{√}{\ensuremath{\surd}}
 \newunicodechar{≠}{\ensuremath{\ne}}
 \newunicodechar{→}{\ensuremath{\to}}
 \newunicodechar{∞}{\ensuremath{\infty}}
@@ -93,6 +94,8 @@ PREAMBLE = r"""
 \newunicodechar{ₙ}{\ensuremath{_{n}}}
 \newunicodechar{ₓ}{\ensuremath{_{x}}}
 \newunicodechar{ᵢ}{\ensuremath{_{i}}}
+\newunicodechar{ŷ}{\ensuremath{\hat y}}
+\newunicodechar{Ŷ}{\ensuremath{\widehat Y}}
 \newunicodechar{ₘ}{\ensuremath{_{m}}}
 \newunicodechar{ₑ}{\ensuremath{_{e}}}
 \newunicodechar{ₐ}{\ensuremath{_{a}}}
@@ -169,13 +172,33 @@ def prepare_html(rendered: str, name: str, lang: str, kind: str):
         for child in list(detail.contents): 
             if getattr(child,"name",None)!="summary":hint.append(child.extract())
         detail.replace_with(hint)
+    for stage_title in soup.select(".qm1-stage-heading h2"):
+        stage_title.string=re.sub(r"^\s*[123]\.\s*", "", stage_title.get_text(" ",strip=True))
+    for meta in soup.select(".qm1-exercise-meta"):
+        labels=[span.get_text(" ",strip=True) for span in meta.find_all("span")]
+        label=soup.new_tag("p");em=soup.new_tag("em");em.string=" — ".join(labels)
+        label.append(em);meta.replace_with(label)
     if kind=="exercises":
         for answer in soup.select(".qm1-exercise-solution"):answer.decompose()
     else:
         for answer in soup.select(".qm1-exercise-solution"):
+            first=answer.find("h3")
+            if first and re.match(r"^(Exercice|Exercise|Complément|Extra|Cas|Case)\b",first.get_text(" ",strip=True),re.I):
+                first.decompose()
             h=soup.new_tag("h4")
             h.string="Corrigé détaillé" if lang=="fr" else "Fully worked solution"
             answer.insert(0,h)
+    # Only stage titles may become numbered sections. Exercise titles become
+    # subsections; internal pedagogical headings stay unnumbered subsubsections.
+    for pair in soup.select(".qm1-exercise-pair"):
+        primary=pair.select_one(".exercise-block h3")
+        for heading in list(pair.find_all(re.compile(r"^h[1-6]$"))):
+            if heading is primary:continue
+            label=heading.get_text(" ",strip=True).lower()
+            if heading.name=="h3" and label in ("corrigé détaillé","detailed solution","fully worked solution"):
+                heading.decompose()
+            elif heading.name in ("h1","h2","h3"):
+                heading.name="h4"
     count=0
     for svg in list(soup.find_all("svg")):
         count+=1
@@ -221,7 +244,21 @@ def convert(ch,lang,kind,rendered,keys,solution_sizes):
                     str(source_file)],cwd=LATEX)
     if not re.search(r"\\subsection\{(?:Exercice|Exercise|Complément|Extra|Cas|Case)",output):
         raise AssertionError((stem,"exercise headings missing from Pandoc output"))
-    tex=document_preamble(ch,lang,kind)+output+"\n\\end{document}\n"
+    output=output.replace("Valeur\\\nréelle=", r"\text{Valeur réelle}=")
+    # Wrap descriptive two-column tables instead of allowing spillover.
+    output=output.replace(r"\begin{longtable}[]{@{}ll@{}}",
+                          r"\begin{longtable}[]{@{}p{0.32\linewidth}p{0.62\linewidth}@{}}")
+    # Break long multi-part calculations only at existing comma/quad separators.
+    def split_display(match):
+        expr=match.group(1)
+        if len(expr)<95 or r"\quad" not in expr or r"\begin{" in expr:
+            return match.group(0)
+        parts=re.split(r",\s*\\(?:quad|qquad)\s*",expr)
+        if len(parts)<2:return match.group(0)
+        lines=[part.strip()+(r"," if i<len(parts)-1 else "") for i,part in enumerate(parts)]
+        return r"\[\begin{gathered}"+"\n"+r"\\".join(lines)+"\n"+r"\end{gathered}\]"
+    output=re.sub(r"(?<!\\)\\\[(.*?)(?<!\\)\\\]",split_display,output,flags=re.S)
+    tex=document_preamble(ch,lang,kind)+output+"\n\\end{document}\n
     tex_path=LATEX/(stem+".tex")
     tex_path.write_text(tex,encoding="utf8")
     log=execute(["xelatex","-interaction=nonstopmode","-halt-on-error","-file-line-error",
@@ -232,7 +269,7 @@ def convert(ch,lang,kind,rendered,keys,solution_sizes):
     warnings=[x for x in log.splitlines() if "Missing character:" in x]
     if warnings:
         raise AssertionError((stem,"missing glyphs",warnings[:12]))
-    overfull=[x for x in log.splitlines() if "Overfull \\hbox" in x and float(re.search(r"\(([\d.]+)pt too wide\)",x).group(1))>12] if False else []
+    overfull=[x for x in log.splitlines() if "Overfull \\hbox" in x and re.search(r"\((\d+(?:\.\d+)?)pt too wide\)",x) and float(re.search(r"\((\d+(?:\.\d+)?)pt too wide\)",x).group(1))>12]
     if overfull:
         raise AssertionError((stem,"overfull text",overfull[:5]))
     pdf=LATEX/(stem+".pdf")
