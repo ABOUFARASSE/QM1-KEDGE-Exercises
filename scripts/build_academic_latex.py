@@ -96,7 +96,6 @@ PREAMBLE = r"""
 \newunicodechar{ₗ}{\ensuremath{_{l}}}
 \newunicodechar{ₕ}{\ensuremath{_{h}}}
 \newunicodechar{ₒ}{\ensuremath{_{o}}}
-\newunicodechar{ₙ}{\ensuremath{_{n}}}
 \newunicodechar{₊}{\ensuremath{_{+}}}
 \newunicodechar{₋}{\ensuremath{_{-}}}
 \newunicodechar{₌}{\ensuremath{_{=}}}
