@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="QM1 bilingual revision exercises for Chapters 1 and 2.">
+<title>QM1 Practice Lab — Revision</title>
+<link rel="stylesheet" href="styles.css?v=20261031-revision">
+<style>
+.revision-intro{margin:0 0 28px;padding:22px 24px;border:1px solid #dedfe3;border-left:4px solid #e40046;border-radius:12px;background:#fff}
+.revision-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-bottom:36px}
+.revision-card{padding:26px;border:1px solid #dedfe3;border-radius:16px;background:#fff;box-shadow:0 8px 24px rgba(23,23,26,.06)}
+.revision-card h2{margin-top:4px}.revision-card p{color:#62636b;line-height:1.6}
+.resource-block{margin-top:18px;padding-top:16px;border-top:1px solid #e6e7ea}
+.resource-block h3{font-size:1rem;margin:0 0 10px}
+.resource-links{display:flex;flex-wrap:wrap;gap:9px}
+.resource-links a{display:inline-flex;padding:10px 13px;border-radius:9px;border:1px solid #cfd5da;background:#f6f7f8;color:#17171a;text-decoration:none;font-weight:700}
+.resource-links a.solution{border-color:#bcd9c8;background:#eef8f2;color:#16613d}
+.free-badge{display:inline-flex;padding:5px 10px;border-radius:999px;background:#eef8f2;color:#16613d;font-size:.8rem;font-weight:750}
+[data-lang-block="fr"]{display:none}
+html[lang="fr"] [data-lang-block="en"]{display:none}
+html[lang="fr"] [data-lang-block="fr"]{display:block}
+@media(max-width:760px){.revision-grid{grid-template-columns:1fr}.revision-card{padding:20px}}
+</style>
+</head>
+<body data-page="revision">
+<header class="topbar"><a class="brand" href="index.html" aria-label="QM1 Practice Lab home"><img src="logoKedge.png" alt="KEDGE Business School"><span>QM1 Practice Lab</span></a><button id="revisionLanguageSwitch" class="language-switch" type="button">Français</button></header>
+<main>
+<a class="back-link" href="index.html"><span data-lang-block="en">← All chapters</span><span data-lang-block="fr">← Tous les chapitres</span></a>
+<section class="portal-hero">
+<p class="eyebrow">QUANTITATIVE METHODS 1 · EBP1</p>
+<div data-lang-block="en"><h1>Revision exercises</h1><p class="lead">Chapters 1 and 2</p></div>
+<div data-lang-block="fr"><h1>Exercices de révision</h1><p class="lead">Chapitres 1 et 2</p></div>
+</section>
+<section class="revision-intro">
+<div data-lang-block="en"><p><strong>These are guided application exercises provided as a complement to the work completed in class.</strong> Use the exercise statements first, then consult the detailed solutions to check each method and calculation. All solutions on this revision page are freely accessible and require no access code.</p></div>
+<div data-lang-block="fr"><p><strong>Il s’agit ici d’exercices d’application guidés, proposés en complément de ce qui a été réalisé en cours.</strong> Commencez par les énoncés, puis consultez les corrigés détaillés pour vérifier chaque méthode et chaque calcul. Tous les corrigés de cette page de révision sont librement accessibles et ne nécessitent aucun code.</p></div>
+</section>
+<section class="revision-grid">
+<article class="revision-card">
+<p class="eyebrow">CHAPTER 1 · CHAPITRE 1</p><h2>Data presentation<br><span style="font-weight:500">Présentation des données</span></h2>
+<span class="free-badge">Free solutions · Corrigés libres</span>
+<div class="resource-block"><h3>Français</h3><div class="resource-links">
+<a href="downloads/revision/QM1_Ch1_Exercices_FR.pdf" target="_blank" rel="noopener">Énoncés FR</a>
+<a class="solution" href="downloads/revision/QM1_Ch1_Corriges_FR.pdf" target="_blank" rel="noopener">Corrigés FR</a>
+</div></div>
+<div class="resource-block"><h3>English</h3><div class="resource-links">
+<a href="downloads/revision/QM1_Ch1_Exercises_EN.pdf" target="_blank" rel="noopener">Exercises EN</a>
+<a class="solution" href="downloads/revision/QM1_Ch1_Solutions_EN.pdf" target="_blank" rel="noopener">Solutions EN</a>
+</div></div>
+</article>
+<article class="revision-card">
+<p class="eyebrow">CHAPTER 2 · CHAPITRE 2</p><h2>Measures of central tendency<br><span style="font-weight:500">Mesures de tendance centrale</span></h2>
+<span class="free-badge">Free solutions · Corrigés libres</span>
+<div class="resource-block"><h3>Français</h3><div class="resource-links">
+<a href="downloads/revision/QM1_Ch2_Exercices_FR.pdf" target="_blank" rel="noopener">Énoncés FR</a>
+<a class="solution" href="downloads/revision/QM1_Ch2_Corriges_FR.pdf" target="_blank" rel="noopener">Corrigés FR</a>
+</div></div>
+<div class="resource-block"><h3>English</h3><div class="resource-links">
+<a href="downloads/revision/QM1_Ch2_Exercises_EN.pdf" target="_blank" rel="noopener">Exercises EN</a>
+<a class="solution" href="downloads/revision/QM1_Ch2_Solutions_EN.pdf" target="_blank" rel="noopener">Solutions EN</a>
+</div></div>
+</article>
+</section>
+</main>
+<footer><span>Badr ABOUFARASSE, PhD. · KEDGE Business School</span><span>© 2026 — All rights reserved</span></footer>
+<script>
+(()=>{const b=document.getElementById('revisionLanguageSwitch');const saved=localStorage.getItem('qm1Language');const initial=saved==='fr'?'fr':'en';function set(l){document.documentElement.lang=l;b.textContent=l==='en'?'Français':'English';localStorage.setItem('qm1Language',l)}set(initial);b.addEventListener('click',()=>set(document.documentElement.lang==='en'?'fr':'en'))})();
+</script>
+</body></html>
